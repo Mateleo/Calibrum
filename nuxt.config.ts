@@ -2,5 +2,11 @@
 export default defineNuxtConfig({
     modules: [
         '@nuxtjs/tailwindcss',
-      ]
+        '@nuxtjs/google-fonts'
+      ],
+      googleFonts: {
+        families: {
+          "Inter":true
+        }
+      }
 })
