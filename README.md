@@ -33,8 +33,6 @@ Build the application for production:
 npm run build
 ```
 
-## Commits
-We uses opencommit : https://github.com/di-sukharev/opencommit
 Locally preview production build:
 
 ```bash
@@ -42,3 +40,7 @@ npm run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+
+## Commits
+We uses opencommit : https://github.com/di-sukharev/opencommit 
