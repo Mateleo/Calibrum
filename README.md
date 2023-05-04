@@ -33,6 +33,8 @@ Build the application for production:
 npm run build
 ```
 
+## Commits
+We uses opencommit : https://github.com/di-sukharev/opencommit
 Locally preview production build:
 
 ```bash
