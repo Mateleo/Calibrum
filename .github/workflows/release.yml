@@ -24,6 +24,7 @@ jobs:
         run: npm install --no-package-lock --no-save emoji-regex && node changelog.js
       - name: Release
         uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           body_path: changelog.md
           token: ${{ secrets.TOKEN }}
