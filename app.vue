@@ -10,6 +10,7 @@
 :root{
   background-color: #12171c;
   color:white;
-  font-family: "Inter"
+  font-family: "Inter";
+  color-scheme: dark;
 }
 </style>
