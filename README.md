@@ -44,4 +44,4 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 ## Commits
 We use opencommit : https://github.com/di-sukharev/opencommit
-Make sure to add emoji !
+Make sure to add emoji!
