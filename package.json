@@ -11,9 +11,12 @@
   "devDependencies": {
     "@nuxt/image-edge": "1.0.0-28050764.aaee7ac",
     "@nuxtjs/google-fonts": "^3.0.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^9.0.2",
     "@types/node": "^18",
     "nuxt": "^3.4.3",
-    "nuxt-icon": "^0.4.0"
+    "nuxt-icon": "^0.4.0",
+    "semantic-release": "^21.0.2"
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.6.7"
