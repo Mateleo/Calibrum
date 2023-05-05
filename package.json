@@ -16,6 +16,7 @@
     "nuxt-icon": "^0.4.0"
   },
   "dependencies": {
-    "@nuxtjs/tailwindcss": "^6.6.7"
+    "@nuxtjs/tailwindcss": "^6.6.7",
+    "emoji-regex": "^10.2.1"
   }
 }
