@@ -16,7 +16,7 @@
         </div>
         <nav class="flex justify-between px-4 h-full">
             <NuxtLink to="/live-games"
-                class="h-full border-b-[6px] hover:border-cyan-300 border-transparent flex items-center transition-colors ease-in grow font-semibold pt-[6px] cursor-pointer">
+                class="h-full border-b-[6px] hover:border-cyan-300 border-transparent flex items-center transition-colors ease-in grow font-semibold pt-[6px] cursor-pointer whitespace-nowrap">
                 LIVE GAMES (WIP)
             </NuxtLink>
         </nav>
