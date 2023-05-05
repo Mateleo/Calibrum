@@ -8,16 +8,18 @@ interface props {
 const { padding, title, color } = withDefaults(
     defineProps<props>(),
     {
-        padding: true
+        padding: true,
+        color: "#22262b"
     }
 )
-
 </script>
+
+
 <template>
-    <div>
-        <CommonTitle class="mb-2">{{ title }}</CommonTitle>
+    <CommonSection :color="`${color}5a`" class="rounded-lg">
+        <h2 class="font-semibold text-[#08bcd5] mb-2 text-xl">{{ title }}</h2>
         <CommonSection class="rounded-lg" :padding="padding" :color="color">
             <slot></slot>
         </CommonSection>
-    </div>
+    </CommonSection>
 </template>
