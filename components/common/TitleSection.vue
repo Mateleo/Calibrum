@@ -2,9 +2,10 @@
 interface props {
     padding?: boolean
     title: string
+    color?: string
 }
 
-const { padding, title } = withDefaults(
+const { padding, title, color } = withDefaults(
     defineProps<props>(),
     {
         padding: true
@@ -15,7 +16,7 @@ const { padding, title } = withDefaults(
 <template>
     <div>
         <CommonTitle>{{ title }}</CommonTitle>
-        <CommonSection class="rounded-lg" :padding="padding">
+        <CommonSection class="rounded-lg" :padding="padding" :color="color">
             <slot></slot>
         </CommonSection>
     </div>
