@@ -1,5 +1,5 @@
 <template>
-    <CommonInnerTitleSection title="Top 10" class="h-min">
-        yes
+    <CommonInnerTitleSection title="Ladder">
+        <div class="h-[500px]">yes</div>
     </CommonInnerTitleSection>
 </template>
