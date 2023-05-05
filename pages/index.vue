@@ -3,7 +3,7 @@
     <div class="flex justify-evenly my-12">
         <MainLadder />
         <div class="flex flex-col gap-4">
-            <MainPlayesOfTheDay />
+            <MainPlayersOfTheDay />
             <MainLastGames />
         </div>
     </div>
