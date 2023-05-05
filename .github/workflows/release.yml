@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: "lts/*"
       - name: Generate changelog
-        run: node changelog.js
+        run: npm install emoji-regex && node changelog.js
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
