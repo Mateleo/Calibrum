@@ -5,7 +5,7 @@
             <div class="ml-2 w-[48px]">
                 <NuxtImg src="logo.png"></NuxtImg>
             </div>
-            <div class="px-2 flex flex-row-reverse" to="/">
+            <div class="px-2 flex flex-row-reverse p-2" to="/">
                 <h1 class="hidden lg:block text-4xl font-bold">Calibrum</h1>
             </div>
         </NuxtLink>
