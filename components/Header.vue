@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-    <header class="grid grid-cols-5 gap-8 bg-[#22262b] shadow-lg items-center sticky top-0 h-[68px]">
+    <header class="grid grid-cols-5 gap-8 bg-[#22262b] shadow-lg shadow-black/30 items-center sticky top-0 h-[68px]">
         <NuxtLink to="/" class="flex items-center px-4">
             <div class="ml-2 w-[48px]">
                 <NuxtImg src="logo.png"></NuxtImg>
