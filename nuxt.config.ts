@@ -20,6 +20,9 @@ export default defineNuxtConfig({
     RIOT_API_KEY: process.env.RIOT_API_KEY,
   },
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' }
+    pageTransition: { name: "page", mode: "out-in" },
+    head: {
+      title: "Calibrum ☄",
+    },
   },
 });
