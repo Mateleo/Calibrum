@@ -1,6 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts", "nuxt-icon",'@nuxt/image-edge'],  
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/google-fonts",
+    "nuxt-icon",
+    "@nuxt/image-edge",
+  ],
   googleFonts: {
     families: {
       Inter: {
@@ -9,9 +14,12 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    dir: 'assets/img',
-},
-runtimeConfig: {
-  RIOT_API_KEY: process.env.RIOT_API_KEY
-}
+    dir: "assets/img",
+  },
+  runtimeConfig: {
+    RIOT_API_KEY: process.env.RIOT_API_KEY,
+  },
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' }
+  },
 });
