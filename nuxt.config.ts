@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       Inter: {
-        wght: [100, 400, 600, 700],
+        wght: [100, 300, 400, 600, 700],
       },
     },
   },

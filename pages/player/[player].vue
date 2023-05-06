@@ -16,8 +16,10 @@ useSeoMeta({
         <div>
             <PlayerTitle></PlayerTitle>
         </div>
-        <div>
+        <div class="flex flex-col">
             <PlayerNavigation></PlayerNavigation>
+            <div class="flex gap-12 flex-wrap text-sm font-light">
+            </div>
         </div>
     </div>
 </template>
