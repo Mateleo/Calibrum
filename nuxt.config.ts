@@ -11,4 +11,7 @@ export default defineNuxtConfig({
   image: {
     dir: 'assets/img',
 },
+runtimeConfig: {
+  RIOT_API_KEY: process.env.RIOT_API_KEY
+}
 });
