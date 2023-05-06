@@ -9,11 +9,15 @@ useSeoMeta({
     twitterCard: 'summary_large_image',
 })
 
-
-const test = false;
 </script>
+
 <template>
-    <div class="m-4">
-        <PlayerTitle></PlayerTitle>
+    <div class="flex m-4 gap-8">
+        <div>
+            <PlayerTitle></PlayerTitle>
+        </div>
+        <div>
+            <PlayerNavigation></PlayerNavigation>
+        </div>
     </div>
 </template>
