@@ -33,9 +33,11 @@ exec(
             console.error(`Command output to stderr: ${stderr}`);
             return;
           }
-          console.log(`Version : ${CurrentVersion.trim()} | Next Version : ${NextVersion.trim()}`);
+          console.log(
+            `Version : ${CurrentVersion.trim()} | Next Version : ${NextVersion.trim()}`
+          );
           exec(
-            `git log --oneline --pretty=format:'%H$$%an$$%s' ${CurrentVersion.trim()}..HEAD`,
+            `git log --oneline --pretty=format:'%h$$%an$$%s' ${CurrentVersion.trim()}..HEAD`,
             (error, stdout, stderr) => {
               if (error) {
                 console.error(`Error executing command: ${error.message}`);
@@ -85,12 +87,7 @@ exec(
               if (features.length > 0) {
                 changelog += "\n\n## ✨ New Features\n";
                 features.forEach((e) => {
-                  changelog += ` - ${e.content} ([${e.id.substring(
-                    0,
-                    7
-                  )}](https://github.com/Mateleo/Calibrum/commit/${e.id})) by @${
-                    e.author
-                  }\n`;
+                  changelog += ` - ${e.content} ([${e.id}](https://github.com/Mateleo/Calibrum/commit/${e.id})) by @${e.author}\n`;
                 });
               }
               const bugfixes = gitLogOutputFormatedFlat.filter(
