@@ -78,7 +78,7 @@ exec(
                 })
                 .filter((e) => e != undefined);
 
-              let changelog = `# Calibrum\n\n# 🚀 Calibrum ${NextVersion} is here! 🥳`;
+              let changelog = `# Calibrum\n\n# 🚀 Calibrum ${NextVersion.trim()} is here! 🥳`;
 
               const gitLogOutputFormatedFlat = gitLogOutputFormated.flat(1);
               const features = gitLogOutputFormatedFlat.filter((e) => e.type === "feat");
