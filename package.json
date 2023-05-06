@@ -20,6 +20,7 @@
     "@nuxtjs/tailwindcss": "^6.6.7",
     "@prisma/client": "4.13.0",
     "axios": "^1.4.0",
+    "emoji-regex": "^10.2.1",
     "zod": "^3.21.4"
   }
 }
