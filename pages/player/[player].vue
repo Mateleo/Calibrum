@@ -14,12 +14,21 @@ useSeoMeta({
 <template>
     <div class="flex m-4 gap-8">
         <div>
-            <PlayerTitle>{{ route.params.player}}</PlayerTitle>
+            <PlayerTitle>{{ route.params.player }}</PlayerTitle>
         </div>
         <div class="flex flex-col grow">
-            <PlayerNavigation></PlayerNavigation>
-            <div class="text-sm font-light mt-4">
-                <PlayerAccounts></PlayerAccounts>
+            <div class="flex flex-col">
+                <PlayerNavigation></PlayerNavigation>
+                <div class="text-sm font-light mt-4">
+                    <PlayerAccounts></PlayerAccounts>
+                </div>
+            </div>
+            <div class="flex mt-4">
+                <div class="flex flex-col">
+                    <PlayerRank :rank="undefined" :title="'Current Rank'"></PlayerRank>
+                    <PlayerRank :rank="undefined" :title="'Peak Rank'" class="mt-8"></PlayerRank>
+                    <PlayerRank :rank="undefined" :title="'Lowest Rank'" class="mt-8"></PlayerRank>
+                </div>
             </div>
         </div>
     </div>

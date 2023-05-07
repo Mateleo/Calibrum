@@ -5,12 +5,14 @@ interface props {
     color?: string
 }
 
-const { padding, title, color } = withDefaults(
+const props = withDefaults(
     defineProps<props>(),
     {
         padding: true
     }
 )
+
+const { padding, title, color } = toRefs(props)
 
 </script>
 <template>
