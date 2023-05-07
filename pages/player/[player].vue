@@ -14,11 +14,12 @@ useSeoMeta({
 <template>
     <div class="flex m-4 gap-8">
         <div>
-            <PlayerTitle></PlayerTitle>
+            <PlayerTitle>{{ route.params.player}}</PlayerTitle>
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col grow">
             <PlayerNavigation></PlayerNavigation>
-            <div class="flex gap-12 flex-wrap text-sm font-light">
+            <div class="text-sm font-light mt-4">
+                <PlayerAccounts></PlayerAccounts>
             </div>
         </div>
     </div>

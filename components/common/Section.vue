@@ -13,8 +13,9 @@ const { color, padding } = withDefaults(
 )
 </script>
 <template>
-    <div class="min-w-min shadow-black/50 shadow-2xl"
+    <div class="min-w-min"
         :style="`background-color: ${color}; ${padding ? 'padding: 8px' : ''}`">
+        {{color}}
         <slot></slot>
     </div>
 </template>
