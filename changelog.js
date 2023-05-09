@@ -90,7 +90,7 @@ exec(
                   changelog += ` - ${e.content} ([${e.id}](https://github.com/Mateleo/Calibrum/commit/${e.id})) by @${e.author}\n`;
                 });
               }
-              const bugfixes = gitLogOutputFormatedFlat.filter((e) => e.type == "perf" || e.type=="fix");
+              const bugfixes = gitLogOutputFormatedFlat.filter((e) => e.type == "perf" || e.type=="fix" || e.type=="refactor");
               if (bugfixes.length > 0) {
                 changelog += "\n\n## 🔧 Bug Fixes\n";
                 bugfixes.forEach((e) => {
