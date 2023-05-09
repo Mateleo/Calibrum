@@ -43,4 +43,16 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 
 ## Commits
-We use opencommit : https://github.com/di-sukharev/opencommit 
+We use [opencommit](https://github.com/di-sukharev/opencommit)  
+Make sure to add emoji!
+
+## Prisma
+We use [prisma](https://github.com/prisma/prisma)  
+Generate prisma client (do this when you change the prisma schema)  
+```bash
+npx prisma generate
+```
+Push schema changes to the database:  
+```bash
+npx prisma db push
+```

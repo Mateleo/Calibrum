@@ -13,7 +13,6 @@ exec(
       console.error(`Command output to stderr: ${stderr}`);
       return;
     }
-    console.log(commitCurentVersion)
     exec(
       `git describe --abbrev=0 --tags ${commitCurentVersion}`,
       (error, CurrentVersion, stderr) => {
