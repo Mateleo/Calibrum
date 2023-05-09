@@ -1,15 +1,10 @@
 <script lang=ts setup></script>
 <template>
-    <div>
-        <div class="p-20">
-            <CommonTitleSection title="Exemple de titre">
-                Exemple de contenu
-            </CommonTitleSection>
-        </div>        
-        <div class="p-20">
-            <CommonInnerTitleSection title="Titre de section">
-                Yes
-            </CommonInnerTitleSection>
+    <div class="flex justify-evenly my-12 gap-12 px-12">
+        <MainLadder class="flex-grow h-min" />
+        <div class="flex flex-col gap-4">
+            <MainPlayersOfTheDay />
+            <MainLastGames />
         </div>
     </div>
 </template>

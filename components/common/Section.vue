@@ -4,17 +4,17 @@ interface props {
     padding?: boolean
 }
 
-const { color, padding } = withDefaults(
+const props = withDefaults(
     defineProps<props>(),
     {
         color: "#22262b",
         padding: true
     }
 )
+const { color, padding } = toRefs(props)
 </script>
 <template>
-    <div class="min-w-min shadow-black/50 shadow-2xl"
-        :style="`background-color: ${color}; ${padding ? 'padding: 8px' : ''}`">
+    <div class="min-w-min" :style="`background-color: ${color}; ${padding ? 'padding: 8px' : ''}`">
         <slot></slot>
     </div>
 </template>

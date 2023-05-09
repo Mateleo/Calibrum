@@ -120,7 +120,7 @@ exec(
                 ...new Set(gitLogOutputFormatedFlat.map((e) => e.author)),
               ];
               if (contributors.length > 0) {
-                changelog += "\n\n## 🗿 Chad Contributors\n------\n";
+                changelog += "\n------\n## 🗿 Chad Contributors\n\n";
                 contributors.forEach((e) => {
                   changelog += ` - [@${e}](https://github.com/${e}) for ${gitLogOutputFormatedFlat
                     .filter((commit) => commit.author === e)

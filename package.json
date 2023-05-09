@@ -13,10 +13,14 @@
     "@nuxtjs/google-fonts": "^3.0.0",
     "@types/node": "^18",
     "nuxt": "^3.4.3",
-    "nuxt-icon": "^0.4.0"
+    "nuxt-icon": "^0.4.0",
+    "prisma": "^4.13.0"
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.6.7",
-    "emoji-regex": "^10.2.1"
+    "@prisma/client": "4.13.0",
+    "axios": "^1.4.0",
+    "emoji-regex": "^10.2.1",
+    "zod": "^3.21.4"
   }
 }
