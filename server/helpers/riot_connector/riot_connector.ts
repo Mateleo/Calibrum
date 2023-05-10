@@ -1,3 +1,4 @@
+import { Rank, Tier } from '@prisma/client'
 import axios from 'axios'
 
 interface AccountByNameResponse {
@@ -12,9 +13,9 @@ interface AccountByNameResponse {
 
 interface RankedInfoResponse {
     leagueId: string
-    queueType: string
-    tier: string
-    rank: string
+    queueType: "RANKED_SOLO_5x5" | "RANKED_FLEX_SR"
+    tier: Tier
+    rank: Rank
     summonerId: string
     summonerName: string
     leaguePoints: number

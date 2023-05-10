@@ -24,12 +24,12 @@ model Account {
   sumonerLvl  Int
   profileIcon String
 
-  tier   String?
-  rank   String?
-  LP     Int?    @default(0)
-  wins   Int?    @default(0)
-  losses Int?    @default(0)
-  LPC    Int?    @default(0)
+  tier   Tier?
+  rank   Rank?
+  LP     Int?  @default(0)
+  wins   Int?  @default(0)
+  losses Int?  @default(0)
+  LPC    Int?  @default(0)
 
   player          Player     @relation(fields: [playerDiscordId], references: [discordId], onDelete: Cascade)
   playerDiscordId String
@@ -41,6 +41,25 @@ model LpUpdate {
   date DateTime
   LP   Int
 
-  account Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
   accountId String
+}
+
+enum Tier {
+  IRON
+  BRONZE
+  SILVER
+  GOLD
+  PLATINUM
+  DIAMOND
+  MASTER
+  GRANDMASTER
+  CHALLENGER
+}
+
+enum Rank {
+  I
+  II
+  III
+  IV
 }
