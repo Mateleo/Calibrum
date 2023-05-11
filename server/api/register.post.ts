@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { registerPlayer } from '../helpers/players/players'
+import { registerOrUpdatePlayer } from '../helpers/players/players'
 import { fetchAccountData, registerAccount } from '../helpers/accounts/accounts'
 
 const RegisterBodySchema = z.object({
@@ -19,7 +19,7 @@ export default defineEventHandler(async (event) => {
         return { error: "incorrect data type" }
     }
 
-    const registeredPlayer = await registerPlayer(player)
+    const registeredPlayer = await registerOrUpdatePlayer(player)
 
     var registeredAccounts = []
     
@@ -28,7 +28,6 @@ export default defineEventHandler(async (event) => {
         if (registeredAccount) {
             registeredAccounts.push(await fetchAccountData(registeredAccount.id))
         }
-        
     }
 
     return {

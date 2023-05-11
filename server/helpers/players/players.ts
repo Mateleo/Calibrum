@@ -36,10 +36,10 @@ export function updatePlayer(player: Prisma.PlayerUpdateInput) {
     })
 }
 
-export async function registerPlayer(player: RegisterBody) {
+export async function registerOrUpdatePlayer(player: RegisterBody) {
     const { accounts, ...playerWithoutAccounts } = player
 
-    if (await getPlayerByDiscordId(playerWithoutAccounts.discordId)) {
+    if (await getPlayerByDiscordId(player.discordId)) {
         var newPlayer = await updatePlayer(playerWithoutAccounts)
     } else {
         var newPlayer = await createPlayer(playerWithoutAccounts)
