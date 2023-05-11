@@ -37,9 +37,13 @@ model Account {
 }
 
 model LpUpdate {
-  id   String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  date DateTime
-  LP   Int
+  id             String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  date           DateTime
+  LPC            Int
+  tier           Tier
+  rank           Rank
+  LP             Int
+  lastUpdateDiff Int
 
   account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
   accountId String
