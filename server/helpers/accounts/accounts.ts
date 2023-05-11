@@ -81,11 +81,11 @@ export async function fetchAccountData(accountId: string) {
     if (!rankedInfo) return
 
     const newAccountData = (await fetchAccountByName(rankedInfo?.summonerName)).data
-    const oldLPC = (await getAccountById(accountId))?.LPC ?? 0
 
+    const oldLPC = (await getAccountById(accountId))?.LPC ?? 0
     const newLPC = getLPC(rankedInfo.tier, rankedInfo.rank, rankedInfo.leaguePoints)
 
-    if (oldLPC !== 0 && oldLPC !== newLPC) {
+    if (newLPC !== 0 && oldLPC !== newLPC) {
         await createLpUpdate({
             LP: newLPC,
             date: new Date().toISOString(),
@@ -115,7 +115,7 @@ export async function fetchAccountData(accountId: string) {
 // Utils
 
 function getProfileIconUrl(profileIconId: number) {
-    return `https://ddragon.leagueoflegends.com/cdn/13.9.1/img/profileicon/${profileIconId}.png`
+    return `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${profileIconId}.jpg`
 }
 
 
