@@ -87,8 +87,12 @@ export async function fetchAccountData(accountId: string) {
 
     if (newLPC !== 0 && oldLPC !== newLPC) {
         await createLpUpdate({
-            LP: newLPC,
+            LPC: newLPC,
             date: new Date().toISOString(),
+            LP: rankedInfo.leaguePoints,
+            rank: rankedInfo.rank,
+            tier: rankedInfo.tier,
+            lastUpdateDiff: oldLPC !== 0 ? newLPC - oldLPC : 0,
             account: {
                 connect: {
                     id: accountId
