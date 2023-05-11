@@ -3,38 +3,34 @@ interface props {
     rank: string
     tier: string
     LP: number
-    games: {
-        wins: number
-        losses: number
-        winrate: number
-    }
+    LPC: number
+    wins: number
+    losses: number
     lastUpdated: string
 }
 
 const props = withDefaults(
-    defineProps<{ rank: props,title:string }>(),
+    defineProps<{ rank: props, title: string }>(),
     {
         rank: {
             //@ts-ignore
             rank: "Challenger",
             tier: "IV",
             LP: 0,
-            games: {
-                wins: 0,
-                losses: 0,
-                winrate: 0
-            },
+            LPC: 0,
+            wins: 0,
+            losses: 0,
             lastUpdated: "0/0"
         },
-        title:"Title Rank"
+        title: "Title Rank"
     }
 )
 
-const { rank, tier, LP, games, lastUpdated } = toRefs(props.rank)
+const { rank, tier, LP, LPC, wins, losses, lastUpdated } = toRefs(props.rank)
 const { title } = toRefs(props)
 
 
-const image = `emblems/Emblem_${rank.value}.png`
+const image = `emblems/Emblem_${tier.value}.png`
 
 </script>
 <template>
@@ -45,7 +41,7 @@ const image = `emblems/Emblem_${rank.value}.png`
                 <div class="text-sm text-right p-4 leading-4 flex flex-col justify-center">
                     <p class="font-semibold">{{ rank }} {{ tier }}</p>
                     <p class="font-semibold">{{ LP }} LP</p>
-                    <p>{{ games.wins }}/{{ games.losses }} ({{ games.winrate * 100 }}%)</p>
+                    <p>{{ wins }}/{{ losses }} ({{ Math.floor(wins/(losses+wins)*1000)/10}}%)</p>
                     <p class="text-white/70">{{ lastUpdated }}</p>
                 </div>
             </div>
