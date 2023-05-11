@@ -6,15 +6,19 @@ export default defineEventHandler(async (event) => {
     const params = event.context.params
 
     if (!params) {
-        setResponseStatus(event, 500, "params not found")
-        return { error: "parameters not found" }
+        throw createError({
+            statusCode: 500,
+            statusMessage: `params not found`
+        })
     }
 
     const player = await getPlayerByName(params.player)
 
     if (!player) {
-        setResponseStatus(event, 500, "player not found")
-        return { error: `player ${params.player} not found` }
+        throw createError({
+            statusCode: 500,
+            statusMessage: `player ${params.player} not found`
+        })
     }
 
     const accounts = await getAccountsByPlayer(player.discordId)
@@ -26,7 +30,6 @@ export default defineEventHandler(async (event) => {
             lpUpdates: lpUpdates
         }
     }))
-
 
     return {
         ...player,

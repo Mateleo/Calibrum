@@ -4,15 +4,19 @@ export default defineEventHandler(async (event) => {
     const params = event.context.params
 
     if (!params) {
-        setResponseStatus(event, 500, "params not found")
-        return { error: "parameters not found" } 
+        throw createError({
+            statusCode: 500,
+            statusMessage: `params not found`
+        })
     }
 
     const account = await getAccountByName(params.account)
 
     if (!account) {
-        setResponseStatus(event, 500, "account not found")
-        return { error: `account ${params.account} not found` }
+        throw createError({
+            statusCode: 500,
+            statusMessage: `account ${params.account} not found`
+        })
     }
     
     await fetchAccountData(account.id)

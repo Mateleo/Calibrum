@@ -5,22 +5,28 @@ export default defineEventHandler(async (event) => {
     const params = event.context.params
 
     if (!params) {
-        setResponseStatus(event, 500, "params not found")
-        return { error: "parameters not found" }
+        throw createError({
+            statusCode: 500,
+            statusMessage: `params not found`
+        })
     }
 
     const player = await getPlayerByName(params.player)
 
     if (!player) {
-        setResponseStatus(event, 500, "player not found")
-        return { error: "player not found" }
+        throw createError({
+            statusCode: 500,
+            statusMessage: `player ${params.player} not found`
+        })
     }
 
     const accounts = await getAccountsByPlayer(player.discordId)
 
     if (!accounts) {
-        setResponseStatus(event, 500, "accounts not found")
-        return { error: `no account found for ${player.name}` }
+        throw createError({
+            statusCode: 500,
+            statusMessage: `account ${params.account} not found`
+        })
     }
 
     for (const account of accounts) {
