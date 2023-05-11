@@ -24,7 +24,11 @@ export default defineEventHandler(async (event) => {
     const accounts = await getAccountsByPlayer(player.discordId)
 
     const accountsWithLpUpdates = await Promise.all(accounts.map(async (account) => {
-        const lpUpdates = await getLpUpdateByAccount(account.id)
+        const lpUpdatesRaw = await getLpUpdateByAccount(account.id)
+        const lpUpdates = lpUpdatesRaw.map(lpupdate => {
+            const { id, accountId, ...lpupdateReponse } = lpupdate
+            return lpupdateReponse
+        })
         return {
             ...account,
             lpUpdates: lpUpdates
