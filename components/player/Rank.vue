@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import dayjs from "dayjs"
+
 interface props {
     rank: string
     tier: string
     LP: number
-    LPC: number
     wins: number
     losses: number
     lastUpdated: string
@@ -20,13 +21,12 @@ const props = withDefaults(
             LPC: 0,
             wins: 0,
             losses: 0,
-            lastUpdated: "0/0"
         },
         title: "Title Rank"
     }
 )
 
-const { rank, tier, LP, LPC, wins, losses, lastUpdated } = toRefs(props.rank)
+const { rank, tier, LP, wins, losses, lastUpdated } = toRefs(props.rank)
 const { title } = toRefs(props)
 
 
@@ -41,7 +41,7 @@ const image = `emblems/Emblem_${tier.value}.png`
                 <div class="text-sm text-right p-4 leading-4 flex flex-col justify-center">
                     <p class="font-semibold">{{ rank }} {{ tier }}</p>
                     <p class="font-semibold">{{ LP }} LP</p>
-                    <p>{{ wins }}/{{ losses }} ({{ Math.floor(wins/(losses+wins)*1000)/10}}%)</p>
+                    <p>{{ wins }}/{{ losses }} ({{ Math.floor(wins / (losses + wins) * 1000) / 10 }}%)</p>
                     <p class="text-white/70">{{ lastUpdated }}</p>
                 </div>
             </div>

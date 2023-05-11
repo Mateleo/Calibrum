@@ -1,9 +1,12 @@
 <script lang="ts" setup>
 const route = useRoute();
 
-const {pending, data:player} = await useLazyFetch(`/api/player/${route.params.player}`)
+const { pending, error, data: player } = await useLazyFetch(`/api/player/${route.params.player}`)
 
 console.log(player.value)
+
+player.value
+
 
 useSeoMeta({
     title: `${route.params.player} on Calibrum ☄`,
@@ -17,7 +20,7 @@ useSeoMeta({
 </script>
 
 <template>
-    <div class="flex gap-8 max-w-[2000px] m-auto mt-4 w-[95%] lg:w-[85%] xl:w-[70%]">
+    <div v-if="player" class="flex gap-8 max-w-[2000px] m-auto mt-4 w-[95%] lg:w-[85%] xl:w-[70%]">
         <div class="flex flex-col gap-8">
             <PlayerTitle :role="player.role">{{ route.params.player }}</PlayerTitle>
             <CommonSection class="h-full rounded-lg"></CommonSection>
