@@ -1,6 +1,6 @@
 <script lang=ts setup></script>
 <template>
-    <footer class="fixed bottom-0 w-full">
+    <footer class="absolute bottom-0 w-full">
         <div class="flex justify-between px-6 text-white/50 text-xs pb-2">
             <div class="flex gap-2">
                 <NuxtLink to="/faq" class="hover:text-white transition-all ease-in">FAQ</NuxtLink>
