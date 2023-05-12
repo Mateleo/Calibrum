@@ -2,14 +2,26 @@
 import { LpUpdate } from '@prisma/client';
 
 const route = useRoute();
-
 const { pending, error, data: player } = await useLazyFetch(`/api/player/${route.params.player}`)
 
-const lastUpdate = player.value?.accounts.at(0)?.lpUpdates.at(0) as unknown as Omit<LpUpdate, "accountId" | "id"> | undefined
+const selectedAccountIndex = ref(0)
 
-const peakEloUpdate = player.value?.accounts.at(0)?.lpUpdates.reduce((peakEloUpdate, currentUpdate) => (
-    currentUpdate.LPC > peakEloUpdate.LPC ? currentUpdate : peakEloUpdate
-)) as unknown as Omit<LpUpdate, "accountId" | "id"> | undefined
+type Response = Omit<LpUpdate, "accountId" | "id"> | undefined
+
+const lastUpdate = ref(player.value?.accounts.at(0)?.lpUpdates.at(0) as Response)
+
+watch(selectedAccountIndex, (newIndex) => {
+    lastUpdate.value = player.value?.accounts.at(newIndex)?.lpUpdates.at(0) as Response
+
+    console.log(lastUpdate)
+})
+
+
+
+
+// var peakEloUpdate = player.value?.accounts.at(selectedAccountIndex.value)?.lpUpdates.reduce((peakEloUpdate, currentUpdate) => (
+//     currentUpdate.LPC > peakEloUpdate.LPC ? currentUpdate : peakEloUpdate
+// )) as unknown as Omit<LpUpdate, "accountId" | "id"> | undefined
 
 useSeoMeta({
     title: `${route.params.player} on Calibrum ☄`,
@@ -32,13 +44,15 @@ useSeoMeta({
             <div class="flex flex-col">
                 <PlayerNavigation />
                 <div class="text-sm font-light mt-4">
-                    <PlayerAccounts :accounts="player.accounts" />
+                    <PlayerAccounts :accounts="player.accounts" :onAccountChange="(accountIndex) => {
+                        selectedAccountIndex = accountIndex
+                    }" />
                 </div>
             </div>
             <div class="flex mt-4 gap-8">
                 <div class="flex flex-col shrink-0">
                     <PlayerRank :lpUpdate="lastUpdate" :title="'Current Rank'" :wins=100 :losses=150 />
-                    <PlayerRank :lpUpdate="peakEloUpdate" :title="'Peak Rank'" class="mt-8" />
+                    <PlayerRank :title="'Peak Rank'" class="mt-8" />
                 </div>
                 <div class="flex flex-col w-full">
                     <CommonTitleSection title="Rank History" class="h-full"></CommonTitleSection>

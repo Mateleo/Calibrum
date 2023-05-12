@@ -36,5 +36,8 @@ export function updateLpUpdate(lpUpdate: Prisma.LpUpdateUpdateInput) {
 }
 
 export function isDodge(lpUpdate: LpUpdate) {
-    return true
+    if (![5, 15].includes(lpUpdate.lastUpdateDiff)) return false
+    
+    if (lpUpdate) return true
+
 }
