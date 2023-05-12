@@ -1,4 +1,4 @@
-import { Prisma } from "@prisma/client";
+import { LpUpdate, Prisma } from "@prisma/client";
 import { prisma } from "../prisma";
 
 export function getLpUpdateById(id: string) {
@@ -33,4 +33,8 @@ export function updateLpUpdate(lpUpdate: Prisma.LpUpdateUpdateInput) {
         },
         data: lpUpdate
     })
+}
+
+export function isDodge(lpUpdate: LpUpdate) {
+    return true
 }

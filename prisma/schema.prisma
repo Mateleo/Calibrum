@@ -44,6 +44,7 @@ model LpUpdate {
   rank           Rank
   LP             Int
   lastUpdateDiff Int
+  isDodge        Boolean?
 
   account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
   accountId String

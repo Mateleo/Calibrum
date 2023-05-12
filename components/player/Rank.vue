@@ -1,36 +1,37 @@
 <script setup lang="ts">
+import { LpUpdate } from "@prisma/client"
 import dayjs from "dayjs"
 
-interface props {
-    rank: string
-    tier: string
-    LP: number
-    wins: number
-    losses: number
-    lastUpdated: string
+interface Props {
+    lpUpdate?: Omit<LpUpdate, "id" | "accountId">
+    title?: string
+    wins?: number
+    losses?: number
 }
 
 const props = withDefaults(
-    defineProps<{ rank: props, title: string }>(),
+    defineProps<Props>(),
     {
-        rank: {
-            //@ts-ignore
-            rank: "Challenger",
-            tier: "IV",
-            LP: 0,
-            LPC: 0,
-            wins: 0,
-            losses: 0,
-        },
-        title: "Title Rank"
+        lpUpdate: () => ({
+            date: new Date(),
+            LP: 1,
+            LPC: 1,
+            lastUpdateDiff: 1,
+            rank: "IV",
+            tier: "CHALLENGER"
+        }),
+        title: "123",
+        wins: 1,
+        losses: 1
     }
 )
 
-const { rank, tier, LP, wins, losses, lastUpdated } = toRefs(props.rank)
-const { title } = toRefs(props)
+const { LP, LPC, date, lastUpdateDiff, rank, tier } = toRefs(props.lpUpdate)
+
+const { title, losses, wins } = toRefs(props)
 
 
-const image = `emblems/Emblem_${tier.value}.png`
+const image = `img/emblems/Emblem_${tier.value}.png`
 
 </script>
 <template>
@@ -42,7 +43,7 @@ const image = `emblems/Emblem_${tier.value}.png`
                     <p class="font-semibold">{{ rank }} {{ tier }}</p>
                     <p class="font-semibold">{{ LP }} LP</p>
                     <p>{{ wins }}/{{ losses }} ({{ Math.floor(wins / (losses + wins) * 1000) / 10 }}%)</p>
-                    <p class="text-white/70">{{ lastUpdated }}</p>
+                    <p class="text-white/70">{{ dayjs(date).format("DD/MM") }}</p>
                 </div>
             </div>
         </CommonTitleSection>

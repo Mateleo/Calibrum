@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "nuxt-icon",
     "@nuxt/image-edge",
+    'nuxt-scheduler'
   ],
   googleFonts: {
     families: {
@@ -12,9 +13,6 @@ export default defineNuxtConfig({
         wght: [100, 300, 400, 500, 600, 700],
       },
     },
-  },
-  image: {
-    dir: "assets/img",
   },
   runtimeConfig: {
     RIOT_API_KEY: process.env.RIOT_API_KEY,
