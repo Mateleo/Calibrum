@@ -21,7 +21,7 @@ function startScheduler() {
         await new Promise((r) => setTimeout(r, 2000));
       }
     })
-    .everySeconds(2);
+    .everyTenMinutes();
 
   // create as many tasks as you want here
 }
