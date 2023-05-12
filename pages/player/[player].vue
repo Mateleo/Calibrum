@@ -30,15 +30,15 @@ useSeoMeta({
         </div>
         <div class="flex flex-col grow">
             <div class="flex flex-col">
-                <PlayerNavigation></PlayerNavigation>
+                <PlayerNavigation />
                 <div class="text-sm font-light mt-4">
-                    <PlayerAccounts :accounts="player.accounts"></PlayerAccounts>
+                    <PlayerAccounts :accounts="player.accounts" />
                 </div>
             </div>
             <div class="flex mt-4 gap-8">
                 <div class="flex flex-col shrink-0">
-                    <PlayerRank :lpUpdate="lastUpdate" :title="'Current Rank'" :wins=100 :losses=150></PlayerRank>
-                    <PlayerRank :lpUpdate="peakEloUpdate" :title="'Peak Rank'" class="mt-8"></PlayerRank>
+                    <PlayerRank :lpUpdate="lastUpdate" :title="'Current Rank'" :wins=100 :losses=150 />
+                    <PlayerRank :lpUpdate="peakEloUpdate" :title="'Peak Rank'" class="mt-8" />
                 </div>
                 <div class="flex flex-col w-full">
                     <CommonTitleSection title="Rank History" class="h-full"></CommonTitleSection>
