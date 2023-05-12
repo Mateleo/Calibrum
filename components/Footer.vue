@@ -22,7 +22,7 @@
                 </a>
                 <a href="https://4esport.fr/" target="-blank"
                     class="w-[22px] hover:opacity-100 opacity-50  transition-all ease-in">
-                    <NuxtImg src="4es_logo.png"></NuxtImg>
+                    <NuxtImg src="img/4es_logo.png"></NuxtImg>
                 </a>
             </div>
         </div>
