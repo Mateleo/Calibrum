@@ -36,6 +36,9 @@ devDependencies:
   nuxt-icon:
     specifier: ^0.4.0
     version: 0.4.0(vue@3.2.47)
+  nuxt-scheduler:
+    specifier: ^0.0.16
+    version: 0.0.16
   prisma:
     specifier: ^4.14.0
     version: 4.14.0
@@ -3803,6 +3806,13 @@ packages:
     dev: true
     optional: true
 
+  /node-cron@3.0.2:
+    resolution: {integrity: sha512-iP8l0yGlNpE0e6q1o185yOApANRe47UPbLf4YxfbiNHt/RU5eBcGB/e0oudruheSf+LQeDMezqC5BVAb5wwRcQ==}
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      uuid: 8.3.2
+    dev: true
+
   /node-domexception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
@@ -3907,6 +3917,17 @@ packages:
       - rollup
       - supports-color
       - vue
+    dev: true
+
+  /nuxt-scheduler@0.0.16:
+    resolution: {integrity: sha512-uZH+7IrNqEVogh9in3eftoIi/2WnKglehpsuEGXikZ/+dMSq31p9unyl8BSs4D63Ddzpx6ovFhQFDscPrucbbA==}
+    dependencies:
+      '@nuxt/kit': 3.4.3
+      defu: 6.1.2
+      node-cron: 3.0.2
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
     dev: true
 
   /nuxt@3.4.3(@types/node@18.16.3):
@@ -5588,6 +5609,11 @@ packages:
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+
+  /uuid@8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    hasBin: true
+    dev: true
 
   /vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}

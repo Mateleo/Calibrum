@@ -84,6 +84,7 @@ export async function fetchAccountData(accountId: string) {
 
     const oldLPC = (await getAccountById(accountId))?.LPC ?? 0
     const newLPC = getLPC(rankedInfo.tier, rankedInfo.rank, rankedInfo.leaguePoints)
+    console.log(oldLPC, newLPC)
 
     if (newLPC !== 0 && oldLPC !== newLPC) {
         await createLpUpdate({
