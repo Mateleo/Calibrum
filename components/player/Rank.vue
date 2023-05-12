@@ -42,9 +42,8 @@ const image = `emblems/Emblem_${tier.value}.png`
                 <div class="text-sm text-right p-4 leading-4 flex flex-col justify-center">
                     <p class="font-semibold">{{ rank }} {{ tier }}</p>
                     <p class="font-semibold">{{ LP }} LP</p>
-                    <p class="font-semibold">{{ LPC }} LPC</p>
                     <p>{{ wins }}/{{ losses }} ({{ Math.floor(wins / (losses + wins) * 1000) / 10 }}%)</p>
-                    <p class="text-white/70">{{ lastUpdateDiff }}</p>
+                    <p class="text-white/70">{{ dayjs(date).format("DD/MM") }}</p>
                 </div>
             </div>
         </CommonTitleSection>
