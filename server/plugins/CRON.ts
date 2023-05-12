@@ -16,12 +16,12 @@ function startScheduler() {
         try {
           await fetchAccountData(account.id);
         } catch (error) {
-          console.log(`[CRON][fetchAccountData]${account}\n${error}`)
+          console.log(`[CRON][fetchAccountData]${account.name}\n${error}`)
         }
         await new Promise((r) => setTimeout(r, 2000));
       }
     })
-    .everyTenMinutes();
+    .everySeconds(2);
 
   // create as many tasks as you want here
 }
