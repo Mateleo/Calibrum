@@ -31,7 +31,7 @@ const { LP, LPC, date, lastUpdateDiff, rank, tier } = toRefs(props.lpUpdate)
 const { title, losses, wins } = toRefs(props)
 
 
-const image = `emblems/Emblem_${tier.value}.png`
+const image = `img/emblems/Emblem_${tier.value}.png`
 
 </script>
 <template>

@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<props>(), {
 
                 <div class="absolute -bottom-[1px] left-[95px] flex items-center justify-center w-10 h-10
                 text-xs font-extrabold bg-blue-950 border-2 border-teal-400 rounded-full">
-                    <NuxtImg :src="`/positions/${props.role}.svg`" class="w-[50%]">
+                    <NuxtImg :src="`img/positions/${props.role}.svg`" class="w-[50%]">
                     </NuxtImg>
                 </div>
             </div>

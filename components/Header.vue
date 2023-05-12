@@ -6,7 +6,7 @@
                 <NuxtLink to="/"
                     class="flex items-center px-2 md:px-4 border-r-[1px] border-gray-500/50 md:border-transparent pr-4">
                     <div class="ml-2 w-[48px]">
-                        <NuxtImg src="logo.png"></NuxtImg>
+                        <NuxtImg src="img/logo.png"></NuxtImg>
                     </div>
                     <div class="hidden md:flex flex-row-reverse p-2" to="/">
                         <h1 class="hidden lg:block text-4xl font-bold">Calibrum</h1>
