@@ -3,9 +3,9 @@
     <footer class="fixed bottom-0 w-full">
         <div class="flex justify-between px-6 text-white/50 text-xs pb-2">
             <div class="flex gap-2">
-                <a>FAQ</a>
-                <a>DevTeam</a>
-                <a>Terms of services</a>
+                <NuxtLink to="/faq" class="hover:text-white transition-all ease-in">FAQ</NuxtLink>
+                <NuxtLink to="/dev-team" class="hover:text-white transition-all ease-in">DevTeam</NuxtLink>
+                <!-- <NuxtLink to="/" class="hover:text-white transition-all ease-in">Terms of services</NuxtLink> -->
             </div>
             <!-- <div>Copyright © 2023 4eSport Tous droits réservés.</div> -->
             <div class="flex gap-6">
