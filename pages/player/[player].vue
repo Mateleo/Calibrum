@@ -1,12 +1,15 @@
 <script lang="ts" setup>
+import { LpUpdate } from '@prisma/client';
+
 const route = useRoute();
 
 const { pending, error, data: player } = await useLazyFetch(`/api/player/${route.params.player}`)
 
-console.log(player.value)
+const lastUpdate = player.value?.accounts.at(0)?.lpUpdates.at(0) as unknown as Omit<LpUpdate, "accountId" | "id"> | undefined
 
-player.value
-
+const peakEloUpdate = player.value?.accounts.at(0)?.lpUpdates.reduce((peakEloUpdate, currentUpdate) => (
+    currentUpdate.LPC > peakEloUpdate.LPC ? currentUpdate : peakEloUpdate
+)) as unknown as Omit<LpUpdate, "accountId" | "id"> | undefined
 
 useSeoMeta({
     title: `${route.params.player} on Calibrum ☄`,
@@ -34,8 +37,8 @@ useSeoMeta({
             </div>
             <div class="flex mt-4 gap-8">
                 <div class="flex flex-col shrink-0">
-                    <PlayerRank :rank="player.accounts[0]" :title="'Current Rank'"></PlayerRank>
-                    <PlayerRank :rank="player.accounts[0]" :title="'Peak Rank'" class="mt-8"></PlayerRank>
+                    <PlayerRank :lpUpdate="lastUpdate" :title="'Current Rank'" :wins=100 :losses=150></PlayerRank>
+                    <PlayerRank :lpUpdate="peakEloUpdate" :title="'Peak Rank'" class="mt-8"></PlayerRank>
                 </div>
                 <div class="flex flex-col w-full">
                     <CommonTitleSection title="Rank History" class="h-full"></CommonTitleSection>
