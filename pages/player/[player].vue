@@ -13,7 +13,7 @@ const lastUpdate = ref(player.value?.accounts.at(0)?.lpUpdates.at(0) as Response
 watch(selectedAccountIndex, (newIndex) => {
     lastUpdate.value = player.value?.accounts.at(newIndex)?.lpUpdates.at(0) as Response
 
-    console.log(lastUpdate)
+    console.log(lastUpdate.value)
 })
 
 
