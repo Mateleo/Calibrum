@@ -1,5 +1,4 @@
 import { Prisma } from "@prisma/client";
-import { prisma } from "../prisma";
 import { RegisterBody } from "~/server/api/register.post";
 
 export function getPlayerByName(name: string) {

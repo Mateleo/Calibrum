@@ -1,7 +1,4 @@
 import { Prisma, Rank, Tier } from "@prisma/client";
-import { prisma } from "../prisma";
-import { fetchAccountByName, fetchRankedInfo } from "../riot_connector/riot_connector";
-import { createLpUpdate } from "../lp_updates/lp_updates";
 
 // Low level functions
 

@@ -1,5 +1,3 @@
-import { fetchAccountData, getAccountByName } from "~/server/helpers/accounts/accounts"
-
 export default defineEventHandler(async (event) => {
     const params = event.context.params
 

@@ -1,5 +1,4 @@
 import { useScheduler } from "#scheduler";
-import { fetchAccountData, getAccounts } from "../helpers/accounts/accounts";
 
 export default defineNitroPlugin(() => {
   startScheduler();

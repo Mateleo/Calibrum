@@ -1,6 +1,3 @@
-import { fetchAccountData, getAccountsByPlayer } from "~/server/helpers/accounts/accounts"
-import { getPlayerByName } from "~/server/helpers/players/players"
-
 export default defineEventHandler(async (event) => {
     const params = event.context.params
 

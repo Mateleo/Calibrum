@@ -1,6 +1,4 @@
 import { z } from 'zod'
-import { registerOrUpdatePlayer } from '../helpers/players/players'
-import { fetchAccountData, registerAccount } from '../helpers/accounts/accounts'
 
 const RegisterBodySchema = z.object({
     discordId: z.string(),

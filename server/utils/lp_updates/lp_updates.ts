@@ -1,5 +1,4 @@
 import { LpUpdate, Prisma } from "@prisma/client";
-import { prisma } from "../prisma";
 
 export function getLpUpdateById(id: string) {
     return prisma.lpUpdate.findUnique({

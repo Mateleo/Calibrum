@@ -1,7 +1,3 @@
-import { getAccountsByPlayer } from "~/server/helpers/accounts/accounts";
-import { getLpUpdateByAccount } from "~/server/helpers/lp_updates/lp_updates";
-import { getPlayerByName } from "~/server/helpers/players/players";
-
 export default defineEventHandler(async (event) => {
   const params = event.context.params;
 
