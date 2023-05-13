@@ -56,7 +56,9 @@ useSeoMeta({
                     <PlayerRank :lpUpdate="peakEloUpdate" :title="'Peak Rank'" :wins="player.accounts.at(selectedAccount)?.wins" :losses="player.accounts.at(selectedAccount)?.losses" class="mt-8" />
                 </div>
                 <div class="flex flex-col w-full">
-                    <CommonTitleSection title="Rank History" class="h-full"></CommonTitleSection>
+                    <CommonTitleSection title="Rank History" class="h-full">
+                        <LazyPlayerGraph :lp-updates="player.accounts.at(selectedAccount)?.lpUpdates"></LazyPlayerGraph>
+                    </CommonTitleSection>
                 </div>
             </div>
         </div>

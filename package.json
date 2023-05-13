@@ -22,8 +22,10 @@
     "@prisma/client": "4.14.0",
     "animate.css": "^4.1.1",
     "axios": "^1.4.0",
+    "chart.js": "^4.3.0",
     "dayjs": "^1.11.7",
     "emoji-regex": "^10.2.1",
+    "vue-chartjs": "^5.2.0",
     "zod": "^3.21.4"
   }
 }
