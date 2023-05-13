@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-    <header class="gap-4 md:gap-8 bg-[#22262b] shadow-lg shadow-black/30 sticky top-0 py-1">
+    <header class="gap-4 md:gap-8 bg-[#22262b] shadow-lg shadow-black/30 sticky top-0 py-2 h-[64px]">
         <div class="flex md:grid md:grid-cols-3 lg:grid-cols-10 items-center max-w-[2000px] m-auto">
             <div class="lg:col-span-3">
                 <NuxtLink to="/"
@@ -8,7 +8,7 @@
                     <div class="ml-2 w-[48px]">
                         <NuxtImg src="img/logo.png"></NuxtImg>
                     </div>
-                    <div class="hidden md:flex flex-row-reverse p-2" to="/">
+                    <div class="hidden md:flex flex-row-reverse px-2" to="/">
                         <h1 class="hidden lg:block text-4xl font-bold">Calibrum</h1>
                     </div>
                 </NuxtLink>
