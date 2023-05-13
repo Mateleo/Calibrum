@@ -1,5 +1,3 @@
-import { fetchAccountData, getAccounts } from "../../helpers/accounts/accounts"
-
 export default defineEventHandler(async (event) => {
     const accounts = await getAccounts()
 
