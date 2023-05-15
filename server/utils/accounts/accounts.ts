@@ -81,7 +81,8 @@ export async function fetchAccountData(accountId: string) {
 
     const oldLPC = (await getAccountById(accountId))?.LPC ?? 0
     const newLPC = getLPC(rankedInfo.tier, rankedInfo.rank, rankedInfo.leaguePoints)
-    console.log(oldLPC, newLPC)
+    const diff = oldLPC !== 0 ? newLPC - oldLPC : 0
+    console.log(oldLPC, newLPC, diff)
 
     if (newLPC !== 0 && oldLPC !== newLPC) {
         await createLpUpdate({
@@ -90,7 +91,8 @@ export async function fetchAccountData(accountId: string) {
             LP: rankedInfo.leaguePoints,
             rank: rankedInfo.rank,
             tier: rankedInfo.tier,
-            lastUpdateDiff: oldLPC !== 0 ? newLPC - oldLPC : 0,
+            lastUpdateDiff: diff,
+            isDodge: isDodge(newLPC, diff),
             account: {
                 connect: {
                     id: accountId

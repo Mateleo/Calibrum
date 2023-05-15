@@ -34,6 +34,6 @@ export function updateLpUpdate(lpUpdate: Prisma.LpUpdateUpdateInput) {
     })
 }
 
-export function isDodge(lpUpdate: LpUpdate) {
-    return true
+export function isDodge(LPC: number, diff: number) {
+    return ([-5, -15].includes(diff) && LPC%100 !== 0)
 }
