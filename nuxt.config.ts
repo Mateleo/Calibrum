@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
-    RIOT_API_KEY: process.env.RIOT_API_KEY,
+    RIOT_API_KEY: process.env.NUXT_RIOT_API_KEY,
   },
   app: {
     pageTransition: { name: "page", mode: "out-in" },
