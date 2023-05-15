@@ -1,4 +1,5 @@
 import { useScheduler } from "#scheduler";
+import axios from "axios";
 import { fetchAccountData } from "../utils/accounts/accounts";
 
 export default defineNitroPlugin(() => {
@@ -16,7 +17,10 @@ function startScheduler() {
         try {
           await fetchAccountData(account.id);
         } catch (error) {
-          console.log(`[CRON][fetchAccountData]${account.name}\n${error}`)
+          console.log(`[CRON] [fetchAccountData] ${account.name}`)
+          if (axios.isAxiosError(error)) {
+            console.log(error.toJSON())
+          }
         }
         await new Promise((r) => setTimeout(r, 2000));
       }
