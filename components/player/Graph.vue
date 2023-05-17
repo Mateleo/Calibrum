@@ -39,6 +39,30 @@ const props = defineProps<Props>()
     plugins: {
         legend: {
             display: false
+        },
+        tooltip: {
+            mode:'index',
+            intersect:false,
+            xAlign:'center',
+            yAlign:'bottom',
+            displayColors: false,
+            bodyAlign: 'center',
+            titleAlign: 'center',
+            titleFont: {
+                family: 'Inter'
+            },
+            bodyFont: {
+                family: 'Inter'
+            },
+            callbacks: {
+                title: (TooltipItem) => {
+                    // PLEASE UPDATE
+                    return `${props.lpUpdates.at(TooltipItem[0].dataIndex)?.tier.charAt(0)} ${props.lpUpdates.at(TooltipItem[0].dataIndex)?.rank}  ${props.lpUpdates.at(TooltipItem[0].dataIndex)?.LP}LP`
+                },
+                label: (TooltipItem) => {
+                    return TooltipItem.label
+                },
+            }
         }
     },
     maintainAspectRatio: false
