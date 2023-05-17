@@ -1,6 +1,5 @@
 import { useScheduler } from "#scheduler";
 import axios from "axios";
-import { fetchAccountData } from "../utils/accounts/accounts";
 
 export default defineNitroPlugin(() => {
   startScheduler();
