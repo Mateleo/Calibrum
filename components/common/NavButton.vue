@@ -1,11 +1,11 @@
 <script lang=ts setup>
 
-interface props {
+interface Props {
     active: boolean
 }
 
-const props: props = withDefaults(
-    defineProps<props>(), {
+const props: Props = withDefaults(
+    defineProps<Props>(), {
     active: false
 }
 )

@@ -29,7 +29,7 @@ useSeoMeta({
     description: `Learn more about ${route.params.player} stats on Calibrum ☄ by 4eSport.`,
     ogDescription: `Learn more about ${route.params.player} stats on Calibrum ☄ by 4eSport.`,
     ogImage: 'https://example.com/image.png',
-    twitterCard: 'summary_large_image',
+    twitterCard: 'summary_large_image'
 })
 
 </script>
@@ -39,7 +39,7 @@ useSeoMeta({
         <div class="flex flex-col gap-8">
             <PlayerTitle :role="player.role" :profileIcon="player.accounts.at(0)?.profileIcon">{{ route.params.player }}
             </PlayerTitle>
-            <CommonSection class="h-full rounded-lg"></CommonSection>
+            <CommonSection class="h-full rounded-lg"/>
         </div>
         <div class="flex flex-col grow">
             <div class="flex flex-col">
@@ -47,7 +47,8 @@ useSeoMeta({
                 <div class="text-sm font-light mt-4">
                     <PlayerAccounts :accounts="player.accounts" :onAccountChange="(accountIndex) => {
                         selectedAccount = accountIndex
-                    }" />
+                    }" 
+                    />
                 </div>
             </div>
             <div class="flex mt-4 gap-8">

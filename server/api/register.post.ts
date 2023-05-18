@@ -19,8 +19,8 @@ export default defineEventHandler(async (event) => {
 
     const registeredPlayer = await registerOrUpdatePlayer(player)
 
-    var registeredAccounts = []
-    
+    const registeredAccounts = []
+
     for (const account of player.accounts) {
         const registeredAccount = await registerAccount(account, player.discordId)
         if (registeredAccount) {

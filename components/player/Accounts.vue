@@ -3,7 +3,7 @@ import { Account } from '@prisma/client';
 
 
 
-let selected = ref(0)
+const selected = ref(0)
 
 
 interface Props {

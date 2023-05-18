@@ -1,14 +1,15 @@
 <script setup lang="ts">
-interface props {
+interface Props {
     padding?: boolean
     title: string
     color?: string
 }
 
 const props = withDefaults(
-    defineProps<props>(),
+    defineProps<Props>(),
     {
-        padding: true
+        padding: true,
+        color: "#22262b"
     }
 )
 

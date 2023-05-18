@@ -1,6 +1,6 @@
 <script lang=ts setup>
 
-let selected = ref<"accounts" | "liveGame" | "badges">("accounts")
+const selected = ref<"accounts" | "liveGame" | "badges">("accounts")
 
 </script>
 <template>

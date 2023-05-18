@@ -8,7 +8,7 @@ export function getAccountByName(name: string) {
             name: {
                 equals: name,
                 mode: "insensitive"
-            },
+            }
         }
     })
 }

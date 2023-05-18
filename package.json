@@ -10,8 +10,13 @@
   },
   "devDependencies": {
     "@nuxt/image-edge": "1.0.0-28050764.aaee7ac",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/eslint-module": "^4.0.2",
     "@nuxtjs/google-fonts": "^3.0.0",
     "@types/node": "^18",
+    "@typescript-eslint/parser": "^5.59.6",
+    "eslint": "^8.40.0",
+    "eslint-plugin-vue": "^9.13.0",
     "nuxt": "^3.5.0",
     "nuxt-icon": "^0.4.0",
     "nuxt-scheduler": "^0.0.16",

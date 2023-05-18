@@ -1,17 +1,21 @@
 <script setup lang="ts">
-interface props {
+interface Props {
     padding?: boolean
     title: string
     color?: string
 }
 
-const { padding, title, color } = withDefaults(
-    defineProps<props>(),
+const props = withDefaults(
+    defineProps<Props>(),
     {
         padding: true,
         color: "#22262b"
     }
 )
+
+const { color, padding, title } = toRefs(props)
+
+
 </script>
 
 

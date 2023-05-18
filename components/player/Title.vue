@@ -1,11 +1,11 @@
 <script lang=ts setup>
 
-interface props {
+interface Props {
     role?: string
     profileIcon?: string
 }
 
-const props = withDefaults(defineProps<props>(), {
+const props = withDefaults(defineProps<Props>(), {
     role: "adc",
     profileIcon: "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/3890.jpg"
 })
@@ -26,9 +26,9 @@ const props = withDefaults(defineProps<props>(), {
                 </div>
             </div>
             <h1 class="text-2xl font-semibold text-center">
-                <slot></slot>
+                <slot/>
             </h1>
-
+            
         </CommonSection>
     </div>
 </template>
