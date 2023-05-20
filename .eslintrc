@@ -1,4 +1,7 @@
 {
+    "settings": {
+        "cache": false
+    },
     "extends": [
         "@nuxtjs/eslint-config-typescript"
     ],
