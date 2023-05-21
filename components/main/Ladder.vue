@@ -17,11 +17,12 @@ const { pending, error, data: players } = await useLazyFetch('/api/leaderboard')
                     </NuxtLink>
                 </div>
                 <div class="flex sm:justify-between justify-end max-w-[300px] grow items-center">
+                    <img class="w-[32px] h-[32px] hidden sm:block" :src="`img/positions/${player.role}.svg`" alt="" />
                     <div class="flex flex-col justify-center">
-                        <img class="object-cover w-[90px] h-[50px] m-auto" :src="`img/positions/${player.role}.svg`"
-                            alt="" />
+                        <img class="object-cover w-[90px] h-[50px] m-auto"
+                            :src="`img/emblems/Emblem_${player.Account[0].tier ?? 'IRON'}.png`" alt="" />
                         <p class="text-md font-semibold text-center leading-none">
-                            {{ player.Account[0].LPC }}
+                            {{ player.Account[0].rank }} - {{ player.Account[0].LP }}
                         </p>
                     </div>
                 </div>
