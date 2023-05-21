@@ -27,7 +27,6 @@ const props = withDefaults(
 )
 
 const { title, losses, wins, lpUpdate } = toRefs(props)
-
 </script>
 <template>
     <div>

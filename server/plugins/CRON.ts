@@ -1,5 +1,5 @@
-import { useScheduler } from "#scheduler";
 import axios from "axios";
+import { useScheduler } from "#scheduler";
 
 export default defineNitroPlugin(() => {
   startScheduler();
@@ -21,7 +21,7 @@ function startScheduler() {
             console.log(error.toJSON())
           }
         }
-        await new Promise((r) => setTimeout(r, 2000));
+        await new Promise(resolve => setTimeout(resolve, 2000));
       }
     })
     .everyTenMinutes();

@@ -22,6 +22,13 @@ watch(selectedAccount, (newIndex) => {
         currentUpdate.LPC > peakEloUpdate.LPC ? currentUpdate : peakEloUpdate)) as Response
 })
 
+watch(player, (newPlayer) => {
+    lastUpdate.value = newPlayer?.accounts.at(0)?.lpUpdates.at(0) as Response
+    peakEloUpdate.value = player.value?.accounts.at(0)?.lpUpdates.reduce((peakEloUpdate, currentUpdate) => (
+        currentUpdate.LPC > peakEloUpdate.LPC ? currentUpdate : peakEloUpdate
+    )) as Response
+})
+
 
 useSeoMeta({
     title: `${route.params.player} on Calibrum ☄`,
@@ -39,7 +46,7 @@ useSeoMeta({
         <div class="flex flex-col gap-8">
             <PlayerTitle :role="player.role" :profileIcon="player.accounts.at(0)?.profileIcon">{{ route.params.player }}
             </PlayerTitle>
-            <CommonSection class="h-full rounded-lg"/>
+            <CommonSection class="h-full rounded-lg" />
         </div>
         <div class="flex flex-col grow">
             <div class="flex flex-col">
@@ -47,14 +54,17 @@ useSeoMeta({
                 <div class="text-sm font-light mt-4">
                     <PlayerAccounts :accounts="player.accounts" :onAccountChange="(accountIndex) => {
                         selectedAccount = accountIndex
-                    }" 
-                    />
+                    }" />
                 </div>
             </div>
             <div class="flex mt-4 gap-8">
                 <div class="flex flex-col shrink-0">
-                    <PlayerRank :lpUpdate="lastUpdate" :title="'Current Rank'" :wins="player.accounts.at(selectedAccount)?.wins" :losses="player.accounts.at(selectedAccount)?.losses" />
-                    <PlayerRank :lpUpdate="peakEloUpdate" :title="'Peak Rank'" :wins="player.accounts.at(selectedAccount)?.wins" :losses="player.accounts.at(selectedAccount)?.losses" class="mt-8" />
+                    <PlayerRank :lpUpdate="lastUpdate" :title="'Current Rank'"
+                        :wins="player.accounts.at(selectedAccount)?.wins ?? 0"
+                        :losses="player.accounts.at(selectedAccount)?.losses ?? 0" />
+                    <PlayerRank :lpUpdate="peakEloUpdate" :title="'Peak Rank'"
+                        :wins="player.accounts.at(selectedAccount)?.wins ?? 0"
+                        :losses="player.accounts.at(selectedAccount)?.losses ?? 0" class="mt-8" />
                 </div>
                 <div class="flex flex-col w-full">
                     <CommonTitleSection title="Rank History" class="h-full">

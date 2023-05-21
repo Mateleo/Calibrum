@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
   if (!params) {
     throw createError({
       statusCode: 500,
-      statusMessage: `params not found`,
+      statusMessage: `params not found`
     });
   }
 
@@ -13,26 +13,28 @@ export default defineEventHandler(async (event) => {
   if (!player) {
     throw createError({
       statusCode: 500,
-      statusMessage: `player ${params.player} not found`,
+      statusMessage: `player ${params.player} not found`
     });
   }
 
   const accounts = await getAccountsByPlayer(player.discordId);
 
-    const accountsWithLpUpdates = await Promise.all(accounts.map(async (account) => {
-        const lpUpdatesRaw = await getLpUpdateByAccount(account.id)
-        const lpUpdates = lpUpdatesRaw.map(lpupdate => {
-            const { id, accountId, ...lpupdateReponse } = lpupdate
-            return lpupdateReponse
-        })
-        return {
-            ...account,
-            lpUpdates: lpUpdates
-        }
-    }))
+  const accountsWithLpUpdates = await Promise.all(
+    accounts.map(async (account) => {
+      const lpUpdatesRaw = await getLpUpdateByAccount(account.id);
+      const lpUpdates = lpUpdatesRaw.map((lpupdate) => {
+        const { id, accountId, ...lpupdateReponse } = lpupdate;
+        return lpupdateReponse;
+      });
+      return {
+        ...account,
+        lpUpdates: lpUpdates
+      };
+    })
+  );
 
   return {
     ...player,
-    accounts: accountsWithLpUpdates,
+    accounts: accountsWithLpUpdates
   };
 });
