@@ -13,7 +13,7 @@ datasource db {
 model Player {
   discordId String @id
   name      String
-  role      String
+  role      Role
 
   Account Account[]
 }
@@ -24,12 +24,12 @@ model Account {
   sumonerLvl  Int
   profileIcon String
 
-  tier   String?
-  rank   String?
-  LP     Int?    @default(0)
-  wins   Int?    @default(0)
-  losses Int?    @default(0)
-  LPC    Int?    @default(0)
+  tier   Tier?
+  rank   Rank?
+  LP     Int?  @default(0)
+  wins   Int?  @default(0)
+  losses Int?  @default(0)
+  LPC    Int?  @default(0)
 
   player          Player     @relation(fields: [playerDiscordId], references: [discordId], onDelete: Cascade)
   playerDiscordId String
@@ -37,10 +37,42 @@ model Account {
 }
 
 model LpUpdate {
-  id   String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  date DateTime
-  LP   Int
+  id             String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  date           DateTime
+  LPC            Int
+  tier           Tier
+  rank           Rank
+  LP             Int
+  lastUpdateDiff Int
+  isDodge        Boolean?
 
-  account Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
   accountId String
+}
+
+enum Tier {
+  IRON
+  BRONZE
+  SILVER
+  GOLD
+  PLATINUM
+  DIAMOND
+  MASTER
+  GRANDMASTER
+  CHALLENGER
+}
+
+enum Rank {
+  I
+  II
+  III
+  IV
+}
+
+enum Role {
+  top
+  jungle
+  mid
+  adc
+  support
 }

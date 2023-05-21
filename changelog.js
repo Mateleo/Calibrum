@@ -1,3 +1,4 @@
+/* eslint-disable */
 const { exec } = require("child_process");
 const fs = require("fs");
 const emojiRegex = require("emoji-regex");
@@ -90,12 +91,22 @@ exec(
                   changelog += ` - ${e.content} ([${e.id}](https://github.com/Mateleo/Calibrum/commit/${e.id})) by @${e.author}\n`;
                 });
               }
-              const bugfixes = gitLogOutputFormatedFlat.filter(
-                (e) => e.type == "perf" || e.type == "style"
-              );
+              const bugfixes = gitLogOutputFormatedFlat.filter((e) => e.type == "perf" || e.type=="fix" || e.type=="refactor");
               if (bugfixes.length > 0) {
                 changelog += "\n\n## 🔧 Bug Fixes\n";
                 bugfixes.forEach((e) => {
+                  changelog += ` - ${e.content} ([${e.id.substring(
+                    0,
+                    7
+                  )}](https://github.com/Mateleo/Calibrum/commit/${e.id})) by @${
+                    e.author
+                  }\n`;
+                });
+              }
+              const style = gitLogOutputFormatedFlat.filter((e) => e.type == "style");
+              if (style.length > 0) {
+                changelog += "\n\n## 🎨 Styles\n";
+                style.forEach((e) => {
                   changelog += ` - ${e.content} ([${e.id.substring(
                     0,
                     7
