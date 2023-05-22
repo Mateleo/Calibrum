@@ -1,4 +1,3 @@
-import { Account, Player } from "@prisma/client"
 import { getPlayers } from "~/server/utils/players/players"
 
 export default defineEventHandler(async (_event) => {
