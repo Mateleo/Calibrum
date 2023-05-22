@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-    <header class="gap-4 md:gap-8 bg-[#22262b] shadow-lg shadow-black/30 sticky top-0 py-2 h-[64px]">
+    <header class="gap-4 md:gap-8 bg-[#22262b] shadow-lg shadow-black/30 sticky top-0 py-2 h-[64px] z-10">
         <div class="flex md:grid md:grid-cols-3 lg:grid-cols-10 items-center max-w-[2000px] m-auto">
             <div class="lg:col-span-3">
                 <NuxtLink to="/"
