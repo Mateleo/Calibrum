@@ -1,4 +1,6 @@
 import { Prisma, Rank, Tier } from "@prisma/client";
+import { isAxiosError } from "axios";
+import { fetchLiveGameInfo } from "../riot_connector/riot_connector";
 
 // Low level functions
 
@@ -16,7 +18,7 @@ export function getAccountByName(name: string) {
 export function getAccountById(id: string) {
     return prisma.account.findUnique({
         where: {
-            id: id
+            id
         }
     })
 }
@@ -66,7 +68,7 @@ export async function registerAccount(name: string, discordId: string) {
         sumonerLvl: accountData.summonerLevel,
         player: {
             connect: {
-                discordId: discordId
+                discordId
             }
         }
     })
@@ -115,6 +117,17 @@ export async function fetchAccountData(accountId: string) {
     })
 }
 
+
+export async function getLiveGameDataOrError(accountId: string) {
+    try {
+        return (await fetchLiveGameInfo(accountId)).data
+    } catch (error) {
+        throw createError({
+            statusCode: 500,
+            statusMessage: `Account ${accountId} not in game`
+        })
+    }
+}
 
 // Utils
 
