@@ -97,6 +97,7 @@ function LPCtoString(LPC: number) {
             bodyFont: {
                 family: 'Inter'
             },
+            caretPadding: 8,
             callbacks: {
                 title: (TooltipItem) => {
                     // PLEASE UPDATE
@@ -113,11 +114,19 @@ function LPCtoString(LPC: number) {
         y: {
             ticks: {
                 callback: (value, index, ticks) => {
-                    return LPCtoString(value)
+                    return LPCtoString(parseInt(value.toString()))
                 },
-                stepSize:50
+                stepSize: 50
             },
+            suggestedMax: props.lpUpdates.reduce((peakEloUpdate, currentUpdate) => (
+                currentUpdate.LPC > peakEloUpdate.LPC ? currentUpdate : peakEloUpdate
+            )).LPC + 15
         },
+    },
+    layout: {
+        padding: {
+            top: 20
+        }
     }
 }
     " />
