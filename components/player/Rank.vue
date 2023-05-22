@@ -31,11 +31,11 @@ const { title, losses, wins, lpUpdate } = toRefs(props)
 <template>
     <div>
         <CommonTitleSection :title="title" :padding="false">
-            <div class="w-[300px] h-[95px] overflow-hidden">
+            <div class="w-[300px] h-[105px] overflow-hidden">
                 <Transition name="fade">
                     <div class="flex justify-between items-center" :key="lpUpdate.date.toString()">
                         <NuxtImg :src="`img/emblems/Emblem_${lpUpdate.tier ?? 'IRON'}.png`"
-                            class="object-cover w-[155px] h-[95px] opacity-60"></NuxtImg>
+                            class="object-cover w-[155px] h-[112px] opacity-60"></NuxtImg>
                         <div class="text-sm text-right p-4 leading-4 flex flex-col justify-center w-[140px]">
                             <p class="font-semibold">{{ lpUpdate.rank }} {{ lpUpdate.tier }}</p>
                             <p class="font-semibold">{{ lpUpdate.LP }} LP</p>
