@@ -68,7 +68,7 @@ useSeoMeta({
                 </div>
                 <div class="flex flex-col w-full">
                     <CommonTitleSection title="Rank History" class="h-full">
-                        <LazyPlayerGraph :lp-updates="player.accounts.at(selectedAccount)?.lpUpdates"></LazyPlayerGraph>
+                        <LazyPlayerGraph :lp-updates="[...player.accounts.at(selectedAccount)?.lpUpdates].reverse()"></LazyPlayerGraph>
                     </CommonTitleSection>
                 </div>
             </div>

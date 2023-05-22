@@ -2,7 +2,12 @@
 
 const { pending, error, data: players } = await useLazyFetch('/api/leaderboard')
 
-const AllTiers = [...new Set(players.value?.map(player => player.Account.at(0)?.tier))]
+const AllTiers = ref([...new Set(players.value?.map(player => player.Account.at(0)?.tier))])
+
+watch(players, (newPlayers) => {
+    AllTiers.value = [...new Set(newPlayers?.map(player => player.Account.at(0)?.tier))]
+})
+
 </script>
 <template>
     <div class="flex flex-col bg-[#22262b5a] rounded-lg p-2">
@@ -14,8 +19,7 @@ const AllTiers = [...new Set(players.value?.map(player => player.Account.at(0)?.
                 </div>
                 <div class="p-2 px-0 md:px-5 text-white/80">
                     <div v-for="(player) in players?.filter(player => player.Account[0].tier == tier)"
-                        :key="player.discordId"
-                        class="flex flex-nowrap justify-between px-3 my-2">
+                        :key="player.discordId" class="flex flex-nowrap justify-between px-3 my-2">
                         <div class="flex items-center py-4">
                             <img class="w-[50px] mr-5 hidden sm:block rounded-lg" :src="player.Account[0].profileIcon"
                                 alt="" />
@@ -31,7 +35,7 @@ const AllTiers = [...new Set(players.value?.map(player => player.Account.at(0)?.
                                 <img class="object-cover w-[90px] h-[50px] m-auto"
                                     :src="`img/emblems/Emblem_${player.Account[0].tier ?? 'IRON'}.png`" alt="" />
                                 <p class="text-md font-semibold text-center leading-none">
-                                    {{ player.Account[0].rank }} - {{ player.Account[0].LP }}
+                                    {{ player.Account[0].rank }} - {{ player.Account[0].LPC }}
                                 </p>
                             </div>
                         </div>

@@ -3,7 +3,8 @@ import { LpUpdate } from '@prisma/client';
 import dayjs from 'dayjs';
 import { Line } from 'vue-chartjs'
 
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, LineElement, PointElement } from 'chart.js'
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, LineElement, PointElement, scales } from 'chart.js'
+import { callback } from 'chart.js/dist/helpers/helpers.core';
 
 ChartJS.register(
     Title,
@@ -22,18 +23,60 @@ interface Props {
 
 const props = defineProps<Props>()
 
+function LPCtoString(LPC: number) {
+    let rank = "";
+    let tier = "";
+    if (LPC > 2400) {
+        tier = "MASTER";
+        rank = "I";
+        LPC -= 2400;
+        return `${LPC}LP`
+    } else if (LPC > 2000) {
+        tier = "DIAMOND";
+        LPC -= 2000;
+    } else if (LPC >= 1600) {
+        tier = "PLATINUM";
+        LPC -= 1600;
+    } else if (LPC >= 1200) {
+        tier = "GOLD";
+        LPC -= 1200;
+    } else if (LPC >= 800) {
+        tier = "SILVER";
+        LPC -= 800;
+    } else if (LPC >= 400) {
+        tier = "BRONZE";
+        LPC -= 400;
+    } else {
+        tier = "IRON";
+    }
+    if (LPC > 300) {
+        rank = "1";
+        LPC -= 300;
+    } else if (LPC > 200) {
+        rank = "2";
+        LPC -= 200;
+    } else if (LPC > 100) {
+        rank = "3";
+        LPC -= 100;
+    } else {
+        rank = "4";
+    }
+    return `${tier.charAt(0)}${rank} ${LPC}LP`
+}
+
+
 </script>
 <template>
     <ClientOnly>
         <div class="relative h-full w-full">
             <Line id="my-chart-id" :data="{
                 datasets: [{
-                    data: props.lpUpdates.map(e => e.LPC).reverse(),
+                    data: props.lpUpdates.map(e => e.LPC),
                     borderColor: '#38bdf8',
                     borderWidth: 3,
                 }],
                 labels:
-                    props.lpUpdates.map(e => dayjs(e.date).format('DD/MM')).reverse()
+                    props.lpUpdates.map(e => dayjs(e.date).format('DD/MM'))
 
             }" :options="{
     plugins: {
@@ -41,10 +84,10 @@ const props = defineProps<Props>()
             display: false
         },
         tooltip: {
-            mode:'index',
-            intersect:false,
-            xAlign:'center',
-            yAlign:'bottom',
+            mode: 'index',
+            intersect: false,
+            xAlign: 'center',
+            yAlign: 'bottom',
             displayColors: false,
             bodyAlign: 'center',
             titleAlign: 'center',
@@ -65,8 +108,19 @@ const props = defineProps<Props>()
             }
         }
     },
-    maintainAspectRatio: false
-}" />
+    maintainAspectRatio: false,
+    scales: {
+        y: {
+            ticks: {
+                callback: (value, index, ticks) => {
+                    return LPCtoString(value)
+                },
+                stepSize:50
+            },
+        },
+    }
+}
+    " />
         </div>
     </ClientOnly>
 </template>
