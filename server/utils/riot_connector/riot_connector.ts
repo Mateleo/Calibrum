@@ -52,7 +52,7 @@ interface Perks {
     perkSubStyle: number
 }
 
-interface LiveGameInfoResponse {
+export interface LiveGameInfoResponse {
     gameId: number
     mapId: number
     gameMode: string

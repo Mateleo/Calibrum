@@ -5,18 +5,18 @@ export function getPlayers() {
   return prisma.player.findMany({
     where: {
       Account: {
-        some: {},
-      },
+        some: {}
+      }
     },
     include: {
       Account: {
         orderBy: {
-          LPC: "desc",
+          LPC: "desc"
         },
-        take: 1,
-      },
-    },
-  });
+        take: 1
+      }
+    }
+  })
 }
 
 export function getPlayerByName(name: string) {
@@ -24,43 +24,60 @@ export function getPlayerByName(name: string) {
     where: {
       name: {
         equals: name,
-        mode: "insensitive",
-      },
-    },
-  });
+        mode: "insensitive"
+      }
+    }
+  })
 }
 
 export function getPlayerByDiscordId(discordId: string) {
   return prisma.player.findUnique({
     where: {
-      discordId: discordId,
-    },
-  });
+      discordId
+    }
+  })
 }
 
 export function createPlayer(player: Prisma.PlayerCreateInput) {
   return prisma.player.create({
-    data: player,
-  });
+    data: player
+  })
 }
 
 export function updatePlayer(player: Prisma.PlayerUpdateInput) {
   return prisma.player.update({
     where: {
-      discordId: player.discordId as string,
+      discordId: player.discordId as string
     },
-    data: player,
-  });
+    data: player
+  })
 }
 
 export async function registerOrUpdatePlayer(player: RegisterBody) {
-  const { accounts, ...playerWithoutAccounts } = player;
+  const { accounts, ...playerWithoutAccounts } = player
+  let newPlayer
 
   if (await getPlayerByDiscordId(player.discordId)) {
-    var newPlayer = await updatePlayer(playerWithoutAccounts);
+    newPlayer = await updatePlayer(playerWithoutAccounts)
   } else {
-    var newPlayer = await createPlayer(playerWithoutAccounts);
+    newPlayer = await createPlayer(playerWithoutAccounts)
   }
 
   return newPlayer;
+}
+
+export async function getPlayerLiveGame(discordId: string) {
+  const accounts = await getAccountsByPlayer(discordId)
+  
+  for (const account of accounts) {
+    try {
+      return await getLiveGameDataOrError(account.id)
+    } catch (error) {
+      continue
+    }
+  }
+  throw createError({
+    statusCode: 500,
+    statusMessage: `player ${discordId} has no accounts in game`
+  })
 }
