@@ -27,10 +27,55 @@ interface RankedInfoResponse {
     hotStreak: boolean
 }
 
+interface BannedChampion {
+    championId: number
+    teamId: number
+    pickTurn: number
+}
+
+interface Participant {
+    teamId: number
+    spell1Id: number
+    spell2Id: number
+    championId: number
+    profileIconId: number
+    summonerName: string
+    bot: boolean
+    summonerId: string
+    gameCustomizationObjects: unknown[]
+    perks: Perks
+}
+
+interface Perks {
+    perkIds: number[]
+    perkStyle: number
+    perkSubStyle: number
+}
+
+interface LiveGameInfoResponse {
+    gameId: number
+    mapId: number
+    gameMode: string
+    gameType: string
+    gameQueueConfigId: number
+    participants: Participant[]
+    observers: {
+        encryptionKey: string
+    }
+    platformId: string
+    bannedChampions: BannedChampion[]
+    gameStartTime: number
+    gameLength: number
+}
+
 export function fetchAccountByName(name: string) {
     return axios.get<AccountByNameResponse>(`https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${name}?api_key=${useRuntimeConfig().RIOT_API_KEY}`)
 }
 
 export function fetchRankedInfo(id: string) {
     return axios.get<RankedInfoResponse[]>(`https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/${id}?api_key=${useRuntimeConfig().RIOT_API_KEY}`)
+}
+
+export function fetchLiveGameInfo(id: string) {
+    return axios.get<LiveGameInfoResponse>(`https://euw1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/${id}?api_key=${useRuntimeConfig().RIOT_API_KEY}`)
 }
