@@ -1,7 +1,9 @@
 <template>
     <div>
         <Header></Header>
-        <slot />
+        <main class="pb-[50px]">
+            <slot />
+        </main>
         <Footer></Footer>
     </div>
 </template>
