@@ -2,12 +2,11 @@
 definePageMeta({
     layout: false
 });
-defineOgImageDynamic({
+defineOgImageScreenshot({
     component: 'MyOgImage',
     title: 'Welcome to my site!',
     width: 800,
-    height: 400,
-    provider: 'browser'
+    height: 400
 })
 </script>
 <template>
