@@ -4,8 +4,6 @@ import dayjs from 'dayjs';
 import { Line } from 'vue-chartjs'
 
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, LineElement, PointElement, scales } from 'chart.js'
-import { callback } from 'chart.js/dist/helpers/helpers.core';
-
 ChartJS.register(
     Title,
     Tooltip,

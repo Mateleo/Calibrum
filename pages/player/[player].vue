@@ -31,12 +31,14 @@ watch(player, (newPlayer) => {
 
 
 useSeoMeta({
-    title: `${route.params.player} on Calibrum ☄`,
-    ogTitle: `${route.params.player} on Calibrum ☄`,
-    description: `Learn more about ${route.params.player} stats on Calibrum ☄ by 4eSport.`,
-    ogDescription: `Learn more about ${route.params.player} stats on Calibrum ☄ by 4eSport.`,
+    title: `${route.params.player}`,
+    ogTitle: `${route.params.player}`,
+    description: `Learn more about ${route.params.player} stats on Calibrum 🌠 by 4eSport.`,
+    ogDescription: `Learn more about ${route.params.player} stats on Calibrum 🌠 by 4eSport.`,
     ogImage: 'https://example.com/image.png',
-    twitterCard: 'summary_large_image'
+    twitterCard: 'summary_large_image',
+    themeColor: "#0ea5e9",
+    ogUrl: () => `https://dev.calibrum.4esport.fr/player/${route.params.player}`
 })
 
 </script>
@@ -68,7 +70,8 @@ useSeoMeta({
                 </div>
                 <div class="flex flex-col w-full">
                     <CommonTitleSection title="Rank History" class="h-full">
-                        <LazyPlayerGraph :lp-updates="[...player.accounts.at(selectedAccount)?.lpUpdates].reverse()"></LazyPlayerGraph>
+                        <LazyPlayerGraph :lp-updates="[...player.accounts.at(selectedAccount)?.lpUpdates].reverse()">
+                        </LazyPlayerGraph>
                     </CommonTitleSection>
                 </div>
             </div>
