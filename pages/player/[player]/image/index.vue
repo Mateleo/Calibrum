@@ -2,7 +2,7 @@
 definePageMeta({
     layout: false
 });
-defineOgImageStatic({
+defineOgImageDynamic({
     component: 'MyOgImage',
     title: 'Welcome to my site!',
     width: 800,
