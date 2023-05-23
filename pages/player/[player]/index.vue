@@ -1,34 +1,11 @@
 <script lang="ts" setup>
-import { LpUpdate } from '@prisma/client';
-
-type Response = Omit<LpUpdate, "accountId" | "id"> | undefined
+import { PlayerWithAccountsReponse } from "~/utils/types"
 
 const route = useRoute();
 
 const selectedAccount = ref(0)
 
-
-const { pending, error, data: player } = await useLazyFetch(`/api/player/${route.params.player}`)
-
-const lastUpdate = ref(player.value?.accounts.at(0)?.lpUpdates.at(0) as Response)
-
-const peakEloUpdate = ref(player.value?.accounts.at(0)?.lpUpdates.reduce((peakEloUpdate, currentUpdate) => (
-    currentUpdate.LPC > peakEloUpdate.LPC ? currentUpdate : peakEloUpdate
-)) as Response)
-
-watch(selectedAccount, (newIndex) => {
-    lastUpdate.value = player.value?.accounts.at(newIndex)?.lpUpdates.at(0) as Response
-    peakEloUpdate.value = player.value?.accounts.at(newIndex)?.lpUpdates.reduce((peakEloUpdate, currentUpdate) => (
-        currentUpdate.LPC > peakEloUpdate.LPC ? currentUpdate : peakEloUpdate)) as Response
-})
-
-watch(player, (newPlayer) => {
-    lastUpdate.value = newPlayer?.accounts.at(0)?.lpUpdates.at(0) as Response
-    peakEloUpdate.value = player.value?.accounts.at(0)?.lpUpdates.reduce((peakEloUpdate, currentUpdate) => (
-        currentUpdate.LPC > peakEloUpdate.LPC ? currentUpdate : peakEloUpdate
-    )) as Response
-})
-
+const { pending, error, data: player } = await useLazyFetch<PlayerWithAccountsReponse>(`/api/player/${route.params.player}`)
 
 useSeoMeta({
     title: `${route.params.player}`,
@@ -40,7 +17,6 @@ useSeoMeta({
     themeColor: "#0ea5e9",
     ogUrl: () => `https://dev.calibrum.4esport.fr/player/${route.params.player}`
 })
-
 </script>
 
 <template>
@@ -59,22 +35,7 @@ useSeoMeta({
                     }" />
                 </div>
             </div>
-            <div class="flex mt-4 gap-8">
-                <div class="flex flex-col shrink-0">
-                    <PlayerRank :lpUpdate="lastUpdate" :title="'Current Rank'"
-                        :wins="player.accounts.at(selectedAccount)?.wins ?? 0"
-                        :losses="player.accounts.at(selectedAccount)?.losses ?? 0" />
-                    <PlayerRank :lpUpdate="peakEloUpdate" :title="'Peak Rank'"
-                        :wins="player.accounts.at(selectedAccount)?.wins ?? 0"
-                        :losses="player.accounts.at(selectedAccount)?.losses ?? 0" class="mt-8" />
-                </div>
-                <div class="flex flex-col w-full">
-                    <CommonTitleSection title="Rank History" class="h-full">
-                        <LazyPlayerGraph :lp-updates="[...player.accounts.at(selectedAccount)?.lpUpdates].reverse()">
-                        </LazyPlayerGraph>
-                    </CommonTitleSection>
-                </div>
-            </div>
+            <PlayerAccount :account="player.accounts.at(selectedAccount)!" />
         </div>
     </div>
 </template>

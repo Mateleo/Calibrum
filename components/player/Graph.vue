@@ -1,9 +1,9 @@
 <script lang=ts setup>
-import { LpUpdate } from '@prisma/client';
 import dayjs from 'dayjs';
-import { Line } from 'vue-chartjs'
+import { Line } from 'vue-chartjs';
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, LineElement, PointElement, scales } from 'chart.js';
+import { LpUpdateResponse } from '~/utils/types';
 
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, LineElement, PointElement, scales } from 'chart.js'
 ChartJS.register(
     Title,
     Tooltip,
@@ -16,7 +16,7 @@ ChartJS.register(
 );
 
 interface Props {
-    lpUpdates: LpUpdate[]
+    lpUpdates: LpUpdateResponse[]
 }
 
 const props = defineProps<Props>()
