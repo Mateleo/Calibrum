@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@nuxt/image-edge",
     'nuxt-scheduler',
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    'nuxt-og-image'
   ],
   googleFonts: {
     families: {
