@@ -27,5 +27,8 @@ export default defineNuxtConfig({
   },
   ogImage: {
     runtimeBrowser: true
+  },
+  nitro: {
+    node: true
   }
 });
