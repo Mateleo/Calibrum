@@ -5,9 +5,9 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "nuxt-icon",
     "@nuxt/image-edge",
-    'nuxt-scheduler',
-    '@nuxtjs/eslint-module',
-    'nuxt-og-image'
+    "nuxt-scheduler",
+    "@nuxtjs/eslint-module",
+    "nuxt-og-image"
   ],
   googleFonts: {
     families: {
@@ -24,5 +24,8 @@ export default defineNuxtConfig({
     head: {
       title: "Calibrum 🌠"
     }
+  },
+  ogImage: {
+    runtimeBrowser: true
   }
-})
+});
