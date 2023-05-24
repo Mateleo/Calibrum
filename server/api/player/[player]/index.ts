@@ -1,4 +1,4 @@
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async event => {
   const params = event.context.params
 
   if (!params) {
@@ -20,9 +20,9 @@ export default defineEventHandler(async (event) => {
   const accounts = await getAccountsByPlayer(player.discordId)
 
   const accountsWithLpUpdates = await Promise.all(
-    accounts.map(async (account) => {
+    accounts.map(async account => {
       const lpUpdatesRaw = await getLpUpdateByAccount(account.id)
-      const lpUpdates = lpUpdatesRaw.map((lpupdate) => {
+      const lpUpdates = lpUpdatesRaw.map(lpupdate => {
         const { id, accountId, ...lpupdateReponse } = lpupdate
         return lpupdateReponse
       })

@@ -50,7 +50,7 @@ console.log(route.query.champion)
           <PlayerAccounts
             :accounts="player.accounts"
             :onAccountChange="
-              (accountIndex) => {
+              accountIndex => {
                 selectedAccount = accountIndex
               }
             "

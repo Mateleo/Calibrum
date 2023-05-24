@@ -25,8 +25,8 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const url = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/${
-  data.data.value.find((e) => e.alias === props.champion).id ?? "Jhin"
-}/${data.data.value.find((e) => e.alias === props.champion).id ?? "202"}002.jpg`
+  data.data.value.find(e => e.alias === props.champion).id ?? "Jhin"
+}/${data.data.value.find(e => e.alias === props.champion).id ?? "202"}002.jpg`
 </script>
 
 <template>

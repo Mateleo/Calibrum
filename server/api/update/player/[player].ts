@@ -1,4 +1,4 @@
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async event => {
   const params = event.context.params
 
   if (!params) {
@@ -32,6 +32,6 @@ export default defineEventHandler(async (event) => {
 
   return {
     response: `player ${params.player} accounts updated`,
-    accounts: accounts.map((account) => ({ name: account.name }))
+    accounts: accounts.map(account => ({ name: account.name }))
   }
 })

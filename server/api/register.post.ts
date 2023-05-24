@@ -9,7 +9,7 @@ const RegisterBodySchema = z.object({
 
 export type RegisterBody = z.infer<typeof RegisterBodySchema>
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async event => {
   const player = await readBody<RegisterBody>(event)
   try {
     RegisterBodySchema.parse(player)

@@ -72,12 +72,12 @@ function LPCtoString(LPC: number) {
         :data="{
           datasets: [
             {
-              data: props.lpUpdates.map((e) => e.LPC),
+              data: props.lpUpdates.map(e => e.LPC),
               borderColor: '#38bdf8',
               borderWidth: 3
             }
           ],
-          labels: props.lpUpdates.map((e) => dayjs(e.date).format('DD/MM'))
+          labels: props.lpUpdates.map(e => dayjs(e.date).format('DD/MM'))
         }"
         :options="{
           plugins: {
@@ -100,13 +100,13 @@ function LPCtoString(LPC: number) {
               },
               caretPadding: 8,
               callbacks: {
-                title: (TooltipItem) => {
+                title: TooltipItem => {
                   // PLEASE UPDATE
                   return `${props.lpUpdates.at(TooltipItem[0].dataIndex)?.tier.charAt(0)} ${
                     props.lpUpdates.at(TooltipItem[0].dataIndex)?.rank
                   }  ${props.lpUpdates.at(TooltipItem[0].dataIndex)?.LP}LP`
                 },
-                label: (TooltipItem) => {
+                label: TooltipItem => {
                   return TooltipItem.label
                 }
               }

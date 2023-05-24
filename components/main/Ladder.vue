@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const { pending, error, data: players } = await useLazyFetch("/api/leaderboard")
 
-const AllTiers = ref([...new Set(players.value?.map((player) => player.Account.at(0)?.tier))])
+const AllTiers = ref([...new Set(players.value?.map(player => player.Account.at(0)?.tier))])
 
-watch(players, (newPlayers) => {
-  AllTiers.value = [...new Set(newPlayers?.map((player) => player.Account.at(0)?.tier))]
+watch(players, newPlayers => {
+  AllTiers.value = [...new Set(newPlayers?.map(player => player.Account.at(0)?.tier))]
 })
 </script>
 <template>
@@ -17,7 +17,7 @@ watch(players, (newPlayers) => {
         </div>
         <div class="p-2 px-0 md:px-5 text-white/80">
           <div
-            v-for="player in players?.filter((player) => player.Account[0].tier == tier)"
+            v-for="player in players?.filter(player => player.Account[0].tier == tier)"
             :key="player.discordId"
             class="flex flex-nowrap justify-between px-3 my-2"
           >

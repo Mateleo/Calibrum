@@ -1,4 +1,4 @@
-export default eventHandler(async (event) => {
+export default eventHandler(async event => {
   const params = event.context.params
 
   if (!params) {
