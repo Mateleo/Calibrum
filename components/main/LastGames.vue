@@ -1,5 +1,3 @@
 <template>
-    <CommonInnerTitleSection title="Last games">
-        yes
-    </CommonInnerTitleSection>
+  <CommonInnerTitleSection title="Last games"> yes </CommonInnerTitleSection>
 </template>

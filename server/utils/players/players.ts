@@ -1,5 +1,5 @@
-import { Prisma } from "@prisma/client";
-import { RegisterBody } from "~/server/api/register.post";
+import { Prisma } from "@prisma/client"
+import { RegisterBody } from "~/server/api/register.post"
 
 export function getPlayers() {
   return prisma.player.findMany({
@@ -63,12 +63,12 @@ export async function registerOrUpdatePlayer(player: RegisterBody) {
     newPlayer = await createPlayer(playerWithoutAccounts)
   }
 
-  return newPlayer;
+  return newPlayer
 }
 
 export async function getPlayerLiveGame(discordId: string) {
   const accounts = await getAccountsByPlayer(discordId)
-  
+
   for (const account of accounts) {
     try {
       return await getLiveGameDataOrError(account.id)

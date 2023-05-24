@@ -30,4 +30,4 @@ export default defineNuxtConfig({
   nitro: {
     node: true
   }
-});
+})

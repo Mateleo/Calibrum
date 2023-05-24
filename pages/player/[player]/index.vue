@@ -9,7 +9,7 @@ const selectedAccount = ref(0)
 const {
   pending,
   error,
-  data: player,
+  data: player
 } = await useLazyFetch<PlayerWithAccountsReponse>(`/api/player/${route.params.player}`)
 
 useSeoMeta({
@@ -19,7 +19,7 @@ useSeoMeta({
   ogDescription: `Learn more about ${route.params.player} stats on Calibrum 🌠 by 4eSport.`,
   twitterCard: "summary_large_image",
   themeColor: "#0ea5e9",
-  ogUrl: () => `https://dev.calibrum.4esport.fr/player/${route.params.player}`,
+  ogUrl: () => `https://dev.calibrum.4esport.fr/player/${route.params.player}`
 })
 
 defineOgImageScreenshot({
@@ -29,7 +29,7 @@ defineOgImageScreenshot({
   account: player.value?.accounts.at(0),
   name: player.value?.name,
   role: player.value?.role,
-  champion: "Shaco",
+  champion: "Shaco"
 })
 
 console.log(route.query.champion)
