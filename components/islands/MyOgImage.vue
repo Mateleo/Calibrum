@@ -30,10 +30,10 @@ const url = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data
 </script>
 
 <template>
-  <div class="relative w-[1200px] h-[600px] text-white bg-black z-20">
-    <NuxtImg :src="url" class="absolute -z-10 w-full blur-[1px] opacity-80"></NuxtImg>
-    <div class="relative w-[30%] flex flex-col items-center z-10 mt-4">
-      <p class="font-semibold text-6xl sh z-10">{{ props.name }}</p>
+  <div class="relative z-20 h-[600px] w-[1200px] bg-black text-white">
+    <NuxtImg :src="url" class="absolute -z-10 w-full opacity-80 blur-[1px]"></NuxtImg>
+    <div class="relative z-10 mt-4 flex w-[30%] flex-col items-center">
+      <p class="sh z-10 text-6xl font-semibold">{{ props.name }}</p>
       <div class="flex flex-col items-center">
         <NuxtImg :src="`img/emblems/Emblem_${props.account.tier}.png`" class="mt-2 w-[40%]"></NuxtImg>
       </div>

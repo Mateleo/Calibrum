@@ -15,7 +15,7 @@ const { padding, title, color } = toRefs(props)
 <template>
   <div class="flex flex-col">
     <CommonTitle class="mb-2">{{ title }}</CommonTitle>
-    <CommonSection class="rounded-lg h-full" :padding="padding" :color="color">
+    <CommonSection class="h-full rounded-lg" :padding="padding" :color="color">
       <slot></slot>
     </CommonSection>
   </div>

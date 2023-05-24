@@ -35,17 +35,17 @@ console.log(route.query.champion)
 </script>
 
 <template>
-  <div v-if="player" class="flex gap-8 max-w-[2000px] m-auto mt-4 w-[95%] lg:w-[85%] xl:w-[75%] bg">
+  <div v-if="player" class="bg m-auto mt-4 flex w-[95%] max-w-[2000px] gap-8 lg:w-[85%] xl:w-[75%]">
     <div class="flex flex-col gap-8">
       <PlayerTitle :role="player.role" :profileIcon="player.accounts.at(0)?.profileIcon">
         {{ route.params.player }}
       </PlayerTitle>
       <CommonSection class="h-full rounded-lg" />
     </div>
-    <div class="flex flex-col grow">
+    <div class="flex grow flex-col">
       <div class="flex flex-col">
         <PlayerNavigation />
-        <div class="text-sm font-light mt-4">
+        <div class="mt-4 text-sm font-light">
           <PlayerAccounts
             :accounts="player.accounts"
             :onAccountChange="

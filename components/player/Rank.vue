@@ -28,14 +28,14 @@ const { title, losses, wins, lpUpdate } = toRefs(props)
 <template>
   <div>
     <CommonTitleSection :title="title" :padding="false">
-      <div class="w-[300px] h-[105px] overflow-hidden">
+      <div class="h-[105px] w-[300px] overflow-hidden">
         <Transition name="fade">
-          <div class="flex justify-between items-center" :key="lpUpdate.date.toString()">
+          <div class="flex items-center justify-between" :key="lpUpdate.date.toString()">
             <NuxtImg
               :src="`img/emblems/Emblem_${lpUpdate.tier ?? 'IRON'}.png`"
-              class="object-cover w-[155px] h-[112px] opacity-60"
+              class="h-[112px] w-[155px] object-cover opacity-60"
             ></NuxtImg>
-            <div class="text-sm text-right p-4 leading-4 flex flex-col justify-center w-[140px]">
+            <div class="flex w-[140px] flex-col justify-center p-4 text-right text-sm leading-4">
               <p class="font-semibold">{{ lpUpdate.rank }} {{ lpUpdate.tier }}</p>
               <p class="font-semibold">{{ lpUpdate.LP }} LP</p>
               <p>{{ wins }}/{{ losses }} ({{ Math.floor((wins / (losses + wins)) * 1000) / 10 }}%)</p>

@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 gap-4 pt-12 px-12">
+  <div class="grid grid-cols-2 gap-4 px-12 pt-12">
     <CommonSection class="rounded-lg">
       <div class="flex justify-evenly">
         <div>

@@ -8,37 +8,37 @@ watch(players, newPlayers => {
 })
 </script>
 <template>
-  <div class="flex flex-col bg-[#22262b5a] rounded-lg p-2">
-    <h2 class="font-semibold text-[#08bcd5] mb-2 text-xl">Ladder</h2>
+  <div class="flex flex-col rounded-lg bg-[#22262b5a] p-2">
+    <h2 class="mb-2 text-xl font-semibold text-[#08bcd5]">Ladder</h2>
     <div v-for="tier in AllTiers" :key="tier?.toString()">
       <div>
-        <div class="flex rounded-lg p-2 justify-center" :class="tier">
+        <div class="flex justify-center rounded-lg p-2" :class="tier">
           <h2 class="font-semibold text-white/90">{{ tier }}</h2>
         </div>
-        <div class="p-2 px-0 md:px-5 text-white/80">
+        <div class="p-2 px-0 text-white/80 md:px-5">
           <div
             v-for="player in players?.filter(player => player.Account[0].tier == tier)"
             :key="player.discordId"
-            class="flex flex-nowrap justify-between px-3 my-2"
+            class="my-2 flex flex-nowrap justify-between px-3"
           >
             <div class="flex items-center py-4">
-              <img class="w-[50px] mr-5 hidden sm:block rounded-lg" :src="player.Account[0].profileIcon" alt="" />
+              <img class="mr-5 hidden w-[50px] rounded-lg sm:block" :src="player.Account[0].profileIcon" alt="" />
               <NuxtLink
                 :to="`/player/${player.name}`"
-                class="font-semibold text-lg hover:text-cyan-400 transition-colors ease-in-out w-[170px]"
+                class="w-[170px] text-lg font-semibold transition-colors ease-in-out hover:text-cyan-400"
               >
                 {{ player.name }}
               </NuxtLink>
             </div>
-            <div class="flex sm:justify-between justify-end max-w-[300px] grow items-center">
-              <img class="w-[32px] h-[32px] hidden sm:block" :src="`img/positions/${player.role}.svg`" alt="" />
+            <div class="flex max-w-[300px] grow items-center justify-end sm:justify-between">
+              <img class="hidden h-[32px] w-[32px] sm:block" :src="`img/positions/${player.role}.svg`" alt="" />
               <div class="flex flex-col justify-center">
                 <img
-                  class="object-cover w-[90px] h-[50px] m-auto"
+                  class="m-auto h-[50px] w-[90px] object-cover"
                   :src="`img/emblems/Emblem_${player.Account[0].tier ?? 'IRON'}.png`"
                   alt=""
                 />
-                <p class="text-md font-semibold text-center leading-none">
+                <p class="text-md text-center font-semibold leading-none">
                   {{ player.Account[0].rank }} - {{ player.Account[0].LP }}
                 </p>
               </div>

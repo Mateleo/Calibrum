@@ -15,7 +15,7 @@ const { color, padding, title } = toRefs(props)
 
 <template>
   <CommonSection :color="`${color}5a`" class="rounded-lg">
-    <h2 class="font-semibold text-[#08bcd5] mb-2 text-xl">{{ title }}</h2>
+    <h2 class="mb-2 text-xl font-semibold text-[#08bcd5]">{{ title }}</h2>
     <CommonSection class="rounded-lg" :padding="padding" :color="color">
       <slot></slot>
     </CommonSection>
