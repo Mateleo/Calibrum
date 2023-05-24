@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import internal from "stream"
 import { PlayerWithAccountsReponse } from "~/utils/types"
 
 const route = useRoute()
