@@ -35,7 +35,7 @@ watch(players, (newPlayers) => {
                                 <img class="object-cover w-[90px] h-[50px] m-auto"
                                     :src="`img/emblems/Emblem_${player.Account[0].tier ?? 'IRON'}.png`" alt="" />
                                 <p class="text-md font-semibold text-center leading-none">
-                                    {{ player.Account[0].rank }} - {{ player.Account[0].LPC }}
+                                    {{ player.Account[0].rank }} - {{ player.Account[0].LP }}
                                 </p>
                             </div>
                         </div>

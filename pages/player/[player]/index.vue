@@ -12,11 +12,24 @@ useSeoMeta({
     ogTitle: `${route.params.player}`,
     description: `Learn more about ${route.params.player} stats on Calibrum 🌠 by 4eSport.`,
     ogDescription: `Learn more about ${route.params.player} stats on Calibrum 🌠 by 4eSport.`,
-    ogImage: 'https://example.com/image.png',
     twitterCard: 'summary_large_image',
     themeColor: "#0ea5e9",
     ogUrl: () => `https://dev.calibrum.4esport.fr/player/${route.params.player}`
 })
+
+defineOgImageScreenshot({
+    component: 'MyOgImage',
+    width: 1200,
+    height: 600,
+    account: player.value?.accounts.at(0),
+    name: player.value?.name,
+    role: player.value?.role,
+    champion: route.query.champion
+
+})
+
+console.log(route.query.champion)
+
 </script>
 
 <template>
