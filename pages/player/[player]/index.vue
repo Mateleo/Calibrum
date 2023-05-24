@@ -24,7 +24,7 @@ defineOgImageScreenshot({
     account: player.value?.accounts.at(0),
     name: player.value?.name,
     role: player.value?.role,
-    champion: route.query.champion
+    champion: "Shaco"
 
 })
 

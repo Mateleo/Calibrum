@@ -28,7 +28,7 @@ const props = withDefaults(
 </script>
 <template>
     <div class="grid grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-4">
-        <button v-for="(account, index) in props.accounts">
+        <button v-for="(account, index) in props.accounts" :key="account.name">
             <CommonSection class="flex gap-2 items-center rounded-md px-4 py-2 border-[1px] font-medium" :padding="false"
                 @click="selected = index;props.onAccountChange(index)" :color="selected === index ? '#17191d' : undefined"
                 :class="selected === index ? 'border-gray-600/70 text-sky-400' : 'border-transparent'">

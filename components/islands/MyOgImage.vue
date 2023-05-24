@@ -4,10 +4,9 @@ import { Account, Role } from "@prisma/client";
 const data = await useFetch(
   "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-summary.json"
 );
-console.log(data.data);
 
 interface Props {
-  account?: Pick<Account, "tier" | "rank">;
+  account?: Pick<Account, "tier" | "rank" | "profileIcon">;
   role?: Role,
   name: string,
   champion: string
@@ -17,7 +16,8 @@ const props = withDefaults(defineProps<Props>(), {
   account: () => ({
     name: "Undefined",
     tier: "IRON",
-    rank: "IV"
+    rank: "IV",
+    profileIcon: "jkfezifjze"
   }),
   role: "mid",
   name: "Undefined",
@@ -30,10 +30,10 @@ const url = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data
 </script>
 
 <template>
-  <div class="relative w-[600px] h-[300px] text-white">
-    <NuxtImg :src="url" class="absolute -z-10 w-full blur-[1px]"></NuxtImg>
-    <div class="relative w-[40%] flex flex-col items-center z-10 mt-4">
-      <p class="font-semibold text-6xl sh">{{ props.name }}</p>
+  <div class="relative w-[1200px] h-[600px] text-white bg-black z-20">
+    <NuxtImg :src="url" class="absolute -z-10 w-full blur-[1px] opacity-80"></NuxtImg>
+    <div class="relative w-[30%] flex flex-col items-center z-10 mt-4">
+      <p class="font-semibold text-6xl sh z-10">{{ props.name }}</p>
       <div class="flex flex-col items-center">
         <NuxtImg :src="`img/emblems/Emblem_${props.account.tier}.png`" class=" mt-2 w-[40%]"></NuxtImg>
       </div>
