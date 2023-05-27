@@ -6,7 +6,7 @@ const data = await useFetch(
 )
 
 interface Props {
-  account?: Pick<Account, "tier" | "rank" | "profileIcon">
+  account?: Pick<Account, "tier" | "rank" | "profileIcon" | "sumonerLvl">
   role?: Role
   name: string
   champion: string
@@ -17,7 +17,8 @@ const props = withDefaults(defineProps<Props>(), {
     name: "Undefined",
     tier: "IRON",
     rank: "IV",
-    profileIcon: "jkfezifjze"
+    profileIcon: "jkfezifjze",
+    sumonerLvl: 30
   }),
   role: "mid",
   name: "Undefined",
@@ -30,18 +31,19 @@ const url = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data
 </script>
 
 <template>
-  <div class="relative z-20 h-[600px] w-[1200px] bg-black text-white">
+  <div class="relative z-20 h-[300px] w-[600px] bg-black text-white">
     <NuxtImg :src="url" class="absolute -z-10 w-full opacity-80 blur-[1px]"></NuxtImg>
-    <div class="relative z-10 mt-4 flex w-[30%] flex-col items-center">
-      <p class="sh z-10 text-6xl font-semibold">{{ props.name }}</p>
-      <div class="flex flex-col items-center">
-        <NuxtImg :src="`img/emblems/Emblem_${props.account.tier}.png`" class="mt-2 w-[40%]"></NuxtImg>
+    <div class="grid h-full w-full grid-cols-2 gap-10">
+      <div class="flex flex-col items-center justify-center">
+        <PlayerProfileIcon :profile-icon="props.account.profileIcon" class="border-2 border-sky-600">
+          <template #left>
+            <NuxtImg :src="`img/positions/${props.role}.svg`" class="w-[50%]" />
+          </template>
+          <template #right>
+            {{ props.account.sumonerLvl }}
+          </template>
+        </PlayerProfileIcon>
       </div>
     </div>
   </div>
 </template>
-<style scoped>
-.sh {
-  text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.8);
-}
-</style>

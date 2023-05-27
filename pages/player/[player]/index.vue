@@ -23,12 +23,12 @@ useSeoMeta({
 
 defineOgImageScreenshot({
   component: "MyOgImage",
-  width: 1200,
-  height: 600,
+  width: 600,
+  height: 300,
   account: player.value?.accounts.at(0),
   name: player.value?.name,
   role: player.value?.role,
-  champion: "Shaco"
+  champion: "Lux"
 })
 
 console.log(route.query.champion)
