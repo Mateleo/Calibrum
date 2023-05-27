@@ -28,3 +28,8 @@ const props = withDefaults(defineProps<Props>(), {
     </div>
   </div>
 </template>
+<style scoped>
+.border-teal-400 {
+  border: solid rgb(45 212 191) 2px;
+}
+</style>
