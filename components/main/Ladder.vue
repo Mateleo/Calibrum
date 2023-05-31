@@ -69,9 +69,9 @@ watch(players, newPlayers => {
 }
 
 .GOLD {
-  background: #348f50;
-  background: -webkit-linear-gradient(to right, rgba(86, 180, 211, 0.3), rgba(52, 143, 80, 0.3));
-  background: linear-gradient(to right, rgba(86, 180, 211, 0.3), rgba(52, 143, 80, 0.3));
+background: #ffd700;
+background: -webkit-linear-gradient(to right, rgba(255, 215, 0, 0.3), rgba(218, 165, 32, 0.3));
+background: linear-gradient(to right, rgba(255, 215, 0, 0.3), rgba(218, 165, 32, 0.3));
 }
 
 .SILVER {
