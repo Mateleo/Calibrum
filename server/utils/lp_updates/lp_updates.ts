@@ -1,4 +1,5 @@
-import { LpUpdate, Prisma } from "@prisma/client"
+import { Prisma } from "@prisma/client"
+import dayjs from "dayjs"
 
 export function getLpUpdateById(id: string) {
   return prisma.lpUpdate.findUnique({
@@ -12,6 +13,20 @@ export function getLpUpdateByAccount(accountId: string) {
   return prisma.lpUpdate.findMany({
     where: {
       accountId: accountId
+    },
+    orderBy: {
+      date: "desc"
+    }
+  })
+}
+
+export function getLpUpdateByAccountByDay(accountId: string, days: number) {
+  return prisma.lpUpdate.findMany({
+    where: {
+      accountId: accountId,
+      date: {
+        gte: dayjs().subtract(days, "days").toDate()
+      }
     },
     orderBy: {
       date: "desc"

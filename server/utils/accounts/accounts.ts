@@ -1,6 +1,7 @@
 import { Prisma, Rank, Tier } from "@prisma/client"
 import { isAxiosError } from "axios"
 import { fetchLiveGameInfo } from "../riot_connector/riot_connector"
+import { getLpUpdateByAccountByDay } from "../lp_updates/lp_updates"
 
 // Low level functions
 
@@ -160,4 +161,11 @@ enum RankLPC {
   III = 100,
   II = 200,
   I = 300
+}
+
+export async function get24hGains(accountId: string) {
+  const lpUpdates = await getLpUpdateByAccountByDay(accountId, 1)
+  return lpUpdates
+    .map(update => update.lastUpdateDiff)
+    .reduce((a, b) => a + b, 0)
 }

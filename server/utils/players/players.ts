@@ -1,5 +1,6 @@
 import { Prisma } from "@prisma/client"
-import { RegisterBody } from "~/server/api/register.post"
+import { RegisterBody } from "~/server/api/register/index.post"
+import { get24hGains } from "../accounts/accounts"
 
 export function getPlayers() {
   return prisma.player.findMany({
@@ -78,6 +79,23 @@ export async function getPlayerLiveGame(discordId: string) {
   }
   throw createError({
     statusCode: 500,
-    statusMessage: `player ${accounts[0].name} has no accounts in game`
+    statusMessage: `player ${discordId} has no accounts in game`
   })
+}
+
+export async function getPlayersOfTheDay() {
+  const accounts = await getAccounts()
+
+  const accountsGain = await Promise.all(
+    accounts.map(async account => ({
+      gains: await get24hGains(account.id),
+      account: account.name,
+      profileIcon: account.profileIcon
+    }))
+  )
+
+  return {
+    bestPlayer: accountsGain.reduce((prev, current) => (prev.gains > current.gains ? prev : current)),
+    worstPlayer: accountsGain.reduce((prev, current) => (prev.gains < current.gains ? prev : current))
+  }
 }
