@@ -11,6 +11,8 @@ const {
   data: player
 } = await useLazyFetch<PlayerWithAccountsReponse>(`/api/player/${route.params.player}`)
 
+const { data: playerLive } = await useLazyFetch(`/api/player/${route.params.player}/live`)
+
 useSeoMeta({
   title: `${route.params.player}`,
   ogTitle: `${route.params.player}`,
@@ -31,6 +33,8 @@ defineOgImageScreenshot({
   champion: "Lux"
 })
 
+console.log(playerLive.value)
+
 </script>
 
 <template>
@@ -39,7 +43,15 @@ defineOgImageScreenshot({
       <PlayerTitle :role="player.role" :profileIcon="player.accounts.at(0)?.profileIcon">
         {{ route.params.player }}
       </PlayerTitle>
-      <CommonSection class="h-full rounded-lg" />
+      <CommonSection class="flex h-full flex-col gap-2 rounded-lg">
+        <p class="text-center text-sm font-bold text-white/60">In game :</p>
+        <button
+        v-if="playerLive"
+          class="animate-pulse rounded-lg bg-red-500/50 p-2 font-semibold text-white/80 transition-all ease-in hover:bg-red-600 hover:text-white hover:shadow-lg hover:shadow-red-900"
+        >
+          Watch {{ player.name }}
+        </button>
+      </CommonSection>
     </div>
     <div class="flex grow flex-col">
       <div class="flex flex-col">

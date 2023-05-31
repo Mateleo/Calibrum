@@ -23,12 +23,7 @@ watch(players, newPlayers => {
           >
             <div class="flex items-center py-4">
               <img class="mr-5 hidden w-[50px] rounded-lg sm:block" :src="player.Account[0].profileIcon" alt="" />
-              <NuxtLink
-                :to="`/player/${player.name}`"
-                class="w-[170px] text-lg font-semibold transition-colors ease-in-out hover:text-cyan-400"
-              >
-                {{ player.name }}
-              </NuxtLink>
+              <LeaderboardPlayer :name="player.name"></LeaderboardPlayer>
             </div>
             <div class="flex max-w-[300px] grow items-center justify-end sm:justify-between">
               <img class="hidden h-[32px] w-[32px] sm:block" :src="`img/positions/${player.role}.svg`" alt="" />

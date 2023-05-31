@@ -78,6 +78,6 @@ export async function getPlayerLiveGame(discordId: string) {
   }
   throw createError({
     statusCode: 500,
-    statusMessage: `player ${discordId} has no accounts in game`
+    statusMessage: `player ${accounts[0].name} has no accounts in game`
   })
 }
