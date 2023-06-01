@@ -24,7 +24,7 @@ const props = withDefaults(defineProps<Props>(), {
       @click="selected = 'liveGame'"
       :class="selected == 'liveGame' ? 'text-white/90' : ''"
       >LIVE GAME
-      <span class="relative flex h-2 w-2 self-start mt-1 ml-[2px]" v-if="live">
+      <span class="relative flex h-2 w-2 self-start mt-1 ml-[2px]" v-if="props.live">
       <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
       <span class="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span>
     </span>
