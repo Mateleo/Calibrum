@@ -44,13 +44,6 @@ console.log(playerLive.value)
         {{ route.params.player }}
       </PlayerTitle>
       <CommonSection class="flex h-full flex-col gap-2 rounded-lg">
-        <p class="text-center text-sm font-bold text-white/60">In game :</p>
-        <button
-        v-if="playerLive"
-          class="animate-pulse rounded-lg bg-red-500/50 p-2 font-semibold text-white/80 transition-all ease-in hover:bg-red-600 hover:text-white hover:shadow-lg hover:shadow-red-900"
-        >
-          Watch {{ player.name }}
-        </button>
       </CommonSection>
     </div>
     <div class="flex grow flex-col">
