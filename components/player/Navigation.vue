@@ -2,13 +2,12 @@
 const selected = ref<"accounts" | "liveGame" | "badges">("accounts")
 
 interface Props {
-  live: boolean
+  isLive?: boolean | null
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  live: false
+  isLive: false
 })
-
 </script>
 <template>
   <nav class="flex h-[40px] gap-2 text-sm">
@@ -19,17 +18,16 @@ const props = withDefaults(defineProps<Props>(), {
       >ACCOUNTS</CommonNavButton
     >
     <CommonNavButton
-    class="flex items-center"
+      class="flex items-center"
       :active="selected == 'liveGame'"
       @click="selected = 'liveGame'"
       :class="selected == 'liveGame' ? 'text-white/90' : ''"
       >LIVE GAME
-      <span class="relative flex h-2 w-2 self-start mt-1 ml-[2px]" v-if="props.live">
-      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
-      <span class="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span>
-    </span>
-      </CommonNavButton
-    >
+      <span class="relative ml-[2px] mt-1 flex h-2 w-2 self-start" v-if="isLive">
+        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
+        <span class="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span>
+      </span>
+    </CommonNavButton>
     <CommonNavButton
       :active="selected == 'badges'"
       @click="selected = 'badges'"

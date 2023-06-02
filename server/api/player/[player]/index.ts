@@ -1,4 +1,4 @@
-export default defineEventHandler(async event => {
+export default cachedEventHandler(async event => {
   const params = event.context.params
 
   if (!params) {
@@ -34,10 +34,12 @@ export default defineEventHandler(async event => {
     })
   )
 
-  const { discordId, ...playerWithoutDiscordId } = player
+  const isInGame = getPlayerLiveGame(player.discordId)
+
+  const { isLive = isInGame, discordId, ...playerWithoutDiscordId } = player
 
   return {
     ...playerWithoutDiscordId,
     accounts: accountsWithLpUpdates
   }
-})
+},{maxAge:5*60, swr:true})

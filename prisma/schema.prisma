@@ -11,9 +11,10 @@ datasource db {
 }
 
 model Player {
-  discordId String @id
+  discordId String  @id
   name      String
   role      Role
+  isLive    Boolean?
 
   Account Account[]
 }

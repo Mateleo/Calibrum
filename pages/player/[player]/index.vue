@@ -48,7 +48,7 @@ console.log(playerLive.value)
     </div>
     <div class="flex grow flex-col">
       <div class="flex flex-col">
-        <PlayerNavigation />
+        <PlayerNavigation :is-live="player.isLive"></PlayerNavigation>
         <div class="mt-4 text-sm font-light">
           <PlayerAccounts
             :accounts="player.accounts"
