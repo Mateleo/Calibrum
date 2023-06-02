@@ -10,9 +10,6 @@ const {
   error,
   data: player
 } = await useLazyFetch<PlayerWithAccountsReponse>(`/api/player/${route.params.player}`)
-
-const { data: playerLive } = await useLazyFetch(`/api/player/${route.params.player}/live`)
-
 useSeoMeta({
   title: `${route.params.player}`,
   ogTitle: `${route.params.player}`,
@@ -32,9 +29,6 @@ defineOgImageScreenshot({
   role: player.value?.role,
   champion: "Lux"
 })
-
-console.log(playerLive.value)
-
 </script>
 
 <template>
