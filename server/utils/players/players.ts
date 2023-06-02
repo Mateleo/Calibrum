@@ -28,15 +28,12 @@ export async function getPlayersWithLive() {
   })[] = await getPlayers()
   // Suffle to be sure that every players can be fetched
   players = shuffle(players)
-  for (let x = 0; players.length > x; x++) {
-    const isLive = await getPlayerLiveGame(players[x].discordId)
-    if (isLive) {
-      players[x].isLive = true
-    } else {
-      players[x].isLive = false
-    }
-  }
-  return players
+
+  return Promise.all(players.map(async player => ({
+      ...player,
+      isLive: await getPlayerLiveGame(player.discordId) ? true : false
+    })
+  ))
 }
 
 export function getPlayerByName(name: string) {
