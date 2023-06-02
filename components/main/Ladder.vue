@@ -23,7 +23,7 @@ watch(players, newPlayers => {
           >
             <div class="flex items-center py-4">
               <img class="mr-5 hidden w-[50px] rounded-lg sm:block" :src="player.Account[0].profileIcon" alt="" />
-              <LeaderboardPlayer :name="player.name"></LeaderboardPlayer>
+              <LeaderboardPlayer :name="player.name" :is-live="player.isLive"></LeaderboardPlayer>
             </div>
             <div class="flex max-w-[300px] grow items-center justify-end sm:justify-between">
               <img class="hidden h-[32px] w-[32px] sm:block" :src="`img/positions/${player.role}.svg`" alt="" />

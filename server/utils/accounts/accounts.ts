@@ -119,14 +119,11 @@ export async function fetchAccountData(accountId: string) {
   })
 }
 
-export async function getLiveGameDataOrError(accountId: string) {
+export async function getLiveGameData(accountId: string) {
   try {
     return (await fetchLiveGameInfo(accountId)).data
   } catch (error) {
-    throw createError({
-      statusCode: 500,
-      statusMessage: `Account ${accountId} not in game`
-    })
+    return undefined
   }
 }
 

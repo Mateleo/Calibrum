@@ -1,6 +1,7 @@
-import { Prisma } from "@prisma/client"
+import { Account, Player, Prisma } from "@prisma/client"
 import { RegisterBody } from "~/server/api/register/index.post"
-import { get24hGains } from "../accounts/accounts"
+import { get24hGains, getLiveGameData } from "../accounts/accounts"
+import shuffle from "../suffle"
 
 export function getPlayers() {
   return prisma.player.findMany({
@@ -18,6 +19,24 @@ export function getPlayers() {
       }
     }
   })
+}
+
+export async function getPlayersWithLive() {
+  let players: (Player & {
+    Account: Account[]
+    isLive?: boolean
+  })[] = await getPlayers()
+  // Suffle to be sure that every players can be fetched
+  players = shuffle(players)
+  for (let x = 0; players.length > x; x++) {
+    const isLive = await getPlayerLiveGame(players[x].discordId)
+    if (isLive) {
+      players[x].isLive = true
+    } else {
+      players[x].isLive = false
+    }
+  }
+  return players
 }
 
 export function getPlayerByName(name: string) {
@@ -71,16 +90,8 @@ export async function getPlayerLiveGame(discordId: string) {
   const accounts = await getAccountsByPlayer(discordId)
 
   for (const account of accounts) {
-    try {
-      return await getLiveGameDataOrError(account.id)
-    } catch (error) {
-      continue
-    }
+    return await getLiveGameData(account.id)
   }
-  throw createError({
-    statusCode: 500,
-    statusMessage: `player ${discordId} has no accounts in game`
-  })
 }
 
 export async function getPlayersOfTheDay() {
