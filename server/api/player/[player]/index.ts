@@ -1,3 +1,5 @@
+import { getMostPlayedChampByAccount } from "~/server/utils/accounts/accounts"
+
 export default cachedEventHandler(async event => {
   const params = event.context.params
 

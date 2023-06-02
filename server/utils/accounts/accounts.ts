@@ -1,6 +1,6 @@
 import { Prisma, Rank, Tier } from "@prisma/client"
 import { isAxiosError } from "axios"
-import { fetchLiveGameInfo } from "../riot_connector/riot_connector"
+import { fetchLiveGameInfo, fetchMatchbyId, fetchMatchesHistory } from "../riot_connector/riot_connector"
 import { getLpUpdateByAccountByDay } from "../lp_updates/lp_updates"
 
 // Low level functions
@@ -63,6 +63,7 @@ export async function registerAccount(name: string, discordId: string) {
 
   return createAccount({
     id: accountData.id,
+    puuid: accountData.puuid,
     name: accountData.name,
     profileIcon: getProfileIconUrl(accountData.profileIconId),
     sumonerLvl: accountData.summonerLevel,
@@ -127,6 +128,22 @@ export async function getLiveGameData(accountId: string) {
   }
 }
 
+export async function getMostPlayedChampByAccount(puuid: string, accountName: string) {
+  const MatchHistory = (await fetchMatchesHistory(puuid)).data
+  if (MatchHistory.length < 0) {
+    return null
+  }
+  const AllPlayedChamps = MatchHistory.slice(0, 20).map(async match => {
+    const MatchData = (await fetchMatchbyId(match)).data
+    return MatchData.info.participants.find(participant => participant.summonerName === accountName)?.championId
+  })
+  console.log(AllPlayedChamps)
+  // find the most played champs in the array
+  return AllPlayedChamps.sort(
+    (a, b) => AllPlayedChamps.filter(v => v === a).length - AllPlayedChamps.filter(v => v === b).length
+  ).pop()
+}
+
 // Utils
 
 function getProfileIconUrl(profileIconId: number) {
@@ -162,7 +179,5 @@ enum RankLPC {
 
 export async function get24hGains(accountId: string) {
   const lpUpdates = await getLpUpdateByAccountByDay(accountId, 1)
-  return lpUpdates
-    .map(update => update.lastUpdateDiff)
-    .reduce((a, b) => a + b, 0)
+  return lpUpdates.map(update => update.lastUpdateDiff).reduce((a, b) => a + b, 0)
 }
