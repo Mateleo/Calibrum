@@ -42,4 +42,4 @@ export default cachedEventHandler(async event => {
     ...playerWithoutDiscordId,
     accounts: accountsWithLpUpdates
   }
-},{maxAge:5*60, swr:true})
+},{maxAge:2*60, swr:true})
