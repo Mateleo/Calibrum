@@ -42,12 +42,12 @@ const url = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data
         </PlayerProfileIcon>
         <h1 class="mt-2 text-white/90" :class="props.name.length < 8 ? 'text-3xl' : 'text-xl'">{{ props.name }}</h1>
       </div>
-      <div class="flex flex-col items-center justify-center">
+      <div class="mt-2 flex flex-col items-center justify-center">
         <NuxtImg
           :src="`img/emblems/Emblem_${props.account.tier ?? 'IRON'}.png`"
-          class="mt-4 h-[100px] shadow-sm"
+          class="h-[115px] shadow-sm"
         ></NuxtImg>
-        <h2 class="text-xl text-white/80">{{ props.account.tier }} {{ props.account.rank }}</h2>
+        <h2 class="mt-1 text-xl text-white/80">{{ props.account.tier }} {{ props.account.rank }}</h2>
       </div>
     </div>
   </div>
