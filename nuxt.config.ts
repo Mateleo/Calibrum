@@ -29,6 +29,12 @@ export default defineNuxtConfig({
     siteUrl: "https://dev.calibrum.4esport.fr"
   },
   nitro: {
-    node: true
+    node: true,
+    storage: {
+      db: {
+        driver: "fs",
+        base: './.data/db'
+      }
+    }
   }
 })
