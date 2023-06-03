@@ -130,15 +130,16 @@ export async function getLiveGameData(accountId: string) {
 
 export async function getMostPlayedChampByAccount(puuid: string, accountName: string) {
   const MatchHistoryCached = cachedFunction(
-    async () => {
+    async (puuid: string) => {
       return (await fetchMatchesHistory(puuid)).data
     },
     { maxAge: 24 * 60 * 60, swr: true }
   )
-  const MatchHistory = await MatchHistoryCached()
+  const MatchHistory = await MatchHistoryCached(puuid)
   if (!MatchHistory || MatchHistory.length < 0) {
     return undefined
   }
+  console.log(MatchHistory)
   let AllPlayedChamps = await Promise.all(
     MatchHistory.slice(0, 20).map(async match => {
       try {
@@ -150,6 +151,7 @@ export async function getMostPlayedChampByAccount(puuid: string, accountName: st
     })
   )
   AllPlayedChamps = AllPlayedChamps.filter(Number)
+  console.log(AllPlayedChamps)
   // find the most played champs in the array
   return AllPlayedChamps.sort(
     (a, b) => AllPlayedChamps.filter(v => v === a).length - AllPlayedChamps.filter(v => v === b).length
