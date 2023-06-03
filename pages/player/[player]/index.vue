@@ -20,7 +20,7 @@ useSeoMeta({
   ogUrl: () => `https://dev.calibrum.4esport.fr/player/${route.params.player}`
 })
 
-defineOgImageStatic({
+defineOgImageDynamic({
   component: "MyOgImage",
   width: 400,
   height: 200,
