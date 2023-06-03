@@ -2,6 +2,7 @@ import { Prisma, Rank, Tier } from "@prisma/client"
 import { isAxiosError } from "axios"
 import { fetchLiveGameInfo, fetchMatchbyId, fetchMatchesHistory } from "../riot_connector/riot_connector"
 import { getLpUpdateByAccountByDay } from "../lp_updates/lp_updates"
+import { number } from "zod"
 
 // Low level functions
 
@@ -140,21 +141,27 @@ export async function getMostPlayedChampByAccount(puuid: string, accountName: st
     return undefined
   }
   console.log(MatchHistory)
-  let AllPlayedChamps = await Promise.all(
-    MatchHistory.slice(0, 20).map(async match => {
-      try {
-        const MatchData = (await fetchMatchbyId(match)).data
-        return MatchData.info.participants.find(participant => participant.summonerName === accountName)?.championId
-      } catch (error) {
-        return undefined
-      }
-    })
+  const AllPlayedChampsFunction = cachedFunction(
+    async (MatchHistory: string[]) => {
+      return await Promise.all(
+        MatchHistory.slice(0, 20).map(async match => {
+          try {
+            const MatchData = (await fetchMatchbyId(match)).data
+            return MatchData.info.participants.find(participant => participant.summonerName === accountName)?.championId
+          } catch (error) {
+            return undefined
+          }
+        })
+      )
+    },
+    { maxAge: 24 * 60 * 60, swr: true }
   )
-  AllPlayedChamps = AllPlayedChamps.filter(Number)
-  console.log(AllPlayedChamps)
+  let AllPlayedChamps = await AllPlayedChampsFunction(MatchHistory)
+  const AllPlayedChampsFiltered = AllPlayedChamps ? AllPlayedChamps.filter((champ): champ is number => !!champ) : [1]
+  console.log(AllPlayedChampsFiltered)
   // find the most played champs in the array
-  return AllPlayedChamps.sort(
-    (a, b) => AllPlayedChamps.filter(v => v === a).length - AllPlayedChamps.filter(v => v === b).length
+  return AllPlayedChampsFiltered.sort(
+    (a, b) => AllPlayedChampsFiltered.filter(v => v === a).length - AllPlayedChampsFiltered.filter(v => v === b).length
   ).pop()
 }
 
