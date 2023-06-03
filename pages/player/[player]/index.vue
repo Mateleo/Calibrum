@@ -22,7 +22,6 @@ useSeoMeta({
 
 defineOgImageScreenshot({
   component: "MyOgImage",
-  delay: 500,
   width: 400,
   height: 200,
   account: player.value?.accounts.at(0),
