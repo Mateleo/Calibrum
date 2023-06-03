@@ -27,7 +27,7 @@ defineOgImageScreenshot({
   account: player.value?.accounts.at(0),
   name: player.value?.name,
   role: player.value?.role,
-  champion: "Lux"
+  championId: player.value?.mostPlayedChamp
 })
 </script>
 

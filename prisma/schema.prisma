@@ -35,7 +35,6 @@ model Account {
   player          Player     @relation(fields: [playerDiscordId], references: [discordId], onDelete: Cascade)
   playerDiscordId String
   LpUpdate        LpUpdate[]
-  mostPlayedChamp String?
 }
 
 model LpUpdate {

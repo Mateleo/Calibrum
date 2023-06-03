@@ -1,15 +1,11 @@
 <script setup lang="ts">
 import { Account, Role } from "@prisma/client"
 
-const data = await useFetch(
-  "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-summary.json"
-)
-
 interface Props {
   account?: Pick<Account, "tier" | "rank" | "profileIcon" | "sumonerLvl" | "LP">
   role?: Role
   name: string
-  champion: string
+  championId?: number
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -23,12 +19,10 @@ const props = withDefaults(defineProps<Props>(), {
   }),
   role: "mid",
   name: "Undefined",
-  champion: "Jhin"
+  championId: 202
 })
 
-const url = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/${
-  data.data.value.find(e => e.alias === props.champion).id ?? "Jhin"
-}/${data.data.value.find(e => e.alias === props.champion).id ?? "202"}002.jpg`
+const url = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/${props.championId}/${props.championId}002.jpg`
 </script>
 
 <template>

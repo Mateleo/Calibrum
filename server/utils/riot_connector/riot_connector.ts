@@ -93,7 +93,7 @@ export function fetchLiveGameInfo(id: string) {
 
 export function fetchMatchesHistory(puiid: string) {
   return axios.get<string[]>(
-    `https://euw1.api.riotgames.com/lol/match/v5/matches/by-puuid/${puiid}?api_key=${
+    `https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${puiid}/ids?start=0&count=100&type=ranked&api_key=${
       useRuntimeConfig().RIOT_API_KEY
     }`
   )
@@ -101,7 +101,7 @@ export function fetchMatchesHistory(puiid: string) {
 
 export function fetchMatchbyId(matchId: string) {
   return axios.get<Match>(
-    `https://euw1.api.riotgames.com/lol/match/v5/matches/${matchId}?api_key=${
+    `https://europe.api.riotgames.com/lol/match/v5/matches/${matchId}?api_key=${
       useRuntimeConfig().RIOT_API_KEY
     }`
   )

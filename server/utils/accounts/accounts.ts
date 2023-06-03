@@ -129,15 +129,27 @@ export async function getLiveGameData(accountId: string) {
 }
 
 export async function getMostPlayedChampByAccount(puuid: string, accountName: string) {
-  const MatchHistory = (await fetchMatchesHistory(puuid)).data
-  if (MatchHistory.length < 0) {
-    return null
+  const MatchHistoryCached = cachedFunction(
+    async () => {
+      return (await fetchMatchesHistory(puuid)).data
+    },
+    { maxAge: 24 * 60 * 60, swr: true }
+  )
+  const MatchHistory = await MatchHistoryCached()
+  if (!MatchHistory || MatchHistory.length < 0) {
+    return undefined
   }
-  const AllPlayedChamps = MatchHistory.slice(0, 20).map(async match => {
-    const MatchData = (await fetchMatchbyId(match)).data
-    return MatchData.info.participants.find(participant => participant.summonerName === accountName)?.championId
-  })
-  console.log(AllPlayedChamps)
+  let AllPlayedChamps = await Promise.all(
+    MatchHistory.slice(0, 20).map(async match => {
+      try {
+        const MatchData = (await fetchMatchbyId(match)).data
+        return MatchData.info.participants.find(participant => participant.summonerName === accountName)?.championId
+      } catch (error) {
+        return undefined
+      }
+    })
+  )
+  AllPlayedChamps = AllPlayedChamps.filter(Number)
   // find the most played champs in the array
   return AllPlayedChamps.sort(
     (a, b) => AllPlayedChamps.filter(v => v === a).length - AllPlayedChamps.filter(v => v === b).length

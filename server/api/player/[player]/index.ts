@@ -1,3 +1,4 @@
+import { Player } from "@prisma/client"
 import { getMostPlayedChampByAccount } from "~/server/utils/accounts/accounts"
 
 export default cachedEventHandler(async event => {
@@ -10,7 +11,10 @@ export default cachedEventHandler(async event => {
     })
   }
 
-  const player = await getPlayerByName(params.player)
+  let player: (Player & {
+    isLive?: boolean
+    mostPlayedChamp?: number
+  } | null) = await getPlayerByName(params.player)
 
   if (!player) {
     throw createError({
@@ -19,7 +23,10 @@ export default cachedEventHandler(async event => {
     })
   }
 
+  player.isLive = await getPlayerLiveGame(player?.discordId) ? true : false
+  
   const accounts = await getAccountsByPlayer(player.discordId)
+  player.mostPlayedChamp = accounts.length>0 ? await getMostPlayedChampByAccount(accounts[0].puuid ?? "test", accounts[0].name) : undefined
 
   const accountsWithLpUpdates = await Promise.all(
     accounts.map(async account => {
@@ -36,12 +43,11 @@ export default cachedEventHandler(async event => {
     })
   )
 
-  const isInGame = getPlayerLiveGame(player.discordId)
 
-  const { isLive = isInGame, discordId, ...playerWithoutDiscordId } = player
+  const {discordId, ...playerWithoutDiscordId } = player
 
   return {
     ...playerWithoutDiscordId,
     accounts: accountsWithLpUpdates
   }
-},{maxAge:2*60, swr:true})
+}, { maxAge: 2 * 60, swr: true })
