@@ -26,15 +26,13 @@ export default defineNuxtConfig({
   },
   ogImage: {
     runtimeBrowser: true,
-    siteUrl: "https://dev.calibrum.4esport.fr"
+    siteUrl: "https://dev.calibrum.4esport.fr",
+    runtimeCacheStorage:{
+      driver: "fs",
+      base: './cache/db'
+    }
   },
   nitro: {
     node: true,
-    storage: {
-      db: {
-        driver: "fs",
-        base: './.data/db'
-      }
-    }
   }
 })
