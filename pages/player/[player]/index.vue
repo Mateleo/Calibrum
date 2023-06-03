@@ -22,6 +22,7 @@ useSeoMeta({
 
 defineOgImageScreenshot({
   component: "MyOgImage",
+  delay: 500,
   width: 400,
   height: 200,
   account: player.value?.accounts.at(0),
@@ -37,8 +38,7 @@ defineOgImageScreenshot({
       <PlayerTitle :role="player.role" :profileIcon="player.accounts.at(0)?.profileIcon">
         {{ route.params.player }}
       </PlayerTitle>
-      <CommonSection class="flex h-full flex-col gap-2 rounded-lg">
-      </CommonSection>
+      <CommonSection class="flex h-full flex-col gap-2 rounded-lg"> </CommonSection>
     </div>
     <div class="flex grow flex-col">
       <div class="flex flex-col">
