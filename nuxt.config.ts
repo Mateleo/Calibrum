@@ -25,7 +25,8 @@ export default defineNuxtConfig({
     }
   },
   ogImage: {
-    runtimeBrowser: true
+    runtimeBrowser: true,
+    siteUrl:"https://dev.calibrum.4esport.fr"
   },
   nitro: {
     node: true
