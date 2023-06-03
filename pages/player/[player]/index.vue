@@ -20,14 +20,15 @@ useSeoMeta({
   ogUrl: () => `https://dev.calibrum.4esport.fr/player/${route.params.player}`
 })
 
-defineOgImageScreenshot({
+defineOgImageStatic({
   component: "MyOgImage",
   width: 400,
   height: 200,
   account: player.value?.accounts.at(0),
   name: player.value?.name,
   role: player.value?.role,
-  championId: player.value?.mostPlayedChamp
+  championId: player.value?.mostPlayedChamp,
+  provider:"browser"
 })
 </script>
 
