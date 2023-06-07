@@ -52,3 +52,12 @@ export function updateLpUpdate(lpUpdate: Prisma.LpUpdateUpdateInput) {
 export function isDodge(LPC: number, diff: number) {
   return [-5, -15].includes(diff) && LPC % 100 !== 0
 }
+
+export function getLastXUpdates(amount: number) {
+  return prisma.lpUpdate.findMany({
+    orderBy: { 
+      date: "desc"
+    },
+    take: amount
+  })
+}

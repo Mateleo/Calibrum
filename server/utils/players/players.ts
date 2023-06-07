@@ -2,6 +2,7 @@ import { Account, Player, Prisma } from "@prisma/client"
 import { RegisterBody } from "~/server/api/register/index.post"
 import { get24hGains, getLiveGameData } from "../accounts/accounts"
 import shuffle from "../suffle"
+import { getLastXUpdates } from "../lp_updates/lp_updates"
 
 export function getPlayers() {
   return prisma.player.findMany({
@@ -29,11 +30,12 @@ export async function getPlayersWithLive() {
   // Suffle to be sure that every players can be fetched
   players = shuffle(players)
 
-  return Promise.all(players.map(async player => ({
+  return Promise.all(
+    players.map(async player => ({
       ...player,
-      isLive: await getPlayerLiveGame(player.discordId) ? true : false
-    })
-  ))
+      isLive: (await getPlayerLiveGame(player.discordId)) ? true : false
+    }))
+  )
 }
 
 export function getPlayerByName(name: string) {
@@ -106,4 +108,18 @@ export async function getPlayersOfTheDay() {
     bestPlayer: accountsGain.reduce((prev, current) => (prev.gains > current.gains ? prev : current)),
     worstPlayer: accountsGain.reduce((prev, current) => (prev.gains < current.gains ? prev : current))
   }
+}
+
+export async function getLast10Games() {
+  const updates = await getLastXUpdates(10)
+  return await Promise.all(
+    updates.map(async update => {
+      const { id, puuid, playerDiscordId, wins, losses, ...account } = await getAccountById(update.accountId)
+      const { id: idUpdate, accountId, ...updateResponse } = update
+      return {
+        ...updateResponse,
+        ...account
+      }
+    })
+  )
 }
