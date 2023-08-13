@@ -134,7 +134,7 @@ export async function getMostPlayedChampByAccount(puuid: string, accountName: st
     async (puuid: string) => {
       return (await fetchMatchesHistory(puuid)).data
     },
-    { maxAge: 24 * 60 * 60, swr: true }
+    { maxAge: 24 * 60 * 60, swr: false }
   )
   const MatchHistory = await MatchHistoryCached(puuid)
   if (!MatchHistory || MatchHistory.length < 0) {
@@ -154,7 +154,7 @@ export async function getMostPlayedChampByAccount(puuid: string, accountName: st
         })
       )
     },
-    { maxAge: 24 * 60 * 60, swr: true }
+    { maxAge: 24 * 60 * 60, swr: false }
   )
   let AllPlayedChamps = await AllPlayedChampsFunction(MatchHistory)
   const AllPlayedChampsFiltered = AllPlayedChamps ? AllPlayedChamps.filter((champ): champ is number => !!champ) : [1]

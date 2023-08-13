@@ -5,5 +5,5 @@ export default cachedEventHandler(
     const players = await getPlayersWithLive()
     return players.sort((a, b) => (b.Account[0].LPC ?? 0) - (a.Account[0].LPC ?? 0))
   },
-  { maxAge: 10 * 60, swr: true }
+  { maxAge: 10 * 60, swr: false }
 )
