@@ -6,6 +6,8 @@ const AllTiers = ref([...new Set(players.value?.map(player => player.Account.at(
 watch(players, newPlayers => {
   AllTiers.value = [...new Set(newPlayers?.map(player => player.Account.at(0)?.tier))]
 })
+
+console.log(AllTiers.value)
 </script>
 <template>
   <div class="flex flex-col rounded-lg bg-[#22262b5a] p-2">
@@ -30,7 +32,7 @@ watch(players, newPlayers => {
               <div class="flex flex-col justify-center">
                 <img
                   class="m-auto h-[50px] w-[90px] object-cover"
-                  :src="`img/emblems/Emblem_${player.Account[0].tier ?? 'IRON'}.png`"
+                  :src="`img/new_emblems/${player.Account[0].tier ?? 'IRON'}.png`"
                   alt=""
                 />
                 <p class="text-md text-center font-semibold leading-none">
@@ -52,31 +54,27 @@ watch(players, newPlayers => {
 }
 
 .DIAMOND {
-  background: #7f7fd5;
-  background: -webkit-linear-gradient(
-    to right,
-    rgba(145, 234, 228, 0.3),
-    rgba(134, 168, 231, 0.3),
-    rgba(127, 127, 213, 0.3)
-  );
-  background: linear-gradient(to right, rgba(145, 234, 228, 0.3), rgba(134, 168, 231, 0.3), rgba(127, 127, 213, 0.3));
+  background: #262e61;
+  background: linear-gradient(to right, rgb(38,46,97), rgb(78,121,211,0.8));
 }
 
 .PLATINUM {
   background: #348f50;
-  background: -webkit-linear-gradient(to right, rgba(86, 180, 211, 0.3), rgba(52, 143, 80, 0.3));
-  background: linear-gradient(to right, rgba(86, 180, 211, 0.3), rgba(52, 143, 80, 0.3));
+  background: linear-gradient(to right, rgb(19,59,75), rgb(32,109,148, 0.8));
+}
+
+.EMERALD {
+  background: #348f50;
+  background: linear-gradient(to right, rgb(17, 61, 46), rgba(31,100,70));
 }
 
 .GOLD {
 background: #ffd700;
-background: -webkit-linear-gradient(to right, rgba(255, 215, 0, 0.3), rgba(218, 165, 32, 0.3));
-background: linear-gradient(to right, rgba(255, 215, 0, 0.3), rgba(218, 165, 32, 0.3));
+background: linear-gradient(to right, rgb(87,59,32), rgb(197,141,88,0.7));
 }
 
 .SILVER {
   background: #bbd2c5;
-  background: -webkit-linear-gradient(to right, rgba(83, 105, 118, 0.3), rgba(187, 210, 197, 0.3));
-  background: linear-gradient(to right, rgba(83, 105, 118, 0.3), rgba(187, 210, 197, 0.3));
+  background: linear-gradient(to right, rgba(83, 105, 118, 0.3), rgb(84,100,110));
 }
 </style>

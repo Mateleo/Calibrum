@@ -26,13 +26,16 @@ const props = defineProps<Props>()
 function LPCtoString(LPC: number) {
   let rank = ""
   let tier = ""
-  if (LPC > 2400) {
+  if (LPC > 2800) {
     tier = "MASTER"
     rank = "I"
-    LPC -= 2400
+    LPC -= 2800
     return `${LPC}LP`
-  } else if (LPC > 2000) {
+  } else if (LPC >= 2400) {
     tier = "DIAMOND"
+    LPC -= 2400
+  } else if (LPC > 2000) {
+    tier = "EMERALD"
     LPC -= 2000
   } else if (LPC >= 1600) {
     tier = "PLATINUM"

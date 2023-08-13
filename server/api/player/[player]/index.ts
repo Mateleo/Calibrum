@@ -26,7 +26,7 @@ export default cachedEventHandler(async event => {
   player.isLive = await getPlayerLiveGame(player?.discordId) ? true : false
   
   const accounts = await getAccountsByPlayer(player.discordId)
-  player.mostPlayedChamp = accounts.length>0 ? await getMostPlayedChampByAccount(accounts[0].puuid ?? "test", accounts[0].name) : undefined
+  // player.mostPlayedChamp = accounts.length>0 ? await getMostPlayedChampByAccount(accounts[0].puuid ?? "test", accounts[0].name) : undefined
 
   const accountsWithLpUpdates = await Promise.all(
     accounts.map(async account => {
