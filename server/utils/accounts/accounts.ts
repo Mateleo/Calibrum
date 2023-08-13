@@ -6,38 +6,41 @@ import { number } from "zod"
 
 // Low level functions
 
-export function getAccountByName(name: string) {
+export function getAccountByName(name: string, config?: Prisma.AccountFindFirstArgs) {
   return prisma.account.findFirst({
     where: {
       name: {
         equals: name,
         mode: "insensitive"
       }
-    }
+    },
+    ...config
   })
 }
 
-export function getAccountById(id: string) {
+export function getAccountById(id: string, config?: Prisma.AccountFindUniqueArgs) {
   return prisma.account.findUnique({
     where: {
       id
-    }
+    },
+    ...config
   })
 }
 
-export function getAccountsByPlayer(discordId: string) {
+export function getAccountsByPlayer(discordId: string, config?: Prisma.AccountFindManyArgs) {
   return prisma.account.findMany({
     where: {
       playerDiscordId: discordId
     },
     orderBy: {
       LPC: "desc"
-    }
+    },
+    ...config
   })
 }
 
-export function getAccounts() {
-  return prisma.account.findMany()
+export function getAccounts(config?: Prisma.AccountFindManyArgs) {
+  return prisma.account.findMany(config)
 }
 
 export function createAccount(account: Prisma.AccountCreateInput) {
