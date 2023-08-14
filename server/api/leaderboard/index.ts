@@ -1,8 +1,9 @@
-import { Account, Player } from "@prisma/client"
-import { getPlayers } from "~/server/utils/players/players"
+import { getPlayers, getPlayersWithLive } from "~/server/utils/players/players"
 
-export default defineEventHandler(async (_event) => {
-  const players = await getPlayers()
-
-  return players.sort((a, b) => (b.Account[0].LPC ?? 0) - (a.Account[0].LPC ?? 0))
-})
+export default cachedEventHandler(
+  async _event => {
+    const players = await getPlayersWithLive()
+    return players.sort((a, b) => (b.Account[0].LPC ?? 0) - (a.Account[0].LPC ?? 0))
+  },
+  { maxAge: 2*60, swr: false }
+)

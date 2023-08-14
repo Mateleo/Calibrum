@@ -5,9 +5,10 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "nuxt-icon",
     "@nuxt/image-edge",
-    'nuxt-scheduler',
-    '@nuxtjs/eslint-module'
+    "nuxt-scheduler",
+    "nuxt-og-image"
   ],
+
   googleFonts: {
     families: {
       Inter: {
@@ -15,13 +16,35 @@ export default defineNuxtConfig({
       }
     }
   },
+
   runtimeConfig: {
     RIOT_API_KEY: process.env.NUXT_RIOT_API_KEY
   },
+
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
-      title: "Calibrum ☄"
+      title: "Calibrum 🌠"
     }
-  }
+  },
+
+  ogImage: {
+    runtimeBrowser: true,
+    siteUrl: "https://dev.calibrum.4esport.fr",
+    runtimeCacheStorage: {
+      driver: "fs",
+      base: "./cache/db"
+    }
+  },
+
+  nitro: {
+    node: true
+  },
+
+  devtools: {
+    enabled: true
+  },
+  typescript: {
+    shim: false
+  },
 })

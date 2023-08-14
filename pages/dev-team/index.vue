@@ -1,10 +1,8 @@
-<script lang=ts setup></script>
+<script lang="ts" setup></script>
 <template>
-    <div class="flex justify-evenly my-12 gap-12 px-12">
-        <CommonInnerTitleSection title="Dev Team" class="flex-grow h-min">
-            <div class="h-[500px]">
-                Yes
-            </div>
-        </CommonInnerTitleSection>
-    </div>
+  <div class="my-12 flex justify-evenly gap-12 px-12">
+    <CommonInnerTitleSection title="Dev Team" class="h-min flex-grow">
+      <div class="h-[500px]">Yes</div>
+    </CommonInnerTitleSection>
+  </div>
 </template>

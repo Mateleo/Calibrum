@@ -1,9 +1,9 @@
-export default defineEventHandler(async (event) => {
-    const accounts = await getAccounts()
+export default defineEventHandler(async event => {
+  const accounts = await getAccounts()
 
-    for (const account of accounts) {
-        await fetchAccountData(account.id)
-    }
+  for (const account of accounts) {
+    await fetchAccountData(account.id)
+  }
 
-    return { response: "accounts updated" }
+  return { response: "accounts updated" }
 })
