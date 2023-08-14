@@ -123,3 +123,24 @@ export async function getLast10Games() {
     })
   )
 }
+
+export function getPlayersAlpha() {
+  return prisma.player.findMany({
+    where: {
+      Account: {
+        some: {}
+      }
+    },
+    include: {
+      Account: {
+        orderBy: {
+          LPC: "desc"
+        },
+        take: 1
+      }
+    },
+    orderBy: {
+      name: "asc"
+    }
+  })
+}

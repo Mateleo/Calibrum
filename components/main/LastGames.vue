@@ -15,7 +15,7 @@ const {data:lastGames} = await useLazyFetch("/api/lastgames")
         :class="index == lastGames?.length ?? 1 - 1 ? ['border-b-0'] : ''"
       >
         <div>
-          <NuxtLink :to="`/player/${game.name}`" class="font-semibold text-lg hover:text-cyan-400 transition-colors ease-in-out">{{
+          <NuxtLink :to="`/player/${game.player.name}`" class="font-semibold text-lg hover:text-cyan-400 transition-colors ease-in-out">{{
             game.name
           }}</NuxtLink>
           <p class="text-white/40 text-sm">

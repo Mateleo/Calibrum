@@ -21,6 +21,13 @@ export function getAccountById(id: string) {
   return prisma.account.findUnique({
     where: {
       id
+    },
+    include:{
+      player:{
+        select:{
+          name:true
+        }
+      }
     }
   })
 }
