@@ -4,7 +4,7 @@ const players = (await useFetch("/api/potd")).data
 
 `
 <template>
-  <CommonInnerTitleSection title="Players of the day" class="w-[500px]">
+  <CommonInnerTitleSection title="Players of the day" class="">
     <div class="flex justify-evenly font-semibold">
       <div class="text-center flex flex-col items-center gap-3">
         {{ players?.worstPlayer.account === "Mateleo" ? "Matelow" : players?.worstPlayer.account }}

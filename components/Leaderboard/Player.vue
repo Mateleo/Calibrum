@@ -1,19 +1,18 @@
 <script lang="ts" setup>
 interface Props {
   name: string
-  isLive:boolean
+  isLive: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
   name: "Undefined",
   isLive: false
 })
-
 </script>
 <template>
   <NuxtLink
     :to="`/player/${name}`"
-    class="flex w-[170px] text-lg font-semibold transition-colors ease-in-out hover:text-cyan-400"
+    class="flex w-[100px] text-base md:text-lg font-semibold transition-colors ease-in-out hover:text-cyan-400 md:w-[170px]"
   >
     {{ name
     }}<span class="relative flex h-2 w-2" v-if="isLive">

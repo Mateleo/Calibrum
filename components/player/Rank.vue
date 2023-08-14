@@ -32,7 +32,7 @@ const { title, losses, wins, lpUpdate } = toRefs(props)
         <Transition name="fade">
           <div class="flex items-center justify-between" :key="lpUpdate.date.toString()">
             <NuxtImg
-              :src="`img/new_emblems/${lpUpdate.tier ?? 'IRON'}.png`"
+              :src="`img/new_emblems/${lpUpdate.tier.toLocaleLowerCase() ?? 'iron'}.png`"
               class="h-[112px] w-[155px] object-cover opacity-60"
             ></NuxtImg>
             <div class="flex w-[140px] flex-col justify-center p-4 text-right text-sm leading-4">

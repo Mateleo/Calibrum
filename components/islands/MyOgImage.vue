@@ -44,7 +44,7 @@ const url = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data
       </div>
       <div class="mt-2 flex flex-col items-center justify-center">
         <NuxtImg
-          :src="`img/new_emblems/${props.account.tier ?? 'IRON'}.png`"
+          :src="`img/new_emblems/${props.account.tier?.toLocaleLowerCase() ?? 'iron'}.png`"
           class="h-[115px] shadow-sm"
         ></NuxtImg>
         <h2 class="mt-1 text-xl text-white/80">{{ props.account.tier }} {{ props.account.rank }}</h2>

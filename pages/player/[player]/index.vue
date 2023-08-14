@@ -19,16 +19,6 @@ useSeoMeta({
   themeColor: "#0ea5e9",
   ogUrl: () => `https://dev.calibrum.4esport.fr/player/${route.params.player}`
 })
-
-defineOgImageScreenshot({
-  component: "MyOgImage",
-  width: 400,
-  height: 200,
-  account: player.value?.accounts.at(0),
-  name: player.value?.name,
-  role: player.value?.role,
-  championId: player.value?.mostPlayedChamp,
-})
 </script>
 
 <template>

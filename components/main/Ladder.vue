@@ -32,7 +32,7 @@ console.log(AllTiers.value)
               <div class="flex flex-col justify-center">
                 <img
                   class="m-auto h-[50px] w-[90px] object-cover"
-                  :src="`img/new_emblems/${player.Account[0].tier ?? 'IRON'}.png`"
+                  :src="`img/new_emblems/${player.Account[0].tier?.toLocaleLowerCase() ?? 'iron'}.png`"
                   alt=""
                 />
                 <p class="text-md text-center font-semibold leading-none">
