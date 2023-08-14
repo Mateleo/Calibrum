@@ -25,9 +25,6 @@ dependencies:
   fuse.js:
     specifier: ^6.6.2
     version: 6.6.2
-  playwright:
-    specifier: ^1.34.1
-    version: 1.34.1
   vue-chartjs:
     specifier: ^5.2.0
     version: 5.2.0(chart.js@4.3.0)(vue@3.3.2)
@@ -5850,15 +5847,7 @@ packages:
     resolution: {integrity: sha512-4Y5hGLoSrnB/BXj2NFKBNWP/bI9uVejTVbso1ZBtkKZ+O2KiVIeCJ3R4c7Cf2PbP7htjLolHXY+mImt2IWOlEg==}
     engines: {node: '>=14'}
     hasBin: true
-
-  /playwright@1.34.1:
-    resolution: {integrity: sha512-RonTwQifzkCZHsjZKYUKsOJkQAVe1HArnyLcSRrkyDxN46Ytpwki5XzQFdpuv0XD8WtAjs4gI3oMYJiEj5Qo6g==}
-    engines: {node: '>=14'}
-    hasBin: true
-    requiresBuild: true
-    dependencies:
-      playwright-core: 1.34.1
-    dev: false
+    dev: true
 
   /portfinder@1.0.32:
     resolution: {integrity: sha512-on2ZJVVDXRADWE6jnQaX0ioEylzgBpQk8r55NE4wjXW1ZxO+BgDlY6DXwj20i0V8eB4SenDQ00WEaxfiIQPcxg==}
