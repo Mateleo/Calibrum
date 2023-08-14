@@ -78,7 +78,7 @@ exec(`git rev-list --tags --skip=1 --max-count=1`, (error, commitCurentVersion, 
             .filter(e => e != undefined)
 
           let changelog = `# Calibrum\n\n# 🚀 Calibrum ${NextVersion.trim()} is here! 🥳`
-
+          
           const gitLogOutputFormatedFlat = gitLogOutputFormated.flat(1)
           const features = gitLogOutputFormatedFlat.filter(e => e.type === "feat")
           if (features.length > 0) {
