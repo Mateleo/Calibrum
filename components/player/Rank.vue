@@ -28,7 +28,7 @@ const { title, losses, wins, lpUpdate } = toRefs(props)
 <template>
   <div>
     <CommonTitleSection :title="title" :padding="false">
-      <div class="h-[105px] w-[300px] overflow-hidden">
+      <div class="h-[105px] overflow-hidden">
         <Transition name="fade">
           <div class="flex items-center justify-between" :key="lpUpdate.date.toString()">
             <NuxtImg

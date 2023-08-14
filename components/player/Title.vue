@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 </script>
 <template>
-  <CommonSection class="flex w-[300px] shrink-0 flex-col items-center gap-2 rounded-lg">
+  <CommonSection class="flex md:w-[300px] shrink-0 flex-col items-center gap-2 rounded-lg">
     <PlayerProfileIcon :profile-icon="props.profileIcon">
       <template #left>
         <NuxtImg :src="`img/positions/${props.role}.svg`" class="w-[50%]" />
