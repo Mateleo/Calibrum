@@ -8,7 +8,7 @@ useHead({
     },
     { property: "og:type", content: "website" },
     { property: "og:url", content: "https://calibrum.4esport.fr/" },
-    { property: "og:title", content: "Phoenix Development" },
+    { property: "og:title", content: "Calibrum 🌠" },
     {
       property: "og:description",
       content: "Calibrum : La nouvelle référence pour les joueurs LoL de 4eSport."
