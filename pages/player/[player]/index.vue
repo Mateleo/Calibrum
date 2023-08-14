@@ -47,5 +47,8 @@ useSeoMeta({
         <PlayerAccount :account="player.accounts.at(selectedAccount)!" />
       </div>
     </div>
+    <div v-else class="flex justify-center mt-12">
+      <p class="font-bold text-3xl text-white/80">Oops, this player wasn't found !</p>
+    </div>
   </div>
 </template>
