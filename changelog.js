@@ -59,7 +59,12 @@ exec(`git rev-list --tags --skip=1 --max-count=1`, (error, commitCurentVersion, 
                 e = e.trim()
                 const commitType = e.split("(").length > 1 ? e.split("(")[0] : e.split(":")[0]
                 const commitScope = e.split("(")[1] ? e.split("(")[1].toString().split(")")[0] : undefined
-                const commitContent = e.split(":")[1].toString().trim()
+                let commitContent = "undefined"
+                try {
+                  commitContent = e.split(":")[1].toString().trim();
+                } catch (error) {
+                  console.log(`Error on commit ${commitId}, bypassed`);
+                }
                 return {
                   id: commitId,
                   author: commitAuthor,
