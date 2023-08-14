@@ -17,7 +17,7 @@ useSeoMeta({
   ogDescription: `Learn more about ${route.params.player} stats on Calibrum 🌠 by 4eSport.`,
   twitterCard: "summary_large_image",
   themeColor: "#0ea5e9",
-  ogUrl: () => `https://dev.calibrum.4esport.fr/player/${route.params.player}`
+  ogUrl: () => `https://calibrum.4esport.fr/player/${route.params.player}`
 })
 </script>
 
