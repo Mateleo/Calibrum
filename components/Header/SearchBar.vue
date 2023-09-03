@@ -20,7 +20,6 @@ function fuzzySearch() {
   results.value = fuse.search(search.value).map(item => item.item)
 }
 
-console.log(search.value)
 </script>
 
 <template>
