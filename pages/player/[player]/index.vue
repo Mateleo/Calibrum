@@ -11,14 +11,15 @@ const {
   data: player
 } = await useFetch<PlayerWithAccountsReponse>(`/api/player/${route.params.player}`)
 
-defineOgImage({
+defineOgImageScreenshot({
   component:"MyOgImage",
   name:player.value?.name,
   account:player.value?.accounts[0],
   role:player.value?.role,
   height:315,
   width:600,
-  provider:"browser"
+  provider:"browser",
+  cache:false
 })
 
 
