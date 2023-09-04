@@ -2,7 +2,7 @@
   "name": "nuxt-app",
   "private": true,
   "scripts": {
-    "build": "npx playwright install --with-deps && nuxt build",
+    "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -27,7 +27,6 @@
     "dayjs": "^1.11.9",
     "emoji-regex": "^10.2.1",
     "fuse.js": "^6.6.2",
-    "playwright": "^1.37.1",
     "vue-chartjs": "^5.2.0",
     "zod": "^3.22.2"
   }

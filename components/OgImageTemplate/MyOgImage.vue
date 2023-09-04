@@ -37,23 +37,13 @@ const url = ref(
     :style="[
       {
         background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(${url})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundSize: '600px 100%',
+        backgroundRepeat: 'no-repeat'
       },
     ]"
   >
-    <div class="h-full w-full flex justify-center gap-28 backdrop-blur-[2px]">
+    <div class="h-full w-full flex justify-center">
       <div class="flex flex-col items-center justify-center">
-        <PlayerProfileIcon :profile-icon="props.account.profileIcon" class="">
-          <template #left>
-            <NuxtImg :src="`img/positions/${props.role}.svg`" class="w-[50%]" />
-          </template>
-          <template #right>
-            <p class="text-sky-100">
-              {{ props.account.sumonerLvl }}
-            </p>
-          </template>
-        </PlayerProfileIcon>
         <h1
           class="mt-2 text-white/90"
           :class="props.name.length < 8 ? 'text-3xl' : 'text-xl'"
@@ -62,12 +52,12 @@ const url = ref(
         </h1>
       </div>
       <div class="mb-6 flex flex-col items-center justify-center">
-        <NuxtImg
-          :src="`img/new_emblems/${
+        <img
+          :src="`/img/new_emblems/${
             props.account.tier?.toLocaleLowerCase() ?? 'iron'
           }.png`"
-          class="h-[115px] shadow-sm"
-        ></NuxtImg>
+          class="w-[100px] h-[100px] shadow-sm"
+        />
         <h2 class="mt-1 text-xl text-white">
           {{ props.account.tier }} {{ props.account.rank }}
         </h2>

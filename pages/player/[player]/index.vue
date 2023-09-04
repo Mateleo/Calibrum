@@ -11,28 +11,27 @@ const {
   data: player
 } = await useFetch<PlayerWithAccountsReponse>(`/api/player/${route.params.player}`)
 
-defineOgImageScreenshot({
+defineOgImage({
   component:"MyOgImage",
   name:player.value?.name,
   account:player.value?.accounts[0],
   role:player.value?.role,
   height:315,
   width:600,
-  provider:"browser",
-  cache:false
+  cache:false,
 })
 
 
 
 useSeoMeta({
-  title:()=> `${route.params.player}`,
-  ogTitle:()=> `${route.params.player}`,
-  description:()=> `Learn more about ${route.params.player} stats on Calibrum 🌠 by 4eSport.`,
-  ogDescription:()=> `Learn more about ${route.params.player} stats on Calibrum 🌠 by 4eSport.`,
+  title:()=> `${player.value?.name}`,
+  ogTitle:()=> `${player.value?.name}`,
+  description:()=> `Learn more about ${player.value?.name} stats on Calibrum 🌠 by 4eSport.`,
+  ogDescription:()=> `Learn more about ${player.value?.name} stats on Calibrum 🌠 by 4eSport.`,
   twitterCard: "summary_large_image",
   themeColor: "#0ea5e9",
   ogUrl: () => `https://calibrum.4esport.fr/player/${route.params.player}`,
-  ogImageUrl:()=>`https://calibrum.4esport.fr/player/${route.params.player}/__og_image__/og.png`
+  ogImageUrl:()=>`https://calibrum.4esport.fr/player/${player.value?.name}/__og_image__/og.png`
 })
 </script>
 
