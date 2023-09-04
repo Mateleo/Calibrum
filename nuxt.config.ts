@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts", "nuxt-icon", "@nuxt/image-edge", "nuxt-scheduler"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts", "nuxt-icon", "@nuxt/image-edge", "nuxt-scheduler", 'nuxt-og-image'],
 
   googleFonts: {
     families: {

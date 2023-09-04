@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import MyOgImage from "~/components/islands/MyOgImage.vue";
 import { PlayerWithAccountsReponse } from "~/utils/types"
 
 const route = useRoute()
@@ -10,11 +11,23 @@ const {
   error,
   data: player
 } = await useFetch<PlayerWithAccountsReponse>(`/api/player/${route.params.player}`)
+
+defineOgImage({
+  component:"MyOgImage",
+  name:player.value?.name,
+  account:player.value?.accounts[0],
+  role:player.value?.role,
+  height:630,
+  width:1200
+})
+
+
+
 useSeoMeta({
-  title: `${route.params.player}`,
-  ogTitle: `${route.params.player}`,
-  description: `Learn more about ${route.params.player} stats on Calibrum 🌠 by 4eSport.`,
-  ogDescription: `Learn more about ${route.params.player} stats on Calibrum 🌠 by 4eSport.`,
+  title:()=> `${route.params.player}`,
+  ogTitle:()=> `${route.params.player}`,
+  description:()=> `Learn more about ${route.params.player} stats on Calibrum 🌠 by 4eSport.`,
+  ogDescription:()=> `Learn more about ${route.params.player} stats on Calibrum 🌠 by 4eSport.`,
   twitterCard: "summary_large_image",
   themeColor: "#0ea5e9",
   ogUrl: () => `https://calibrum.4esport.fr/player/${route.params.player}`
