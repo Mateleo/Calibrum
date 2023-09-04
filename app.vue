@@ -1,32 +1,22 @@
 <script lang="ts" setup>
-useHead({
+useServerSeoMeta({
   title: "Calibrum 🌠",
-  meta: [
-    {
-      name: "description",
-      content: "Calibrum : La nouvelle référence pour les joueurs LoL de 4eSport."
-    },
-    { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://calibrum.4esport.fr/" },
-    { property: "og:title", content: "Calibrum 🌠" },
-    {
-      property: "og:description",
-      content: "Calibrum : La nouvelle référence pour les joueurs LoL de 4eSport."
-    },
-    { name: "twitter:title", content: "Calibrum 🌠" },
-    {
-      name: "twitter:description",
-      content: "Calibrum : La nouvelle référence pour les joueurs LoL de 4eSport."
-    }
-  ],
-  link: [
-    {
-      rel: "icon",
-      type: "image/png",
-      href: "/favicon.ico"
-    }
-  ]
-})
+  twitterTitle:"Calibrum 🌠",
+  ogTitle: "Calibrum 🌠",
+  description: "Calibrum : La nouvelle référence pour les joueurs LoL de 4eSport.",
+  ogDescription: "Calibrum : La nouvelle référence pour les joueurs LoL de 4eSport.",
+  twitterDescription: "Calibrum : La nouvelle référence pour les joueurs LoL de 4eSport.",
+  themeColor: "#f65e28",
+  ogType: "website",
+  ogUrl: "https://calibrum.4esport.fr",
+  ogLocale: "fr_FR",
+  msapplicationTileColor:"#f65e28",
+  author:"Mateleo",
+  ogSiteName:"Calibrum 🌠",
+  twitterSite:"Calibrum 🌠",
+  twitterCreator:"Mateleo",
+  appleMobileWebAppTitle:"Calibrum 🌠",
+});
 </script>
 <template>
   <div>

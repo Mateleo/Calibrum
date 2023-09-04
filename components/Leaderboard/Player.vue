@@ -2,14 +2,19 @@
 interface Props {
   name: string
   isLive: boolean
+  mainAccountId?:string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   name: "Undefined",
   isLive: false
 })
+
+const {data:badges} = useLazyFetch(`/api/badges/${props.mainAccountId}`)
+
 </script>
 <template>
+  <div>
   <NuxtLink
     :to="`/player/${name}`"
     class="flex w-[100px] text-base md:text-lg font-semibold transition-colors ease-in-out hover:text-cyan-400 md:w-[170px]"
@@ -20,4 +25,8 @@ const props = withDefaults(defineProps<Props>(), {
       <span class="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span>
     </span>
   </NuxtLink>
+  <div>
+    {{ badges }}
+  </div>
+</div>
 </template>

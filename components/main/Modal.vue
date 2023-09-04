@@ -16,6 +16,7 @@ onBeforeMount(() => {
 </script>
 <template>
   <div>
+    <ClientOnly>
     <button
       v-if="visible"
       @click="hideButton"
@@ -25,5 +26,6 @@ onBeforeMount(() => {
       bienvenue, alors n'hésitez pas à vous incrire via notre bot (4eS Amidala) sur le Discord de l'association <a class="underline" href="https://discord.gg/YsA7Md2">ici</a>.
       <p class="italic text-sm">@Turdyo & @Mateleo</p>
     </button>
+  </ClientOnly>
   </div>
 </template>
