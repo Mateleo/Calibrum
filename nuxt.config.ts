@@ -1,13 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/google-fonts",
-    "nuxt-icon",
-    "@nuxt/image-edge",
-    "nuxt-scheduler",
-    "nuxt-og-image"
-  ],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts", "nuxt-icon", "@nuxt/image-edge", "nuxt-scheduler"],
 
   googleFonts: {
     families: {
@@ -24,8 +17,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
-      title: "Calibrum 🌠",
-      
+      title: "Calibrum 🌠"
     }
   },
 
@@ -46,10 +38,10 @@ export default defineNuxtConfig({
     enabled: true,
 
     timeline: {
-      enabled: true,
-    },
+      enabled: true
+    }
   },
   typescript: {
     shim: false
-  },
+  }
 })
