@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<Props>(), {
   isLive: false
 })
 
-const {data:badges} = useLazyFetch(`/api/badges/${props.mainAccountId}`)
+const {data:badges} = await useLazyFetch(`/api/badges/${props.mainAccountId}`)
 
 </script>
 <template>
@@ -26,7 +26,9 @@ const {data:badges} = useLazyFetch(`/api/badges/${props.mainAccountId}`)
     </span>
   </NuxtLink>
   <div>
-    {{ badges }}
+    <div v-for="icon in badges" :title="icon.message" class="cursor-pointer">
+    {{ icon.icon.repeat(icon.count)}}
+    </div>
   </div>
 </div>
 </template>

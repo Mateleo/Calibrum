@@ -55,26 +55,36 @@ export function isDodge(LPC: number, diff: number) {
 
 export function getLastXUpdates(amount: number) {
   return prisma.lpUpdate.findMany({
-    orderBy: { 
+    orderBy: {
       date: "desc"
     },
     take: amount
   })
 }
 
-export function computeStreak(arr:number[]) {
-  let currentStreak = 0;
+export function computeStreak(arr: number[]) {
+  let currentStreak = 0
   //@ts-ignore
   let side = arr.at(-1) > 0 ? 0 : -1000000
   for (let i = arr.length - 1; i >= 0; i--) {
-    if (arr[i] > side && (side<0 ? arr[i]<0 : "")) {
+    if (arr[i] > side && (side < 0 ? arr[i] < 0 : "")) {
       // Positive value, increment current streak
-      currentStreak++;
+      currentStreak++
     } else {
       // Zero value, reset streak
       break
     }
+  }
+  return { win: side == -1000000 ? 0 : 1, currentStreak: currentStreak }
 }
-return {win:side==-1000000 ? 0 : 1, currentStreak:currentStreak};
 
+export async function getGamesCountByAccountByDay(accountId: string, days: number) {
+  return await prisma.account.findUnique({
+    where: {
+      id: accountId
+    },
+    include: {
+      _count: true
+    }
+  })
 }

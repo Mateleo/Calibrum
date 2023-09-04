@@ -124,8 +124,8 @@ export async function getLast10Games() {
   )
 }
 
-export function getPlayersAlpha() {
-  return prisma.player.findMany({
+export async function getPlayersAlpha() {
+  return await prisma.player.findMany({
     where: {
       Account: {
         some: {}

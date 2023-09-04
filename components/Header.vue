@@ -17,12 +17,12 @@
       </div>
       <HeaderSearchBar class=""></HeaderSearchBar>
       <nav class="px-4 text-white/80 md:ml-auto md:text-white/95 lg:col-span-3 mt-2">
-        <NuxtLink
+        <!-- <NuxtLink
           to="/live-games"
           class="text-xs sm:text-base flex grow items-center whitespace-nowrap border-b-[4px] border-transparent pt-[6px] font-semibold transition-colors ease-in hover:border-cyan-300"
         >
           LIVE GAMES (WIP)
-        </NuxtLink>
+        </NuxtLink> -->
       </nav>
     </div>
   </header>

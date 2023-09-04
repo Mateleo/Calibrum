@@ -1,23 +1,43 @@
 <script setup lang="ts">
-const players = (await useFetch("/api/potd")).data
+const {data:players} = await useLazyFetch("/api/potd")
 </script>
-
-`
 <template>
   <CommonInnerTitleSection title="Players of the day" class="">
     <div class="flex justify-evenly font-semibold">
       <div class="text-center flex flex-col items-center gap-3">
-        {{ players?.worstPlayer.account === "Mateleo" ? "Matelow" : players?.worstPlayer.account }}
-        <img class="w-20 rounded-full" :src="players?.worstPlayer.profileIcon" />
-        <div class="px-2 bg-red-500 rounded-lg">
-          - {{ players?.worstPlayer.gains.toString().substring(1) }}
+        {{players?.bestPlayer.account }}
+        <img class="w-20 rounded-lg" :src="players?.bestPlayer.profileIcon" />
+        <div
+          class="rounded-full py-1 w-[60px] text-center font-semibold text-sm shadow-sm shadow-green-900 transition-colors ease-in-out cursor-pointer"
+          :class="
+            players?.bestPlayer.gains.toString()[0] != '-'
+              ? [
+                  'bg-green-500 shadow-green-900 hover:bg-green-800 border-2 hover:border-green-500 border-transparent',
+                ]
+              : [
+                  'bg-red-500 shadow-red-900 hover:bg-red-800 border-2 hover:border-red-400 border-transparent',
+                ]
+          "
+        >
+          +{{players?.bestPlayer.gains}} LP
         </div>
       </div>
       <div class="text-center flex flex-col items-center gap-3">
-        {{ players?.bestPlayer.account }}
-        <img class="w-20 rounded-full" :src="players?.bestPlayer.profileIcon" />
-        <div class="px-2 bg-green-500 rounded-lg">
-          + {{ players?.bestPlayer.gains }}
+        {{players?.worstPlayer.account }}
+        <img class="w-20 rounded-lg" :src="players?.worstPlayer.profileIcon" />
+        <div
+          class="rounded-full py-1 w-[60px] text-center font-semibold text-sm shadow-sm shadow-green-900 transition-colors ease-in-out cursor-pointer"
+          :class="
+            players?.worstPlayer.gains.toString()[0] != '-'
+              ? [
+                  'bg-green-500 shadow-green-900 hover:bg-green-800 border-2 hover:border-green-500 border-transparent',
+                ]
+              : [
+                  'bg-red-500 shadow-red-900 hover:bg-red-800 border-2 hover:border-red-400 border-transparent',
+                ]
+          "
+        >
+          {{players?.worstPlayer.gains}} LP
         </div>
       </div>
     </div>

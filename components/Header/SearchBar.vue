@@ -8,7 +8,7 @@ let results = ref<
       Account: Account[]
     })[]
 >([])
-const { pending, error, data: players } = useLazyFetch("/api/search")
+const { pending, error, data: players } = await useFetch("/api/search")
 
 const options = {
   includeScore: true,
@@ -30,7 +30,7 @@ function fuzzySearch() {
     >
       <div class="flex items-center">
         <input
-          @keyup.enter="search.length > 0 ? (navigateTo(`/player/${results.at(0)?.name}`), (search = '', results=[])) : ''"
+          @keyup.enter="results.length > 0 ? (navigateTo(`/player/${results.at(0)?.name}`), (search = '', results=[])) : ''"
           @focusout="search = '', results=[]"
           @input="fuzzySearch"
           v-model="search"
@@ -47,7 +47,7 @@ function fuzzySearch() {
         >
           <div class="flex items-center py-2">
             <img class="mr-5 hidden w-[50px] rounded-lg sm:block" :src="player.Account[0].profileIcon" alt="" />
-            <LeaderboardPlayer :name="player.name"></LeaderboardPlayer>
+            <LeaderboardPlayer :name="player.name" :is-live="false"></LeaderboardPlayer>
           </div>
           <div class="flex max-w-[300px] grow items-center justify-end">
             <!-- <div class="flex flex-col justify-center">

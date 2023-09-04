@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header></Header>
+    <LazyHeader></LazyHeader>
     <main class="pb-[50px]">
       <slot />
     </main>

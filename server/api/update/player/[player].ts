@@ -8,7 +8,7 @@ export default defineEventHandler(async event => {
     })
   }
 
-  const player = await getPlayerByName(params.player)
+  const player = await getPlayerByName(decodeURI(params.player))
 
   if (!player) {
     throw createError({

@@ -9,7 +9,7 @@ const {
   pending,
   error,
   data: player
-} = await useLazyFetch<PlayerWithAccountsReponse>(`/api/player/${route.params.player}`)
+} = await useFetch<PlayerWithAccountsReponse>(`/api/player/${route.params.player}`)
 useSeoMeta({
   title: `${route.params.player}`,
   ogTitle: `${route.params.player}`,
