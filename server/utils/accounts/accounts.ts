@@ -191,7 +191,7 @@ export async function getMostPlayedChampByAccount(puuid: string, accountName: st
 
 function getProfileIconUrl(profileIconId: number) {
   return profileIconId == 4089
-    ? "https://calibrum.4esport/img/00018-76184365.png"
+    ? "https://calibrum.4esport.fr/img/00018-76184365.png"
     : `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${profileIconId}.jpg`;
 }
 

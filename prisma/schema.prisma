@@ -41,7 +41,7 @@ model LpUpdate {
   id             String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   date           DateTime
   LPC            Int
-  tier           Tier
+  tier           Tier @default(SILVER)
   rank           Rank
   LP             Int
   lastUpdateDiff Int
