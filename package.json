@@ -17,7 +17,6 @@
     "nuxt-icon": "^0.5.0",
     "nuxt-og-image": "^2.0.24",
     "nuxt-scheduler": "0.0.16",
-    "playwright": "^1.37.1",
     "prisma": "^5.2.0"
   },
   "dependencies": {
@@ -28,6 +27,7 @@
     "dayjs": "^1.11.9",
     "emoji-regex": "^10.2.1",
     "fuse.js": "^6.6.2",
+    "playwright": "^1.37.1",
     "vue-chartjs": "^5.2.0",
     "zod": "^3.22.2"
   }
