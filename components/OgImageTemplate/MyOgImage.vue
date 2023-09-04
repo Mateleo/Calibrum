@@ -33,16 +33,16 @@ const url = ref(
 
 <template>
   <div
-    class="relative z-20 h-[315px] w-[600px] text-white"
+    class="relative h-[315px] w-[600px] text-white"
     :style="[
       {
-        background: `linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(${url})`,
+        background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(${url})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       },
     ]"
   >
-    <div class="grid h-full w-full grid-cols-2 gap-8 backdrop-blur-[2px]">
+    <div class="h-full w-full flex justify-center gap-28 backdrop-blur-[2px]">
       <div class="flex flex-col items-center justify-center">
         <PlayerProfileIcon :profile-icon="props.account.profileIcon" class="">
           <template #left>
@@ -68,7 +68,7 @@ const url = ref(
           }.png`"
           class="h-[115px] shadow-sm"
         ></NuxtImg>
-        <h2 class="mt-1 text-xl text-white/80">
+        <h2 class="mt-1 text-xl text-white">
           {{ props.account.tier }} {{ props.account.rank }}
         </h2>
       </div>

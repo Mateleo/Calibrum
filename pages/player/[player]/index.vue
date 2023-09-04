@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import MyOgImage from "~/components/islands/MyOgImage.vue";
 import { PlayerWithAccountsReponse } from "~/utils/types"
 
 const route = useRoute()
@@ -18,7 +17,8 @@ defineOgImage({
   account:player.value?.accounts[0],
   role:player.value?.role,
   height:315,
-  width:600
+  width:600,
+  provider:"browser"
 })
 
 
@@ -30,7 +30,8 @@ useSeoMeta({
   ogDescription:()=> `Learn more about ${route.params.player} stats on Calibrum 🌠 by 4eSport.`,
   twitterCard: "summary_large_image",
   themeColor: "#0ea5e9",
-  ogUrl: () => `https://calibrum.4esport.fr/player/${route.params.player}`
+  ogUrl: () => `https://calibrum.4esport.fr/player/${route.params.player}`,
+  ogImageUrl:()=>`https://calibrum.4esport.fr/player/${route.params.player}/__og_image__/og.png`
 })
 </script>
 
