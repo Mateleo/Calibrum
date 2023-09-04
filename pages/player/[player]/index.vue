@@ -17,8 +17,8 @@ defineOgImage({
   name:player.value?.name,
   account:player.value?.accounts[0],
   role:player.value?.role,
-  height:630,
-  width:1200
+  height:315,
+  width:600
 })
 
 
