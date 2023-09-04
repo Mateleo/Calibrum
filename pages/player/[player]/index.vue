@@ -19,6 +19,7 @@ defineOgImage({
   height:315,
   width:600,
   cache:false,
+  cacheTtl:100
 })
 
 
