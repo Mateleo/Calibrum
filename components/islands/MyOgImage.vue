@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { Account, Role } from "@prisma/client";
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 interface Props {
   account?: Pick<Account, "tier" | "rank" | "profileIcon" | "sumonerLvl" | "LP">;
   role?: Role;
