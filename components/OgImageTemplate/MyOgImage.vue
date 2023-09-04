@@ -23,7 +23,7 @@ const props = withDefaults(defineProps<Props>(), {
   }),
   role: "mid",
   name: "Undefined",
-  championId: 202,
+  championId: 101,
 });
 
 const url = ref(
