@@ -14,8 +14,8 @@ watch(players, (newPlayers) => {
     <h2 class="mb-2 text-xl font-semibold text-[#08bcd5]">Ladder</h2>
     <div v-for="tier in AllTiers" :key="tier?.toString()">
       <div>
-        <div class="flex justify-center rounded-lg p-2" :class="tier">
-          <h2 class="font-semibold text-white/90">{{ tier }}</h2>
+        <div class="flex justify-center rounded-lg p-2" :class="tier ?? 'UNRANKED'">
+          <h2 class="font-semibold text-white/90">{{ tier ?? "UNRANKED" }}</h2>
         </div>
         <div class="p-2 px-0 text-white/80 md:px-5">
           <div
@@ -98,4 +98,10 @@ watch(players, (newPlayers) => {
   background: #bbd2c5;
   background: linear-gradient(to right, rgba(83, 105, 118, 0.3), rgb(84, 100, 110));
 }
+
+.UNRANKED {
+  background: #bbd2c5;
+  background: linear-gradient(to right, rgba(83, 105, 118, 0.3), rgb(84, 100, 110));
+}
+
 </style>
