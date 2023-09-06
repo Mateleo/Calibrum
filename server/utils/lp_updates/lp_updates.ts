@@ -79,12 +79,24 @@ export function computeStreak(arr: number[]) {
 }
 
 export async function getGamesCountByAccountByDay(accountId: string, days: number) {
+  const last24hours = new Date().setHours(new Date().getHours()-24)
   return await prisma.account.findUnique({
-    where: {
-      id: accountId
+    where:{
+      id:accountId,
     },
-    include: {
-      _count: true
-    }
+    select:{
+      _count:{
+        select:{
+          LpUpdate:{
+            where:{
+              date:{
+                gte: dayjs().subtract(22, 'hours').toDate(),
+                lt:  dayjs().add(2, 'hours').toDate()
+              }
+            }
+          }
+        }
+      }
+    },
   })
 }
