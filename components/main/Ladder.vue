@@ -99,9 +99,10 @@ console.log(players.value)
 }
 
 .BRONZE {
-  background: #c59b7a;
-  background: linear-gradient(to right, rgba(83, 105, 118, 0.3), rgb(84, 100, 110));
+  background: #B87333; /* Solid Copper Color */
+  background: linear-gradient(to right, rgba(183, 115, 51, 0.4), rgba(209, 109, 15, 0.603)); /* Gradient */
 }
+
 
 
 .UNRANKED {
