@@ -5,7 +5,7 @@ const {data:players} = await useLazyFetch("/api/potd")
   <CommonInnerTitleSection title="Players of the day" class="">
     <div class="flex justify-evenly font-semibold">
       <div class="text-center flex flex-col items-center gap-2 justify-center">
-        <p>{{players?.bestPlayer.account }}</p>
+        <NuxtLink :to="`/player/${players?.bestPlayer.player}`" class="hover:text-sky-500 transition-all ease-in">{{players?.bestPlayer.player}}</NuxtLink>
         <img class="w-[70px] rounded-lg" :src="players?.bestPlayer.profileIcon" />
         <div
           class="rounded-full py-1 w-[60px] text-center font-semibold text-sm shadow-sm shadow-green-900 transition-colors ease-in-out cursor-pointer"
@@ -23,7 +23,7 @@ const {data:players} = await useLazyFetch("/api/potd")
         </div>
       </div>
       <div class="text-center flex flex-col items-center gap-2 justify-center">
-        <p>{{players?.worstPlayer.account }}</p>
+        <NuxtLink :to="`/player/${players?.bestPlayer.player}`" class="hover:text-sky-500 transition-all ease-in">{{players?.bestPlayer.player}}</NuxtLink>
         <img class="w-[70px] rounded-lg" :src="players?.worstPlayer.profileIcon" />
         <div
           class="rounded-full py-1 w-[60px] text-center font-semibold text-sm shadow-sm shadow-green-900 transition-colors ease-in-out cursor-pointer"

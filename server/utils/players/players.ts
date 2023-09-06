@@ -94,12 +94,20 @@ export async function getPlayerLiveGame(discordId: string) {
 }
 
 export async function getPlayersOfTheDay() {
-  const accounts = await getAccounts()
+  const accounts = await prisma.account.findMany({
+    include: {
+      player: {
+        select: {
+          name: true
+        }
+      }
+    }
+  })
 
   const accountsGain = await Promise.all(
     accounts.map(async account => ({
       gains: await get24hGains(account.id),
-      account: account.name,
+      player: account.player.name,
       profileIcon: account.profileIcon
     }))
   )
