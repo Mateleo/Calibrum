@@ -11,16 +11,16 @@ const {
   data: player
 } = await useFetch<PlayerWithAccountsReponse>(`/api/player/${route.params.player}`)
 
-defineOgImage({
-  component:"MyOgImage",
-  name:player.value?.name,
-  account:player.value?.accounts[0],
-  role:player.value?.role,
-  height:315,
-  width:600,
-  cache:false,
-  cacheTtl:100
-})
+// defineOgImage({
+//   component:"MyOgImage",
+//   name:player.value?.name,
+//   account:player.value?.accounts[0],
+//   role:player.value?.role,
+//   height:315,
+//   width:600,
+//   cache:false,
+//   cacheTtl:100
+// })
 
 
 
@@ -32,7 +32,6 @@ useSeoMeta({
   twitterCard: "summary_large_image",
   themeColor: "#0ea5e9",
   ogUrl: () => `https://calibrum.4esport.fr/player/${route.params.player}`,
-  ogImageUrl:()=>`https://calibrum.4esport.fr/player/${player.value?.name}/__og_image__/og.png`
 })
 </script>
 
