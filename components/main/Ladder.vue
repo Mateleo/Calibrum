@@ -98,10 +98,17 @@ console.log(players.value)
   background: linear-gradient(to right, rgb(87, 59, 32), rgb(197, 141, 88, 0.7));
 }
 
+.SILVER {
+  background: #bbd2c5;
+  background: linear-gradient(to right, rgba(83, 105, 118, 0.3), rgb(84, 100, 110));
+}
+
+
 .BRONZE {
   background: #B87333; /* Solid Copper Color */
   background: linear-gradient(to right, rgba(183, 115, 51, 0.4), rgba(209, 109, 15, 0.603)); /* Gradient */
 }
+
 
 
 
