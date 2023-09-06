@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 <template>
   <header class="sticky top-0 z-10 h-[64px] gap-4 bg-[#22262b] py-2 shadow-lg shadow-black/30 md:gap-8">
-    <div class="m-auto flex max-w-[2000px] justify-between md:grid md:grid-cols-3 lg:grid-cols-10">
-      <div class="hidden sm:block lg:col-span-3">
+    <div class="m-auto flex justify-center max-w-[2000px] md:grid md:grid-cols-3 lg:grid-cols-10">
+      <div class="hidden md:block lg:col-span-3">
         <NuxtLink
           to="/"
           class="flex items-center border-r-[1px] border-gray-500/50 px-2 pr-4 md:border-transparent md:px-4"
