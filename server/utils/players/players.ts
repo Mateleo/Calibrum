@@ -58,12 +58,14 @@ export function getPlayerByDiscordId(discordId: string) {
 }
 
 export function createPlayer(player: Prisma.PlayerCreateInput) {
+  player.name = decodeURI(player.name)
   return prisma.player.create({
     data: player
   })
 }
 
 export function updatePlayer(player: Prisma.PlayerUpdateInput) {
+  player.name = decodeURI(player.name as string)
   return prisma.player.update({
     where: {
       discordId: player.discordId as string
