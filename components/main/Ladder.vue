@@ -8,6 +8,9 @@ const AllTiers = ref([
 watch(players, (newPlayers) => {
   AllTiers.value = [...new Set(newPlayers?.map((player) => player.Account.at(0)?.tier))];
 });
+
+console.log(players.value)
+
 </script>
 <template>
   <div class="flex flex-col rounded-lg bg-[#22262b5a] p-2">
@@ -33,6 +36,7 @@ watch(players, (newPlayers) => {
                 :name="player.name"
                 :is-live="player.isLive"
                 :main-account-id="player.Account[0].id"
+                :unranked="player.Account.at(0)?.rank==null ? true : false"
               ></LeaderboardPlayer>
             </div>
             <div

@@ -3,11 +3,13 @@ interface Props {
   name: string
   isLive: boolean
   mainAccountId?:string
+  unranked:boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
   name: "Undefined",
-  isLive: false
+  isLive: false,
+  unranked:false
 })
 
 const {data:badges} = await useLazyFetch(`/api/badges/${props.mainAccountId}`)
@@ -17,6 +19,7 @@ const {data:badges} = await useLazyFetch(`/api/badges/${props.mainAccountId}`)
   <div>
   <NuxtLink
     :to="`/player/${name}`"
+    :class="unranked ? 'pointer-events-none' : ''"
     class="flex w-[100px] text-base md:text-lg font-semibold transition-colors ease-in-out hover:text-cyan-400 md:w-[170px]"
   >
     {{ name
