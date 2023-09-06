@@ -9,10 +9,13 @@ const {data:lastGames} = await useLazyFetch("/api/lastgames")
 
 <template>
   <CommonInnerTitleSection title="Last Games">
+    <div v-if="lastGames?.length === 0">
+        No latest updates
+    </div>
     <div
-        v-for="(game, index) in lastGames"
-        class="border-b-2 border-gray-900 flex flex-nowrap justify-between px-3 my-2 items-center pb-2"
-        :class="index == lastGames?.length ?? 1 - 1 ? ['border-b-0'] : ''"
+        v-else
+        v-for="(game) in lastGames"
+        class="border-b-2 border-gray-900 flex flex-nowrap justify-between px-3 my-2 items-center pb-2 last:border-b-0 last:pb-0"
       >
         <div>
           <NuxtLink :to="`/player/${game.player.name}`" class="font-semibold text-lg hover:text-cyan-400 transition-colors ease-in-out">{{

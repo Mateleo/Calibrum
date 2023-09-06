@@ -55,6 +55,11 @@ export function isDodge(LPC: number, diff: number) {
 
 export function getLastXUpdates(amount: number) {
   return prisma.lpUpdate.findMany({
+    where: {
+      lastUpdateDiff: {
+        not: 0
+      }
+    },
     orderBy: {
       date: "desc"
     },
