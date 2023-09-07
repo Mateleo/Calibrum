@@ -45,7 +45,7 @@ export default defineEventHandler(async (event) => {
     badges.push({
       icon: "🚿",
       count: Math.floor(gamesCount?._count.LpUpdate / 6),
-      message: `A joué ${gamesCount._count} games dans la journée`,
+      message: `A joué ${gamesCount._count.LpUpdate} games dans la journée`,
     });
   }
   return badges;
