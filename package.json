@@ -9,22 +9,22 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^0.8.2",
+    "@nuxt/devtools": "^0.8.5",
     "@nuxt/image-edge": "1.0.0-rc.1-28224985.8423773",
     "@nuxtjs/google-fonts": "^3.0.2",
-    "@types/node": "^20.5.9",
-    "nuxt": "^3.7.0",
+    "@types/node": "^20.8.2",
+    "nuxt": "^3.7.4",
     "nuxt-icon": "^0.5.0",
-    "nuxt-og-image": "^2.0.24",
+    "nuxt-og-image": "^2.0.28",
     "nuxt-scheduler": "0.0.16",
-    "prisma": "^5.2.0"
+    "prisma": "^5.3.1"
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@prisma/client": "5.2.0",
-    "axios": "^1.5.0",
+    "axios": "^1.5.1",
     "chart.js": "^4.4.0",
-    "dayjs": "^1.11.9",
+    "dayjs": "^1.11.10",
     "emoji-regex": "^10.2.1",
     "fuse.js": "^6.6.2",
     "vue-chartjs": "^5.2.0",

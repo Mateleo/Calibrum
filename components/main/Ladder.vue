@@ -9,7 +9,6 @@ watch(players, (newPlayers) => {
   AllTiers.value = [...new Set(newPlayers?.map((player) => player.Account.at(0)?.tier))];
 });
 
-console.log(players.value)
 
 </script>
 <template>

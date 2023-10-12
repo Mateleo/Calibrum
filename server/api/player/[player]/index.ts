@@ -37,7 +37,7 @@ export default defineEventHandler(async event => {
         const { id, accountId, ...lpupdateReponse } = lpupdate
         return lpupdateReponse
       })
-      const { id, playerDiscordId, ...accountWithoutDiscordId } = account
+      const {playerDiscordId, ...accountWithoutDiscordId } = account
       return {
         ...accountWithoutDiscordId,
         lpUpdates

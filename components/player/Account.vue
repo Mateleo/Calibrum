@@ -16,6 +16,7 @@ const { account } = toRefs(props)
         :title="'Current Rank'"
         :wins="account.wins ?? 0"
         :losses="account.losses ?? 0"
+        :player="account.name"
       />
       <PlayerRank
         :lpUpdate="

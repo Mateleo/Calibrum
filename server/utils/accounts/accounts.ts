@@ -178,7 +178,6 @@ export async function getMostPlayedChampByAccount(puuid: string, accountName: st
   const AllPlayedChampsFiltered = AllPlayedChamps
     ? AllPlayedChamps.filter((champ): champ is number => !!champ)
     : [1];
-  console.log(AllPlayedChampsFiltered);
   // find the most played champs in the array
   return AllPlayedChampsFiltered.sort(
     (a, b) =>
