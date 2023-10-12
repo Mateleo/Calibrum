@@ -12,7 +12,6 @@ const {
   data: player,
 } = await useFetch<PlayerWithAccountsReponse>(`/api/player/${route.params.player}`);
 
-console.log(player.value);
 
 const { data: prediction, refresh } = await useLazyFetch(()=>
   `/api/AI/LPC/${player.value?.accounts[selectedAccount.value].id}`,{
