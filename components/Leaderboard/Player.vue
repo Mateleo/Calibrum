@@ -1,19 +1,18 @@
 <script lang="ts" setup>
 interface Props {
-  name: string
-  isLive: boolean
-  mainAccountId?:string
-  unranked:boolean
+  name: string;
+  isLive: boolean;
+  mainAccountId?: string;
+  unranked: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   name: "Undefined",
   isLive: false,
-  unranked:false
-})
+  unranked: false,
+});
 
-const {data:badges} = await useLazyFetch(`/api/badges/${props.mainAccountId}`)
-
+const { data: badges } = await useLazyFetch(`/api/badges/${props.mainAccountId}`);
 </script>
 <template>
   <div>
