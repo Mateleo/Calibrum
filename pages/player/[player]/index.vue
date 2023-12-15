@@ -76,7 +76,10 @@ useServerSeoMeta({
         </PlayerTitle>
         <CommonSection class="hidden md:flex h-full flex-col gap-2 rounded-lg">
           <h2 class="text-center font-semibold">CalibrumML</h2>
-          <div
+          <div v-if="route.params.player==='Jiah'" class="text-center">
+            D1 soon 🐶
+          </div>
+          <div v-else
             class="flex gap-1 items-center justify-center"
             title="prediction in the hour to come."
           >
