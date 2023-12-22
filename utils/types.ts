@@ -6,7 +6,7 @@ export type PlayerWithAccountsReponse = PlayerResponse & {
 
 export type PlayerResponse = Omit<Player, "discordId"> & { isLive?: boolean; mostPlayedChamp?: boolean }
 
-export type AccountReponse = Omit<Account, "id" | "playerDiscordId">
+export type AccountReponse = Omit<Account, "playerDiscordId">
 
 export type LpUpdateResponse = Omit<LpUpdate, "id" | "accountId">
 

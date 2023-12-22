@@ -1,19 +1,25 @@
 <script lang="ts" setup>
 interface Props {
-  name: string
-  isLive:boolean
+  name: string;
+  isLive: boolean;
+  mainAccountId?: string;
+  unranked: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   name: "Undefined",
-  isLive: false
-})
+  isLive: false,
+  unranked: false,
+});
 
+const { data: badges } = await useLazyFetch(`/api/badges/${props.mainAccountId}`);
 </script>
 <template>
+  <div>
   <NuxtLink
     :to="`/player/${name}`"
-    class="flex w-[170px] text-lg font-semibold transition-colors ease-in-out hover:text-cyan-400"
+    :class="unranked ? 'pointer-events-none' : ''"
+    class="flex w-[100px] text-base md:text-lg font-semibold transition-colors ease-in-out hover:text-cyan-400 md:w-[170px]"
   >
     {{ name
     }}<span class="relative flex h-2 w-2" v-if="isLive">
@@ -21,4 +27,10 @@ const props = withDefaults(defineProps<Props>(), {
       <span class="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span>
     </span>
   </NuxtLink>
+  <div>
+    <div v-for="icon in badges" :title="icon.message" class="cursor-pointer">
+    {{ icon.icon.repeat(icon.count)}}
+    </div>
+  </div>
+</div>
 </template>

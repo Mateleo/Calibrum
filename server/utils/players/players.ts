@@ -58,12 +58,14 @@ export function getPlayerByDiscordId(discordId: string) {
 }
 
 export function createPlayer(player: Prisma.PlayerCreateInput) {
+  player.name = decodeURI(player.name)
   return prisma.player.create({
     data: player
   })
 }
 
 export function updatePlayer(player: Prisma.PlayerUpdateInput) {
+  player.name = decodeURI(player.name as string)
   return prisma.player.update({
     where: {
       discordId: player.discordId as string
@@ -94,12 +96,20 @@ export async function getPlayerLiveGame(discordId: string) {
 }
 
 export async function getPlayersOfTheDay() {
-  const accounts = await getAccounts()
+  const accounts = await prisma.account.findMany({
+    include: {
+      player: {
+        select: {
+          name: true
+        }
+      }
+    }
+  })
 
   const accountsGain = await Promise.all(
     accounts.map(async account => ({
       gains: await get24hGains(account.id),
-      account: account.name,
+      player: account.player.name,
       profileIcon: account.profileIcon
     }))
   )
@@ -124,8 +134,8 @@ export async function getLast10Games() {
   )
 }
 
-export function getPlayersAlpha() {
-  return prisma.player.findMany({
+export async function getPlayersAlpha() {
+  return await prisma.player.findMany({
     where: {
       Account: {
         some: {}

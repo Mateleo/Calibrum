@@ -1,13 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/google-fonts",
-    "nuxt-icon",
-    "@nuxt/image-edge",
-    "nuxt-scheduler",
-    "nuxt-og-image"
-  ],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts", "nuxt-icon", "@nuxt/image-edge", "nuxt-scheduler", 'nuxt-og-image'],
 
   googleFonts: {
     families: {
@@ -28,23 +21,27 @@ export default defineNuxtConfig({
     }
   },
 
-  ogImage: {
-    runtimeBrowser: true,
-    siteUrl: "https://dev.calibrum.4esport.fr",
-    runtimeCacheStorage: {
-      driver: "fs",
-      base: "./cache/db"
-    }
-  },
+  // ogImage: {
+  //   runtimeBrowser: true,
+  //   siteUrl: "https://calibrum.4esport.fr",
+  //   runtimeCacheStorage: {
+  //     driver: "fs",
+  //     base: "./cache/db"
+  //   }
+  // },
 
   nitro: {
     node: true
   },
 
   devtools: {
-    enabled: true
+    enabled: true,
+
+    timeline: {
+      enabled: true
+    }
   },
   typescript: {
     shim: false
-  },
+  }
 })

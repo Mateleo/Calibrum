@@ -1,3 +1,4 @@
+import { access } from "fs"
 import { z } from "zod"
 
 const RegisterBodySchema = z.object({
@@ -16,7 +17,12 @@ export default defineEventHandler(async event => {
   } catch (error) {
     return { error: "incorrect data type" }
   }
-
+  player.accounts = player.accounts
+    .flatMap(account => {
+      return account.split(",")
+    })
+    .map(acc => decodeURI(acc).replace(/\s/g, ""))
+  console.log(player)
   const registeredPlayer = await registerOrUpdatePlayer(player)
 
   const registeredAccounts = []

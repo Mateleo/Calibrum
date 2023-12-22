@@ -1,7 +1,7 @@
 import { Player } from "@prisma/client"
 import { getMostPlayedChampByAccount } from "~/server/utils/accounts/accounts"
 
-export default cachedEventHandler(async event => {
+export default defineEventHandler(async event => {
   const params = event.context.params
 
   if (!params) {
@@ -11,10 +11,12 @@ export default cachedEventHandler(async event => {
     })
   }
 
-  let player: (Player & {
-    isLive?: boolean
-    mostPlayedChamp?: number
-  } | null) = await getPlayerByName(params.player)
+  let player:
+    | (Player & {
+        isLive?: boolean
+        mostPlayedChamp?: number
+      })
+    | null = await getPlayerByName(decodeURI(params.player))
 
   if (!player) {
     throw createError({
@@ -23,8 +25,8 @@ export default cachedEventHandler(async event => {
     })
   }
 
-  player.isLive = await getPlayerLiveGame(player?.discordId) ? true : false
-  
+  player.isLive = (await getPlayerLiveGame(player?.discordId)) ? true : false
+
   const accounts = await getAccountsByPlayer(player.discordId)
   // player.mostPlayedChamp = accounts.length>0 ? await getMostPlayedChampByAccount(accounts[0].puuid ?? "test", accounts[0].name) : undefined
 
@@ -35,7 +37,7 @@ export default cachedEventHandler(async event => {
         const { id, accountId, ...lpupdateReponse } = lpupdate
         return lpupdateReponse
       })
-      const { id, playerDiscordId, ...accountWithoutDiscordId } = account
+      const {playerDiscordId, ...accountWithoutDiscordId } = account
       return {
         ...accountWithoutDiscordId,
         lpUpdates
@@ -43,11 +45,10 @@ export default cachedEventHandler(async event => {
     })
   )
 
-
-  const {discordId, ...playerWithoutDiscordId } = player
+  const { discordId, ...playerWithoutDiscordId } = player
 
   return {
     ...playerWithoutDiscordId,
     accounts: accountsWithLpUpdates
   }
-}, { maxAge: 2*60, swr: false })
+})

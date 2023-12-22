@@ -1,11 +1,12 @@
 <script lang="ts" setup></script>
 <template>
-  <footer class="absolute bottom-0 w-full">
+  <footer class="absolute bottom-0 w-full" v-once>
     <div class="flex justify-between px-6 pb-2 text-xs text-white/50">
       <div class="flex gap-2">
-        <NuxtLink to="/faq" class="transition-all ease-in hover:text-white">FAQ</NuxtLink>
+        <!-- <NuxtLink to="/faq" class="transition-all ease-in hover:text-white">FAQ</NuxtLink>
         <NuxtLink to="/dev-team" class="transition-all ease-in hover:text-white">DevTeam</NuxtLink>
-        <!-- <NuxtLink to="/" class="hover:text-white transition-all ease-in">Terms of services</NuxtLink> -->
+        <NuxtLink to="/" class="hover:text-white transition-all ease-in">Terms of services</NuxtLink> -->
+        <p>Made by Turdyo & <a href="https://mateo-siam.com" target="_blank" class="underline">Mateleo</a></p>
       </div>
       <!-- <div>Copyright © 2023 4eSport Tous droits réservés.</div> -->
       <div class="flex gap-6">

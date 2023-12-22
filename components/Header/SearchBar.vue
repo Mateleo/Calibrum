@@ -8,7 +8,7 @@ let results = ref<
       Account: Account[]
     })[]
 >([])
-const { pending, error, data: players } = useLazyFetch("/api/search")
+const { pending, error, data: players } = await useFetch("/api/search")
 
 const options = {
   includeScore: true,
@@ -20,18 +20,17 @@ function fuzzySearch() {
   results.value = fuse.search(search.value).map(item => item.item)
 }
 
-console.log(search.value)
 </script>
 
 <template>
-  <div class="col-span-4 flex flex-col items-center">
+  <div class="lg:col-span-4 flex flex-col items-center">
     <div
       class="w-full max-w-[500px] rounded-lg border-2 border-gray-600 p-2 focus-within:border-2 focus-within:border-sky-400 focus-within:shadow-lg focus-within:shadow-black/40 focus-within:outline-none"
       :class="results.length > 0 ? 'bg-[#22262b]/70 shadow-md shadow-black/60 backdrop-blur-[6px]' : ''"
     >
       <div class="flex items-center">
         <input
-          @keyup.enter="search.length > 0 ? (navigateTo(`/player/${results.at(0)?.name}`), (search = '')) : ''"
+          @keyup.enter="results.length > 0 ? (navigateTo(`/player/${results.at(0)?.name}`), (search = '', results=[])) : ''"
           @focusout="search = '', results=[]"
           @input="fuzzySearch"
           v-model="search"
@@ -48,7 +47,7 @@ console.log(search.value)
         >
           <div class="flex items-center py-2">
             <img class="mr-5 hidden w-[50px] rounded-lg sm:block" :src="player.Account[0].profileIcon" alt="" />
-            <LeaderboardPlayer :name="player.name"></LeaderboardPlayer>
+            <LeaderboardPlayer :name="player.name" :is-live="false"></LeaderboardPlayer>
           </div>
           <div class="flex max-w-[300px] grow items-center justify-end">
             <!-- <div class="flex flex-col justify-center">

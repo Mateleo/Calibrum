@@ -16,13 +16,13 @@ const props = withDefaults(defineProps<Props>(), {
     />
     <div
       v-if="$slots.left"
-      class="absolute -bottom-[1px] right-16 flex h-10 w-10 items-center justify-center rounded-full border-2 border-teal-400 bg-blue-950 text-xs font-extrabold"
+      class="absolute -bottom-[1px] right-16 flex h-10 w-10 items-center justify-center rounded-full border-2 border-teal-400 bg-blue-900 text-xs font-extrabold"
     >
       <slot name="left"></slot>
     </div>
     <div
       v-if="$slots.right"
-      class="absolute -bottom-[1px] left-16 flex h-10 w-10 items-center justify-center rounded-full border-2 border-teal-400 bg-blue-950 text-xs font-extrabold"
+      class="absolute -bottom-[1px] left-16 flex h-10 w-10 items-center justify-center rounded-full border-2 border-teal-400 bg-blue-900 text-xs font-extrabold"
     >
       <slot name="right"></slot>
     </div>

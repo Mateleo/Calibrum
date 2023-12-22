@@ -9,13 +9,14 @@ const props = defineProps<AccountProps>()
 const { account } = toRefs(props)
 </script>
 <template>
-  <div class="mt-4 flex gap-8">
+  <div class="mt-4 flex flex-col md:flex-row gap-8">
     <div class="flex shrink-0 flex-col">
       <PlayerRank
         :lpUpdate="account.lpUpdates.at(0)"
         :title="'Current Rank'"
         :wins="account.wins ?? 0"
         :losses="account.losses ?? 0"
+        :player="account.name"
       />
       <PlayerRank
         :lpUpdate="
@@ -30,7 +31,7 @@ const { account } = toRefs(props)
       />
     </div>
     <div class="flex w-full flex-col">
-      <CommonTitleSection title="Rank History" class="h-full">
+      <CommonTitleSection title="Rank History" class="md:h-full h-[250px]">
         <LazyPlayerGraph :lp-updates="[...account.lpUpdates].reverse()" />
       </CommonTitleSection>
     </div>

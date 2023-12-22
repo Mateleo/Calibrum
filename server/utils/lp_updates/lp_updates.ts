@@ -55,9 +55,58 @@ export function isDodge(LPC: number, diff: number) {
 
 export function getLastXUpdates(amount: number) {
   return prisma.lpUpdate.findMany({
-    orderBy: { 
+    where: {
+      lastUpdateDiff: {
+        not: 0
+      }
+    },
+    orderBy: {
       date: "desc"
     },
     take: amount
+  })
+}
+
+export function computeStreak(arr: number[]) {
+  let currentStreak = 0
+  //@ts-ignore
+  let side = arr.at(-1) > 0 ? 0 : -1000000
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] > side && arr[i] != 0) {
+      if (side != 0 && arr[i] < 0) {
+        currentStreak++
+      } else if (side == 0 && arr[i] > 0) {
+        currentStreak++
+      } else {
+        break
+      }
+    }
+    else{
+      break
+    }
+  }
+  return { win: side == -1000000 ? 0 : 1, currentStreak: currentStreak }
+}
+
+export async function getGamesCountByAccountByDay(accountId: string, days: number) {
+  const last24hours = new Date().setHours(new Date().getHours()-24)
+  return await prisma.account.findUnique({
+    where:{
+      id:accountId,
+    },
+    select:{
+      _count:{
+        select:{
+          LpUpdate:{
+            where:{
+              date:{
+                gte: dayjs().subtract(22, 'hours').toDate(),
+                lt:  dayjs().add(2, 'hours').toDate()
+              }
+            }
+          }
+        }
+      }
+    },
   })
 }

@@ -1,5 +1,5 @@
 import { getPlayersAlpha } from "~/server/utils/players/players"
 
-export default defineEventHandler(event => {
-  return getPlayersAlpha()
+export default defineEventHandler(async event => {
+  return await getPlayersAlpha()
 })
