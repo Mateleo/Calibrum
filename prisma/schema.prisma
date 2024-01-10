@@ -11,7 +11,7 @@ datasource db {
 }
 
 model Player {
-  discordId String   @id
+  discordId String @id
   name      String
   role      Role
 
@@ -19,7 +19,7 @@ model Player {
 }
 
 model Account {
-  id          String @id
+  id          String  @id
   puuid       String?
   name        String
   sumonerLvl  Int
@@ -32,16 +32,31 @@ model Account {
   losses Int?  @default(0)
   LPC    Int?  @default(0)
 
-  player          Player     @relation(fields: [playerDiscordId], references: [discordId], onDelete: Cascade)
+  player          Player        @relation(fields: [playerDiscordId], references: [discordId], onDelete: Cascade)
   playerDiscordId String
-  LpUpdate        LpUpdate[]
+  LpUpdate        LpUpdateS14[]
+  LpUpdateOLD        LpUpdate[]
 }
 
 model LpUpdate {
   id             String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   date           DateTime
   LPC            Int
-  tier           Tier @default(SILVER)
+  tier           Tier     @default(SILVER)
+  rank           Rank
+  LP             Int
+  lastUpdateDiff Int
+  isDodge        Boolean?
+
+  account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  accountId String
+}
+
+model LpUpdateS14 {
+  id             String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  date           DateTime
+  LPC            Int
+  tier           Tier     @default(SILVER)
   rank           Rank
   LP             Int
   lastUpdateDiff Int
