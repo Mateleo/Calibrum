@@ -13,7 +13,7 @@ import {
   PointElement,
   scales
 } from "chart.js"
-import { LpUpdateResponse } from "~/utils/types"
+import {type  LpUpdateResponse } from "~/utils/types"
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, PointElement, LineElement)
 

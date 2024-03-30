@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LpUpdate } from "@prisma/client";
+import { type LpUpdate } from "@prisma/client";
 import dayjs from "dayjs";
 
 interface Props {

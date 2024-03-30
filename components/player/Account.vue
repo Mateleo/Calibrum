@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AccountWithLpUpdatesResponse } from "~/utils/types"
+import type { AccountWithLpUpdatesResponse } from "~/utils/types"
 
 export interface AccountProps {
   account: AccountWithLpUpdatesResponse

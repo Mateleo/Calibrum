@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Account, Player } from "@prisma/client"
+import type { Account, Player } from "@prisma/client"
 import Fuse from "fuse.js"
 
 let search = ref("")

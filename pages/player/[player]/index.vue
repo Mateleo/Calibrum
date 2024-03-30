@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import dayjs from "dayjs";
-import { PlayerWithAccountsReponse } from "~/utils/types";
+import { type PlayerWithAccountsReponse } from "~/utils/types";
 
 const route = useRoute();
 
@@ -13,11 +13,10 @@ const {
 } = await useFetch<PlayerWithAccountsReponse>(`/api/player/${route.params.player}`);
 
 
-const { data: prediction, refresh } = await useLazyFetch(()=>
-  `/api/AI/LPC/${player.value?.accounts[selectedAccount.value].id}`,{
-    watch:[selectedAccount]
-  }
-);
+const { data: prediction, refresh } = await useLazyFetch(() =>
+  `/api/AI/LPC/${player.value?.accounts[selectedAccount.value].id}`, {
+  watch: [selectedAccount]
+});
 // defineOgImage({
 //   component:"MyOgImage",
 //   name:player.value?.name,
@@ -40,8 +39,7 @@ useServerSeoMeta({
   twitterDescription: () =>
     `Learn more about ${player.value?.name} stats on Calibrum 🌠 by 4eSport.`,
   ogImage: () =>
-    `https://calibrum.4esport.fr/img/new_emblems/${
-      player.value?.accounts[0].tier?.toLocaleLowerCase() ?? "iron"
+    `https://calibrum.4esport.fr/img/new_emblems/${player.value?.accounts[0].tier?.toLocaleLowerCase() ?? "iron"
     }.png`,
   twitterCard: "summary",
   themeColor: "#0ea5e9",
@@ -63,32 +61,20 @@ useServerSeoMeta({
 
 <template>
   <div>
-    <div
-      v-if="player"
-      class="bg m-auto mt-4 flex flex-col md:flex-row w-[95%] max-w-[2000px] gap-4 md:gap-8 lg:w-[85%] xl:w-[75%]"
-    >
+    <div v-if="player"
+      class="bg m-auto mt-4 flex flex-col md:flex-row w-[95%] max-w-[2000px] gap-4 md:gap-8 lg:w-[85%] xl:w-[75%]">
       <div class="flex flex-col gap-8">
-        <PlayerTitle
-          :role="player.role"
-          :profileIcon="player.accounts.at(0)?.profileIcon"
-        >
+        <PlayerTitle :role="player.role" :profileIcon="player.accounts.at(0)?.profileIcon">
           {{ route.params.player }}
         </PlayerTitle>
         <CommonSection class="hidden md:flex h-full flex-col gap-2 rounded-lg">
           <h2 class="text-center font-semibold">CalibrumML</h2>
-          <div v-if="route.params.player==='Jiah'" class="text-center">
+          <div v-if="route.params.player === 'Jiah'" class="text-center">
             D1 soon 🐶
           </div>
-          <div v-else
-            class="flex gap-1 items-center justify-center"
-            title="prediction in the hour to come."
-          >
+          <div v-else class="flex gap-1 items-center justify-center" title="prediction in the hour to come.">
             <p>{{ Math.round(prediction) }}LP</p>
-            <Icon
-              v-if="prediction < 0"
-              name="ic:baseline-trending-down"
-              color="#f53838"
-            ></Icon>
+            <Icon v-if="prediction < 0" name="ic:baseline-trending-down" color="#f53838"></Icon>
             <Icon v-else name="ic:baseline-trending-up" color="#48f538"></Icon>
           </div>
         </CommonSection>
@@ -97,14 +83,8 @@ useServerSeoMeta({
         <div class="flex flex-col">
           <PlayerNavigation :is-live="player.isLive"></PlayerNavigation>
           <div class="mt-4 text-sm font-light">
-            <PlayerAccounts
-              :accounts="player.accounts"
-              :onAccountChange="
-                (accountIndex) => {
-                  selectedAccount = accountIndex;
-                }
-              "
-            />
+            <PlayerAccounts :accounts="player.accounts"
+              :onAccountChange="(accountIndex) => { selectedAccount = accountIndex; }" />
           </div>
         </div>
         <PlayerAccount :account="player.accounts.at(selectedAccount)!" />

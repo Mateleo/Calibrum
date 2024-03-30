@@ -1,4 +1,4 @@
-import { Account, LpUpdate, Player } from "@prisma/client"
+import type { Account, LpUpdate, Player } from "@prisma/client"
 
 export type PlayerWithAccountsReponse = PlayerResponse & {
   accounts: AccountWithLpUpdatesResponse[]

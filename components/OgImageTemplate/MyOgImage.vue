@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Account, Role } from "@prisma/client";
+import { type Account, Role } from "@prisma/client";
 
 defineOptions({
   inheritAttrs: false,

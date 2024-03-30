@@ -1,4 +1,4 @@
-import { Player } from "@prisma/client"
+import { type Player } from "@prisma/client"
 import { getMostPlayedChampByAccount } from "~/server/utils/accounts/accounts"
 
 export default defineEventHandler(async event => {
@@ -13,9 +13,9 @@ export default defineEventHandler(async event => {
 
   let player:
     | (Player & {
-        isLive?: boolean
-        mostPlayedChamp?: number
-      })
+      isLive?: boolean
+      mostPlayedChamp?: number
+    })
     | null = await getPlayerByName(decodeURI(params.player))
 
   if (!player) {
@@ -37,7 +37,7 @@ export default defineEventHandler(async event => {
         const { id, accountId, ...lpupdateReponse } = lpupdate
         return lpupdateReponse
       })
-      const {playerDiscordId, ...accountWithoutDiscordId } = account
+      const { playerDiscordId, ...accountWithoutDiscordId } = account
       return {
         ...accountWithoutDiscordId,
         lpUpdates

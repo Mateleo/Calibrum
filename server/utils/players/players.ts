@@ -1,5 +1,5 @@
-import { Account, Player, Prisma } from "@prisma/client"
-import { RegisterBody } from "~/server/api/register/index.post"
+import type { Account, Player, Prisma } from "@prisma/client"
+import { type RegisterBody } from "~/server/api/register/index.post"
 import { get24hGains, getLiveGameData } from "../accounts/accounts"
 import shuffle from "../suffle"
 import { getLastXUpdates } from "../lp_updates/lp_updates"

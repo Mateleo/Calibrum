@@ -1,6 +1,6 @@
 import { Rank, Tier } from "@prisma/client"
 import axios from "axios"
-import { Match } from "../interfaces/match"
+import { type Match } from "../interfaces/match"
 
 interface AccountByNameResponse {
   id: string
@@ -71,8 +71,7 @@ export interface LiveGameInfoResponse {
 
 export function fetchAccountByName(name: string) {
   return axios.get<AccountByNameResponse>(
-    `https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${name}?api_key=${
-      useRuntimeConfig().RIOT_API_KEY
+    `https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${name}?api_key=${useRuntimeConfig().RIOT_API_KEY
     }`
   )
 }
@@ -85,24 +84,21 @@ export function fetchRankedInfo(id: string) {
 
 export function fetchLiveGameInfo(id: string) {
   return axios.get<LiveGameInfoResponse>(
-    `https://euw1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/${id}?api_key=${
-      useRuntimeConfig().RIOT_API_KEY
+    `https://euw1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/${id}?api_key=${useRuntimeConfig().RIOT_API_KEY
     }`
   )
 }
 
 export function fetchMatchesHistory(puiid: string) {
   return axios.get<string[]>(
-    `https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${puiid}/ids?start=0&count=100&type=ranked&api_key=${
-      useRuntimeConfig().RIOT_API_KEY
+    `https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${puiid}/ids?start=0&count=100&type=ranked&api_key=${useRuntimeConfig().RIOT_API_KEY
     }`
   )
 }
 
 export function fetchMatchbyId(matchId: string) {
   return axios.get<Match>(
-    `https://europe.api.riotgames.com/lol/match/v5/matches/${matchId}?api_key=${
-      useRuntimeConfig().RIOT_API_KEY
+    `https://europe.api.riotgames.com/lol/match/v5/matches/${matchId}?api_key=${useRuntimeConfig().RIOT_API_KEY
     }`
   )
 }
