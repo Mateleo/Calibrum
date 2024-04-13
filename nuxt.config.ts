@@ -1,24 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts", "nuxt-icon", "@nuxt/image-edge", "nuxt-scheduler", 'nuxt-og-image'],
-
-  googleFonts: {
-    families: {
-      Inter: {
-        wght: [100, 300, 400, 500, 600, 700]
-      }
-    }
-  },
+  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "@nuxt/image-edge", "nuxt-scheduler", "nuxt-og-image", "@nuxt/fonts"],
 
   runtimeConfig: {
-    RIOT_API_KEY: process.env.NUXT_RIOT_API_KEY
+    RIOT_API_KEY: process.env.NUXT_RIOT_API_KEY,
   },
 
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
-      title: "Calibrum 🌠"
-    }
+      title: "Calibrum 🌠",
+    },
   },
 
   // ogImage: {
@@ -31,17 +23,17 @@ export default defineNuxtConfig({
   // },
 
   nitro: {
-    node: true
+    node: true,
   },
 
   devtools: {
     enabled: true,
 
     timeline: {
-      enabled: true
-    }
+      enabled: true,
+    },
   },
   typescript: {
-    shim: false
-  }
-})
+    shim: false,
+  },
+});

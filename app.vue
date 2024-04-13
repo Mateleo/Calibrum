@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-useServerSeoMeta({
+useSeoMeta({
   title: "Calibrum 🌠",
   twitterTitle:"Calibrum 🌠",
   ogTitle: "Calibrum 🌠",
@@ -30,7 +30,7 @@ useServerSeoMeta({
 :root {
   background-color: #12171c;
   color: white;
-  font-family: "Inter";
+  font-family: Poppins;
   color-scheme: dark;
 }
 
