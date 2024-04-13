@@ -1,6 +1,8 @@
 import { Prisma, Rank, Tier } from "@prisma/client";
 import { isAxiosError } from "axios";
 import {
+  fetchAccountByPuuid,
+  fetchAccountPuuidByName,
   fetchLiveGameInfo,
   fetchMatchbyId,
   fetchMatchesHistory,
@@ -37,10 +39,7 @@ export function getAccountById(id: string, config?: Prisma.AccountFindUniqueArgs
   });
 }
 
-export function getAccountsByPlayer(
-  discordId: string,
-  config?: Prisma.AccountFindManyArgs
-) {
+export function getAccountsByPlayer(discordId: string, config?: Prisma.AccountFindManyArgs) {
   return prisma.account.findMany({
     where: {
       playerDiscordId: discordId,
@@ -73,15 +72,14 @@ export function updateAccount(account: Prisma.AccountUpdateInput) {
 
 // High level functions
 
-export async function registerAccount(name: string, discordId: string) {
-  if (await getAccountByName(name)) return;
-
-  const accountData = (await fetchAccountByName(name)).data;
+export async function registerAccount(gameName: string, tagLine: string, discordId: string) {
+  const accountPuuid = await fetchAccountPuuidByName(gameName, tagLine);
+  const accountData = await fetchAccountByPuuid(accountPuuid.data.puuid);
 
   return createAccount({
     id: accountData.id,
     puuid: accountData.puuid,
-    name: accountData.name,
+    name: accountPuuid.data.gameName + "#" + accountPuuid.data.tagLine,
     profileIcon: getProfileIconUrl(accountData.profileIconId),
     sumonerLvl: accountData.summonerLevel,
     player: {
@@ -99,9 +97,8 @@ export async function fetchAccountData(accountId: string) {
 
   if (!rankedInfo) return;
 
-  const newAccountData = (await fetchAccountByName(rankedInfo?.summonerName)).data;
-
-  const oldLPC = (await getAccountById(accountId))?.LPC ?? 0;
+  const userAccount = await getAccountById(accountId);
+  const oldLPC = userAccount?.LPC ?? 0;
   const newLPC = getLPC(rankedInfo.tier, rankedInfo.rank, rankedInfo.leaguePoints);
   const diff = oldLPC !== 0 ? newLPC - oldLPC : 0;
   console.log(oldLPC, newLPC, diff);
@@ -123,11 +120,24 @@ export async function fetchAccountData(accountId: string) {
     });
   }
 
+  if (userAccount?.puuid) {
+    const newUserAccount = await fetchAccountByPuuid(userAccount.puuid);
+
+    return updateAccount({
+      id: accountId,
+      name: newUserAccount.name,
+      profileIcon: getProfileIconUrl(newUserAccount.profileIconId),
+      sumonerLvl: newUserAccount.summonerLevel,
+      wins: rankedInfo.wins,
+      losses: rankedInfo.losses,
+      tier: rankedInfo.tier,
+      rank: rankedInfo.rank,
+      LP: rankedInfo.leaguePoints,
+      LPC: newLPC,
+    });
+  }
   return updateAccount({
     id: accountId,
-    name: rankedInfo.summonerName,
-    profileIcon: getProfileIconUrl(newAccountData.profileIconId),
-    sumonerLvl: newAccountData.summonerLevel,
     wins: rankedInfo.wins,
     losses: rankedInfo.losses,
     tier: rankedInfo.tier,
@@ -163,9 +173,8 @@ export async function getMostPlayedChampByAccount(puuid: string, accountName: st
         MatchHistory.slice(0, 20).map(async (match) => {
           try {
             const MatchData = (await fetchMatchbyId(match)).data;
-            return MatchData.info.participants.find(
-              (participant) => participant.summonerName === accountName
-            )?.championId;
+            return MatchData.info.participants.find((participant) => participant.summonerName === accountName)
+              ?.championId;
           } catch (error) {
             return undefined;
           }
@@ -175,14 +184,11 @@ export async function getMostPlayedChampByAccount(puuid: string, accountName: st
     { maxAge: 24 * 60 * 60, swr: false }
   );
   let AllPlayedChamps = await AllPlayedChampsFunction(MatchHistory);
-  const AllPlayedChampsFiltered = AllPlayedChamps
-    ? AllPlayedChamps.filter((champ): champ is number => !!champ)
-    : [1];
+  const AllPlayedChampsFiltered = AllPlayedChamps ? AllPlayedChamps.filter((champ): champ is number => !!champ) : [1];
   // find the most played champs in the array
   return AllPlayedChampsFiltered.sort(
     (a, b) =>
-      AllPlayedChampsFiltered.filter((v) => v === a).length -
-      AllPlayedChampsFiltered.filter((v) => v === b).length
+      AllPlayedChampsFiltered.filter((v) => v === a).length - AllPlayedChampsFiltered.filter((v) => v === b).length
   ).pop();
 }
 
