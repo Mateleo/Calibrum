@@ -7,7 +7,10 @@ useSeoMeta({
   ogDescription: "Calibrum : La nouvelle référence pour les joueurs LoL de 4eSport.",
   twitterDescription: "Calibrum : La nouvelle référence pour les joueurs LoL de 4eSport.",
   themeColor: "#0EA5E9",
+  ogImage:"https://calibrum.4esport.fr/img/logo.png",
   ogType: "website",
+  twitterCard:"summary",
+  twitterImage:'https://calibrum.4esport.fr/img/logo.png',
   ogUrl: "https://calibrum.4esport.fr",
   ogLocale: "fr_FR",
   msapplicationTileColor:"#0EA5E9",
@@ -17,6 +20,20 @@ useSeoMeta({
   twitterCreator:"Mateleo",
   appleMobileWebAppTitle:"Calibrum 🌠",
 });
+
+useHead({
+  htmlAttrs: {
+    lang: 'en'
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      href: '/favicon.ico'
+    }
+  ]
+})
+
 </script>
 <template>
   <div>
