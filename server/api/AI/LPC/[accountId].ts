@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios";
+import axios, { type AxiosResponse } from "axios";
 export default defineEventHandler(async (event) => {
   const params = event.context.params;
 
@@ -42,6 +42,7 @@ export default defineEventHandler(async (event) => {
     })
     .catch((err) => {
       console.log("ERROR");
+      console.log(err)
       console.log(err.response.data);
     })
     .then((response: any) => {

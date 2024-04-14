@@ -23,7 +23,7 @@ function startScheduler() {
         } catch (error) {
           console.log(`[CRON] [fetchAccountData] ${account.name}`)
           if (axios.isAxiosError(error)) {
-            console.log(error.toJSON())
+            console.log(error.code)
           }
         }
         await new Promise(resolve => setTimeout(resolve, 2000))
