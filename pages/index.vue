@@ -7,6 +7,7 @@
     <div class="flex flex-col gap-4 md:w-[40%]">
       <LazyMainPlayersOfTheDay/>
       <LazyMainLastGames />
+      <LazyMainPredictions />
     </div>
   </div></div>
 </template>

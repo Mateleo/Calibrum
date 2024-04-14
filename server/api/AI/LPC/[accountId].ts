@@ -36,16 +36,16 @@ export default defineEventHandler(async (event) => {
   //   ...lpUpdate,
   //   win: lpUpdate.lastUpdateDiff < 0 ? false : true,
   // }));
-  return await axios
+  return (await axios
     .post("https://calibrumai.4esport.fr/predict", {
       data: lpUpdates,
     })
     .catch((err) => {
       console.log("ERROR");
-      console.log(err)
+      console.log(err);
       console.log(err.response.data);
     })
     .then((response: any) => {
       return response.data.data;
-    });
+    })) as number[];
 });
