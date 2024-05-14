@@ -28,7 +28,8 @@ export default defineEventHandler(async event => {
   const registeredAccounts = []
 
   for (const account of player.accounts) {
-    const registeredAccount = await registerAccount(account, player.discordId)
+    const [name, tag] = account.split('#')
+    const registeredAccount = await registerAccount(name, tag, player.discordId)
     if (registeredAccount) {
       registeredAccounts.push(await fetchAccountData(registeredAccount.id))
     }
