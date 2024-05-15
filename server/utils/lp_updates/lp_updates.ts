@@ -2,7 +2,7 @@ import { Prisma } from "@prisma/client"
 import dayjs from "dayjs"
 
 export function getLpUpdateById(id: string) {
-  return prisma.lpUpdateS14.findUnique({
+  return prisma.lpUpdateS142.findUnique({
     where: {
       id: id
     }
@@ -10,7 +10,7 @@ export function getLpUpdateById(id: string) {
 }
 
 export function getLpUpdateByAccount(accountId: string) {
-  return prisma.lpUpdateS14.findMany({
+  return prisma.lpUpdateS142.findMany({
     where: {
       accountId: accountId
     },
@@ -21,7 +21,7 @@ export function getLpUpdateByAccount(accountId: string) {
 }
 
 export function getLpUpdateByAccountByDay(accountId: string, days: number) {
-  return prisma.lpUpdateS14.findMany({
+  return prisma.lpUpdateS142.findMany({
     where: {
       accountId: accountId,
       date: {
@@ -35,13 +35,13 @@ export function getLpUpdateByAccountByDay(accountId: string, days: number) {
 }
 
 export function createLpUpdate(lpUpdate: Prisma.LpUpdateCreateInput) {
-  return prisma.lpUpdateS14.create({
+  return prisma.lpUpdateS142.create({
     data: lpUpdate
   })
 }
 
 export function updateLpUpdate(lpUpdate: Prisma.LpUpdateUpdateInput) {
-  return prisma.lpUpdateS14.update({
+  return prisma.lpUpdateS142.update({
     where: {
       id: lpUpdate.id as string
     },
@@ -54,7 +54,7 @@ export function isDodge(LPC: number, diff: number) {
 }
 
 export function getLastXUpdates(amount: number) {
-  return prisma.lpUpdateS14.findMany({
+  return prisma.lpUpdateS142.findMany({
     where: {
       lastUpdateDiff: {
         not: 0

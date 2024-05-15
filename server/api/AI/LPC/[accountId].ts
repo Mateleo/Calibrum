@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
       statusMessage: `params not found`,
     });
   }
-  const lpUpdates = await prisma.lpUpdateS14.findMany({
+  const lpUpdates = await prisma.lpUpdateS142.findMany({
     where: {
       accountId: params.accountId,
       AND: {

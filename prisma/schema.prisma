@@ -34,8 +34,9 @@ model Account {
 
   player          Player        @relation(fields: [playerDiscordId], references: [discordId], onDelete: Cascade)
   playerDiscordId String
-  LpUpdate        LpUpdateS14[]
-  LpUpdateOLD        LpUpdate[]
+  LpUpdate        LpUpdateS142[]
+  LpUpdateS14     LpUpdateS14[]
+  LpUpdateOLD     LpUpdate[]
 }
 
 model LpUpdate {
@@ -53,6 +54,20 @@ model LpUpdate {
 }
 
 model LpUpdateS14 {
+  id             String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  date           DateTime
+  LPC            Int
+  tier           Tier     @default(SILVER)
+  rank           Rank
+  LP             Int
+  lastUpdateDiff Int
+  isDodge        Boolean?
+
+  account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  accountId String
+}
+
+model LpUpdateS142 {
   id             String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   date           DateTime
   LPC            Int
