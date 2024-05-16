@@ -46,6 +46,6 @@ export default defineEventHandler(async (event) => {
       console.log(err.response.data);
     })
     .then((response: any) => {
-      return response.data.data;
+      return response?.data?.data ?? []
     })) as number[];
 });
