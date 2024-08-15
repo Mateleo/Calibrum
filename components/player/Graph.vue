@@ -15,12 +15,36 @@ import {
 } from "chart.js";
 import { type LpUpdateResponse } from "~/utils/types";
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, PointElement, LineElement);
+ChartJS.register(
+  Title,
+  Tooltip,
+  Legend,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement
+);
+
+const { data: cutoff } = useFetch("/api/cutoff");
 
 interface Props {
   lpUpdates: (LpUpdateResponse & { prediction: boolean })[];
   prediction: number[];
 }
+
+const rankColors = {
+  IRON: "#3f302c",
+  BRONZE: "#471d12",
+  SILVER: "#54646e",
+  GOLD: "#c58d58",
+  PLATINUM: "#206d94",
+  EMERALD: "#1f6446",
+  DIAMOND: "#4e79d3",
+  MASTER: "#742fb9",
+  GRANDMASTER: "#8a2030",
+  CHALLENGER: "#54d4e6",
+};
 
 const props = defineProps<Props>();
 
@@ -76,11 +100,30 @@ function LPCtoString(LPC: number) {
         :data="{
           datasets: [
             {
-              data: props.lpUpdates.map((e) => e.LPC),
-              borderColor: props.lpUpdates.map((e) => (e.prediction ? '#ff8000' : '#38bdf8')),
-              backgroundColor: props.lpUpdates.map((e) => (e.prediction ? '#ff8000' : '#38bdf8')),
-              segment: { borderColor: (ctx) => (props.lpUpdates[ctx.p0DataIndex].prediction ? '#ff8000' : undefined) },
+              data: props.lpUpdates
+                .filter((e) => !e.prediction)
+                .map((e) => e.LPC),
+              borderColor: props.lpUpdates.map((e) => rankColors[e.tier]),
+              backgroundColor: props.lpUpdates.map((e) => rankColors[e.tier]),
+              segment: {
+                backgroundColor: (ctx) =>
+                  rankColors[props.lpUpdates[ctx.p0DataIndex].tier],
+                borderColor: (ctx) =>
+                  rankColors[props.lpUpdates[ctx.p0DataIndex].tier],
+              },
               borderWidth: 3,
+            },
+            {
+              data: props.lpUpdates.map((e) => (!e.prediction ? null : e.LPC)),
+              borderColor: '#67e8f9CC',
+              backgroundColor: '#67e8f9CC',
+              segment: {
+                backgroundColor: '#67e8f9CC',
+                borderColor: '#67e8f9CC',
+              },
+              pointRadius: 0,
+              borderWidth: 3,
+              borderDash: [4, 4],
             },
           ],
           labels: props.lpUpdates.map((e) => dayjs(e.date).format('DD/MM')),
@@ -108,7 +151,9 @@ function LPCtoString(LPC: number) {
               callbacks: {
                 title: (TooltipItem) => {
                   // PLEASE UPDATE
-                  return `${props.lpUpdates.at(TooltipItem[0].dataIndex)?.tier.charAt(0)} ${
+                  return `${props.lpUpdates
+                    .at(TooltipItem[0].dataIndex)
+                    ?.tier.charAt(0)} ${
                     props.lpUpdates.at(TooltipItem[0].dataIndex)?.rank
                   }  ${props.lpUpdates.at(TooltipItem[0].dataIndex)?.LP}LP`;
                 },
@@ -129,7 +174,9 @@ function LPCtoString(LPC: number) {
               },
               suggestedMax:
                 props.lpUpdates.reduce((peakEloUpdate, currentUpdate) =>
-                  currentUpdate.LPC > peakEloUpdate.LPC ? currentUpdate : peakEloUpdate
+                  currentUpdate.LPC > peakEloUpdate.LPC
+                    ? currentUpdate
+                    : peakEloUpdate
                 ).LPC + 15,
             },
           },

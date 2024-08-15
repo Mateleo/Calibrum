@@ -70,6 +70,11 @@ function updateWithPrediction() {
   if (lpUpdates.value.length > 20) {
     props.prediction.map((prediction, index) => {
       lpUpdates.value.push({
+        ...lpUpdates.value.at(-1),
+        //@ts-ignore
+        prediction: true
+      })
+      lpUpdates.value.push({
         date: dayjs(lastDate)
           .add(index + 1, "day")
           .toDate(),

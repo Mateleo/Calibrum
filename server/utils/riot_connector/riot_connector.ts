@@ -135,3 +135,28 @@ export function fetchMatchbyId(matchId: string) {
     `https://europe.api.riotgames.com/lol/match/v5/matches/${matchId}?api_key=${useRuntimeConfig().RIOT_API_KEY}`
   );
 }
+
+
+export function fetchApexPLayers(tier: "challenger" | "grandmaster" | "master") {
+  return axios.get<{
+    tier: string;
+    leagueId: string;
+    queue: string;
+    name: string;
+    entries: Array<{
+      summonerId: string;
+      leaguePoints: number;
+      rank: string;
+      wins: number;
+      losses: number;
+      veteran: boolean;
+      inactive: boolean;
+      freshBlood: boolean;
+      hotStreak: boolean;
+    }>;
+  }>(
+    `https://EUW1.api.riotgames.com/lol/league/v4/${tier}leagues/by-queue/RANKED_SOLO_5x5?api_key=${
+      useRuntimeConfig().RIOT_API_KEY
+    }`
+  )
+}
