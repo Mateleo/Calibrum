@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import type { Rank, Tier } from "@prisma/client";
 import dayjs from "dayjs";
-import type { AccountWithLpUpdatesResponse, LpUpdateResponse } from "~/utils/types";
+import type {
+  AccountWithLpUpdatesResponse,
+  LpUpdateResponse,
+} from "~/utils/types";
 
 export interface AccountProps {
   account: AccountWithLpUpdatesResponse;
@@ -72,8 +75,8 @@ function updateWithPrediction() {
       lpUpdates.value.push({
         ...lpUpdates.value.at(-1),
         //@ts-ignore
-        prediction: true
-      })
+        prediction: true,
+      });
       lpUpdates.value.push({
         date: dayjs(lastDate)
           .add(index + 1, "day")
@@ -89,12 +92,12 @@ function updateWithPrediction() {
       });
     });
   }
-  let trimmedArray;
-  if (lpUpdates.value.length > 100) {
-    trimmedArray = lpUpdates.value.slice(-100);
-  } else {
-    trimmedArray = lpUpdates.value;
-  }
+  let trimmedArray = lpUpdates.value;
+  // if (lpUpdates.value.length > 100) {
+  //   trimmedArray = lpUpdates.value.slice(-100);
+  // } else {
+  //   trimmedArray = lpUpdates.value;
+  // }
   return trimmedArray as (LpUpdateResponse & { prediction: boolean })[];
 }
 </script>
@@ -111,7 +114,9 @@ function updateWithPrediction() {
       <PlayerRank
         :lpUpdate="
           account.lpUpdates.reduce((peakEloUpdate, currentUpdate) =>
-            currentUpdate.LPC > peakEloUpdate.LPC ? currentUpdate : peakEloUpdate
+            currentUpdate.LPC > peakEloUpdate.LPC
+              ? currentUpdate
+              : peakEloUpdate
           )
         "
         :title="'Peak Rank'"
@@ -122,7 +127,12 @@ function updateWithPrediction() {
     </div>
     <div class="flex w-full flex-col">
       <CommonTitleSection title="Rank History" class="md:h-full h-[250px]">
-        <LazyPlayerGraph :lp-updates="updateWithPrediction()" :prediction="props.prediction" />
+        <ClientOnly>
+          <LazyPlayerGraph
+            :lp-updates="updateWithPrediction()"
+            :prediction="props.prediction"
+          />
+        </ClientOnly>
       </CommonTitleSection>
     </div>
   </div>

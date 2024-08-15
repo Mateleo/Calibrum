@@ -14,6 +14,7 @@ import {
   scales,
 } from "chart.js";
 import { type LpUpdateResponse } from "~/utils/types";
+import zoomPlugin from "chartjs-plugin-zoom";
 
 ChartJS.register(
   Title,
@@ -23,7 +24,8 @@ ChartJS.register(
   CategoryScale,
   LinearScale,
   PointElement,
-  LineElement
+  LineElement,
+  zoomPlugin
 );
 
 const { data: cutoff } = useFetch("/api/cutoff");
@@ -96,6 +98,7 @@ function LPCtoString(LPC: number) {
   <ClientOnly>
     <div class="relative h-full w-full">
       <Line
+        class="cursor-pointer"
         id="my-chart-id"
         :data="{
           datasets: [
@@ -130,6 +133,27 @@ function LPCtoString(LPC: number) {
         }"
         :options="{
           plugins: {
+            zoom: {
+              zoom: {
+                wheel: {
+                  enabled: true,
+                },
+                pinch: {
+                  enabled: true,
+                },
+                mode: 'x',
+              },
+              pan: {
+                enabled: true,
+                mode: 'x',
+                threshold: 0,
+              },
+              limits: {
+                x: {
+                  minRange: 10,
+                },
+              },
+            },
             legend: {
               display: false,
             },
@@ -165,6 +189,10 @@ function LPCtoString(LPC: number) {
           },
           maintainAspectRatio: false,
           scales: {
+            x: {
+              min: props.lpUpdates.length - 100,
+              max: props.lpUpdates.length,
+            },
             y: {
               ticks: {
                 callback: (value, index, ticks) => {

@@ -17,6 +17,9 @@ dependencies:
   chart.js:
     specifier: ^4.4.2
     version: 4.4.2
+  chartjs-plugin-zoom:
+    specifier: ^2.0.1
+    version: 2.0.1(chart.js@4.4.2)
   dayjs:
     specifier: ^1.11.10
     version: 1.11.10
@@ -3947,6 +3950,15 @@ packages:
       '@kurkle/color': 0.3.2
     dev: false
 
+  /chartjs-plugin-zoom@2.0.1(chart.js@4.4.2):
+    resolution: {integrity: sha512-ogOmLu6e+Q7E1XWOCOz9YwybMslz9qNfGV2a+qjfmqJYpsw5ZMoRHZBUyW+NGhkpQ5PwwPA/+rikHpBZb7PZuA==}
+    peerDependencies:
+      chart.js: '>=3.2.0'
+    dependencies:
+      chart.js: 4.4.2
+      hammerjs: 2.0.8
+    dev: false
+
   /chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
     engines: {node: '>= 8.10.0'}
@@ -5245,6 +5257,11 @@ packages:
       unenv: 1.9.0
     transitivePeerDependencies:
       - uWebSockets.js
+
+  /hammerjs@2.0.8:
+    resolution: {integrity: sha512-tSQXBXS/MWQOn/RKckawJ61vvsDpCom87JgxiYdGwHdOa0ht0vzUWDlfioofFCRU0L+6NGDt6XzbgoJvZkMeRQ==}
+    engines: {node: '>=0.8.0'}
+    dev: false
 
   /has-flag@3.0.0:
     resolution: {integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==}

@@ -33,6 +33,7 @@ export default defineEventHandler(async event => {
   const accountsWithLpUpdates = await Promise.all(
     accounts.map(async account => {
       const lpUpdatesRaw = await getLpUpdateByAccount(account.id)
+      console.log(account.name, lpUpdatesRaw.length)
       const lpUpdates = lpUpdatesRaw.map(lpupdate => {
         const { id, accountId, ...lpupdateReponse } = lpupdate
         return lpupdateReponse
