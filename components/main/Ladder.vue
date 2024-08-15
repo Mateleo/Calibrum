@@ -67,6 +67,10 @@ watch(players, (newPlayers) => {
   </div>
 </template>
 <style scoped>
+.GRANDMASTER {
+  background: rgb(86,17,27);
+  background: linear-gradient(90deg, rgba(86,17,27,1) 0%, rgba(142,62,44,1) 100%); 
+}
 .MASTER {
   background: #7f00ff;
   background: -webkit-linear-gradient(
