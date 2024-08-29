@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import dayjs from "dayjs"
+import relativeTime from 'dayjs/plugin/relativeTime'
 const {data:lastGames} = await useLazyFetch("/api/lastgames")
-
-
-
+dayjs.extend(relativeTime)
 </script>
 
 
@@ -22,7 +21,7 @@ const {data:lastGames} = await useLazyFetch("/api/lastgames")
             game.name
           }}</NuxtLink>
           <p class="text-white/40 text-sm">
-            ({{ dayjs(game.date).format("DD/MM à HH:mm") }})
+            {{ dayjs(game.date).fromNow() }}
           </p>
         </div>
         <div
