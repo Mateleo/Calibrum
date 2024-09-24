@@ -77,8 +77,15 @@ model LpUpdateS142 {
   lastUpdateDiff Int
   isDodge        Boolean?
 
+  season Season @default(S142)
+
   account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
   accountId String
+}
+
+enum Season {
+  S142
+  S143
 }
 
 enum Tier {

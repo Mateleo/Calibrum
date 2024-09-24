@@ -1,3 +1,4 @@
+import type { Season } from "@prisma/client";
 import axios, { type AxiosResponse } from "axios";
 export default defineEventHandler(async (event) => {
   const params = event.context.params;
@@ -10,6 +11,7 @@ export default defineEventHandler(async (event) => {
   }
   const lpUpdates = await prisma.lpUpdateS142.findMany({
     where: {
+      season: useRuntimeConfig().CURRENT_SEASON as Season,
       accountId: params.accountId,
       AND: {
         isDodge: false,

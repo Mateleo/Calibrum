@@ -1,9 +1,10 @@
-import { Prisma } from "@prisma/client"
+import { Prisma, Season } from "@prisma/client"
 import dayjs from "dayjs"
 
 export function getLpUpdateById(id: string) {
   return prisma.lpUpdateS142.findUnique({
     where: {
+      season: useRuntimeConfig().CURRENT_SEASON as Season,
       id: id
     }
   })
@@ -12,6 +13,7 @@ export function getLpUpdateById(id: string) {
 export function getLpUpdateByAccount(accountId: string) {
   return prisma.lpUpdateS142.findMany({
     where: {
+      season: useRuntimeConfig().CURRENT_SEASON as Season,
       accountId: accountId
     },
     orderBy: {
@@ -23,6 +25,7 @@ export function getLpUpdateByAccount(accountId: string) {
 export function getLpUpdateByAccountByDay(accountId: string, days: number) {
   return prisma.lpUpdateS142.findMany({
     where: {
+      season: useRuntimeConfig().CURRENT_SEASON as Season,
       accountId: accountId,
       date: {
         gte: dayjs().subtract(days, "days").toDate()
@@ -56,6 +59,7 @@ export function isDodge(LPC: number, diff: number) {
 export function getLastXUpdates(amount: number) {
   return prisma.lpUpdateS142.findMany({
     where: {
+      season: useRuntimeConfig().CURRENT_SEASON as Season,
       lastUpdateDiff: {
         not: 0
       }
