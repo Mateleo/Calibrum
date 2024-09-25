@@ -110,7 +110,7 @@ export async function fetchAccountData(accountId: string) {
       LP: rankedInfo.leaguePoints,
       rank: rankedInfo.rank,
       tier: rankedInfo.tier,
-      lastUpdateDiff: diff < 100 ? diff : 0,
+      lastUpdateDiff: Math.abs(diff) < 100 ? diff : 0, // prevent new seasons reset
       isDodge: isDodge(newLPC, diff),
       account: {
         connect: {
