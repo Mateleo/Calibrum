@@ -110,7 +110,7 @@ export async function fetchAccountData(accountId: string) {
       LP: rankedInfo.leaguePoints,
       rank: rankedInfo.rank,
       tier: rankedInfo.tier,
-      lastUpdateDiff: diff,
+      lastUpdateDiff: diff < 100 ? diff : 0,
       isDodge: isDodge(newLPC, diff),
       account: {
         connect: {
