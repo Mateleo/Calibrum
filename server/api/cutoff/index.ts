@@ -28,7 +28,7 @@ export default defineCachedEventHandler(
 
     return {
       chall: chall > 500 ? chall : 500,
-      gm: gm > 200 ? gm : 500,
+      gm: gm > 200 ? gm : 200,
     };
   }, {
     maxAge: 60 * 30
