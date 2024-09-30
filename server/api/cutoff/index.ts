@@ -23,9 +23,12 @@ export default defineCachedEventHandler(
     const newChalls = sortedPlayers.slice(0, CHALL_PLAYERS);
     const newGM = sortedPlayers.slice(0, GM_PLAYERS);
 
+    const chall = newChalls.at(-1)!.leaguePoints + 1
+    const gm = newGM.at(-1)!.leaguePoints + 1
+
     return {
-      chall: newChalls.at(-1)!.leaguePoints + 1,
-      gm: newGM.at(-1)!.leaguePoints + 1,
+      chall: chall > 500 ? chall : 500,
+      gm: gm > 200 ? gm : 500,
     };
   }, {
     maxAge: 60 * 30
