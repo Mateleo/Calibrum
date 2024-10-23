@@ -20,8 +20,8 @@ export default defineCachedEventHandler(
       return a.leaguePoints > b.leaguePoints ? -1 : 1;
     });
 
-    const newChalls = sortedPlayers.slice(0, challengers.entries.length);
-    const newGM = sortedPlayers.slice(0, grandmasters.entries.length + challengers.entries.length);
+    const newChalls = sortedPlayers.slice(0, CHALL_PLAYERS);
+    const newGM = sortedPlayers.slice(0, GM_PLAYERS);
 
     const chall = newChalls.at(-1)!.leaguePoints + 1
     const gm = newGM.at(-1)!.leaguePoints + 1
