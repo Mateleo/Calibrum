@@ -1,7 +1,7 @@
 import { fetchApexPLayers } from "~/server/utils/riot_connector/riot_connector";
 
 const CHALL_PLAYERS = 300;
-const GM_PLAYERS = 1000;
+const GM_PLAYERS = 700;
 
 export default defineCachedEventHandler(
   async () => {
@@ -21,16 +21,22 @@ export default defineCachedEventHandler(
     });
 
     const newChalls = sortedPlayers.slice(0, CHALL_PLAYERS);
-    const newGM = sortedPlayers.slice(0, GM_PLAYERS);
+    const newGM = sortedPlayers.slice(
+      0,
+      challengers.entries.length < CHALL_PLAYERS
+        ? challengers.entries.length + GM_PLAYERS
+        : CHALL_PLAYERS + GM_PLAYERS
+    );
 
-    const chall = newChalls.at(-1)!.leaguePoints + 1
-    const gm = newGM.at(-1)!.leaguePoints + 1
+    const chall = newChalls.at(-1)!.leaguePoints + 1;
+    const gm = newGM.at(-1)!.leaguePoints + 1;
 
     return {
       chall: chall > 500 ? chall : 500,
       gm: gm > 200 ? gm : 200,
     };
-  }, {
-    maxAge: 60 * 30
+  },
+  {
+    maxAge: 60 * 30,
   }
 );
