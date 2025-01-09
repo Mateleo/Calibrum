@@ -32,7 +32,7 @@ model Account {
   losses Int?  @default(0)
   LPC    Int?  @default(0)
 
-  player          Player        @relation(fields: [playerDiscordId], references: [discordId], onDelete: Cascade)
+  player          Player         @relation(fields: [playerDiscordId], references: [discordId], onDelete: Cascade)
   playerDiscordId String
   LpUpdate        LpUpdateS142[]
   LpUpdateS14     LpUpdateS14[]
@@ -77,7 +77,7 @@ model LpUpdateS142 {
   lastUpdateDiff Int
   isDodge        Boolean?
 
-  season Season @default(S143)
+  season Season @default(S151)
 
   account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
   accountId String
@@ -86,6 +86,7 @@ model LpUpdateS142 {
 enum Season {
   S142
   S143
+  S151
 }
 
 enum Tier {
