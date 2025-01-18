@@ -1,42 +1,36 @@
-import { fetchApexPLayers } from "~/server/utils/riot_connector/riot_connector";
+import { fetchApexPLayers } from "~/server/utils/riot_connector/riot_connector"
 
-const CHALL_PLAYERS = 300;
-const GM_PLAYERS = 700;
+const CHALL_PLAYERS = 300
+const GM_PLAYERS = 700
 
 export default defineCachedEventHandler(
   async () => {
-    const challengers = (await fetchApexPLayers("challenger")).data;
-    const grandmasters = (await fetchApexPLayers("grandmaster")).data;
-    const masters = (await fetchApexPLayers("master")).data;
+    const challengers = (await fetchApexPLayers("challenger")).data
+    const grandmasters = (await fetchApexPLayers("grandmaster")).data
+    const masters = (await fetchApexPLayers("master")).data
 
-    const players = [
-      ...challengers.entries,
-      ...grandmasters.entries,
-      ...masters.entries,
-    ];
+    const players = [...challengers.entries, ...grandmasters.entries, ...masters.entries]
 
     const sortedPlayers = players.sort((a, b) => {
-      if (a.leaguePoints === b.leaguePoints) return 0;
-      return a.leaguePoints > b.leaguePoints ? -1 : 1;
-    });
+      if (a.leaguePoints === b.leaguePoints) return 0
+      return a.leaguePoints > b.leaguePoints ? -1 : 1
+    })
 
-    const newChalls = sortedPlayers.slice(0, CHALL_PLAYERS);
+    const newChalls = sortedPlayers.slice(0, CHALL_PLAYERS)
     const newGM = sortedPlayers.slice(
       0,
-      challengers.entries.length < CHALL_PLAYERS
-        ? challengers.entries.length + GM_PLAYERS
-        : CHALL_PLAYERS + GM_PLAYERS
-    );
+      challengers.entries.length < CHALL_PLAYERS ? challengers.entries.length + GM_PLAYERS : CHALL_PLAYERS + GM_PLAYERS
+    )
 
-    const chall = newChalls.at(-1)!.leaguePoints + 1;
-    const gm = newGM.at(-1)!.leaguePoints + 1;
+    const chall = newChalls.at(-1)!.leaguePoints + 1
+    const gm = newGM.at(-1)!.leaguePoints + 1
 
     return {
       chall: chall > 500 ? chall : 500,
-      gm: gm > 200 ? gm : 200,
-    };
+      gm: gm > 200 ? gm : 200
+    }
   },
   {
-    maxAge: 60 * 30,
+    maxAge: 60 * 30
   }
-);
+)

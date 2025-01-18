@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import dayjs from "dayjs";
-import { Line } from "vue-chartjs";
+import dayjs from "dayjs"
+import { Line } from "vue-chartjs"
 import {
   Chart as ChartJS,
   Title,
@@ -11,28 +11,18 @@ import {
   LinearScale,
   LineElement,
   PointElement,
-  scales,
-} from "chart.js";
-import { type LpUpdateResponse } from "~/utils/types";
-import zoomPlugin from "chartjs-plugin-zoom";
+  scales
+} from "chart.js"
+import { type LpUpdateResponse } from "~/utils/types"
+import zoomPlugin from "chartjs-plugin-zoom"
 
-ChartJS.register(
-  Title,
-  Tooltip,
-  Legend,
-  BarElement,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  zoomPlugin
-);
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, PointElement, LineElement, zoomPlugin)
 
-const { data: cutoff } = useFetch("/api/cutoff");
+const { data: cutoff } = useFetch("/api/cutoff")
 
 interface Props {
-  lpUpdates: (LpUpdateResponse & { prediction: boolean })[];
-  prediction: number[];
+  lpUpdates: (LpUpdateResponse & { prediction: boolean })[]
+  prediction: number[]
 }
 
 const rankColors = {
@@ -45,53 +35,53 @@ const rankColors = {
   DIAMOND: "#4e79d3",
   MASTER: "#742fb9",
   GRANDMASTER: "#8a2030",
-  CHALLENGER: "#54d4e6",
-};
+  CHALLENGER: "#54d4e6"
+}
 
-const props = defineProps<Props>();
+const props = defineProps<Props>()
 
 function LPCtoString(LPC: number) {
-  let rank = "";
-  let tier = "";
+  let rank = ""
+  let tier = ""
   if (LPC > 2800) {
-    tier = "MASTER";
-    rank = "I";
-    LPC -= 2800;
-    return `${LPC}LP`;
+    tier = "MASTER"
+    rank = "I"
+    LPC -= 2800
+    return `${LPC}LP`
   } else if (LPC >= 2400) {
-    tier = "DIAMOND";
-    LPC -= 2400;
+    tier = "DIAMOND"
+    LPC -= 2400
   } else if (LPC > 2000) {
-    tier = "EMERALD";
-    LPC -= 2000;
+    tier = "EMERALD"
+    LPC -= 2000
   } else if (LPC >= 1600) {
-    tier = "PLATINUM";
-    LPC -= 1600;
+    tier = "PLATINUM"
+    LPC -= 1600
   } else if (LPC >= 1200) {
-    tier = "GOLD";
-    LPC -= 1200;
+    tier = "GOLD"
+    LPC -= 1200
   } else if (LPC >= 800) {
-    tier = "SILVER";
-    LPC -= 800;
+    tier = "SILVER"
+    LPC -= 800
   } else if (LPC >= 400) {
-    tier = "BRONZE";
-    LPC -= 400;
+    tier = "BRONZE"
+    LPC -= 400
   } else {
-    tier = "IRON";
+    tier = "IRON"
   }
   if (LPC > 300) {
-    rank = "1";
-    LPC -= 300;
+    rank = "1"
+    LPC -= 300
   } else if (LPC > 200) {
-    rank = "2";
-    LPC -= 200;
+    rank = "2"
+    LPC -= 200
   } else if (LPC > 100) {
-    rank = "3";
-    LPC -= 100;
+    rank = "3"
+    LPC -= 100
   } else {
-    rank = "4";
+    rank = "4"
   }
-  return `${tier.charAt(0)}${rank} ${LPC}LP`;
+  return `${tier.charAt(0)}${rank} ${LPC}LP`
 }
 </script>
 <template>
@@ -103,18 +93,14 @@ function LPCtoString(LPC: number) {
         :data="{
           datasets: [
             {
-              data: props.lpUpdates
-                .filter((e) => !e.prediction)
-                .map((e) => e.LPC),
+              data: props.lpUpdates.filter((e) => !e.prediction).map((e) => e.LPC),
               borderColor: props.lpUpdates.map((e) => rankColors[e.tier]),
               backgroundColor: props.lpUpdates.map((e) => rankColors[e.tier]),
               segment: {
-                backgroundColor: (ctx) =>
-                  rankColors[props.lpUpdates[ctx.p0DataIndex].tier],
-                borderColor: (ctx) =>
-                  rankColors[props.lpUpdates[ctx.p0DataIndex].tier],
+                backgroundColor: (ctx) => rankColors[props.lpUpdates[ctx.p0DataIndex].tier],
+                borderColor: (ctx) => rankColors[props.lpUpdates[ctx.p0DataIndex].tier]
               },
-              borderWidth: 3,
+              borderWidth: 3
             },
             {
               data: props.lpUpdates.map((e) => (!e.prediction ? null : e.LPC)),
@@ -122,40 +108,40 @@ function LPCtoString(LPC: number) {
               backgroundColor: '#67e8f9CC',
               segment: {
                 backgroundColor: '#67e8f9CC',
-                borderColor: '#67e8f9CC',
+                borderColor: '#67e8f9CC'
               },
               pointRadius: 0,
               borderWidth: 3,
-              borderDash: [4, 4],
-            },
+              borderDash: [4, 4]
+            }
           ],
-          labels: props.lpUpdates.map((e) => dayjs(e.date).format('DD/MM')),
+          labels: props.lpUpdates.map((e) => dayjs(e.date).format('DD/MM'))
         }"
         :options="{
           plugins: {
             zoom: {
               zoom: {
                 wheel: {
-                  enabled: true,
+                  enabled: true
                 },
                 pinch: {
-                  enabled: true,
+                  enabled: true
                 },
-                mode: 'x',
+                mode: 'x'
               },
               pan: {
                 enabled: true,
                 mode: 'x',
-                threshold: 0,
+                threshold: 0
               },
               limits: {
                 x: {
-                  minRange: 10,
-                },
-              },
+                  minRange: 10
+                }
+              }
             },
             legend: {
-              display: false,
+              display: false
             },
             tooltip: {
               mode: 'index',
@@ -166,53 +152,49 @@ function LPCtoString(LPC: number) {
               bodyAlign: 'center',
               titleAlign: 'center',
               titleFont: {
-                family: 'Poppins',
+                family: 'Poppins'
               },
               bodyFont: {
-                family: 'Poppins',
+                family: 'Poppins'
               },
               caretPadding: 8,
               callbacks: {
                 title: (TooltipItem) => {
                   // PLEASE UPDATE
-                  return `${props.lpUpdates
-                    .at(TooltipItem[0].dataIndex)
-                    ?.tier.charAt(0)} ${
+                  return `${props.lpUpdates.at(TooltipItem[0].dataIndex)?.tier.charAt(0)} ${
                     props.lpUpdates.at(TooltipItem[0].dataIndex)?.rank
-                  }  ${props.lpUpdates.at(TooltipItem[0].dataIndex)?.LP}LP`;
+                  }  ${props.lpUpdates.at(TooltipItem[0].dataIndex)?.LP}LP`
                 },
                 label: (TooltipItem) => {
-                  return TooltipItem.label;
-                },
-              },
-            },
+                  return TooltipItem.label
+                }
+              }
+            }
           },
           maintainAspectRatio: false,
           scales: {
             x: {
               min: props.lpUpdates.length - 100,
-              max: props.lpUpdates.length,
+              max: props.lpUpdates.length
             },
             y: {
               ticks: {
                 callback: (value, index, ticks) => {
-                  return LPCtoString(parseInt(value.toString()));
+                  return LPCtoString(parseInt(value.toString()))
                 },
-                stepSize: 50,
+                stepSize: 50
               },
               suggestedMax:
                 props.lpUpdates.reduce((peakEloUpdate, currentUpdate) =>
-                  currentUpdate.LPC > peakEloUpdate.LPC
-                    ? currentUpdate
-                    : peakEloUpdate
-                ).LPC + 15,
-            },
+                  currentUpdate.LPC > peakEloUpdate.LPC ? currentUpdate : peakEloUpdate
+                ).LPC + 15
+            }
           },
           layout: {
             padding: {
-              top: 20,
-            },
-          },
+              top: 20
+            }
+          }
         }"
       />
     </div>

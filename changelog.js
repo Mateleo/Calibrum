@@ -46,7 +46,7 @@ exec(`git rev-list --tags --skip=1 --max-count=1`, (error, commitCurentVersion, 
           const regex = emojiRegex()
           const gitLogOutputFormated = gitLogOutput
             .split("\n")
-            .map(commit => {
+            .map((commit) => {
               let changeList = commit.split("$$")
               const commitId = changeList[0].slice(1)
               const commitAuthor = changeList[1]
@@ -55,15 +55,15 @@ exec(`git rev-list --tags --skip=1 --max-count=1`, (error, commitCurentVersion, 
                 return undefined
               }
               changeList.shift()
-              changeList = changeList.map(e => {
+              changeList = changeList.map((e) => {
                 e = e.trim()
                 const commitType = e.split("(").length > 1 ? e.split("(")[0] : e.split(":")[0]
                 const commitScope = e.split("(")[1] ? e.split("(")[1].toString().split(")")[0] : undefined
                 let commitContent = "undefined"
                 try {
-                  commitContent = e.split(":")[1].toString().trim();
+                  commitContent = e.split(":")[1].toString().trim()
                 } catch (error) {
-                  console.log(`Error on commit ${commitId}, bypassed`);
+                  console.log(`Error on commit ${commitId}, bypassed`)
                 }
                 return {
                   id: commitId,
@@ -75,57 +75,57 @@ exec(`git rev-list --tags --skip=1 --max-count=1`, (error, commitCurentVersion, 
               })
               return changeList
             })
-            .filter(e => e != undefined)
+            .filter((e) => e != undefined)
 
           let changelog = `# Calibrum\n\n# 🚀 Calibrum ${NextVersion.trim()} is here! 🥳`
-          
+
           const gitLogOutputFormatedFlat = gitLogOutputFormated.flat(1)
-          const features = gitLogOutputFormatedFlat.filter(e => e.type === "feat")
+          const features = gitLogOutputFormatedFlat.filter((e) => e.type === "feat")
           if (features.length > 0) {
             changelog += "\n\n## ✨ New Features\n"
-            features.forEach(e => {
+            features.forEach((e) => {
               changelog += ` - ${e.content} ([${e.id}](https://github.com/Mateleo/Calibrum/commit/${e.id})) by @${e.author}\n`
             })
           }
           const bugfixes = gitLogOutputFormatedFlat.filter(
-            e => e.type == "perf" || e.type == "fix" || e.type == "refactor"
+            (e) => e.type == "perf" || e.type == "fix" || e.type == "refactor"
           )
           if (bugfixes.length > 0) {
             changelog += "\n\n## 🔧 Bug Fixes\n"
-            bugfixes.forEach(e => {
+            bugfixes.forEach((e) => {
               changelog += ` - ${e.content} ([${e.id.substring(0, 7)}](https://github.com/Mateleo/Calibrum/commit/${
                 e.id
               })) by @${e.author}\n`
             })
           }
-          const style = gitLogOutputFormatedFlat.filter(e => e.type == "style")
+          const style = gitLogOutputFormatedFlat.filter((e) => e.type == "style")
           if (style.length > 0) {
             changelog += "\n\n## 🎨 Styles\n"
-            style.forEach(e => {
+            style.forEach((e) => {
               changelog += ` - ${e.content} ([${e.id.substring(0, 7)}](https://github.com/Mateleo/Calibrum/commit/${
                 e.id
               })) by @${e.author}\n`
             })
           }
-          const doc = gitLogOutputFormatedFlat.filter(e => e.type == "docs")
+          const doc = gitLogOutputFormatedFlat.filter((e) => e.type == "docs")
           if (doc.length > 0) {
             changelog += "\n\n## 📝 Documentation\n"
-            doc.forEach(e => {
+            doc.forEach((e) => {
               changelog += ` - ${e.content} ([${e.id.substring(0, 7)}](https://github.com/Mateleo/Calibrum/commit/${
                 e.id
               })) by @${e.author}\n`
             })
           }
-          const contributors = [...new Set(gitLogOutputFormatedFlat.map(e => e.author))]
+          const contributors = [...new Set(gitLogOutputFormatedFlat.map((e) => e.author))]
           if (contributors.length > 0) {
             changelog += "\n------\n## 🗿 Chad Contributors\n\n"
-            contributors.forEach(e => {
+            contributors.forEach((e) => {
               changelog += ` - [@${e}](https://github.com/${e}) for ${gitLogOutputFormatedFlat
-                .filter(commit => commit.author === e)
+                .filter((commit) => commit.author === e)
                 .reduce((acc, obj) => acc + 1, 0)} contributions\n`
             })
           }
-          fs.writeFile("changelog.md", changelog, err => {
+          fs.writeFile("changelog.md", changelog, (err) => {
             if (err) throw err
             console.log("Changelog created!")
           })

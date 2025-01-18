@@ -1,38 +1,38 @@
-import type { Season } from "@prisma/client";
-import axios, { type AxiosResponse } from "axios";
+import type { Season } from "@prisma/client"
+import axios, { type AxiosResponse } from "axios"
 export default defineEventHandler(async (event) => {
-  const params = event.context.params;
+  const params = event.context.params
 
   if (!params || !params.accountId) {
     throw createError({
       statusCode: 500,
-      statusMessage: `params not found`,
-    });
+      statusMessage: `params not found`
+    })
   }
   const lpUpdates = await prisma.lpUpdateS142.findMany({
     where: {
       season: useRuntimeConfig().CURRENT_SEASON as Season,
       accountId: params.accountId,
       AND: {
-        isDodge: false,
+        isDodge: false
       },
       NOT: {
-        lastUpdateDiff: 0,
-      },
+        lastUpdateDiff: 0
+      }
     },
     select: {
       date: true,
-      LPC: true,
+      LPC: true
     },
     orderBy: {
-      date: "asc",
-    },
-  });
+      date: "asc"
+    }
+  })
   if (!lpUpdates) {
     throw createError({
       statusCode: 404,
-      statusMessage: `user not found`,
-    });
+      statusMessage: `user not found`
+    })
   }
   // const modifiedLpUpdates = lpUpdates.map((lpUpdate) => ({
   //   ...lpUpdate,
@@ -40,14 +40,14 @@ export default defineEventHandler(async (event) => {
   // }));
   return (await axios
     .post("https://calibrumai.4esport.fr/predict", {
-      data: lpUpdates,
+      data: lpUpdates
     })
     .catch((err) => {
-      console.log("ERROR");
-      console.log(err);
-      console.log(err.response.data);
+      console.log("ERROR")
+      console.log(err)
+      console.log(err.response.data)
     })
     .then((response: any) => {
       return response?.data?.data ?? []
-    })) as number[];
-});
+    })) as number[]
+})

@@ -1,4 +1,4 @@
-export default defineEventHandler(async event => {
+export default defineEventHandler(async (event) => {
   const accounts = await getAccounts()
 
   for (const account of accounts) {

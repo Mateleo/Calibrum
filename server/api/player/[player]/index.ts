@@ -1,6 +1,6 @@
 import { type Player } from "@prisma/client"
 
-export default defineEventHandler(async event => {
+export default defineEventHandler(async (event) => {
   const params = event.context.params
 
   if (!params) {
@@ -12,9 +12,9 @@ export default defineEventHandler(async event => {
 
   let player:
     | (Player & {
-      isLive?: boolean
-      mostPlayedChamp?: number
-    })
+        isLive?: boolean
+        mostPlayedChamp?: number
+      })
     | null = await getPlayerByName(decodeURI(params.player))
 
   if (!player) {
@@ -30,10 +30,10 @@ export default defineEventHandler(async event => {
   // player.mostPlayedChamp = accounts.length>0 ? await getMostPlayedChampByAccount(accounts[0].puuid ?? "test", accounts[0].name) : undefined
 
   const accountsWithLpUpdates = await Promise.all(
-    accounts.map(async account => {
+    accounts.map(async (account) => {
       const lpUpdatesRaw = await getLpUpdateByAccount(account.id)
       console.log(account.name, lpUpdatesRaw.length)
-      const lpUpdates = lpUpdatesRaw.map(lpupdate => {
+      const lpUpdates = lpUpdatesRaw.map((lpupdate) => {
         const { id, accountId, ...lpupdateReponse } = lpupdate
         return lpupdateReponse
       })

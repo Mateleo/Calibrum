@@ -13,7 +13,7 @@ function startScheduler() {
       let accounts = await getAccounts()
 
       accounts = accounts
-        .map(value => ({ value, sort: Math.random() }))
+        .map((value) => ({ value, sort: Math.random() }))
         .sort((a, b) => a.sort - b.sort)
         .map(({ value }) => value)
 
@@ -26,7 +26,7 @@ function startScheduler() {
             console.log(error.code)
           }
         }
-        await new Promise(resolve => setTimeout(resolve, 2000))
+        await new Promise((resolve) => setTimeout(resolve, 2000))
       }
     })
     .everyMinutes(10)

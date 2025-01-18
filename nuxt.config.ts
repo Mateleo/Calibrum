@@ -4,14 +4,14 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     RIOT_API_KEY: process.env.NUXT_RIOT_API_KEY,
-    CURRENT_SEASON: "S15",
+    CURRENT_SEASON: "S15"
   },
 
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
-      title: "Calibrum 🌠",
-    },
+      title: "Calibrum 🌠"
+    }
   },
 
   // ogImage: {
@@ -23,12 +23,12 @@ export default defineNuxtConfig({
   //   }
   // },
   devtools: {
-    enabled: true,
+    enabled: true
   },
   nitro: {
     imports: {
-      dirs: ["server/utils/**"],
-    },
+      dirs: ["server/utils/**"]
+    }
   },
-  compatibilityDate: "2025-01-18",
-});
+  compatibilityDate: "2025-01-18"
+})

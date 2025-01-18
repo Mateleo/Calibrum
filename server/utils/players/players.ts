@@ -31,7 +31,7 @@ export async function getPlayersWithLive() {
   players = shuffle(players)
 
   return Promise.all(
-    players.map(async player => ({
+    players.map(async (player) => ({
       ...player,
       isLive: (await getPlayerLiveGame(player.discordId)) ? true : false
     }))
@@ -107,7 +107,7 @@ export async function getPlayersOfTheDay() {
   })
 
   const accountsGain = await Promise.all(
-    accounts.map(async account => ({
+    accounts.map(async (account) => ({
       gains: await get24hGains(account.id),
       player: account.player.name,
       profileIcon: account.profileIcon
@@ -123,7 +123,7 @@ export async function getPlayersOfTheDay() {
 export async function getLast10Games() {
   const updates = await getLastXUpdates(10)
   return await Promise.all(
-    updates.map(async update => {
+    updates.map(async (update) => {
       const { id, puuid, playerDiscordId, wins, losses, ...account } = await getAccountById(update.accountId)
       const { id: idUpdate, accountId, ...updateResponse } = update
       return {

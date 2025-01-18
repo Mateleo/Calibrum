@@ -1,19 +1,19 @@
 <script lang="ts" setup>
-import { type PlayerWithAccountsReponse } from "~/utils/types";
+import { type PlayerWithAccountsReponse } from "~/utils/types"
 
-const route = useRoute();
+const route = useRoute()
 
-const selectedAccount = ref(0);
+const selectedAccount = ref(0)
 
-const { error, data: player } = await useFetch<PlayerWithAccountsReponse>(`/api/player/${route.params.player}`);
+const { error, data: player } = await useFetch<PlayerWithAccountsReponse>(`/api/player/${route.params.player}`)
 
 const {
   data: prediction,
   refresh,
-  pending,
+  pending
 } = await useLazyFetch<number[]>(() => `/api/AI/LPC/${player.value?.accounts[selectedAccount.value].id}`, {
-  watch: [selectedAccount],
-});
+  watch: [selectedAccount]
+})
 // defineOgImage({
 //   component:"MyOgImage",
 //   name:player.value?.name,
@@ -48,25 +48,25 @@ useServerSeoMeta({
   appleMobileWebAppTitle: () => `${player.value?.name}`,
   ogImageHeight: 256,
   ogImageWidth: 256,
-  ogImageType: "image/png",
-});
+  ogImageType: "image/png"
+})
 </script>
 
 <template>
   <div>
     <div
       v-if="player"
-      class="bg m-auto mt-4 flex flex-col md:flex-row w-[95%] max-w-[2000px] gap-4 md:gap-8 lg:w-[85%] xl:w-[75%]"
+      class="bg m-auto mt-4 flex w-[95%] max-w-[2000px] flex-col gap-4 md:flex-row md:gap-8 lg:w-[85%] xl:w-[75%]"
     >
       <div class="flex flex-col gap-8">
         <PlayerTitle :role="player.role" :profileIcon="player.accounts.at(0)?.profileIcon">
           {{ route.params.player }}
         </PlayerTitle>
-        <CommonSection class="hidden md:flex h-full flex-col gap-2 rounded-lg">
+        <CommonSection class="hidden h-full flex-col gap-2 rounded-lg md:flex">
           <h2 class="text-center font-semibold">CalibrumML v2</h2>
           <div
             v-if="prediction?.at(0) && !pending"
-            class="flex gap-1 items-center justify-center"
+            class="flex items-center justify-center gap-1"
             title="prediction in the day to come."
           >
             <p>{{ Math.floor((prediction.at(-1) ?? 0) - (player.accounts[selectedAccount].LPC ?? 0)) }}LP</p>
@@ -87,7 +87,7 @@ useServerSeoMeta({
               :accounts="player.accounts"
               :onAccountChange="
                 (accountIndex) => {
-                  selectedAccount = accountIndex;
+                  selectedAccount = accountIndex
                 }
               "
             />
@@ -96,8 +96,8 @@ useServerSeoMeta({
         <PlayerAccount v-if="prediction" :account="player.accounts.at(selectedAccount)!" :prediction="prediction" />
       </div>
     </div>
-    <div v-else class="flex justify-center mt-12">
-      <p class="font-bold text-3xl text-white/80">Oops, this player wasn't found !</p>
+    <div v-else class="mt-12 flex justify-center">
+      <p class="text-3xl font-bold text-white/80">Oops, this player wasn't found !</p>
     </div>
   </div>
 </template>

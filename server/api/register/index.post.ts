@@ -10,7 +10,7 @@ const RegisterBodySchema = z.object({
 
 export type RegisterBody = z.infer<typeof RegisterBodySchema>
 
-export default defineEventHandler(async event => {
+export default defineEventHandler(async (event) => {
   const player = await readBody<RegisterBody>(event)
   try {
     RegisterBodySchema.parse(player)
@@ -18,17 +18,17 @@ export default defineEventHandler(async event => {
     return { error: "incorrect data type" }
   }
   player.accounts = player.accounts
-    .flatMap(account => {
+    .flatMap((account) => {
       return account.split(",")
     })
-    .map(acc => decodeURI(acc).replace(/\s/g, ""))
+    .map((acc) => decodeURI(acc).replace(/\s/g, ""))
   console.log(player)
   const registeredPlayer = await registerOrUpdatePlayer(player)
 
   const registeredAccounts = []
 
   for (const account of player.accounts) {
-    const [name, tag] = account.split('#')
+    const [name, tag] = account.split("#")
     const registeredAccount = await registerAccount(name, tag, player.discordId)
     if (registeredAccount) {
       registeredAccounts.push(await fetchAccountData(registeredAccount.id))

@@ -84,8 +84,7 @@ export function computeStreak(arr: number[]) {
       } else {
         break
       }
-    }
-    else{
+    } else {
       break
     }
   }
@@ -93,24 +92,24 @@ export function computeStreak(arr: number[]) {
 }
 
 export async function getGamesCountByAccountByDay(accountId: string, days: number) {
-  const last24hours = new Date().setHours(new Date().getHours()-24)
+  const last24hours = new Date().setHours(new Date().getHours() - 24)
   return await prisma.account.findUnique({
-    where:{
-      id:accountId,
+    where: {
+      id: accountId
     },
-    select:{
-      _count:{
-        select:{
-          LpUpdate:{
-            where:{
-              date:{
-                gte: dayjs().subtract(22, 'hours').toDate(),
-                lt:  dayjs().add(2, 'hours').toDate()
+    select: {
+      _count: {
+        select: {
+          LpUpdate: {
+            where: {
+              date: {
+                gte: dayjs().subtract(22, "hours").toDate(),
+                lt: dayjs().add(2, "hours").toDate()
               }
             }
           }
         }
       }
-    },
+    }
   })
 }
