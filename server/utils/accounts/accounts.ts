@@ -95,7 +95,17 @@ export async function fetchAccountData(accountId: string) {
     .filter((league) => league.queueType === "RANKED_SOLO_5x5")
     .at(0);
 
-  if (!rankedInfo) return;
+  if (!rankedInfo) {
+    return updateAccount({
+      id: accountId,
+      wins: 0,
+      losses: 0,
+      tier: null,
+      rank: null,
+      LP: 0,
+      LPC: 0,
+    });
+  }
 
   const userAccount = await getAccountById(accountId);
   const oldLPC = userAccount?.LPC ?? 0;
