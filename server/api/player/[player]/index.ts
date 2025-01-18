@@ -1,5 +1,4 @@
 import { type Player } from "@prisma/client"
-import { getMostPlayedChampByAccount } from "~/server/utils/accounts/accounts"
 
 export default defineEventHandler(async event => {
   const params = event.context.params

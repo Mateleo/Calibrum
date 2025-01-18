@@ -1,13 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    "@nuxtjs/tailwindcss",
-    "nuxt-icon",
-    "@nuxt/image-edge",
-    "nuxt-scheduler",
-    "nuxt-og-image",
-    "@nuxt/fonts",
-  ],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/image-edge", "nuxt-scheduler", "nuxt-og-image", "@nuxt/fonts", "@nuxt/icon"],
 
   runtimeConfig: {
     RIOT_API_KEY: process.env.NUXT_RIOT_API_KEY,
@@ -29,19 +22,13 @@ export default defineNuxtConfig({
   //     base: "./cache/db"
   //   }
   // },
-
-  nitro: {
-    node: true,
-  },
-
   devtools: {
     enabled: true,
-
-    timeline: {
-      enabled: true,
+  },
+  nitro: {
+    imports: {
+      dirs: ["server/utils/**"],
     },
   },
-  typescript: {
-    shim: false,
-  },
+  compatibilityDate: "2025-01-18",
 });
