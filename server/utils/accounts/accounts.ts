@@ -9,6 +9,7 @@ import {
 } from "../riot_connector/riot_connector"
 import { getLpUpdateByAccountByDay } from "../lp_updates/lp_updates"
 import { number } from "zod"
+import dayjs from "dayjs"
 
 // Low level functions
 
@@ -241,4 +242,22 @@ enum RankLPC {
 export async function get24hGains(accountId: string) {
   const lpUpdates = await getLpUpdateByAccountByDay(accountId, 1)
   return lpUpdates.map((update) => update.lastUpdateDiff).reduce((a, b) => a + b, 0)
+}
+
+export async function getShortHisto(accountId: string) {
+  return prisma.lpUpdateS142.findMany({
+    where: {
+      accountId,
+      date: {
+        gte: dayjs().subtract(1, "days").toDate()
+      }
+    },
+    orderBy: {
+      date: "asc"
+    },
+    select: {
+      lastUpdateDiff: true,
+      date: true
+    }
+  })
 }

@@ -110,7 +110,8 @@ export async function getPlayersOfTheDay() {
     accounts.map(async (account) => ({
       gains: await get24hGains(account.id),
       player: account.player.name,
-      profileIcon: account.profileIcon
+      profileIcon: account.profileIcon,
+      shortHisto: await getShortHisto(account.id)
     }))
   )
 
