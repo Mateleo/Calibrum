@@ -1,6 +1,7 @@
 import { Rank, Tier } from "@prisma/client"
 import axios from "axios"
 import { type Match } from "../interfaces/match"
+import type { GameInfos } from "./riot_types"
 
 interface AccountByPuuid {
   id: string
@@ -157,4 +158,18 @@ export function fetchApexPLayers(tier: "challenger" | "grandmaster" | "master") 
       useRuntimeConfig().RIOT_API_KEY
     }`
   )
+}
+
+export async function fetchLast10Matches(puuid: string): Promise<string[]> {
+  const response = await fetch(
+    `https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids/?api_key=${useRuntimeConfig().RIOT_API_KEY}`
+  )
+  return response.json()
+}
+
+export async function getMatchInfo(matchId: string): Promise<GameInfos> {
+  const response = await fetch(
+    `https://europe.api.riotgames.com/lol/match/v5/matches/${matchId}?api_key=${useRuntimeConfig().RIOT_API_KEY}`
+  )
+  return response.json()
 }

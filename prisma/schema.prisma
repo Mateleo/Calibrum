@@ -76,6 +76,9 @@ model LpUpdateS142 {
   LP             Int
   lastUpdateDiff Int
   isDodge        Boolean?
+  championName   String?
+  championId     Int?
+  matchId        String?
 
   season Season @default(S15)
 

@@ -1,5 +1,4 @@
 import { Prisma, Rank, Tier } from "@prisma/client"
-import { isAxiosError } from "axios"
 import {
   fetchAccountByPuuid,
   fetchAccountPuuidByName,
@@ -8,7 +7,6 @@ import {
   fetchMatchesHistory
 } from "../riot_connector/riot_connector"
 import { getLpUpdateByAccountByDay } from "../lp_updates/lp_updates"
-import { number } from "zod"
 import dayjs from "dayjs"
 
 // Low level functions
@@ -112,20 +110,34 @@ export async function fetchAccountData(accountId: string) {
   const oldLPC = userAccount?.LPC ?? 0
   const newLPC = getLPC(rankedInfo.tier, rankedInfo.rank, rankedInfo.leaguePoints)
   const diff = oldLPC !== 0 ? newLPC - oldLPC : 0
+  const hasNewGame = newLPC !== 0 && oldLPC !== newLPC
+
   console.log(oldLPC, newLPC, diff)
 
-  if (newLPC !== 0 && oldLPC !== newLPC) {
-    await createLpUpdate({
-      LPC: newLPC,
-      date: new Date().toISOString(),
-      LP: rankedInfo.leaguePoints,
-      rank: rankedInfo.rank,
-      tier: rankedInfo.tier,
-      lastUpdateDiff: Math.abs(diff) < 100 ? diff : 0, // prevent new seasons reset
-      isDodge: isDodge(newLPC, diff),
-      account: {
-        connect: {
-          id: accountId
+  if (hasNewGame) {
+    if (!userAccount?.puuid) return
+    const matches = await fetchLast10Matches(userAccount.puuid)
+    const matchResponse = await getMatchInfo(matches[0])
+
+    const championName = matchResponse.info.participants.find((p) => p.puuid === userAccount.puuid)?.championName
+    const championId = matchResponse.info.participants.find((p) => p.puuid === userAccount.puuid)?.championId
+
+    await prisma.lpUpdateS142.create({
+      data: {
+        LPC: newLPC,
+        date: new Date().toISOString(),
+        LP: rankedInfo.leaguePoints,
+        rank: rankedInfo.rank,
+        tier: rankedInfo.tier,
+        lastUpdateDiff: Math.abs(diff) < 100 ? diff : 0, // prevent new seasons reset
+        isDodge: isDodge(newLPC, diff),
+        matchId: matchResponse.metadata.matchId,
+        championName,
+        championId,
+        account: {
+          connect: {
+            id: accountId
+          }
         }
       }
     })
