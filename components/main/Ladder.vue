@@ -49,7 +49,7 @@ watch(players, (newPlayers) => {
                 :is-live="player.isLive"
                 :main-account-id="player.Account[0].id"
                 :unranked="player.Account.at(0)?.rank == null ? true : false"
-              ></LeaderboardPlayer>
+              />
             </div>
             <div class="flex max-w-[300px] grow items-center justify-end sm:justify-between">
               <img class="hidden h-[32px] w-[32px] sm:block" :src="`img/positions/${player.role}.svg`" alt="" />
@@ -58,7 +58,7 @@ watch(players, (newPlayers) => {
                   sizes="200px"
                   quality="60"
                   format="webp"
-                  class="m-auto h-[50px] w-[90px] object-cover"
+                  class="m-auto h-[70px] w-[90px] object-cover"
                   :src="`img/new_emblems/${player.Account[0].tier?.toLocaleLowerCase() ?? 'silver'}.png`"
                   alt=""
                 />
