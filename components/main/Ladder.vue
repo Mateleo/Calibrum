@@ -55,7 +55,7 @@ watch(players, (newPlayers) => {
               <img class="hidden h-[32px] w-[32px] sm:block" :src="`img/positions/${player.role}.svg`" alt="" />
               <div class="flex flex-col justify-center">
                 <NuxtImg
-                  sizes="100px"
+                  sizes="200px"
                   quality="60"
                   format="webp"
                   class="m-auto h-[50px] w-[90px] object-cover"
