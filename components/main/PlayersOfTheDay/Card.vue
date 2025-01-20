@@ -26,7 +26,7 @@ const losses = computed<number>(() => props.shortHisto.filter((game) => game.las
     </NuxtLink>
     <div class="flex items-center gap-4">
       <div
-        class="w-[60px] rounded-full border-2 border-transparent py-1 text-center text-sm font-semibold shadow-sm transition-colors ease-in-out"
+        class="w-[65px] rounded-full border-2 border-transparent py-1 text-center text-sm font-semibold shadow-sm transition-colors ease-in-out"
         :class="mode === 'best' ? 'bg-green-500 shadow-green-900' : 'bg-red-500 shadow-red-900'"
       >
         {{ mode === "best" ? "+" : "" }}{{ gains }} LP
