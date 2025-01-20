@@ -24,7 +24,7 @@ watch(players, (newPlayers) => {
         </div>
       </div>
     </div>
-    <div v-for="tier in AllTiers" :key="tier?.toString()">
+    <div v-for="tier in AllTiers.filter((e) => e !== null)" :key="tier?.toString()">
       <div>
         <div class="flex justify-center rounded-lg p-2" :class="tier ?? 'UNRANKED'">
           <h2 class="font-semibold text-white/90">{{ tier ?? "UNRANKED" }}</h2>
