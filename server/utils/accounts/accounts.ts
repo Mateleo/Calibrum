@@ -119,8 +119,13 @@ export async function fetchAccountData(accountId: string) {
     const matches = await fetchLast10Matches(userAccount.puuid)
     const matchResponse = await getMatchInfo(matches[0])
 
-    const championName = matchResponse.info.participants.find((p) => p.puuid === userAccount.puuid)?.championName
-    const championId = matchResponse.info.participants.find((p) => p.puuid === userAccount.puuid)?.championId
+    const participantInfo = matchResponse.info.participants.find((p) => p.puuid === userAccount.puuid)
+
+    const championName = participantInfo?.championName
+    const championId = participantInfo?.championId
+    const kill = participantInfo?.kills
+    const assist = participantInfo?.assists
+    const death = participantInfo?.deaths
 
     await prisma.lpUpdateS142.create({
       data: {
@@ -134,6 +139,9 @@ export async function fetchAccountData(accountId: string) {
         matchId: matchResponse.metadata.matchId,
         championName,
         championId,
+        kill,
+        assist,
+        death,
         account: {
           connect: {
             id: accountId

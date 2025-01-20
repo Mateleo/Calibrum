@@ -1,4 +1,4 @@
-import type { Account, LpUpdate, Player } from "@prisma/client"
+import type { Account, LpUpdate, LpUpdateS142, Player } from "@prisma/client"
 
 export type PlayerWithAccountsReponse = PlayerResponse & {
   accounts: AccountWithLpUpdatesResponse[]
@@ -8,7 +8,7 @@ export type PlayerResponse = Omit<Player, "discordId"> & { isLive?: boolean; mos
 
 export type AccountReponse = Omit<Account, "playerDiscordId">
 
-export type LpUpdateResponse = Omit<LpUpdate, "id" | "accountId">
+export type LpUpdateResponse = Omit<LpUpdateS142, "id" | "accountId">
 
 export type AccountWithLpUpdatesResponse = AccountReponse & {
   lpUpdates: LpUpdateResponse[]

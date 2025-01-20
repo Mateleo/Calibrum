@@ -33,16 +33,7 @@ dayjs.extend(relativeTime)
           </p>
         </div>
       </div>
-      <div
-        class="w-[60px] cursor-pointer rounded-full py-1 text-center text-sm font-semibold shadow-sm shadow-green-900 transition-colors ease-in-out"
-        :class="
-          game.lastUpdateDiff.toString()[0] != '-'
-            ? ['bg-green-500 shadow-green-900 hover:border-2 hover:border-green-500 hover:bg-green-800']
-            : ['bg-red-500 shadow-red-900 hover:border-2 hover:border-red-400 hover:bg-red-800']
-        "
-      >
-        {{ ["", "+"][+(game.lastUpdateDiff > 0)] + game.lastUpdateDiff }} LP
-      </div>
+      <CommonLpBadge :amount="game.lastUpdateDiff" />
     </div>
   </CommonInnerTitleSection>
 </template>

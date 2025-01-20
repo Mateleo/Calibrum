@@ -1,5 +1,9 @@
 <script lang="ts" setup>
+import dayjs from "dayjs"
+import relativeTime from "dayjs/plugin/relativeTime"
 import { type PlayerWithAccountsReponse } from "~/utils/types"
+
+dayjs.extend(relativeTime)
 
 const route = useRoute()
 
@@ -62,20 +66,32 @@ useServerSeoMeta({
         <PlayerTitle :role="player.role" :profileIcon="player.accounts.at(0)?.profileIcon">
           {{ route.params.player }}
         </PlayerTitle>
-        <CommonSection class="hidden h-full flex-col gap-2 rounded-lg md:flex">
-          <h2 class="text-center font-semibold">CalibrumML v2</h2>
-          <div
-            v-if="prediction?.at(0) && !pending"
-            class="flex items-center justify-center gap-1"
-            title="prediction in the day to come."
-          >
-            <p>{{ Math.floor((prediction.at(-1) ?? 0) - (player.accounts[selectedAccount].LPC ?? 0)) }}LP</p>
-            <Icon
-              v-if="Math.floor((prediction.at(-1) ?? 0) - (player.accounts[selectedAccount].LPC ?? 0)) < 0"
-              name="ic:baseline-trending-down"
-              color="#f53838"
-            ></Icon>
-            <Icon v-else name="ic:baseline-trending-up" color="#48f538"></Icon>
+        <CommonSection class="hidden h-full flex-col gap-2 rounded-lg p-4 md:flex">
+          <div class="flex flex-col gap-2 p-2">
+            <div
+              v-for="lpUpdate in player.accounts.at(selectedAccount)?.lpUpdates.filter((lp) => lp.kill)"
+              class="flex items-center justify-between gap-2"
+            >
+              <div class="flex gap-2">
+                <NuxtImg
+                  sizes="40px"
+                  quality="80"
+                  format="webp"
+                  v-if="lpUpdate.championId"
+                  :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${lpUpdate.championId}.png`"
+                  class="size-10 rounded-lg"
+                />
+                <div class="flex flex-col">
+                  <p v-if="lpUpdate.kill" class="font-semibold">
+                    {{ lpUpdate.kill }}/{{ lpUpdate.death }}/{{ lpUpdate.assist }}
+                  </p>
+                  <p class="text-sm text-white/40">
+                    {{ dayjs(lpUpdate.date).fromNow() }}
+                  </p>
+                </div>
+              </div>
+              <CommonLpBadge :amount="lpUpdate.lastUpdateDiff" />
+            </div>
           </div>
         </CommonSection>
       </div>

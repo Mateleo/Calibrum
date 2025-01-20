@@ -79,6 +79,9 @@ model LpUpdateS142 {
   championName   String?
   championId     Int?
   matchId        String?
+  kill           Int?
+  death          Int?
+  assist         Int?
 
   season Season @default(S15)
 
