@@ -32,7 +32,13 @@ const props = withDefaults(defineProps<Props>(), {
         :color="selected === index ? '#17191d' : undefined"
         :class="selected === index ? 'border-gray-600/70 text-sky-400' : 'border-transparent'"
       >
-        <NuxtImg :src="account.profileIcon" class="w-[26px] rounded-full"></NuxtImg>
+        <NuxtImg
+          sizes="32px"
+          format="webp"
+          quality="60"
+          :src="account.profileIcon"
+          class="w-[26px] rounded-full"
+        ></NuxtImg>
         <p>{{ account.name }}</p>
       </CommonSection>
     </button>
