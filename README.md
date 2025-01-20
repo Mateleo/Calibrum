@@ -41,7 +41,7 @@ A ranked tracker for 4eSport players.
 - 🛠️ Get insights into potential future rankings based on your current performance and trends.
 - 🔥 Earn and display badges (emoji-based) that reflect your playing trends and achievements.
 
-Calibrum is created and maintained cby Mateleo & Turdyo
+Calibrum is created and maintained by Mateleo & Turdyo
 
 ## Activity
 
