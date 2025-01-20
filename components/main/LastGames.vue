@@ -13,15 +13,22 @@ dayjs.extend(relativeTime)
       v-for="game in lastGames"
       class="my-2 flex flex-nowrap items-center justify-between border-b-2 border-gray-900 px-3 pb-2 last:border-b-0 last:pb-0"
     >
-      <div>
-        <NuxtLink
-          :to="`/player/${game.player.name}`"
-          class="text-lg font-semibold transition-colors ease-in-out hover:text-cyan-400"
-          >{{ game.name }}</NuxtLink
-        >
-        <p class="text-sm text-white/40">
-          {{ dayjs(game.date).fromNow() }}
-        </p>
+      <div class="flex items-center gap-4">
+        <img
+          v-if="game.championId"
+          :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${game.championId}.png`"
+          class="size-12 rounded-lg"
+        />
+        <div>
+          <NuxtLink
+            :to="`/player/${game.player.name}`"
+            class="text-lg font-semibold transition-colors ease-in-out hover:text-cyan-400"
+            >{{ game.name }}</NuxtLink
+          >
+          <p class="text-sm text-white/40">
+            {{ dayjs(game.date).fromNow() }}
+          </p>
+        </div>
       </div>
       <div
         class="w-[60px] cursor-pointer rounded-full py-1 text-center text-sm font-semibold shadow-sm shadow-green-900 transition-colors ease-in-out"
