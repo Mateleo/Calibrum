@@ -13,13 +13,13 @@ watch(players, (newPlayers) => {
   <div class="flex flex-col rounded-lg bg-[#22262b5a] p-2">
     <div class="flex justify-between">
       <h2 class="mb-2 text-xl font-semibold text-[#08bcd5]">Ladder</h2>
-      <div class="flex gap-8 font-semibold">
-        <div class="flex gap-2">
-          <img :src="`img/new_emblems/challenger.png`" class="h-8 w-8" />
+      <div class="flex gap-8 pb-1 font-semibold">
+        <div class="flex items-center gap-2">
+          <NuxtImg :src="`img/new_emblems/challenger.png`" sizes="32px" quality="80" format="webp" class="size-8" />
           <span>{{ cutoff?.chall }} LP</span>
         </div>
-        <div class="flex gap-2">
-          <img :src="`img/new_emblems/grandmaster.png`" class="h-8 w-8" />
+        <div class="flex items-center gap-2">
+          <NuxtImg :src="`img/new_emblems/grandmaster.png`" sizes="32px" quality="80" format="webp" class="size-8" />
           <span>{{ cutoff?.gm }} LP</span>
         </div>
       </div>

@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/image-edge", "nuxt-scheduler", "nuxt-og-image", "@nuxt/fonts", "@nuxt/icon"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-scheduler", "@nuxt/fonts", "@nuxt/icon", "@nuxt/image"],
 
   runtimeConfig: {
     RIOT_API_KEY: process.env.NUXT_RIOT_API_KEY,

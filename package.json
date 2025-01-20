@@ -15,10 +15,9 @@
     "@nuxt/devtools": "2.0.0-beta.3",
     "@nuxt/fonts": "^0.10.3",
     "@nuxt/icon": "^1.10.3",
-    "@nuxt/image-edge": "1.3.0-28493895.369b747",
+    "@nuxt/image": "1.9.0",
     "@types/node": "^22.10.7",
     "nuxt": "^3.15.2",
-    "nuxt-og-image": "4.0.3",
     "nuxt-scheduler": "0.1.9",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.10",
@@ -33,8 +32,8 @@
     "dayjs": "^1.11.13",
     "emoji-regex": "^10.4.0",
     "fuse.js": "^7.0.0",
-    "sharp": "^0.33.5",
     "vue-chartjs": "^5.3.2",
     "zod": "^3.24.1"
-  }
+  },
+  "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee"
 }
