@@ -8,7 +8,7 @@
           class="flex items-center border-r-[1px] border-gray-500/50 px-2 pr-4 md:border-transparent md:px-4"
         >
           <div class="ml-2 w-[48px]">
-            <NuxtImg src="img/logo.png"></NuxtImg>
+            <NuxtImg src="img/logo.png" sizes="64px" format="webp" quality="70"></NuxtImg>
           </div>
           <div class="hidden flex-row-reverse px-2 md:flex" to="/">
             <h1 class="hidden text-4xl font-bold lg:block">Calibrum</h1>

@@ -28,7 +28,7 @@
           target="-blank"
           class="w-[22px] opacity-50 transition-all ease-in hover:opacity-100"
         >
-          <NuxtImg src="img/4es_logo.png" />
+          <NuxtImg sizes="32px" quality="90" format="webp" src="img/4es_logo.png" />
         </a>
       </div>
     </div>

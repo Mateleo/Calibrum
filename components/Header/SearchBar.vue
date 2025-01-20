@@ -47,7 +47,14 @@ function fuzzySearch() {
           class="flex w-full rounded-md p-1 focus-within:bg-white/5 hover:bg-white/5"
         >
           <div class="flex items-center py-2">
-            <img class="mr-5 hidden w-[50px] rounded-lg sm:block" :src="player.Account[0].profileIcon" alt="" />
+            <NuxtImg
+              sizes="50px"
+              quality="80"
+              format="webp"
+              class="mr-5 hidden w-[50px] rounded-lg sm:block"
+              :src="player.Account[0].profileIcon"
+              alt=""
+            />
             <LeaderboardPlayer :name="player.name" :is-live="false"></LeaderboardPlayer>
           </div>
           <div class="flex max-w-[300px] grow items-center justify-end">

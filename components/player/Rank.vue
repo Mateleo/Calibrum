@@ -34,7 +34,10 @@ const { title, losses, wins, lpUpdate, player } = toRefs(props)
           <div class="flex items-center justify-between" :key="lpUpdate.date.toString()">
             <NuxtImg
               :src="`img/new_emblems/${lpUpdate.tier.toLocaleLowerCase() ?? 'iron'}.png`"
-              class="h-[112px] w-[155px] object-cover opacity-60"
+              sizes="160px"
+              quality="70"
+              format="webp"
+              class="h-[112px] w-[155px] object-cover opacity-70"
             ></NuxtImg>
             <div class="flex w-[140px] flex-col justify-center p-4 text-right text-sm leading-4">
               <p class="font-semibold">{{ lpUpdate.rank }} {{ lpUpdate.tier }}</p>

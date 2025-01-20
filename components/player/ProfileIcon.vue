@@ -12,6 +12,9 @@ const props = withDefaults(defineProps<Props>(), {
   <div class="relative flex justify-center">
     <NuxtImg
       :src="props.profileIcon"
+      sizes="100px"
+      quality="90"
+      format="webp"
       class="h-[100px] w-[100px] rounded-full border-2 border-teal-400 shadow-md shadow-black/70"
     />
     <div

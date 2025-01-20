@@ -13,7 +13,7 @@ const losses = computed<number>(() => props.shortHisto.filter((game) => game.las
 <template>
   <div class="flex flex-col items-center justify-center gap-4 text-center">
     <NuxtLink :to="`/player/${player}`" class="group flex items-center gap-4 text-[#d0d1d2]">
-      <img class="size-[70px] rounded-lg" :src="profileIcon" />
+      <NuxtImg sizes="120px" quality="70" format="webp" class="size-[70px] rounded-lg" :src="profileIcon" />
       <div class="flex flex-col items-start gap-2">
         <p class="transition-all ease-in group-hover:text-sky-500">
           {{ player }}

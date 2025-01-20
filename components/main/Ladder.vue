@@ -15,11 +15,11 @@ watch(players, (newPlayers) => {
       <h2 class="mb-2 text-xl font-semibold text-[#08bcd5]">Ladder</h2>
       <div class="flex gap-8 pb-1 font-semibold">
         <div class="flex items-center gap-2">
-          <NuxtImg :src="`img/new_emblems/challenger.png`" sizes="32px" quality="80" format="webp" class="size-8" />
+          <NuxtImg :src="`img/new_emblems/challenger.png`" sizes="32px" quality="70" format="webp" class="size-8" />
           <span>{{ cutoff?.chall }} LP</span>
         </div>
         <div class="flex items-center gap-2">
-          <NuxtImg :src="`img/new_emblems/grandmaster.png`" sizes="32px" quality="80" format="webp" class="size-8" />
+          <NuxtImg :src="`img/new_emblems/grandmaster.png`" sizes="32px" quality="70" format="webp" class="size-8" />
           <span>{{ cutoff?.gm }} LP</span>
         </div>
       </div>
@@ -36,7 +36,14 @@ watch(players, (newPlayers) => {
             class="my-2 flex flex-nowrap justify-between px-3"
           >
             <div class="flex items-center py-4">
-              <img class="mr-5 hidden w-[50px] rounded-lg sm:block" :src="player.Account[0].profileIcon" alt="" />
+              <NuxtImg
+                sizes="70px"
+                quality="70"
+                format="webp"
+                class="mr-5 hidden w-[50px] rounded-lg sm:block"
+                :src="player.Account[0].profileIcon"
+                alt=""
+              />
               <LeaderboardPlayer
                 :name="player.name"
                 :is-live="player.isLive"
@@ -47,7 +54,10 @@ watch(players, (newPlayers) => {
             <div class="flex max-w-[300px] grow items-center justify-end sm:justify-between">
               <img class="hidden h-[32px] w-[32px] sm:block" :src="`img/positions/${player.role}.svg`" alt="" />
               <div class="flex flex-col justify-center">
-                <img
+                <NuxtImg
+                  sizes="100px"
+                  quality="60"
+                  format="webp"
                   class="m-auto h-[50px] w-[90px] object-cover"
                   :src="`img/new_emblems/${player.Account[0].tier?.toLocaleLowerCase() ?? 'silver'}.png`"
                   alt=""

@@ -30,5 +30,8 @@ export default defineNuxtConfig({
       dirs: ["server/utils/**"]
     }
   },
+  image: {
+    domains: ["https://raw.communitydragon.org"]
+  },
   compatibilityDate: "2025-01-18"
 })
