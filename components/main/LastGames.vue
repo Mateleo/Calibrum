@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import dayjs from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
-const { data: lastGames } = await useLazyFetch("/api/lastgames")
+const { data: lastGames } = await useFetch("/api/lastgames")
 dayjs.extend(relativeTime)
 </script>
 
