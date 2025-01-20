@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { PlayerRank } from "#components"
 import type { Account, Player } from "@prisma/client"
 import Fuse from "fuse.js"
 
@@ -19,20 +20,41 @@ function fuzzySearch() {
   const fuse = new Fuse(players.value ?? [], options)
   results.value = fuse.search(search.value).map((item) => item.item)
 }
+
+const target = ref(null)
+const target2 = ref(null)
+
+const { x, y, isOutside } = useMouseInElement(target)
+const { focused } = useFocus(target2)
+
+function flush() {
+  results.value = []
+  search.value = ""
+}
+
+watch(focused, () => {
+  if (isOutside.value && !focused.value) {
+    flush()
+  }
+})
+
+watch(isOutside, () => {
+  if (isOutside.value && !focused.value) {
+    flush()
+  }
+})
 </script>
 
 <template>
-  <div class="flex flex-col items-center lg:col-span-4">
+  <div ref="target" class="flex flex-col items-center lg:col-span-4">
     <div
       class="w-full max-w-[500px] rounded-lg border-2 border-gray-600 p-2 focus-within:border-2 focus-within:border-sky-400 focus-within:shadow-lg focus-within:shadow-black/40 focus-within:outline-none"
       :class="results.length > 0 ? 'bg-[#22262b]/70 shadow-md shadow-black/60 backdrop-blur-[6px]' : ''"
     >
       <div class="flex items-center">
         <input
-          @keyup.enter="
-            results.length > 0 ? (navigateTo(`/player/${results.at(0)?.name}`), ((search = ''), (results = []))) : ''
-          "
-          @focusout="((search = ''), (results = []))"
+          ref="target2"
+          @keyup.enter="results.length > 0 ? (navigateTo(`/player/${results.at(0)?.name}`), flush()) : ''"
           @input="fuzzySearch"
           v-model="search"
           placeholder="Search..."
@@ -42,7 +64,7 @@ function fuzzySearch() {
       </div>
       <div v-if="players && results.length > 0" class="mt-2">
         <button
-          @click="navigateTo(`/player/${player.name}`)"
+          @click="(navigateTo(`/player/${player.name}`), flush())"
           v-for="(player, index) in results.slice(0, 4)"
           class="flex w-full rounded-md p-1 focus-within:bg-white/5 hover:bg-white/5"
         >
@@ -55,7 +77,9 @@ function fuzzySearch() {
               :src="player.Account[0].profileIcon"
               alt=""
             />
-            <LeaderboardPlayer :name="player.name" :is-live="false"></LeaderboardPlayer>
+            <div>
+              {{ player.Account[0].name }}
+            </div>
           </div>
           <div class="flex max-w-[300px] grow items-center justify-end">
             <!-- <div class="flex flex-col justify-center">
