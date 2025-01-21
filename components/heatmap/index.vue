@@ -11,14 +11,8 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-
-console.log(props.lpUpdates[0].date)
-
-var now = new Date()
-
+const now = new Date()
 const heatmap = []
-
-// new Date(new Date().setDate(end.getDate() - 365))
 
 for (
   var d = new Date(new Date().setDate(new Date(props.lpUpdates[0].date).getDate() - 363));
