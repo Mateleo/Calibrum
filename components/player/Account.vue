@@ -131,7 +131,7 @@ function updateWithPrediction() {
     </div>
     <div class="flex flex-col gap-8 md:flex-row">
       <CommonTitleSection title="Account Activity" class="size-full">
-        <LazyHeatmap></LazyHeatmap>
+        <LazyHeatmap :lp-updates="updateWithPrediction()"></LazyHeatmap>
       </CommonTitleSection>
     </div>
   </div>

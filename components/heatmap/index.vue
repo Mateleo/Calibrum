@@ -6,60 +6,68 @@ import { color } from "chart.js/helpers"
 
 Chart.register(MatrixController, MatrixElement, ...registerables)
 
-// function generateData() {
-//   const data = []
-//   const end = Utils.startOfToday()
-//   let dt = new Date(new Date().setDate(end.getDate() - 365))
-//   while (dt <= end) {
-//     const iso = dt.toISOString().substr(0, 10)
-//     data.push({
-//       x: iso,
-//       y: Utils.isoDayOfWeek(dt),
-//       d: iso,
-//       v: Math.random() * 50
-//     })
-//     dt = new Date(dt.setDate(dt.getDate() + 1))
-//   }
-//   return data
-// }
-
-// Combined single function
-function generateDataModern(): { x: string; y: string; d: string; v: number }[] {
-  const data: { x: string; y: string; d: string; v: number }[] = []
-  const end = new Date()
-  end.setHours(0, 0, 0, 0)
-  let dt = new Date(new Date().setDate(end.getDate() - 365))
-
-  while (dt <= end) {
-    const iso = dt.toISOString().substr(0, 10)
-    const dayOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"][dt.getDay()]
-    data.push({
-      x: iso,
-      y: dayOfWeek,
-      d: iso,
-      v: Math.floor(Math.random() * 16)
-    })
-    dt.setDate(dt.getDate() + 1)
-  }
-
-  return data
+interface Props {
+  lpUpdates: (LpUpdateResponse & { prediction: boolean })[]
 }
 
-console.log(generateDataModern()[0])
+const props = defineProps<Props>()
 
+console.log(props.lpUpdates[0].date)
+
+var now = new Date()
+
+const heatmap = []
+
+// new Date(new Date().setDate(end.getDate() - 365))
+
+for (
+  var d = new Date(new Date().setDate(new Date(props.lpUpdates[0].date).getDate() - 363));
+  d <= now;
+  d.setDate(d.getDate() + 1)
+) {
+  const iso = d.toISOString().substr(0, 10)
+  const dayOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"][d.getDay()]
+  heatmap.push({
+    x: iso,
+    y: dayOfWeek,
+    d: iso,
+    v: props.lpUpdates.filter((e) => new Date(e.date).toDateString() === d.toDateString()).length
+  })
+}
+
+// function generateDataModern(): { x: string; y: string; d: string; v: number }[] {
+//   const data: { x: string; y: string; d: string; v: number }[] = []
+//   const end = new Date()
+//   end.setHours(0, 0, 0, 0)
+//   let dt = new Date(new Date().setDate(end.getDate() - 365))
+
+//   while (dt <= end) {
+//     const iso = dt.toISOString().substr(0, 10)
+//     const dayOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"][dt.getDay()]
+//     data.push({
+//       x: iso,
+//       y: dayOfWeek,
+//       d: iso,
+//       v: Math.floor(Math.random() * 16)
+//     })
+//     dt.setDate(dt.getDate() + 1)
+//   }
+
+//   return data
+// }
 const data = {
   datasets: [
     {
       label: "My Matrix",
-      data: generateDataModern(),
+      data: heatmap,
       backgroundColor(c) {
         const value = c.dataset.data[c.dataIndex].v
-        const alpha = value / 15
+        const alpha = Math.min(value / 5, 1)
         return value == 0 ? "rgba(0, 0, 0, 0.3)" : color("#08BCD5").alpha(alpha).rgbString()
       },
       borderColor(c) {
         const value = c.dataset.data[c.dataIndex].v
-        const alpha = value / 15
+        const alpha = Math.min(value / 5, 1)
         return value == 0 ? "rgba(0, 0, 0, 0.1)" : color("#08BCD5").alpha(alpha).darken(0.3).rgbString()
       },
       borderWidth: 1,
