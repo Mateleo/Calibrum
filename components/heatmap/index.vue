@@ -14,6 +14,8 @@ const props = defineProps<Props>()
 const now = new Date()
 const heatmap = []
 
+// We take all days from the last 364 days and compute the games count for every day.
+// Only S15 for the moment
 for (
   var d = new Date(new Date().setDate(new Date(props.lpUpdates[0].date).getDate() - 363));
   d <= now;
