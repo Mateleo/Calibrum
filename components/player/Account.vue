@@ -99,32 +99,39 @@ function updateWithPrediction() {
 }
 </script>
 <template>
-  <div class="mt-4 flex flex-col gap-8 md:flex-row">
-    <div class="flex shrink-0 flex-col">
-      <PlayerRank
-        :lpUpdate="account.lpUpdates.at(0)"
-        :title="'Current Rank'"
-        :wins="account.wins ?? 0"
-        :losses="account.losses ?? 0"
-        :player="account.name"
-      />
-      <PlayerRank
-        :lpUpdate="
-          account.lpUpdates.reduce((peakEloUpdate, currentUpdate) =>
-            currentUpdate.LPC > peakEloUpdate.LPC ? currentUpdate : peakEloUpdate
-          )
-        "
-        :title="'Peak Rank'"
-        :wins="account.wins ?? 0"
-        :losses="account.losses ?? 0"
-        class="mt-8"
-      />
+  <div class="mt-4 flex flex-col gap-4">
+    <div class="flex flex-col gap-8 md:flex-row">
+      <div class="flex shrink-0 flex-col">
+        <PlayerRank
+          :lpUpdate="account.lpUpdates.at(0)"
+          :title="'Current Rank'"
+          :wins="account.wins ?? 0"
+          :losses="account.losses ?? 0"
+          :player="account.name"
+        />
+        <PlayerRank
+          :lpUpdate="
+            account.lpUpdates.reduce((peakEloUpdate, currentUpdate) =>
+              currentUpdate.LPC > peakEloUpdate.LPC ? currentUpdate : peakEloUpdate
+            )
+          "
+          :title="'Peak Rank'"
+          :wins="account.wins ?? 0"
+          :losses="account.losses ?? 0"
+          class="mt-8"
+        />
+      </div>
+      <div class="flex w-full flex-col">
+        <CommonTitleSection title="Rank History" class="h-[250px] md:h-full">
+          <ClientOnly>
+            <LazyPlayerGraph :lp-updates="updateWithPrediction()" :prediction="props.prediction" />
+          </ClientOnly>
+        </CommonTitleSection>
+      </div>
     </div>
-    <div class="flex w-full flex-col">
-      <CommonTitleSection title="Rank History" class="h-[250px] md:h-full">
-        <ClientOnly>
-          <LazyPlayerGraph :lp-updates="updateWithPrediction()" :prediction="props.prediction" />
-        </ClientOnly>
+    <div class="flex flex-col gap-8 md:flex-row">
+      <CommonTitleSection title="Account Activity" class="size-full">
+        <LazyHeatmap></LazyHeatmap>
       </CommonTitleSection>
     </div>
   </div>
