@@ -77,7 +77,7 @@ export interface LiveGameInfoResponse {
 
 export function fetchAccountPuuidByName(gameName: string, tagLine: string) {
   return axios.get<AccountDto>(
-    `https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${gameName}/${tagLine}/?api_key=${
+    `https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${gameName}/${tagLine}?api_key=${
       useRuntimeConfig().RIOT_API_KEY
     }`
   )
