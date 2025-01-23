@@ -8,12 +8,13 @@ Chart.register(MatrixController, MatrixElement, ...registerables)
 
 // Account name
 interface Props {
-  name: string
+  id: string
 }
 
 const props = defineProps<Props>()
 
-const { data: heatmap } = useFetch(`/api/heatmap/${encodeURI(props.name)}`)
+const { data: heatmap } = await useFetch(`/api/heatmap/${props.id}`)
+const mostGamesInADay = computed(() => (heatmap.value ? Math.max(...heatmap.value.map((e) => e.v), 5) : 5))
 
 function formatDate(date: Date): string {
   const monthNames = [
@@ -76,13 +77,13 @@ const data = {
       data: heatmap.value,
       backgroundColor(c) {
         const value = c.dataset.data[c.dataIndex].v
-        const alpha = Math.min(value / 5, 1)
-        return value == 0 ? "rgba(0, 0, 0, 0.3)" : color("#08BCD5").alpha(alpha).rgbString()
+        const alpha = Math.min(value / mostGamesInADay.value, 1)
+        return value == 0 ? "rgba(0, 0, 0, 0.3)" : color("#00fafa").alpha(alpha).rgbString()
       },
       borderColor(c) {
         const value = c.dataset.data[c.dataIndex].v
-        const alpha = Math.min(value / 5, 1)
-        return value == 0 ? "rgba(0, 0, 0, 0.1)" : color("#08BCD5").alpha(alpha).darken(0.3).rgbString()
+        const alpha = Math.min(value / mostGamesInADay.value, 1)
+        return value == 0 ? "rgba(0, 0, 0, 0.1)" : color("#00fafa").alpha(alpha).darken(0.3).rgbString()
       },
       borderWidth: 1,
       width(c) {
@@ -191,7 +192,8 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="">
+  <div v-if="heatmap && heatmap.length > 0">
     <canvas ref="chartRef" id="chartRef" class=""></canvas>
   </div>
+  <div v-else>Oops there is an issue with this chart :(</div>
 </template>

@@ -1,13 +1,12 @@
 export default defineEventHandler(async (event) => {
-  const account = getRouterParam(event, "account", { decode: true })
-  console.log(account)
-  if (!account) {
+  const accountId = getRouterParam(event, "account")
+  if (!accountId) {
     return []
   }
   const lpupdatesS142 = await prisma.lpUpdateS142.findMany({
     where: {
       account: {
-        name: account
+        id: accountId
       }
     },
     select: {
@@ -17,7 +16,7 @@ export default defineEventHandler(async (event) => {
   const lpupdatesS141 = await prisma.lpUpdateS14.findMany({
     where: {
       account: {
-        name: account
+        id: accountId
       }
     },
     select: {
@@ -25,7 +24,7 @@ export default defineEventHandler(async (event) => {
     }
   })
   const lpupdates = lpupdatesS142.concat(lpupdatesS141)
-  if (!lpupdates[0].date) {
+  if (lpupdates.length === 0 || !lpupdates[0].date) {
     return []
   }
 
