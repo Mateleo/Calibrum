@@ -162,7 +162,7 @@ export function fetchApexPLayers(tier: "challenger" | "grandmaster" | "master") 
 
 export async function fetchLast10Matches(puuid: string): Promise<string[]> {
   const response = await fetch(
-    `https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids/?api_key=${useRuntimeConfig().RIOT_API_KEY}`
+    `https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?api_key=${useRuntimeConfig().RIOT_API_KEY}`
   )
   return response.json()
 }
