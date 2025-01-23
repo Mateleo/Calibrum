@@ -14,6 +14,39 @@ const props = defineProps<Props>()
 const now = new Date()
 const heatmap = []
 
+function formatDate(date: Date): string {
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ]
+
+  const month = monthNames[date.getMonth()]
+  const day = date.getDate()
+
+  let daySuffix: string
+  if (day % 10 === 1 && day !== 11) {
+    daySuffix = "st"
+  } else if (day % 10 === 2 && day !== 12) {
+    daySuffix = "nd"
+  } else if (day % 10 === 3 && day !== 13) {
+    daySuffix = "rd"
+  } else {
+    daySuffix = "th"
+  }
+
+  return `${month} ${day}${daySuffix}`
+}
+
 // We take all days from the last 364 days and compute the games count for every day.
 // Only S15 for the moment
 for (
@@ -67,8 +100,6 @@ const data = {
         return value == 0 ? "rgba(0, 0, 0, 0.1)" : color("#08BCD5").alpha(alpha).darken(0.3).rgbString()
       },
       borderWidth: 1,
-      hoverBackgroundColor: "yellow",
-      hoverBorderColor: "yellowgreen",
       width(c) {
         const a = c.chart.chartArea || {}
         const cellSize = (a.right - a.left) / 53 // 53 weeks in a year
@@ -140,14 +171,16 @@ const options = {
   plugins: {
     legend: false,
     tooltip: {
-      displayColors: true,
+      displayColors: false,
       callbacks: {
         title() {
           return ""
         },
         label(context) {
           const v = context.dataset.data[context.dataIndex]
-          return ["d: " + v.d, "v: " + v.v.toFixed(2)]
+          return v.v === 0
+            ? `No game on ${formatDate(new Date(v.d))}.`
+            : `${v.v} games on ${formatDate(new Date(v.d))}.`
         }
       }
     }
