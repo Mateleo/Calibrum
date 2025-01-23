@@ -6,13 +6,14 @@ import { color } from "chart.js/helpers"
 
 Chart.register(MatrixController, MatrixElement, ...registerables)
 
+// Account name
 interface Props {
-  lpUpdates: (LpUpdateResponse & { prediction: boolean })[]
+  name: string
 }
 
 const props = defineProps<Props>()
-const now = new Date()
-const heatmap = []
+
+const { data: heatmap } = useFetch(`/api/heatmap/${encodeURI(props.name)}`)
 
 function formatDate(date: Date): string {
   const monthNames = [
@@ -47,23 +48,6 @@ function formatDate(date: Date): string {
   return `${month} ${day}${daySuffix}`
 }
 
-// We take all days from the last 364 days and compute the games count for every day.
-// Only S15 for the moment
-for (
-  var d = new Date(new Date().setDate(new Date(props.lpUpdates[0].date).getDate() - 363));
-  d <= now;
-  d.setDate(d.getDate() + 1)
-) {
-  const iso = d.toISOString().substr(0, 10)
-  const dayOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"][d.getDay()]
-  heatmap.push({
-    x: iso,
-    y: dayOfWeek,
-    d: iso,
-    v: props.lpUpdates.filter((e) => new Date(e.date).toDateString() === d.toDateString()).length
-  })
-}
-
 // function generateDataModern(): { x: string; y: string; d: string; v: number }[] {
 //   const data: { x: string; y: string; d: string; v: number }[] = []
 //   const end = new Date()
@@ -84,11 +68,12 @@ for (
 
 //   return data
 // }
+
 const data = {
   datasets: [
     {
       label: "My Matrix",
-      data: heatmap,
+      data: heatmap.value,
       backgroundColor(c) {
         const value = c.dataset.data[c.dataIndex].v
         const alpha = Math.min(value / 5, 1)
