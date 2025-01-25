@@ -8,7 +8,8 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@vueuse/nuxt",
     "@nuxt/content",
-    "dayjs-nuxt"
+    "dayjs-nuxt",
+    "nuxt-shiki"
   ],
 
   runtimeConfig: {
@@ -53,14 +54,21 @@ export default defineNuxtConfig({
       weights: [200, 300, 400, 500, 600, 700]
     }
   },
-  content: {
-    build: {
-      markdown: {
-        highlight: {
-          theme: "dracula"
-        }
-      }
-    }
+  // content: {
+  //   build: {
+  //     markdown: {
+  //       highlight: {
+  //         theme: "dracula"
+  //       }
+  //     }
+  //   }
+  // },
+  shiki: {
+    defaultTheme: {
+      dark: "ayu-dark",
+      light: "ayu-dark"
+    },
+    bundledLangs: ["sh", "js", "ts"]
   },
   compatibilityDate: "2025-01-18"
 })

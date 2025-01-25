@@ -60,7 +60,7 @@ They didn't quite make it in time for v3.14 but for the next minor release you c
 
 As usual, our recommendation for upgrading is to run:
 
-```shell
+```sh
 npx nuxi@latest upgrade --force
 ```
 
