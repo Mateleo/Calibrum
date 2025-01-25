@@ -75,7 +75,7 @@ const activeSection = useScrollspy(sectionIds)
 </script>
 
 <template>
-  <main v-if="page" class="m-auto w-[98%] max-w-[1300px] md:w-[95%]">
+  <main v-if="page" class="m-auto w-[98%] max-w-[1500px] md:w-[95%]">
     <BlogHeadline
       :date="page.date"
       :title="page.title"
@@ -84,12 +84,17 @@ const activeSection = useScrollspy(sectionIds)
       :tag="page.tag"
     ></BlogHeadline>
     <div class="grid grid-cols-9">
-      <ContentRenderer
-        id="scroll"
-        v-if="page"
-        :value="page"
-        class="text-md col-span-9 text-justify text-gray-300 lg:col-span-7 lg:pr-8"
-      />
+      <div class="col-span-9 lg:col-span-7 lg:pr-8">
+        <ContentRenderer id="scroll" v-if="page" :value="page" class="text-md text-justify text-gray-300" />
+        <div class="mt-12 flex items-center justify-between border-b border-white/20 pb-12">
+          <NuxtLink to="/blog" class="flex items-center">← Back to Blog</NuxtLink>
+          <div>Socials WIP</div>
+        </div>
+        <div class="my-12 grid grid-cols-2 gap-12">
+          <div class="h-[150px] rounded-xl border border-white/20">Previous article</div>
+          <div class="h-[150px] rounded-xl border border-white/20">Next article</div>
+        </div>
+      </div>
       <div class="hidden flex-col lg:col-span-2 lg:flex">
         <div class="sticky right-0 top-[60px]">
           <p class="text-sm font-semibold text-white">Table des matières</p>
@@ -130,13 +135,16 @@ main :where(code:not(pre code)) {
   @apply truncate rounded-md border border-white/20 bg-white/[5%] px-[6px] pb-[3px] pt-[1px] font-medium text-white;
 }
 main :where(pre) {
-  @apply mb-4 rounded-md border border-white/20 bg-white/5 p-4 text-xs;
+  @apply mb-4 rounded-md border border-white/20 bg-white/5 p-4 text-[14px];
 }
 main :where(pre > code) {
   font-family: "Fira Code";
 }
 main :where(p):not(.custom) {
-  @apply mb-4 text-[15px] leading-7 tracking-tight;
+  @apply mb-4 text-[16px] leading-7 tracking-tight;
+}
+main :where(img):not(.custom) {
+  @apply m-auto w-full max-w-[700px];
 }
 main :where(ol li):not(.custom) {
   @apply mb-6 ml-8 list-decimal text-[15px] leading-7;
