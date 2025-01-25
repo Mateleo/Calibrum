@@ -31,14 +31,13 @@ const smoothScroll = (event: MouseEvent, id: string) => {
 
 <template>
   <div>
-    {{ props.activeSection }}
     <ul class="custom" v-if="toc && toc.links">
       <li
-        class="custom mb-2 transition-all ease-in"
+        class="custom mb-[10px] opacity-100 transition-all"
         :style="{
-          paddingLeft: `${Math.max(12 * (link.depth - 2), 0)}px`,
-          color: activeSection === link.id ? 'blue' : 'red' // Change color based on active section
+          paddingLeft: `${Math.max(12 * (link.depth - 2), 0)}px` // Change color based on active section
         }"
+        :class="activeSection === link.id ? 'text-[#00eaff]/90' : 'text-gray-400 hover:text-white'"
         v-for="link in toc.links"
         :key="link.text"
       >

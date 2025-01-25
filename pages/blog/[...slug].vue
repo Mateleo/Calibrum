@@ -118,7 +118,7 @@ main :where(h3):not(.custom) {
   scroll-margin-top: 80px;
 }
 main :where(a):not(.custom) {
-  @apply font-medium text-[#00DC82];
+  @apply font-medium text-[#00eaff];
 }
 main :where(hr) {
   @apply my-8;

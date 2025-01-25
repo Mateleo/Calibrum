@@ -21,7 +21,7 @@ const props = defineProps({
   <div class="mb-8 border-b border-white/20">
     <div class="flex flex-col text-white/70 md:mt-12">
       <p class="text-sm">
-        <span class="font-medium text-sky-500"> {{ props.tag }}</span> |
+        <span class="font-medium text-[#00eaff]"> {{ props.tag }}</span> |
         {{ $dayjs(props.date, "DD/MM/YYYY").format("D MMMM YYYY") }}
       </p>
       <h1 class="mt-2 text-6xl font-bold text-white">{{ props.title }}</h1>
