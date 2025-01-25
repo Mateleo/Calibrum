@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const router = useRouter()
 const props = defineProps({
   toc: {
     type: Object
@@ -20,8 +21,9 @@ const smoothScroll = (event: MouseEvent, id: string) => {
       block: "start"
     })
 
-    setTimeout(() => {
-      window.history.replaceState(null, "", `#${id}`)
+    setTimeout(async () => {
+      await router.push(`#${id}`)
+      history.replaceState({ ...history.state }, "")
     }, 500)
   }
 }
