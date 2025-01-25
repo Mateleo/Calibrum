@@ -119,6 +119,17 @@ export async function fetchAccountData(accountId: string) {
     const matches = await fetchLast10Matches(userAccount.puuid)
     const matchResponse = await getMatchInfo(matches[0])
 
+    const latestUpdate = await prisma.lpUpdateS142.findFirst({
+      where: { accountId },
+      orderBy: {
+        date: "desc"
+      }
+    })
+
+    const fakeUpdate = latestUpdate?.matchId === matchResponse.metadata.matchId
+
+    if (fakeUpdate) return
+
     const participantInfo = matchResponse.info.participants.find((p) => p.puuid === userAccount.puuid)
 
     const championName = participantInfo?.championName
