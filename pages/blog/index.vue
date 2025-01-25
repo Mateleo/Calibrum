@@ -3,8 +3,8 @@ const { data: articles } = await useAsyncData(() => queryCollection("content").o
 </script>
 <template>
   <div class="m-auto w-[98%] max-w-[1500px] md:w-[95%]">
-    <h1 class="mt-14 text-3xl font-bold">Le Blog de 4eSport</h1>
-    <h2 class="mt-2 text-white/70">Lisez les dernières nouvelles concernant l'association.</h2>
+    <h1 class="mt-14 text-3xl font-bold">Le Blog de Calibrum</h1>
+    <h2 class="mt-2 text-white/70">Lisez les dernières nouvelles de l'équipe de Dev.</h2>
     <main v-if="articles" class="mt-12">
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 lg:grid-cols-4">
         <div
