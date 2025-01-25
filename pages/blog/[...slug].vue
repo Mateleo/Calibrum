@@ -108,6 +108,33 @@ function useScrollspy(sectionIds: Ref<string[]>) {
 const sectionIds = computed(() => page.value?.body?.toc?.links?.map((link: any) => link.id) ?? [])
 
 const activeSection = useScrollspy(sectionIds)
+
+useSeoMeta({
+  title: () => `${page.value?.title ?? "Calibrum"}`,
+  titleTemplate: () => `${page.value?.title ?? "Calibrum"}`,
+  twitterTitle: () => `${page.value?.title ?? "Calibrum"}`,
+  ogTitle: () => `${page.value?.title ?? "Calibrum"}`,
+  description: `${page.value?.description}`,
+  ogDescription: `${page.value?.description}`,
+  twitterDescription: `${page.value?.description}`,
+  ogImage: () => `/content/thumbnail/${page.value?.thumbnail}`,
+  twitterImage: `/content/thumbnail/${page.value?.thumbnail}`,
+  twitterCard: "summary_large_image",
+  themeColor: "#00eaff",
+  ogType: "website",
+  ogUrl: "https://calibrum.4esport.fr/",
+  ogLocale: "fr_FR",
+  msapplicationTileColor: "#00eaff",
+  author: "Mateleo",
+  ogSiteName: "Calibrum",
+  twitterSite: "Calibrum",
+  twitterCreator: "Mateleo",
+  mobileWebAppCapable: "yes",
+  appleMobileWebAppTitle: "Calibrum",
+  ogImageHeight: 1200,
+  ogImageWidth: 630,
+  ogImageType: "image/png"
+})
 </script>
 
 <template>
