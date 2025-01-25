@@ -1,9 +1,45 @@
 <script lang="ts" setup>
+import dayjs from "dayjs"
+
 const route = useRoute()
 const articlePath = route.path.substring(5)
 const { data: page } = await useAsyncData(articlePath, () => {
   return queryCollection("content").path(articlePath).first()
 })
+
+const { data: articles } = await useAsyncData("navigation", () => {
+  return queryCollectionNavigation("content", ["date", "description"])
+})
+
+const givenDate = dayjs(page.value?.date, "DD/MM/YYYY")
+
+// we need this bc of calibrum subfolder.
+// Not the best options (we suppose calibrum's articles are in the first item)
+// Ideal would be to flatten every list from "children"
+const allArticles = computed(() =>
+  articles.value ? [...articles.value.slice(1), ...articles.value.at(0).children] : []
+)
+
+// Find the closest previous and next articles
+const previousArticle = computed(() => {
+  if (!allArticles.value) return null
+  const previous = allArticles.value
+    .filter((article) => dayjs(article.date, "DD/MM/YYYY").isBefore(givenDate))
+    .sort((a, b) => dayjs(b.date, "DD/MM/YYYY").diff(dayjs(a.date, "DD/MM/YYYY")))[0]
+
+  return previous || null
+})
+
+const nextArticle = computed(() => {
+  if (!allArticles.value) return null
+  const next = allArticles.value
+    .filter((article) => dayjs(article.date, "DD/MM/YYYY").isAfter(givenDate))
+    .sort((a, b) => dayjs(a.date, "DD/MM/YYYY").diff(dayjs(b.date, "DD/MM/YYYY")))[0]
+
+  return next || null
+})
+
+console.log(articles.value)
 
 // A delete si possible, je n'ai pas accès aux sections directement (cachés derrière <ContentRenderer>)
 // Manuellement ajouter et retirer les watchers pour déterminer quelle section est la plus "visible"
@@ -91,8 +127,40 @@ const activeSection = useScrollspy(sectionIds)
           <div>Socials WIP</div>
         </div>
         <div class="my-12 grid grid-cols-2 gap-12">
-          <div class="h-[150px] rounded-xl border border-white/20">Previous article</div>
-          <div class="h-[150px] rounded-xl border border-white/20">Next article</div>
+          <NuxtLink
+            :to="`/blog${nextArticle.path}`"
+            v-if="nextArticle"
+            class="group flex h-[150px] flex-col rounded-xl border border-white/20 p-4 hover:bg-white/[2%]"
+          >
+            <div class="">
+              <Icon
+                name="material-symbols:keyboard-double-arrow-left-rounded"
+                size="2.5em"
+                class="-ml-[6px] text-white/80 group-hover:text-[#00eaff]"
+              ></Icon>
+            </div>
+            <div>
+              <p class="custom font-semibold text-white">{{ nextArticle.title }}</p>
+              <p class="custom mt-1 text-xs font-normal text-gray-400">{{ nextArticle.description }}</p>
+            </div>
+          </NuxtLink>
+          <NuxtLink
+            :to="`/blog${previousArticle.path}`"
+            v-if="previousArticle"
+            class="group col-start-2 flex h-[150px] flex-col rounded-xl border border-white/20 p-4 hover:bg-white/[2%]"
+          >
+            <div class="">
+              <Icon
+                name="material-symbols:keyboard-double-arrow-right-rounded"
+                size="2.5em"
+                class="-ml-[6px] text-white/80 group-hover:text-[#00eaff]"
+              ></Icon>
+            </div>
+            <div>
+              <p class="custom font-semibold text-white">{{ previousArticle.title }}</p>
+              <p class="custom mt-1 text-xs font-normal text-gray-400">{{ previousArticle.description }}</p>
+            </div>
+          </NuxtLink>
         </div>
       </div>
       <div class="hidden flex-col lg:col-span-2 lg:flex">
