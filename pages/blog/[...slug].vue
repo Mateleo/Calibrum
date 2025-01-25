@@ -127,7 +127,7 @@ main :where(h2 a, h3 a, h1 a):not(.custom) {
   @apply font-semibold text-white;
 }
 main :where(code:not(pre code)) {
-  @apply rounded-md border border-white/20 bg-white/[5%] px-[6px] pb-[3px] pt-[1px] font-medium text-white;
+  @apply truncate rounded-md border border-white/20 bg-white/[5%] px-[6px] pb-[3px] pt-[1px] font-medium text-white;
 }
 main :where(pre) {
   @apply mb-4 rounded-md border border-white/20 bg-white/5 p-4 text-xs;
