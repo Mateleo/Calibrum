@@ -13,17 +13,17 @@
             <NuxtImg src="img/logo.png" sizes="64px" format="webp" quality="70"></NuxtImg>
           </div>
           <div class="hidden flex-row-reverse px-2 md:flex" to="/">
-            <h1 class="hidden text-3xl font-bold lg:block">Calibrum</h1>
+            <h1 class="hidden text-3xl font-semibold lg:block">Calibrum</h1>
           </div>
         </NuxtLink>
       </div>
       <HeaderSearchBar class="grow"></HeaderSearchBar>
       <nav class="flex flex-col md:ml-auto md:px-4 lg:col-span-3">
         <NuxtLink
-          to="/live-games"
+          to="/blog"
           class="flex grow items-center whitespace-nowrap border-b-[4px] border-transparent pt-[6px] text-xs font-semibold transition-colors ease-in hover:border-cyan-300 sm:text-base"
         >
-          Blog (WIP)
+          Blog
         </NuxtLink>
       </nav>
     </div>

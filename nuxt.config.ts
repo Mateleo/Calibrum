@@ -6,7 +6,9 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/icon",
     "@nuxt/image",
-    "@vueuse/nuxt"
+    "@vueuse/nuxt",
+    "@nuxt/content",
+    "dayjs-nuxt"
   ],
 
   runtimeConfig: {
@@ -39,6 +41,26 @@ export default defineNuxtConfig({
   },
   image: {
     domains: ["https://raw.communitydragon.org"]
+  },
+  dayjs: {
+    locales: ["en"],
+    plugins: ["relativeTime", "utc", "timezone", "customParseFormat"],
+    defaultLocale: "en",
+    defaultTimezone: "Europe/Paris"
+  },
+  fonts: {
+    defaults: {
+      weights: [200, 300, 400, 500, 600, 700]
+    }
+  },
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          theme: "dracula"
+        }
+      }
+    }
   },
   compatibilityDate: "2025-01-18"
 })
