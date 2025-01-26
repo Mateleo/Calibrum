@@ -28,5 +28,5 @@ const props = defineProps({
 </script>
 
 <template>
-  <Shiki :lang="props.language" :code="props.code" as="span" :class="props.class" class="text-sm" />
+  <Shiki :lang="props.language" :code="props.code" as="span" :class="props.class" class="text-xs md:text-[14px]" />
 </template>

@@ -245,12 +245,10 @@ main :where(pre) {
 }
 main :where(pre > code) {
   font-family: "Fira Code";
-  display: flex;
-  flex-wrap: wrap;
-}
-main :where(pre > code > span) {
-  display: flex;
-  flex-wrap: wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto;
+  display: block;
 }
 main :where(p):not(.custom) {
   @apply mb-4 text-[15px] leading-7 tracking-tight text-gray-400 md:text-[16px];

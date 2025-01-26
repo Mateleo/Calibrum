@@ -6,7 +6,7 @@ const { data: articles } = await useAsyncData(() => queryCollection("content").o
     <h1 class="mt-14 text-3xl font-bold">Le Blog de Calibrum</h1>
     <h2 class="mt-2 text-white/70">Lisez les dernières nouvelles de l'équipe de Dev.</h2>
     <main v-if="articles" class="mt-12">
-      <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 lg:grid-cols-4">
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         <div
           v-for="article in articles.sort(
             (a, b) => $dayjs(b.date, 'DD/MM/YYYY').unix() - $dayjs(a.date, 'DD/MM/YYYY').unix()
@@ -25,14 +25,14 @@ const { data: articles } = await useAsyncData(() => queryCollection("content").o
                 backgroundSize: 'contain'
               }"
             ></div>
-            <div class="flex h-[55%] flex-col p-4">
+            <div class="flex h-[55%] flex-col p-4 pb-2">
               <div
-                class="m-auto mb-2 ml-0 rounded-lg border border-sky-800 bg-sky-950/40 px-2 py-[3px] text-xs font-semibold text-sky-400 lg:mb-4"
+                class="m-auto mb-2 ml-0 rounded-lg border border-sky-800 bg-sky-950/40 px-2 py-[3px] text-xs font-semibold text-sky-400 lg:mb-3"
               >
                 {{ article.tag }}
               </div>
-              <h3 class="text-lg font-semibold leading-6">{{ article.title }}</h3>
-              <p class="mt-2 h-[40px] overflow-hidden text-sm font-light leading-5 text-white/70">
+              <h3 class="font-semibold leading-6 lg:text-[20px]">{{ article.title }}</h3>
+              <p class="mt-2 h-[40px] overflow-hidden text-[13px] font-light leading-4 text-white/70">
                 {{ article.description }}
               </p>
               <div class="grow"></div>
