@@ -9,7 +9,7 @@ let results = ref<
     Account: Account[]
   })[]
 >([])
-const { pending, error, data: players } = await useFetch("/api/search")
+const { data: players } = await useFetch("/api/search")
 
 const options = {
   includeScore: true,
@@ -46,11 +46,12 @@ watch(isOutside, () => {
 </script>
 
 <template>
-  <div ref="target" class="relative flex justify-center lg:col-span-4">
+  <div class="relative flex justify-center lg:col-span-4">
     <div class="absolute flex h-full w-full flex-col justify-center">
       <div class="h-[42px]">
         <div
-          class="relative m-auto w-full max-w-[350px] rounded-lg border-2 border-gray-600 p-2 focus-within:border-2 focus-within:border-sky-400 focus-within:shadow-lg focus-within:shadow-black/40 focus-within:outline-none"
+          ref="target"
+          class="relative m-auto w-full max-w-[350px] rounded-lg border-2 border-gray-600 pr-2 focus-within:border-2 focus-within:border-sky-400 focus-within:shadow-lg focus-within:shadow-black/40 focus-within:outline-none"
           :class="results.length > 0 ? 'bg-[#22262b]/70 shadow-md shadow-black/60 backdrop-blur-[6px]' : ''"
         >
           <div class="flex items-center">
@@ -60,7 +61,7 @@ watch(isOutside, () => {
               @input="fuzzySearch"
               v-model="search"
               placeholder="Search..."
-              class="block w-full bg-[#22262b] text-sm font-semibold placeholder:text-sm placeholder:font-normal focus:outline-none"
+              class="block w-full rounded-md bg-[#22262b] p-2 text-sm font-semibold placeholder:text-sm placeholder:font-normal focus:outline-none"
             />
             <Icon name="material-symbols:search" size="1.2em"></Icon>
           </div>
@@ -70,7 +71,7 @@ watch(isOutside, () => {
               v-for="(player, index) in results.slice(0, 4)"
               class="flex w-full rounded-md p-1 focus-within:bg-white/5 hover:bg-white/5"
             >
-              <div class="flex items-center py-2">
+              <div class="flex items-center p-2">
                 <NuxtImg
                   sizes="50px"
                   quality="80"

@@ -46,7 +46,7 @@ useHead({
 :root {
   background-color: #12171c;
   color: white;
-  font-family: Poppins;
+  font-family: "Poppins";
   color-scheme: dark;
 }
 
