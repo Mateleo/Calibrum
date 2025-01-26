@@ -2,7 +2,7 @@
 const { data: articles } = await useAsyncData(() => queryCollection("content").order("date", "DESC").all())
 </script>
 <template>
-  <div class="m-auto w-[98%] max-w-[1500px] md:w-[95%]">
+  <div class="m-auto w-[94%] max-w-[1500px] pb-12">
     <h1 class="mt-14 text-3xl font-bold">Le Blog de Calibrum</h1>
     <h2 class="mt-2 text-white/70">Lisez les dernières nouvelles de l'équipe de Dev.</h2>
     <main v-if="articles" class="mt-12">

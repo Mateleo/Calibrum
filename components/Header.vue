@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 <template>
   <header
-    class="z-10 m-auto mt-4 h-[64px] w-[98%] max-w-[1500px] gap-4 rounded-md bg-[#22262b] py-2 shadow-lg shadow-black/30 md:w-[95%] md:gap-8 md:rounded-xl"
+    class="z-10 m-auto mt-4 h-[64px] w-[94%] max-w-[1500px] gap-4 rounded-md bg-[#22262b] py-2 shadow-lg shadow-black/30 md:gap-8 md:rounded-xl"
   >
     <div class="flex h-full justify-between gap-4 px-2 md:grid md:justify-center md:px-0 lg:grid-cols-10">
       <div class="hidden md:flex lg:col-span-3">

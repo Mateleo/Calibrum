@@ -60,7 +60,7 @@ useServerSeoMeta({
   <div>
     <div
       v-if="player"
-      class="bg m-auto mt-4 flex w-[95%] max-w-[2000px] flex-col gap-4 md:flex-row md:gap-8 lg:w-[85%] xl:w-[75%]"
+      class="bg m-auto mt-4 flex w-[94%] max-w-[2000px] flex-col gap-4 md:flex-row md:gap-8 lg:w-[85%] xl:w-[75%]"
     >
       <div class="flex flex-col gap-8">
         <PlayerTitle :role="player.role" :profileIcon="player.accounts.at(0)?.profileIcon">

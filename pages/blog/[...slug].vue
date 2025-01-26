@@ -138,7 +138,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <main v-if="page" class="m-auto w-[98%] max-w-[1500px] md:w-[95%]">
+  <main v-if="page" class="m-auto w-[94%] max-w-[1500px]">
     <BlogHeadline
       :date="page.date"
       :title="page.title"
@@ -148,12 +148,12 @@ useSeoMeta({
     ></BlogHeadline>
     <div class="grid grid-cols-9">
       <div class="col-span-9 lg:col-span-7 lg:pr-8">
-        <ContentRenderer id="scroll" v-if="page" :value="page" class="text-md text-justify text-gray-300" />
+        <ContentRenderer id="scroll" v-if="page" :value="page" class="text-md text-gray-300 md:text-justify" />
         <div class="mt-12 flex items-center justify-between border-b border-white/20 pb-12">
           <NuxtLink to="/blog" class="flex items-center">← Back to Blog</NuxtLink>
           <div>Socials WIP</div>
         </div>
-        <div class="my-12 grid grid-cols-2 gap-12">
+        <div class="my-12 flex flex-col gap-12 md:grid md:grid-cols-2">
           <NuxtLink
             :to="`/blog${nextArticle.path}`"
             v-if="nextArticle"
@@ -206,11 +206,11 @@ main,
   scroll-behavior: smooth;
 }
 main :where(h1):not(.custom) {
-  @apply mb-4 text-4xl font-bold text-white;
+  @apply mb-4 text-3xl font-bold text-white md:text-4xl;
   scroll-margin-top: 80px;
 }
 main :where(h2):not(.custom) {
-  @apply mb-4 mt-10 text-2xl font-bold text-white;
+  @apply mb-4 mt-10 text-xl font-bold text-white md:text-2xl;
   scroll-margin-top: 80px;
 }
 main :where(h3):not(.custom) {
@@ -230,13 +230,19 @@ main :where(code:not(pre code)) {
   @apply truncate rounded-md border border-white/20 bg-white/[5%] px-[6px] pb-[3px] pt-[1px] font-medium text-white;
 }
 main :where(pre) {
-  @apply mb-4 rounded-md border border-white/20 bg-white/5 p-4 text-[14px];
+  @apply mb-4 w-full rounded-md border border-white/20 bg-white/5 p-4;
 }
 main :where(pre > code) {
   font-family: "Fira Code";
+  display: flex;
+  flex-wrap: wrap;
+}
+main :where(pre > code > span) {
+  display: flex;
+  flex-wrap: wrap;
 }
 main :where(p):not(.custom) {
-  @apply mb-4 text-[16px] leading-7 tracking-tight;
+  @apply mb-4 text-[15px] leading-7 tracking-tight md:text-[16px];
 }
 main :where(img):not(.custom) {
   @apply m-auto w-full max-w-[700px];
