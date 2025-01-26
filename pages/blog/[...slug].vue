@@ -39,8 +39,6 @@ const nextArticle = computed(() => {
   return next || null
 })
 
-console.log(articles.value)
-
 // A delete si possible, je n'ai pas accès aux sections directement (cachés derrière <ContentRenderer>)
 // Manuellement ajouter et retirer les watchers pour déterminer quelle section est la plus "visible"
 // J'ai fait un watch mais sectionIds ne sera jamais réactif (Mardown -> Static) aka useless
@@ -105,7 +103,20 @@ function useScrollspy(sectionIds: Ref<string[]>) {
   return activeSection
 }
 
-const sectionIds = computed(() => page.value?.body?.toc?.links?.map((link: any) => link.id) ?? [])
+// Each link can have a "children" property with even more links. (Recursive lol)
+const flattenLinks = (links: any[]) => {
+  return links.reduce((acc, link) => {
+    acc.push(link.id)
+    if (link.children && link.children.length > 0) {
+      acc.push(...flattenLinks(link.children))
+    }
+    return acc
+  }, [])
+}
+
+const sectionIds = computed(() => {
+  return flattenLinks(page.value?.body?.toc?.links ?? [])
+})
 
 const activeSection = useScrollspy(sectionIds)
 
@@ -192,7 +203,7 @@ useSeoMeta({
       </div>
       <div class="hidden flex-col lg:col-span-2 lg:flex">
         <div class="sticky right-0 top-[60px]">
-          <p class="text-sm font-semibold text-white">Table des matières</p>
+          <p class="custom mb-4 text-sm font-semibold text-white">Table des matières</p>
           <BlogNavigation class="text-sm" :toc="page.body?.toc" :activeSection="activeSection"></BlogNavigation>
         </div>
       </div>
@@ -214,7 +225,7 @@ main :where(h2):not(.custom) {
   scroll-margin-top: 80px;
 }
 main :where(h3):not(.custom) {
-  @apply mb-4 mt-8 text-xl font-semibold text-white;
+  @apply mb-4 mt-8 text-lg font-semibold text-gray-200;
   scroll-margin-top: 80px;
 }
 main :where(a):not(.custom) {
@@ -242,10 +253,10 @@ main :where(pre > code > span) {
   flex-wrap: wrap;
 }
 main :where(p):not(.custom) {
-  @apply mb-4 text-[15px] leading-7 tracking-tight md:text-[16px];
+  @apply mb-4 text-[15px] leading-7 tracking-tight text-gray-400 md:text-[16px];
 }
 main :where(img):not(.custom) {
-  @apply m-auto w-full max-w-[700px];
+  @apply m-auto h-auto max-h-[400px] w-full max-w-[700px] object-contain;
 }
 main :where(ol li):not(.custom) {
   @apply mb-6 ml-8 list-decimal text-[15px] leading-7;

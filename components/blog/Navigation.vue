@@ -37,13 +37,28 @@ const smoothScroll = (event: MouseEvent, id: string) => {
         :style="{
           paddingLeft: `${Math.max(12 * (link.depth - 2), 0)}px` // Change color based on active section
         }"
-        :class="activeSection === link.id ? 'text-[#00eaff]/90' : 'text-gray-400 hover:text-white'"
+        :class="activeSection === link.id ? 'text-[#00eaff]/90' : 'text-gray-300 hover:text-white'"
         v-for="link in toc.links"
         :key="link.text"
       >
         <a class="custom" :href="`#${link.id}`" @click="(event) => smoothScroll(event, link.id)">
           {{ link.text }}
         </a>
+        <div v-if="link.children" class="mt-[10px]">
+          <li
+            class="custom mb-[10px] opacity-100 transition-all"
+            :style="{
+              paddingLeft: `${Math.max(15 * (deepLink.depth - 2), 0)}px` // Change color based on active section
+            }"
+            :class="activeSection === deepLink.id ? 'text-[#00eaff]/90' : 'text-gray-300 hover:text-white'"
+            v-for="deepLink in link.children"
+            :key="deepLink.text"
+          >
+            <a class="custom" :href="`#${deepLink.id}`" @click="(event) => smoothScroll(event, deepLink.id)">
+              {{ deepLink.text }}
+            </a>
+          </li>
+        </div>
       </li>
     </ul>
   </div>

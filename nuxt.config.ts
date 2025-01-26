@@ -54,15 +54,16 @@ export default defineNuxtConfig({
       weights: [200, 300, 400, 500, 600, 700]
     }
   },
-  // content: {
-  //   build: {
-  //     markdown: {
-  //       highlight: {
-  //         theme: "dracula"
-  //       }
-  //     }
-  //   }
-  // },
+  content: {
+    build: {
+      markdown: {
+        toc: {
+          depth: 3,
+          searchDepth: 3
+        }
+      }
+    }
+  },
   shiki: {
     defaultTheme: {
       dark: "ayu-dark",

@@ -46,13 +46,13 @@ if (hasNewGame) {
 }
 ```
 
-## 🗺 Nouvelle Heatmap
+## 🗺️ Nouvelle Heatmap
 
 Nous avons introduit une carte de fréquentation directement dans votre profil joueur. Elle représente la répartition de toutes vos parties sur la saison 15 ainsi que les split 1 et 2 de la saison 14.
 
 ![Heatmap](/content/img/heatmap.png)
 
-## 🛠 QoL à foison
+## 🛠️ QoL à foison
 
 Mateleo a travaillé sur de nombreuses améliorations pour rendre Calibrum encore plus agréable à utiliser.
 
