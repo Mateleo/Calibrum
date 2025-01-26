@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 useSeoMeta({
-  title: "Calibru 🌠",
+  title: "Calibrum 🌠",
   titleTemplate: "Calibrum 🌠",
   twitterTitle: "Calibrum 🌠",
   ogTitle: "Calibrum 🌠",
