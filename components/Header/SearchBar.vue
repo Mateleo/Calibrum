@@ -51,7 +51,7 @@ watch(isOutside, () => {
       <div class="h-[42px]">
         <div
           ref="target"
-          class="relative m-auto w-full max-w-[350px] rounded-lg border-2 border-gray-600 focus-within:border-2 focus-within:border-sky-400 focus-within:shadow-lg focus-within:shadow-black/40 focus-within:outline-none"
+          class="relative m-auto w-full max-w-[350px] rounded-lg border-2 border-gray-600 pr-2 focus-within:border-2 focus-within:border-sky-400 focus-within:shadow-lg focus-within:shadow-black/40 focus-within:outline-none"
           :class="results.length > 0 ? 'bg-[#22262b]/70 shadow-md shadow-black/60 backdrop-blur-[6px]' : ''"
         >
           <div class="flex items-center">
