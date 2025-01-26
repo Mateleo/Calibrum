@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/icon",
     "@nuxt/image",
-    "@vueuse/nuxt"
+    "@vueuse/nuxt",
+    "@nuxtjs/seo"
   ],
 
   runtimeConfig: {
@@ -39,6 +40,22 @@ export default defineNuxtConfig({
   },
   image: {
     domains: ["https://raw.communitydragon.org"]
+  },
+  sitemap: {
+    urls: async () => {
+      try {
+        const response = await fetch("https://calibrum.4esport.fr/api/urls")
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
+        }
+        const urls = await response.json() // Assuming the response is a JSON array of strings
+        console.log(urls)
+        return urls
+      } catch (error) {
+        console.error("Error fetching URLs:", error)
+        return [] // Return an empty array or handle the error as needed
+      }
+    }
   },
   compatibilityDate: "2025-01-18"
 })
