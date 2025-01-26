@@ -16,10 +16,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    pageTransition: { name: "page", mode: "out-in" },
-    head: {
-      title: "Calibrum 🌠"
-    }
+    pageTransition: { name: "page", mode: "out-in" }
   },
 
   // ogImage: {
@@ -27,7 +24,7 @@ export default defineNuxtConfig({
   //   siteUrl: "https://calibrum.4esport.fr",
   //   runtimeCacheStorage: {
   //     driver: "fs",
-  //     base: "./cache/db"
+  //     base: "./cache/db"<
   //   }
   // },
   devtools: {
@@ -48,14 +45,17 @@ export default defineNuxtConfig({
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
         }
-        const urls = await response.json() // Assuming the response is a JSON array of strings
-        console.log(urls)
+        const urls = await response.json()
         return urls
       } catch (error) {
         console.error("Error fetching URLs:", error)
-        return [] // Return an empty array or handle the error as needed
+        return []
       }
     }
+  },
+  site: {
+    url: "https://calibrum.4esport.fr",
+    name: "Calibrum"
   },
   compatibilityDate: "2025-01-18"
 })

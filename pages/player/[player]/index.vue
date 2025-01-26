@@ -29,7 +29,7 @@ const {
 //   cacheTtl:100
 // })
 
-useServerSeoMeta({
+useSeoMeta({
   title: () => `${player.value?.name}`,
   twitterTitle: () => `${player.value?.name}`,
   ogTitle: () => `${player.value?.name}`,

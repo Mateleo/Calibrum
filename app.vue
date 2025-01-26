@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 useSeoMeta({
   title: "Calibrum 🌠",
+  titleTemplate: "Calibrum 🌠",
   twitterTitle: "Calibrum 🌠",
   ogTitle: "Calibrum 🌠",
   description: "Calibrum : La nouvelle référence pour les joueurs LoL de 4eSport.",
