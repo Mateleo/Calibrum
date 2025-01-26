@@ -9,7 +9,7 @@ let results = ref<
     Account: Account[]
   })[]
 >([])
-const { pending, error, data: players } = await useFetch("/api/search")
+const { data: players } = await useFetch("/api/search")
 
 const options = {
   includeScore: true,
