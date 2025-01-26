@@ -15,7 +15,7 @@ const { data: articles } = await useAsyncData(() => queryCollection("content").o
         >
           <NuxtLink
             :to="`/blog${article.path}`"
-            class="group flex aspect-[8/10] flex-col rounded-xl border border-white/10 bg-white/[0.04] shadow-lg shadow-black/50 hover:bg-white/[1%] hover:outline hover:outline-[3px] hover:outline-sky-500"
+            class="group flex aspect-[9/10] flex-col rounded-xl border border-white/10 bg-white/[0.04] shadow-lg shadow-black/50 hover:bg-white/[1%] hover:outline hover:outline-[3px] hover:outline-sky-500"
           >
             <div
               class="h-[45%] w-full rounded-t-xl"
