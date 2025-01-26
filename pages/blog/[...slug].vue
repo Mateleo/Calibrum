@@ -159,7 +159,7 @@ useSeoMeta({
             v-if="nextArticle"
             class="group flex h-[150px] flex-col rounded-xl border border-white/20 p-4 hover:bg-white/[2%]"
           >
-            <div class="">
+            <div class="mb-2 flex">
               <Icon
                 name="material-symbols:keyboard-double-arrow-left-rounded"
                 size="2.5em"
@@ -176,14 +176,14 @@ useSeoMeta({
             v-if="previousArticle"
             class="group col-start-2 flex h-[150px] flex-col rounded-xl border border-white/20 p-4 hover:bg-white/[2%]"
           >
-            <div class="">
+            <div class="mb-2 flex flex-row-reverse">
               <Icon
                 name="material-symbols:keyboard-double-arrow-right-rounded"
                 size="2.5em"
                 class="-ml-[6px] text-white/80 group-hover:text-[#00eaff]"
               ></Icon>
             </div>
-            <div>
+            <div class="text-right">
               <p class="custom font-semibold text-white">{{ previousArticle.title }}</p>
               <p class="custom mt-1 text-xs font-normal text-gray-400">{{ previousArticle.description }}</p>
             </div>
