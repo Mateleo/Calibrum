@@ -15,7 +15,7 @@ const { data: articles } = await useAsyncData(() => queryCollection("content").o
         >
           <NuxtLink
             :to="`/blog${article.path}`"
-            class="flex aspect-[8/10] flex-col rounded-xl border border-white/10 bg-white/[0.04] shadow-lg shadow-black/50 hover:bg-white/[1%] hover:outline hover:outline-[3px] hover:outline-sky-500"
+            class="group flex aspect-[8/10] flex-col rounded-xl border border-white/10 bg-white/[0.04] shadow-lg shadow-black/50 hover:bg-white/[1%] hover:outline hover:outline-[3px] hover:outline-sky-500"
           >
             <div
               class="h-[45%] w-full rounded-t-xl"
@@ -31,7 +31,7 @@ const { data: articles } = await useAsyncData(() => queryCollection("content").o
               >
                 {{ article.tag }}
               </div>
-              <h3 class="mt-2 text-lg font-semibold lg:text-xl">{{ article.title }}</h3>
+              <h3 class="text-lg font-semibold leading-6">{{ article.title }}</h3>
               <p class="mt-2 h-[40px] overflow-hidden text-sm font-light leading-5 text-white/70">
                 {{ article.description }}
               </p>
@@ -42,10 +42,7 @@ const { data: articles } = await useAsyncData(() => queryCollection("content").o
                 </p>
                 <div class="flex">
                   <div
-                    v-for="(author, index) in article.author
-                      .split(',')
-                      .map((item: string) => item.trim())
-                      .reverse()"
+                    v-for="(author, index) in article.author.split(',').map((item: string) => item.trim())"
                     :class="index !== article.author.split(',').length - 1 ? '-mr-2' : ''"
                     :style="{ zIndex: article.author.split(',').length - index }"
                     class=""
@@ -53,7 +50,7 @@ const { data: articles } = await useAsyncData(() => queryCollection("content").o
                     <img
                       :src="`/content/author/${author}.png`"
                       alt=""
-                      class="size-[32px] rounded-full border-2 border-[#1B2025]"
+                      class="size-[32px] rounded-full border-2 border-[#1B2025] group-hover:border-[#151A1F]"
                     />
                   </div>
                 </div>
