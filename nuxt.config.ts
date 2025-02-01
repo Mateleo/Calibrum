@@ -1,3 +1,5 @@
+import { rollup as unwasm } from "unwasm/plugin"
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -36,7 +38,13 @@ export default defineNuxtConfig({
   nitro: {
     imports: {
       dirs: ["server/utils/**"]
-    }
+    },
+    experimental: {
+      // fix #29 inject onig.wasm warning
+      wasm: true
+    },
+    // fix #45 cannot find module core.mjs
+    externals: { traceInclude: ["shiki/dist/core.mjs"] }
   },
   image: {
     domains: ["https://raw.communitydragon.org"]
@@ -87,6 +95,10 @@ export default defineNuxtConfig({
       light: "ayu-dark"
     },
     bundledLangs: ["sh", "js", "ts"]
+  },
+  vite: {
+    // fix #41 [vite:wasm-fallback] Could not load
+    plugins: import.meta.env.NODE_ENV === "production" ? [unwasm({})] : undefined
   },
   hooks: {
     close: (nuxt) => {
