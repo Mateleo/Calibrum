@@ -7,10 +7,10 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "@vueuse/nuxt",
-    "@nuxt/content",
     "dayjs-nuxt",
     "nuxt-shiki",
-    "@nuxtjs/seo"
+    "@nuxtjs/seo",
+    "@nuxt/content"
   ],
 
   runtimeConfig: {
