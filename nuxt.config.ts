@@ -7,6 +7,9 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "@vueuse/nuxt",
+    "@nuxt/content",
+    "dayjs-nuxt",
+    "nuxt-shiki",
     "@nuxtjs/seo"
   ],
 
@@ -56,6 +59,34 @@ export default defineNuxtConfig({
   site: {
     url: "https://calibrum.4esport.fr",
     name: "Calibrum"
+  },
+  dayjs: {
+    locales: ["en"],
+    plugins: ["relativeTime", "utc", "timezone", "customParseFormat"],
+    defaultLocale: "en",
+    defaultTimezone: "Europe/Paris"
+  },
+  fonts: {
+    defaults: {
+      weights: [200, 300, 400, 500, 600, 700]
+    }
+  },
+  content: {
+    build: {
+      markdown: {
+        toc: {
+          depth: 3,
+          searchDepth: 3
+        }
+      }
+    }
+  },
+  shiki: {
+    defaultTheme: {
+      dark: "ayu-dark",
+      light: "ayu-dark"
+    },
+    bundledLangs: ["sh", "js", "ts"]
   },
   compatibilityDate: "2025-01-18"
 })
