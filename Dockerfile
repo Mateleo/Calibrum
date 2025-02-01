@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM node:22-alpine AS builder
+FROM node:22 AS builder
 
 # Set the working directory
 WORKDIR /app
@@ -21,7 +21,7 @@ RUN npm run build
 RUN npx prisma generate
 
 # Stage 2: Create the final, optimized image
-FROM node:22-alpine
+FROM node:22
 
 # Set the working directory
 WORKDIR /app
