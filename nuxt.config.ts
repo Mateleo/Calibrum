@@ -88,5 +88,10 @@ export default defineNuxtConfig({
     },
     bundledLangs: ["sh", "js", "ts"]
   },
+  hooks: {
+    close: (nuxt) => {
+      if (!nuxt.options._prepare) process.exit()
+    }
+  },
   compatibilityDate: "2025-01-18"
 })
