@@ -1,17 +1,23 @@
 <script lang="ts" setup>
 interface Props {
   active: boolean
+  disabled?: boolean
 }
 
 const props: Props = withDefaults(defineProps<Props>(), {
-  active: false
+  active: false,
+  disabled: false
 })
 </script>
 <template>
   <button
-    class="border-b-[4px] px-2 font-semibold text-white/80 transition-colors ease-in hover:border-cyan-300"
-    :class="props.active ? 'border-cyan-300' : 'border-transparent'"
+    class="border-b-[4px] px-2 font-semibold transition-colors ease-in hover:border-cyan-300"
+    :class="[
+      props.active ? 'border-cyan-300 text-white/90' : 'border-transparent text-white/80',
+      disabled ? 'pointer-events-none' : ''
+    ]"
+    :disabled
   >
-    <slot></slot>
+    <slot />
   </button>
 </template>

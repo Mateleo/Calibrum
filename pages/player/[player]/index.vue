@@ -94,16 +94,9 @@ useSeoMeta({
       </div>
       <div class="flex grow flex-col">
         <div class="flex flex-col">
-          <PlayerNavigation :is-live="player.isLive"></PlayerNavigation>
+          <PlayerNavigation :is-live="player.isLive" />
           <div class="mt-4 text-sm font-light">
-            <PlayerAccounts
-              :accounts="player.accounts"
-              :onAccountChange="
-                (accountIndex) => {
-                  selectedAccount = accountIndex
-                }
-              "
-            />
+            <PlayerAccounts :accounts="player.accounts" v-model:selected="selectedAccount" />
           </div>
         </div>
         <PlayerAccount v-if="prediction" :account="player.accounts.at(selectedAccount)!" :prediction="prediction" />
