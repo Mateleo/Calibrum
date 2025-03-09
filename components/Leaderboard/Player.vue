@@ -21,7 +21,7 @@ const { data: badges } = await useLazyFetch(`/api/badges/${props.mainAccountId}`
       :class="unranked ? 'pointer-events-none' : ''"
       class="flex w-[100px] text-base font-semibold transition-colors ease-in-out hover:text-cyan-400 md:w-[170px] md:text-lg"
     >
-      KC {{ name }}
+      {{ name }}
       <span class="relative flex h-2 w-2" v-if="isLive">
         <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
         <span class="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span>
