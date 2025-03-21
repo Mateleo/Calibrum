@@ -31,6 +31,7 @@
     "@nuxt/content": "^3.0.1",
     "@nuxtjs/tailwindcss": "^6.13.1",
     "@prisma/client": "6.3.0",
+    "@vueuse/core": "^13.0.0",
     "axios": "^1.7.9",
     "chart.js": "^4.4.7",
     "chartjs-adapter-moment": "^1.0.1",
