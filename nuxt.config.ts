@@ -103,7 +103,10 @@ export default defineNuxtConfig({
     // fix #41 [vite:wasm-fallback] Could not load
     plugins: import.meta.env.NODE_ENV === "production" ? [unwasm({})] : undefined,
     build: {
-      minify: false
+      minify: false,
+      rollupOptions: {
+        external: ['vue']
+      }
     }
   },
   hooks: {
