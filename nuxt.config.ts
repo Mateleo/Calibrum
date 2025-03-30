@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "shadcn-nuxt",
   ],
+  css: ['~/assets/css/tailwind.css'],
 
   runtimeConfig: {
     RIOT_API_KEY: process.env.NUXT_RIOT_API_KEY,
