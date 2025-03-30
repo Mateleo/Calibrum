@@ -13,9 +13,7 @@ export default defineNuxtConfig({
     "nuxt-shiki",
     "@nuxtjs/seo",
     "@nuxt/content",
-    "shadcn-nuxt",
   ],
-  css: ['~/assets/css/tailwind.css'],
 
   runtimeConfig: {
     RIOT_API_KEY: process.env.NUXT_RIOT_API_KEY,
@@ -47,7 +45,6 @@ export default defineNuxtConfig({
     },
     // fix #45 cannot find module core.mjs
     externals: { traceInclude: ["shiki/dist/core.mjs"] },
-    minify: false
   },
   image: {
     domains: ["https://raw.communitydragon.org"]
@@ -102,9 +99,6 @@ export default defineNuxtConfig({
   vite: {
     // fix #41 [vite:wasm-fallback] Could not load
     plugins: import.meta.env.NODE_ENV === "production" ? [unwasm({})] : undefined,
-    build: {
-      minify: false,
-    }
   },
   hooks: {
     close: (nuxt) => {
