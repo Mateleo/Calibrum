@@ -46,7 +46,8 @@ export default defineNuxtConfig({
       wasm: true
     },
     // fix #45 cannot find module core.mjs
-    externals: { traceInclude: ["shiki/dist/core.mjs"] }
+    externals: { traceInclude: ["shiki/dist/core.mjs"] },
+    minify: false
   },
   image: {
     domains: ["https://raw.communitydragon.org"]
@@ -100,7 +101,10 @@ export default defineNuxtConfig({
   },
   vite: {
     // fix #41 [vite:wasm-fallback] Could not load
-    plugins: import.meta.env.NODE_ENV === "production" ? [unwasm({})] : undefined
+    plugins: import.meta.env.NODE_ENV === "production" ? [unwasm({})] : undefined,
+    build: {
+      minify: false
+    }
   },
   hooks: {
     close: (nuxt) => {
