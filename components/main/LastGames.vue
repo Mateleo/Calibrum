@@ -28,9 +28,11 @@ dayjs.extend(relativeTime)
             class="text-lg font-semibold transition-colors ease-in-out hover:text-cyan-400"
             >{{ game.name }}</NuxtLink
           >
-          <p class="text-sm text-white/40">
-            {{ dayjs(game.date).fromNow() }}
-          </p>
+          <ClientOnly>
+            <p class="text-sm text-white/40">
+              {{ dayjs(game.date).fromNow() }}
+            </p>
+          </ClientOnly>
         </div>
       </div>
       <CommonLpBadge :amount="game.lastUpdateDiff" />
