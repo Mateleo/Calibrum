@@ -31,7 +31,7 @@ const { data: badges } = await useLazyFetch(`/api/badges/${props.mainAccountId}`
       <div v-for="icon in badges" class="cursor-pointer group relative">
         {{ icon.icon.repeat(icon.count) }}
         <div class="hidden group-hover:block p-4 rounded-lg bg-[#22262b] shadow-xl absolute z-50 whitespace-nowrap -translate-x-1/2 left-1/2">
-          {{ icon.icon }} {{ icon.message }}
+          {{ icon.icon.repeat(icon.count) }} {{ icon.message }}
         </div>
       </div>
     </div>
