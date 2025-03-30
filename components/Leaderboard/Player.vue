@@ -28,11 +28,11 @@ const { data: badges } = await useLazyFetch(`/api/badges/${props.mainAccountId}`
       </span>
     </NuxtLink>
     <div class="flex gap-1">
-      <UiHoverCard  v-for="icon in badges" class="cursor-pointer" :open-delay="50" :close-delay="0">
+      <UiHoverCard v-for="icon in badges" :open-delay="0" :close-delay="0">
         <UiHoverCardContent class="bg-[#22262b]">
           {{ icon.icon.repeat(icon.count) }} {{ icon.message }}
         </UiHoverCardContent>
-        <UiHoverCardTrigger>
+        <UiHoverCardTrigger class="cursor-pointer">
           {{ icon.icon.repeat(icon.count) }}
         </UiHoverCardTrigger>
       </UiHoverCard>
