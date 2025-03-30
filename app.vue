@@ -26,6 +26,9 @@ useHead({
   htmlAttrs: {
     lang: "en"
   },
+  bodyAttrs: {
+    class: 'dark'
+  },
   link: [
     {
       rel: "icon",

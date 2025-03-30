@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     "dayjs-nuxt",
     "nuxt-shiki",
     "@nuxtjs/seo",
-    "@nuxt/content"
+    "@nuxt/content",
+    "shadcn-nuxt"
   ],
 
   runtimeConfig: {
