@@ -104,9 +104,6 @@ export default defineNuxtConfig({
     plugins: import.meta.env.NODE_ENV === "production" ? [unwasm({})] : undefined,
     build: {
       minify: false,
-      rollupOptions: {
-        external: ['vue']
-      }
     }
   },
   hooks: {
