@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     "nuxt-shiki",
     "@nuxtjs/seo",
     "@nuxt/content",
-    "shadcn-nuxt"
+    "shadcn-nuxt",
   ],
 
   runtimeConfig: {
