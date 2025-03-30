@@ -25,8 +25,7 @@
     "nuxt-shiki": "0.3.0",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "prisma": "^6.3.0",
-    "shadcn-nuxt": "1.0.3"
+    "prisma": "^6.3.0"
   },
   "dependencies": {
     "@nuxt/content": "^3.0.1",
