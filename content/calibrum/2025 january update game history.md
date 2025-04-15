@@ -72,7 +72,7 @@ Toutes les images sur le site sont désormais gérées par NuxtImage. Ce module 
 
 ### Caché dans les abysses
 
-Les joueurs unranked sont maintenant cachés du classement global. Ils restent présents en base de données et réapparaîtront automatiquement après leurs parties de classement. Calibrum accueil de plus en plus de joueurs, cette fonctionnalité nous permet de mettre en avant uniquement les joueurs actifs.
+Les joueurs unranked sont maintenant cachés du classement global. Ils restent présents en base de données et réapparaîtront automatiquement après leurs parties de classement. Calibrum accueille de plus en plus de joueurs, cette fonctionnalité nous permet de mettre en avant uniquement les joueurs actifs.
 
 ### 👀 Un Blog
 
