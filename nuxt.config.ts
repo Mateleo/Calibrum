@@ -10,9 +10,8 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@vueuse/nuxt",
     "dayjs-nuxt",
-    "nuxt-shiki",
     "@nuxtjs/seo",
-    "@nuxt/content",
+    "@nuxt/content"
   ],
 
   runtimeConfig: {
@@ -42,9 +41,9 @@ export default defineNuxtConfig({
     experimental: {
       // fix #29 inject onig.wasm warning
       wasm: true
-    },
+    }
     // fix #45 cannot find module core.mjs
-    externals: { traceInclude: ["shiki/dist/core.mjs"] },
+    // externals: { traceInclude: ["shiki/dist/core.mjs"] }
   },
   image: {
     domains: ["https://raw.communitydragon.org"]
@@ -85,20 +84,24 @@ export default defineNuxtConfig({
         toc: {
           depth: 3,
           searchDepth: 3
+        },
+        highlight: {
+          langs: ["sh", "js", "ts"],
+          theme: "ayu-dark"
         }
       }
     }
   },
-  shiki: {
-    defaultTheme: {
-      dark: "ayu-dark",
-      light: "ayu-dark"
-    },
-    bundledLangs: ["sh", "js", "ts"]
-  },
+  // shiki: {
+  //   defaultTheme: {
+  //     dark: "ayu-dark",
+  //     light: "ayu-dark"
+  //   },
+  //   bundledLangs: ["sh", "js", "ts"]
+  // },
   vite: {
     // fix #41 [vite:wasm-fallback] Could not load
-    plugins: import.meta.env.NODE_ENV === "production" ? [unwasm({})] : undefined,
+    plugins: import.meta.env.NODE_ENV === "production" ? [unwasm({})] : undefined
   },
   hooks: {
     close: (nuxt) => {

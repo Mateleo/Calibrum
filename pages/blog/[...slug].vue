@@ -201,7 +201,7 @@ useSeoMeta({
           </NuxtLink>
         </div>
       </div>
-      <div class="hidden flex-col lg:col-span-2 lg:flex">
+      <div class="col-span-2 flex-col">
         <div class="sticky right-0 top-[60px]">
           <p class="custom mb-4 text-sm font-semibold text-white">Table des matières</p>
           <BlogNavigation class="text-sm" :toc="page.body?.toc" :activeSection="activeSection"></BlogNavigation>
