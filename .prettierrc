@@ -2,5 +2,6 @@
   "plugins": ["prettier-plugin-tailwindcss"],
   "semi": false,
   "printWidth": 120,
-  "trailingComma": "none"
+  "trailingComma": "none",
+  "tailwindStylesheet": "./assets/css/app.css"
 }

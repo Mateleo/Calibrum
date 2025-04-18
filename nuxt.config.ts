@@ -1,9 +1,8 @@
-import { rollup as unwasm } from "unwasm/plugin"
+import tailwindcss from "@tailwindcss/vite"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    "@nuxtjs/tailwindcss",
     "nuxt-scheduler",
     "@nuxt/fonts",
     "@nuxt/icon",
@@ -22,6 +21,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" }
   },
+  css: ["~/assets/css/main.css"],
 
   // ogImage: {
   //   runtimeBrowser: true,
@@ -101,7 +101,8 @@ export default defineNuxtConfig({
   // },
   vite: {
     // fix #41 [vite:wasm-fallback] Could not load
-    plugins: import.meta.env.NODE_ENV === "production" ? [unwasm({})] : undefined
+    // plugins: import.meta.env.NODE_ENV === "production" ? [unwasm({})] : undefined
+    plugins: [tailwindcss()]
   },
   hooks: {
     close: (nuxt) => {
