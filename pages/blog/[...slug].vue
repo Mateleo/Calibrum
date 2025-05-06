@@ -201,10 +201,12 @@ useSeoMeta({
           </NuxtLink>
         </div>
       </div>
-      <div class="hidden flex-col lg:col-span-2 lg:flex">
+      <div class="hidden lg:col-span-2 lg:block">
         <div class="sticky right-0 top-[60px]">
           <p class="custom mb-4 text-sm font-semibold text-white">Table des matières</p>
-          <BlogNavigation class="text-sm" :toc="page.body?.toc" :activeSection="activeSection"></BlogNavigation>
+          <ClientOnly>
+            <BlogNavigation class="text-sm" :toc="page.body?.toc" :activeSection="activeSection"></BlogNavigation>
+          </ClientOnly>
         </div>
       </div>
     </div>
@@ -212,6 +214,8 @@ useSeoMeta({
 </template>
 
 <style scoped>
+@reference "~/assets/css/main.css";
+
 main,
 #scroll {
   scroll-behavior: smooth;
@@ -249,6 +253,7 @@ main :where(pre > code) {
   word-wrap: break-word;
   overflow-x: auto;
   display: block;
+  @apply text-xs;
 }
 main :where(p):not(.custom) {
   @apply mb-4 text-[15px] leading-7 tracking-tight text-gray-400 md:text-[16px];
