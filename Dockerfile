@@ -5,7 +5,7 @@ FROM node:22 AS builder
 WORKDIR /app
 
 # Copy package.json and package-lock.json (or npm-shrinkwrap.json)
-COPY package.json package-lock.json ./
+COPY package.json ./
 COPY prisma ./prisma/
 
 # Install dependencies using npm
