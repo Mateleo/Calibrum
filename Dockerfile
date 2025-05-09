@@ -14,6 +14,8 @@ COPY prisma ./prisma/
 # Install dependencies using pnpm
 RUN pnpm install --frozen-lockfile
 
+RUN pnpm exec prisma generate
+
 # Copy the rest of the application code
 COPY . .
 
