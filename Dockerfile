@@ -64,7 +64,7 @@ COPY --chown=nuxtjs:nodejs prisma ./prisma/
 # Prisma Client's `postinstall` script should run `prisma generate` again,
 # this time creating binaries compatible with Alpine Linux.
 # This is crucial if your builder stage OS (Debian) differs from the final stage OS (Alpine).
-RUN pnpm install --prod --frozen-lockfile
+RUN pnpm install --frozen-lockfile
 
 # Copy the built application artifacts from the builder stage
 COPY --from=builder --chown=nuxtjs:nodejs /app/.output ./.output
