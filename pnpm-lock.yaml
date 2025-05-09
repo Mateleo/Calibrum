@@ -12,8 +12,8 @@ importers:
         specifier: ^3.4.0
         version: 3.4.0(magicast@0.3.5)(typescript@5.8.3)
       '@prisma/client':
-        specifier: 6.6.0
-        version: 6.6.0(prisma@6.3.0(typescript@5.8.3))(typescript@5.8.3)
+        specifier: 6.3.0
+        version: 6.3.0(prisma@6.3.0(typescript@5.8.3))(typescript@5.8.3)
       '@tailwindcss/vite':
         specifier: ^4.1.4
         version: 4.1.4(vite@6.3.1(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0)(yaml@2.7.1))
@@ -931,8 +931,8 @@ packages:
     resolution: {integrity: sha512-aQypoot0HPSJa6gDPEPTntc1GT6QINrSbgRlRhadGW2WaYqUK3tK4Bw9SBMZXhmxd3GeAlZjVcODHgiu+THY7A==}
     engines: {node: '>=18'}
 
-  '@prisma/client@6.6.0':
-    resolution: {integrity: sha512-vfp73YT/BHsWWOAuthKQ/1lBgESSqYqAWZEYyTdGXyFAHpmewwWL2Iz6ErIzkj4aHbuc6/cGSsE6ZY+pBO04Cg==}
+  '@prisma/client@6.3.0':
+    resolution: {integrity: sha512-BY3Fi28PUSk447Bpv22LhZp4HgNPo7NsEN+EteM1CLDnLjig5863jpW+3c3HHLFmml+nB/eJv1CjSriFZ8z7Cg==}
     engines: {node: '>=18.18'}
     peerDependencies:
       prisma: '*'
@@ -6524,7 +6524,7 @@ snapshots:
 
   '@poppinss/exception@1.2.1': {}
 
-  '@prisma/client@6.6.0(prisma@6.3.0(typescript@5.8.3))(typescript@5.8.3)':
+  '@prisma/client@6.3.0(prisma@6.3.0(typescript@5.8.3))(typescript@5.8.3)':
     optionalDependencies:
       prisma: 6.3.0(typescript@5.8.3)
       typescript: 5.8.3
