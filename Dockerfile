@@ -9,6 +9,7 @@ RUN corepack enable && corepack prepare pnpm@latest --activate
 
 # Copy package.json and pnpm-lock.yaml
 COPY package.json pnpm-lock.yaml .npmrc ./
+COPY prisma ./prisma/
 
 # Install dependencies using pnpm
 RUN pnpm install --frozen-lockfile
@@ -35,7 +36,8 @@ RUN corepack enable && corepack prepare pnpm@latest --activate
 COPY --from=builder /app/.output ./.output
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
-COPY --from=builder /app/generated ./generated
+COPY --from=builder /app/prisma ./prisma
+# COPY --from=builder /app/generated ./generated
 
 # Expose the port that the application will run on
 EXPOSE 3000
