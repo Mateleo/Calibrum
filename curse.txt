@@ -1,2 +1,12 @@
 Remove unenv if possible
 https://github.com/nuxt-modules/og-image/issues/345
+
+Prisma 6.3.0 issue with new version of nuxt
+    resolve: {
+      alias: {
+        ".prisma/client/index-browser": "./node_modules/.prisma/client/index-browser.js"
+      }
+    }
+We need to migrate to native TS starting at Prisma >=6.3.0
+
+https://github.com/prisma/prisma/issues/26565#issuecomment-2838168142

@@ -4,37 +4,31 @@ FROM node:22 AS builder
 # Set the working directory
 WORKDIR /app
 
-# Install pnpm globally
-RUN corepack enable && corepack prepare pnpm@latest --activate
-
-# Copy package.json and pnpm-lock.yaml
-COPY package.json pnpm-lock.yaml .npmrc ./
+# Copy package.json and package-lock.json (or npm-shrinkwrap.json)
+COPY package.json package-lock.json ./
 COPY prisma ./prisma/
 
-# Install dependencies using pnpm
-RUN pnpm install --frozen-lockfile
+# Install dependencies using npm
+RUN npm ci
 
 # Copy the rest of the application code
 COPY . .
 
 # Build the Nuxt 3 project
-RUN pnpm run build
+RUN npm run build
 
 # Generate Prisma client
-RUN pnpm exec prisma generate
+RUN npm exec prisma generate
 
 # Stage 2: Create the final, optimized image
-FROM node:22
+FROM node:22-alpine # Using a smaller base image is a common optimization
 
 # Set the working directory
 WORKDIR /app
 
-# Install pnpm globally
-RUN corepack enable && corepack prepare pnpm@latest --activate
-
 # Copy necessary files from the builder stage
 COPY --from=builder /app/.output ./.output
-COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/node_modules ./node_modules # You might be able to optimize this further depending on your dependencies
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/prisma ./prisma
 
@@ -42,4 +36,4 @@ COPY --from=builder /app/prisma ./prisma
 EXPOSE 3000
 
 # Command to start the Nuxt 3 application
-CMD [ "pnpm", "run", "start" ]
+CMD [ "npm", "run", "start" ]
