@@ -24,7 +24,7 @@
     "nuxt-scheduler": "0.1.9",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "prisma": "^6.3.0"
+    "prisma": "6.3.0"
   },
   "dependencies": {
     "@nuxt/content": "^3.4.0",
