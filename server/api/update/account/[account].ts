@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const account = await getAccountByName(params.account)
+  const account = await getAccountByName(decodeURIComponent(params.account))
 
   if (!account) {
     throw createError({

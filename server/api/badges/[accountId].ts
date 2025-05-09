@@ -45,5 +45,22 @@ export default defineEventHandler(async (event) => {
       message: `A joué ${gamesCount._count.LpUpdate} games dans la journée`
     })
   }
+
+  const isChallengerThisSeason = await prisma.lpUpdateS142.findFirst({
+    where: {
+      accountId: event.context.params.accountId,
+      tier: "CHALLENGER",
+      season: "S15"
+    }
+  })
+
+  if (isChallengerThisSeason) {
+    badges.push({
+      icon: "⚜️",
+      count: 1,
+      message: `Est passé Challenger cette saison, rien que ça !`
+    })
+  }
+
   return badges
 })

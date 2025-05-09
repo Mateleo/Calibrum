@@ -21,13 +21,13 @@
       <nav class="flex flex-col md:col-span-3 md:ml-auto md:px-4">
         <NuxtLink
           to="/blog"
-          class="-mt-2 flex grow items-center gap-1 whitespace-nowrap border-b-[4px] border-transparent pt-[6px] text-xs font-semibold transition-colors ease-in hover:border-cyan-300 sm:text-base"
+          class="-mt-1 flex grow items-center gap-1 whitespace-nowrap border-b-[4px] border-transparent pt-[6px] text-xs font-semibold transition-colors ease-in hover:border-cyan-300 sm:text-base"
         >
           Blog
-          <span class="relative mb-2 flex size-2">
+          <!-- <span class="relative mb-2 flex size-2">
             <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
             <span class="relative inline-flex size-2 rounded-full bg-sky-500"></span>
-          </span>
+          </span> -->
         </NuxtLink>
       </nav>
     </div>

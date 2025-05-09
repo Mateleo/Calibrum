@@ -24,10 +24,7 @@ watch(players, (newPlayers) => {
         </div>
       </div>
     </div>
-    <div
-      v-for="tier in AllTiers.filter((e) => e !== null).filter((tier) => tier !== 'CHALLENGER')"
-      :key="tier?.toString()"
-    >
+    <div v-for="tier in AllTiers.filter((e) => e !== null)" :key="tier?.toString()">
       <div>
         <div class="flex justify-center rounded-lg p-2" :class="tier ?? 'UNRANKED'">
           <h2 class="font-semibold text-white/90">{{ tier ?? "UNRANKED" }}</h2>
@@ -78,6 +75,10 @@ watch(players, (newPlayers) => {
   </div>
 </template>
 <style scoped>
+.CHALLENGER {
+  background: linear-gradient(90deg, #3d81c3 0%, #71d1e2 50%, #3d81c3 100%);
+  background-size: 200% 100%;
+}
 .GRANDMASTER {
   background: rgb(86, 17, 27);
   background: linear-gradient(90deg, rgba(86, 17, 27, 1) 0%, rgba(142, 62, 44, 1) 100%);

@@ -14,8 +14,9 @@ const props = withDefaults(defineProps<Props>(), {
 
 const { data: badges } = await useLazyFetch(`/api/badges/${props.mainAccountId}`)
 
-const specialPlayers = ["Turdyo", "Eskuns", "Manguier", "Dioubot", "Kurnoth"]
-const isSpecialPlayer = computed(() => specialPlayers.includes(props.name))
+// const specialPlayers = ["Turdyo", "Eskuns", "Manguier", "Dioubot", "Kurnoth"]
+// const isSpecialPlayer = computed(() => specialPlayers.includes(props.name))
+const isSpecialPlayer = ref(false)
 </script>
 
 <template>
@@ -59,7 +60,7 @@ const isSpecialPlayer = computed(() => specialPlayers.includes(props.name))
         A gagné la Gamers Assembly 2025
       </div>
     </NuxtLink>
-    <div class="flex gap-1">
+    <div class="flex">
       <div v-for="icon in badges" class="group relative cursor-pointer">
         {{ icon.icon.repeat(icon.count) }}
         <div

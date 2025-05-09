@@ -29,7 +29,6 @@ function startScheduler() {
         await new Promise((resolve) => setTimeout(resolve, 2000))
       }
     })
-    .everyMinutes(10)
-
+    .everyMinutes(process.env.NODE_ENV === "production" ? 10 : 20)
   // create as many tasks as you want here
 }
