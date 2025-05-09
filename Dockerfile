@@ -9,7 +9,7 @@ COPY package.json package-lock.json ./
 COPY prisma ./prisma/
 
 # Install dependencies using npm
-RUN npm ci
+RUN npm i
 
 # Copy the rest of the application code
 COPY . .
@@ -21,14 +21,14 @@ RUN npm run build
 RUN npm exec prisma generate
 
 # Stage 2: Create the final, optimized image
-FROM node:22-alpine # Using a smaller base image is a common optimization
+FROM node:22-alpine
 
 # Set the working directory
 WORKDIR /app
 
 # Copy necessary files from the builder stage
 COPY --from=builder /app/.output ./.output
-COPY --from=builder /app/node_modules ./node_modules # You might be able to optimize this further depending on your dependencies
+COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/prisma ./prisma
 
