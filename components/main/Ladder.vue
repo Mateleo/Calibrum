@@ -76,7 +76,7 @@ watch(players, (newPlayers) => {
 </template>
 <style scoped>
 .CHALLENGER {
-  background: linear-gradient(90deg, #3d81c3 0%, #71d1e2 50%, #3d81c3 100%);
+  background: linear-gradient(90deg, #2a5c94 0%, #457aa8 50%, #2b5596 100%);
   background-size: 200% 100%;
 }
 .GRANDMASTER {
