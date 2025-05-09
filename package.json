@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^3.4.0",
-    "@prisma/client": "6.3.0",
+    "@prisma/client": "6.6.0",
     "@tailwindcss/vite": "^4.1.4",
     "@vueuse/core": "^13.0.0",
     "axios": "^1.7.9",
