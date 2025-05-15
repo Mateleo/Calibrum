@@ -1,4 +1,4 @@
-import { type Player } from "@prisma/client"
+import { Season, type Player } from "@prisma/client"
 
 export default defineEventHandler(async (event) => {
   const params = event.context.params
@@ -31,7 +31,16 @@ export default defineEventHandler(async (event) => {
 
   const accountsWithLpUpdates = await Promise.all(
     accounts.map(async (account) => {
-      const lpUpdatesRaw = await getLpUpdateByAccount(account.id)
+      const lpUpdatesRaw = await prisma.lpUpdateS142.findMany({
+          where: {
+            season: useRuntimeConfig().CURRENT_SEASON as Season,
+            accountId: account.id
+          },
+          orderBy: {
+            date: "desc"
+          },
+          take: 20
+        })
       console.log(account.name, lpUpdatesRaw.length)
       const lpUpdates = lpUpdatesRaw.map((lpupdate) => {
         const { id, accountId, ...lpupdateReponse } = lpupdate
