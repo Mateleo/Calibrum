@@ -39,9 +39,7 @@ export default defineEventHandler(async (event) => {
           orderBy: {
             date: "desc"
           },
-          take: 20
         })
-      console.log(account.name, lpUpdatesRaw.length)
       const lpUpdates = lpUpdatesRaw.map((lpupdate) => {
         const { id, accountId, ...lpupdateReponse } = lpupdate
         return lpupdateReponse
