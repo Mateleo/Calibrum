@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "dayjs-nuxt",
     "@nuxtjs/seo",
-    "@nuxt/content"
+    "@nuxt/content",
+    "shadcn-nuxt"
   ],
 
   runtimeConfig: {

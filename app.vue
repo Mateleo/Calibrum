@@ -24,7 +24,10 @@ useSeoMeta({
 
 useHead({
   htmlAttrs: {
-    lang: "en"
+    lang: "en",
+  },
+  bodyAttrs: {
+    class: 'dark bg-[#12171c]', 
   },
   link: [
     {
@@ -36,11 +39,9 @@ useHead({
 })
 </script>
 <template>
-  <div>
     <NuxtLayout>
       <NuxtPage></NuxtPage>
     </NuxtLayout>
-  </div>
 </template>
 
 <style>
