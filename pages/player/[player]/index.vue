@@ -96,7 +96,16 @@ useSeoMeta({
         <div class="flex flex-col">
           <PlayerNavigation :is-live="player.isLive" />
           <div class="mt-4 text-sm font-light">
-            <PlayerAccounts :accounts="player.accounts" v-model:selected="selectedAccount" />
+            <PlayerAccounts
+              :accounts="
+                player.accounts.map((account) => ({
+                  name: account.name,
+                  profileIcon: account.profileIcon,
+                  sumonerLvl: account.sumonerLvl
+                }))
+              "
+              v-model:selected="selectedAccount"
+            />
           </div>
         </div>
         <PlayerAccount v-if="prediction" :account="player.accounts.at(selectedAccount)!" :prediction="prediction" />
