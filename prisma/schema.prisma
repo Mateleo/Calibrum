@@ -22,8 +22,8 @@ model Player {
 }
 
 model Account {
-  id          String  @id
-  puuid       String?
+  id          String @id
+  puuid       String @unique
   name        String
   sumonerLvl  Int
   profileIcon String

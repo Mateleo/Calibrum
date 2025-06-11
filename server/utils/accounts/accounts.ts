@@ -90,7 +90,9 @@ export async function registerAccount(gameName: string, tagLine: string, discord
 }
 
 export async function fetchAccountData(accountId: string) {
-  const rankedInfo = (await fetchRankedInfo(accountId)).data
+  const oldUserAccount = await getAccountById(accountId)
+  if (!oldUserAccount) return
+  const rankedInfo = (await fetchRankedInfo(oldUserAccount.puuid)).data
     .filter((league) => league.queueType === "RANKED_SOLO_5x5")
     .at(0)
 

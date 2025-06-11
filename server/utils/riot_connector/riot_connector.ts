@@ -108,9 +108,9 @@ export async function fetchAccountByPuuid(puuid: string) {
   return mergedData as AccountByPuuid
 }
 
-export function fetchRankedInfo(id: string) {
+export function fetchRankedInfo(puuid: string) {
   return axios.get<RankedInfoResponse[]>(
-    `https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/${id}?api_key=${useRuntimeConfig().RIOT_API_KEY}`
+    `https://euw1.api.riotgames.com/lol/league/v4/entries/by-puuid/${puuid}?api_key=${useRuntimeConfig().RIOT_API_KEY}`
   )
 }
 
