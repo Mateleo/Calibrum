@@ -22,17 +22,13 @@ dayjs.extend(relativeTime)
           :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${game.championId}.png`"
           class="size-12 rounded-lg"
         />
-        <div>
+        <div class="flex flex-col">
           <NuxtLink
             :to="`/player/${game.player.name}`"
             class="text-lg font-semibold transition-colors ease-in-out hover:text-cyan-400"
             >{{ game.name }}</NuxtLink
           >
-          <ClientOnly>
-            <p class="text-sm text-white/40">
-              {{ dayjs(game.date).fromNow() }}
-            </p>
-          </ClientOnly>
+          <NuxtTime :datetime="game.date" relative class="text-sm text-white/40" locale="en-US" />
         </div>
       </div>
       <CommonLpBadge :amount="game.lastUpdateDiff" />
