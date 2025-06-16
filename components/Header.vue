@@ -23,11 +23,11 @@
           to="/blog"
           class="-mt-1 flex grow items-center gap-1 whitespace-nowrap border-b-[4px] border-transparent pt-[6px] text-xs font-semibold transition-colors ease-in hover:border-cyan-300 sm:text-base"
         >
-          Blog
-          <!-- <span class="relative mb-2 flex size-2">
+          <span class="relative mr-1 flex size-2">
             <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
             <span class="relative inline-flex size-2 rounded-full bg-sky-500"></span>
-          </span> -->
+          </span>
+          Blog
         </NuxtLink>
       </nav>
     </div>
