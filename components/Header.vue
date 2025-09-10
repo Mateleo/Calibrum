@@ -5,7 +5,7 @@
   >
     <div class="flex h-full justify-between gap-4 px-2 md:grid md:grid-cols-10 md:justify-center md:px-0">
       <div class="flex md:col-span-3">
-        <NuxtLink to="/" class="flex items-center border-r-[1px] border-gray-500/50 pr-2 md:border-transparent md:px-4">
+        <NuxtLink to="/" class="flex items-center border-r-[1px] md:px-4">
           <div class="w-[42px] md:ml-2">
             <NuxtImg src="img/logo.png" sizes="64px" format="webp" quality="70"></NuxtImg>
           </div>
