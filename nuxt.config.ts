@@ -89,6 +89,9 @@ export default defineNuxtConfig({
           theme: "ayu-dark"
         }
       }
+    },
+    experimental: {
+      nativeSqlite: true
     }
   },
   vite: {
@@ -104,5 +107,6 @@ export default defineNuxtConfig({
       if (!nuxt.options._prepare) process.exit()
     }
   },
+
   compatibilityDate: "2025-01-18"
 })

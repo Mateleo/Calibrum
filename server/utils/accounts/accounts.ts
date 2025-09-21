@@ -76,7 +76,7 @@ export async function registerAccount(gameName: string, tagLine: string, discord
   const accountData = await fetchAccountByPuuid(accountPuuid.data.puuid)
 
   return createAccount({
-    id: accountData.id,
+    id: accountData.puuid,
     puuid: accountData.puuid,
     name: accountPuuid.data.gameName + "#" + accountPuuid.data.tagLine,
     profileIcon: getProfileIconUrl(accountData.profileIconId),
