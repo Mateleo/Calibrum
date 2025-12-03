@@ -1,7 +1,6 @@
 # Stage 1: Build the application
 FROM node:24-slim AS builder
 
-RUN apk add --no-cache libc6-compat
 
 # Set the working directory
 WORKDIR /app
