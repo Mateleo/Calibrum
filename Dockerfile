@@ -37,6 +37,7 @@ COPY --from=builder /app/.output ./.output
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/prisma ./prisma
+COPY --from=builder /app/data ./data
 # COPY --from=builder /app/generated ./generated
 
 # Expose the port that the application will run on

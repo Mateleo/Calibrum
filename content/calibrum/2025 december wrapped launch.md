@@ -15,9 +15,9 @@ Cette saison 15 de LoL se termine, et mon dieu, vous avez joué ! Calibrum, c'es
 
 ## 🎁 Le cadeau de fin d'année : Calibrum Wrapped 2025
 
-Afin de célébrer cette fin d'année et le début des fêtes de Noël, j'ai préparé quelque chose de spécial pour vous : le Calibrum Wrapped 2025 ! À partir de maintenant, sur votre page joueur, un onglet "Wrapped" est disponible. N'hésitez pas à faire des screenshots et à les partager sur le Discord de l'association, ça me ferait vraiment plaisir !
+Afin de célébrer cette fin d'année et le début des fêtes de Noël, j'ai préparé quelque chose de spécial pour vous : le Calibrum Wrapped 2025 ! À partir de maintenant, sur votre page joueur, un onglet "Wrapped" est disponible. C'est une compilation de vos stats sur l'année. N'hésitez pas à faire des screenshots et à les publier sur le Discord de l'association.
 
-Cette fonctionnalité majeure de Calibrum sera disponible chaque année pour vous permettre de revivre vos moments forts de la saison écoulée. C'est un moyen de célébrer vos performances et de partager vos succès entre nous.
+Cette fonctionnalité majeure de Calibrum sera disponible chaque année pour vous permettre de revivre vos moments forts de la saison écoulée. C'est un moyen de célébrer vos performances et de partager vos succès entre vous.
 
 ## 🏆 Kurnoth : Calibrum Player of the Year
 
