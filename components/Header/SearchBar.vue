@@ -78,7 +78,7 @@ watch(isOutside, () => {
                   format="webp"
                   class="mr-5 hidden w-[50px] rounded-lg sm:block"
                   :src="player.Account[0].profileIcon"
-                  alt=""
+                  :alt="`Profile icon of ${player.Account[0].name}`"
                 />
                 <div>
                   {{ player.Account[0].name }}

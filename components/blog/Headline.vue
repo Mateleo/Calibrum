@@ -32,7 +32,13 @@ const props = defineProps({
           v-for="(author, index) in props.author.split(',').map((item: string) => item.trim())"
           class="flex cursor-pointer items-center gap-2 rounded-lg px-4 py-2 transition-all ease-in hover:bg-white/10"
         >
-          <div><img :src="`/content/author/${author}.png`" alt="" class="custom size-[38px] rounded-full" /></div>
+          <div>
+            <img
+              :src="`/content/author/${author}.png`"
+              :alt="`${author} avatar`"
+              class="custom size-[38px] rounded-full"
+            />
+          </div>
           <div class="flex flex-col">
             <p class="custom font-semibold leading-none text-white">{{ author }}</p>
             <p class="custom text-xs text-white/50">@{{ author.toLocaleLowerCase() }}</p>

@@ -15,11 +15,25 @@ watch(players, (newPlayers) => {
       <h2 class="mb-2 text-xl font-semibold text-[#08bcd5]">Ladder</h2>
       <div class="flex gap-8 pb-1 font-semibold">
         <div class="flex items-center gap-2">
-          <NuxtImg :src="`img/new_emblems/challenger.png`" sizes="32px" quality="70" format="webp" class="size-8" />
+          <NuxtImg
+            :src="`img/new_emblems/challenger.png`"
+            sizes="32px"
+            quality="70"
+            format="webp"
+            class="size-8"
+            alt="Challenger rank emblem"
+          />
           <span>{{ cutoff?.chall }} LP</span>
         </div>
         <div class="flex items-center gap-2">
-          <NuxtImg :src="`img/new_emblems/grandmaster.png`" sizes="32px" quality="70" format="webp" class="size-8" />
+          <NuxtImg
+            :src="`img/new_emblems/grandmaster.png`"
+            sizes="32px"
+            quality="70"
+            format="webp"
+            class="size-8"
+            alt="Grandmaster rank emblem"
+          />
           <span>{{ cutoff?.gm }} LP</span>
         </div>
       </div>
@@ -42,7 +56,7 @@ watch(players, (newPlayers) => {
                 format="webp"
                 class="mr-5 hidden w-[50px] rounded-lg sm:block"
                 :src="player.Account[0].profileIcon"
-                alt=""
+                :alt="`Profile icon of ${player.name}`"
               />
               <LeaderboardPlayer
                 :name="player.name"
@@ -52,7 +66,11 @@ watch(players, (newPlayers) => {
               />
             </div>
             <div class="flex max-w-[300px] grow items-center justify-end sm:justify-between">
-              <img class="hidden h-[32px] w-[32px] sm:block" :src="`img/positions/${player.role}.svg`" alt="" />
+              <img
+                class="hidden h-[32px] w-[32px] sm:block"
+                :src="`img/positions/${player.role}.svg`"
+                :alt="`${player.role} position icon`"
+              />
               <div class="flex flex-col justify-center">
                 <NuxtImg
                   sizes="200px"
@@ -60,7 +78,7 @@ watch(players, (newPlayers) => {
                   format="webp"
                   class="m-auto h-[70px] w-[90px] object-cover"
                   :src="`img/new_emblems/${player.Account[0].tier?.toLocaleLowerCase() ?? 'silver'}.png`"
-                  alt=""
+                  :alt="`${player.Account[0].tier ?? 'Unranked'} rank emblem`"
                 />
                 <p v-if="player.Account[0].rank" class="text-md text-center font-semibold leading-none">
                   {{ player.Account[0].rank }} - {{ player.Account[0].LP }}

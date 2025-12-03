@@ -61,12 +61,14 @@ const isSpecialPlayer = ref(false)
       </div>
     </NuxtLink>
     <div class="flex">
-      <ClientOnly>
-        <UiHoverCard v-for="icon in badges" class="group relative cursor-pointer" :open-delay="0" :close-delay="0">
-          <UiHoverCardTrigger class="cursor-pointer">{{ icon.icon.repeat(icon.count) }}</UiHoverCardTrigger>
-          <UiHoverCardContent>{{ icon.icon.repeat(icon.count) }} {{ icon.message }}</UiHoverCardContent>
-        </UiHoverCard>
-      </ClientOnly>
+      <UiHoverCard v-for="icon in badges" class="group relative" :open-delay="0" :close-delay="0">
+        <UiHoverCardTrigger as-child>
+          <button>
+            {{ icon.icon.repeat(icon.count) }}
+          </button>
+        </UiHoverCardTrigger>
+        <UiHoverCardContent>{{ icon.icon.repeat(icon.count) }} {{ icon.message }}</UiHoverCardContent>
+      </UiHoverCard>
     </div>
   </div>
 </template>

@@ -52,6 +52,7 @@ const url = ref(
         <img
           :src="`/img/new_emblems/${props.account.tier?.toLocaleLowerCase() ?? 'iron'}.png`"
           class="h-[100px] w-[100px] shadow-sm"
+          :alt="`${props.account.tier ?? 'Iron'} rank emblem`"
         />
         <h2 class="mt-1 text-xl text-white">{{ props.account.tier }} {{ props.account.rank }}</h2>
       </div>
