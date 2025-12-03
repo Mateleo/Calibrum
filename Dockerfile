@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM node:24-alpine AS builder
+FROM node:24-slim AS builder
 
 RUN apk add --no-cache libc6-compat
 
@@ -28,7 +28,7 @@ RUN pnpm exec prisma generate
 RUN pnpm run build
 
 # Stage 2: Create the final, optimized image
-FROM node:24-alpine AS runner
+FROM node:24-slim AS runner
 
 
 # Set the working directory
