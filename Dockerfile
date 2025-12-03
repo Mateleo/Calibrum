@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM node:24-slim AS builder
+FROM node:24 AS builder
 
 
 # Set the working directory
@@ -27,7 +27,7 @@ RUN pnpm exec prisma generate
 RUN pnpm run build
 
 # Stage 2: Create the final, optimized image
-FROM node:24-slim AS runner
+FROM node:24 AS runner
 
 
 # Set the working directory
