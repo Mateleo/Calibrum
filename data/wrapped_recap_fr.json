@@ -1,0 +1,4742 @@
+[
+  {
+    "pseudo": "Kurnoth",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 972,
+            "topPourcent": 1,
+            "message": "Tu es dans le top 1%, quasi personne n'a joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 5,
+            "topPourcent": 5,
+            "message": "5% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "4.84",
+            "topPourcent": 10,
+            "message": "10% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "31.0",
+            "topPourcent": 12,
+            "message": "12% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "51.1%",
+            "topPourcent": 50,
+            "message": "50% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 10001,
+            "topPourcent": 5,
+            "message": "5% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "MASTER I",
+            "topPourcent": 5,
+            "message": "5% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 13,
+            "topPourcent": 2,
+            "message": "2% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 50,
+            "topPourcent": 18,
+            "message": "18% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "darkose",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 307,
+            "topPourcent": 43,
+            "message": "43% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 3,
+            "topPourcent": 30,
+            "message": "30% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.32",
+            "topPourcent": 58,
+            "message": "58% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "23.0",
+            "topPourcent": 53,
+            "message": "53% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "46.9%",
+            "topPourcent": 87,
+            "message": "87% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 2858,
+            "topPourcent": 53,
+            "message": "53% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "DIAMOND I",
+            "topPourcent": 30,
+            "message": "30% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 6,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 45,
+            "topPourcent": 28,
+            "message": "28% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "JL142",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 260,
+            "topPourcent": 52,
+            "message": "52% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 2,
+            "topPourcent": 48,
+            "message": "48% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "5.42",
+            "topPourcent": 3,
+            "message": "3% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "38.0",
+            "topPourcent": 2,
+            "message": "2% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "54.6%",
+            "topPourcent": 17,
+            "message": "17% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 3134,
+            "topPourcent": 50,
+            "message": "50% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "DIAMOND IV",
+            "topPourcent": 45,
+            "message": "45% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 9,
+            "topPourcent": 20,
+            "message": "20% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 32,
+            "topPourcent": 47,
+            "message": "47% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "P4ND4 P0W3R",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 17,
+            "topPourcent": 95,
+            "message": "95% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 1,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "5.27",
+            "topPourcent": 7,
+            "message": "7% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "12.0",
+            "topPourcent": 90,
+            "message": "90% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "47.1%",
+            "topPourcent": 85,
+            "message": "85% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 257,
+            "topPourcent": 93,
+            "message": "93% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "EMERALD III",
+            "topPourcent": 70,
+            "message": "70% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 3,
+            "topPourcent": 92,
+            "message": "92% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 9,
+            "topPourcent": 87,
+            "message": "87% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Mateleo",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 4,
+            "topPourcent": 98,
+            "message": "98% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 0,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "2.15",
+            "topPourcent": 97,
+            "message": "97% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "6.3",
+            "topPourcent": 98,
+            "message": "98% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "25.0%",
+            "topPourcent": 98,
+            "message": "98% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 38,
+            "topPourcent": 98,
+            "message": "98% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "PLATINUM IV",
+            "topPourcent": 95,
+            "message": "95% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 1,
+            "topPourcent": 98,
+            "message": "98% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 1,
+            "topPourcent": 98,
+            "message": "98% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Nastrau",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 41,
+            "topPourcent": 87,
+            "message": "87% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 3,
+            "topPourcent": 30,
+            "message": "30% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "2.94",
+            "topPourcent": 78,
+            "message": "78% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "20.0",
+            "topPourcent": 67,
+            "message": "67% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "43.9%",
+            "topPourcent": 95,
+            "message": "95% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 501,
+            "topPourcent": 90,
+            "message": "90% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "DIAMOND IV",
+            "topPourcent": 52,
+            "message": "52% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 4,
+            "topPourcent": 82,
+            "message": "82% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 19,
+            "topPourcent": 65,
+            "message": "65% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "maksoumotm",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 95,
+            "topPourcent": 72,
+            "message": "72% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 2,
+            "topPourcent": 48,
+            "message": "48% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "4.85",
+            "topPourcent": 8,
+            "message": "8% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "33.0",
+            "topPourcent": 5,
+            "message": "5% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "51.6%",
+            "topPourcent": 45,
+            "message": "45% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 1476,
+            "topPourcent": 68,
+            "message": "68% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "GOLD I",
+            "topPourcent": 97,
+            "message": "97% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 7,
+            "topPourcent": 50,
+            "message": "50% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 14,
+            "topPourcent": 78,
+            "message": "78% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Shihro",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 178,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 1,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.27",
+            "topPourcent": 62,
+            "message": "62% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "24.0",
+            "topPourcent": 42,
+            "message": "42% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "52.2%",
+            "topPourcent": 35,
+            "message": "35% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 2179,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "EMERALD II",
+            "topPourcent": 65,
+            "message": "65% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 6,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 38,
+            "topPourcent": 42,
+            "message": "42% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Dioubot",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 644,
+            "topPourcent": 17,
+            "message": "17% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 3,
+            "topPourcent": 30,
+            "message": "30% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "2.93",
+            "topPourcent": 80,
+            "message": "80% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "24.0",
+            "topPourcent": 42,
+            "message": "42% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "50.5%",
+            "topPourcent": 65,
+            "message": "65% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 6901,
+            "topPourcent": 17,
+            "message": "17% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "MASTER I",
+            "topPourcent": 7,
+            "message": "7% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 8,
+            "topPourcent": 35,
+            "message": "35% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 39,
+            "topPourcent": 37,
+            "message": "37% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Rem9007",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 31,
+            "topPourcent": 88,
+            "message": "88% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 0,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.81",
+            "topPourcent": 35,
+            "message": "35% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "16.0",
+            "topPourcent": 78,
+            "message": "78% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "64.5%",
+            "topPourcent": 2,
+            "message": "2% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 663,
+            "topPourcent": 87,
+            "message": "87% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "PLATINUM II",
+            "topPourcent": 80,
+            "message": "80% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 6,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 14,
+            "topPourcent": 78,
+            "message": "78% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Qwy",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 267,
+            "topPourcent": 48,
+            "message": "48% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 3,
+            "topPourcent": 30,
+            "message": "30% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.13",
+            "topPourcent": 68,
+            "message": "68% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "21.0",
+            "topPourcent": 65,
+            "message": "65% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "50.6%",
+            "topPourcent": 63,
+            "message": "63% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 3578,
+            "topPourcent": 45,
+            "message": "45% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "PLATINUM II",
+            "topPourcent": 82,
+            "message": "82% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 12,
+            "topPourcent": 5,
+            "message": "5% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 65,
+            "topPourcent": 12,
+            "message": "12% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Reilä",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 30,
+            "topPourcent": 90,
+            "message": "90% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 0,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.77",
+            "topPourcent": 37,
+            "message": "37% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "23.0",
+            "topPourcent": 53,
+            "message": "53% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "36.7%",
+            "topPourcent": 97,
+            "message": "97% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 317,
+            "topPourcent": 92,
+            "message": "92% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "EMERALD I",
+            "topPourcent": 58,
+            "message": "58% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 2,
+            "topPourcent": 95,
+            "message": "95% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 10,
+            "topPourcent": 85,
+            "message": "85% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "la league des tanks",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 157,
+            "topPourcent": 65,
+            "message": "65% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 1,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.86",
+            "topPourcent": 30,
+            "message": "30% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "27.0",
+            "topPourcent": 25,
+            "message": "25% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "56.7%",
+            "topPourcent": 8,
+            "message": "8% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 1777,
+            "topPourcent": 65,
+            "message": "65% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "DIAMOND III",
+            "topPourcent": 38,
+            "message": "38% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 8,
+            "topPourcent": 35,
+            "message": "35% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 15,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Yoon",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 363,
+            "topPourcent": 35,
+            "message": "35% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 3,
+            "topPourcent": 30,
+            "message": "30% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.44",
+            "topPourcent": 55,
+            "message": "55% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "20.0",
+            "topPourcent": 67,
+            "message": "67% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "49.9%",
+            "topPourcent": 70,
+            "message": "70% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 3904,
+            "topPourcent": 37,
+            "message": "37% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "EMERALD I",
+            "topPourcent": 53,
+            "message": "53% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 7,
+            "topPourcent": 50,
+            "message": "50% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 21,
+            "topPourcent": 57,
+            "message": "57% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Darkshade",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 107,
+            "topPourcent": 70,
+            "message": "70% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 0,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "5.76",
+            "topPourcent": 1,
+            "message": "Tu es dans le top 1%, quasi personne n'a un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "30.0",
+            "topPourcent": 15,
+            "message": "15% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "57.0%",
+            "topPourcent": 7,
+            "message": "7% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 1194,
+            "topPourcent": 73,
+            "message": "73% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "EMERALD I",
+            "topPourcent": 60,
+            "message": "60% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 10,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 23,
+            "topPourcent": 55,
+            "message": "55% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "rototoboys",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 53,
+            "topPourcent": 82,
+            "message": "82% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 4,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "5.41",
+            "topPourcent": 5,
+            "message": "5% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "23.0",
+            "topPourcent": 53,
+            "message": "53% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "56.6%",
+            "topPourcent": 10,
+            "message": "10% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 780,
+            "topPourcent": 82,
+            "message": "82% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "DIAMOND IV",
+            "topPourcent": 43,
+            "message": "43% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 4,
+            "topPourcent": 82,
+            "message": "82% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 4,
+            "topPourcent": 92,
+            "message": "92% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "II_DINO_II",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 75,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 1,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.84",
+            "topPourcent": 32,
+            "message": "32% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "15.0",
+            "topPourcent": 80,
+            "message": "80% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "56.0%",
+            "topPourcent": 12,
+            "message": "12% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 1291,
+            "topPourcent": 72,
+            "message": "72% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "PLATINUM I",
+            "topPourcent": 78,
+            "message": "78% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 4,
+            "topPourcent": 82,
+            "message": "82% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 16,
+            "topPourcent": 73,
+            "message": "73% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "moonlyt",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 122,
+            "topPourcent": 68,
+            "message": "68% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 4,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.84",
+            "topPourcent": 33,
+            "message": "33% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "25.0",
+            "topPourcent": 33,
+            "message": "33% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "53.3%",
+            "topPourcent": 22,
+            "message": "22% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 1375,
+            "topPourcent": 70,
+            "message": "70% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "DIAMOND IV",
+            "topPourcent": 47,
+            "message": "47% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 7,
+            "topPourcent": 50,
+            "message": "50% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 18,
+            "topPourcent": 68,
+            "message": "68% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Lafe66",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 249,
+            "topPourcent": 55,
+            "message": "55% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 4,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "2.37",
+            "topPourcent": 90,
+            "message": "90% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "14.0",
+            "topPourcent": 85,
+            "message": "85% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "47.8%",
+            "topPourcent": 83,
+            "message": "83% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 2474,
+            "topPourcent": 60,
+            "message": "60% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "DIAMOND IV",
+            "topPourcent": 42,
+            "message": "42% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 6,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 29,
+            "topPourcent": 50,
+            "message": "50% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "retsu",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 835,
+            "topPourcent": 7,
+            "message": "7% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 3,
+            "topPourcent": 30,
+            "message": "30% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "1.75",
+            "topPourcent": 98,
+            "message": "98% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "19.0",
+            "topPourcent": 72,
+            "message": "72% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "50.8%",
+            "topPourcent": 60,
+            "message": "60% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 10541,
+            "topPourcent": 3,
+            "message": "3% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "EMERALD IV",
+            "topPourcent": 73,
+            "message": "73% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 11,
+            "topPourcent": 10,
+            "message": "10% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 102,
+            "topPourcent": 2,
+            "message": "2% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Ryskell",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 318,
+            "topPourcent": 40,
+            "message": "40% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 3,
+            "topPourcent": 30,
+            "message": "30% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "4.16",
+            "topPourcent": 18,
+            "message": "18% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "25.0",
+            "topPourcent": 33,
+            "message": "33% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "50.9%",
+            "topPourcent": 57,
+            "message": "57% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 4069,
+            "topPourcent": 33,
+            "message": "33% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "EMERALD IV",
+            "topPourcent": 75,
+            "message": "75% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 12,
+            "topPourcent": 5,
+            "message": "5% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 50,
+            "topPourcent": 18,
+            "message": "18% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "wezold",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 246,
+            "topPourcent": 57,
+            "message": "57% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 0,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "2.43",
+            "topPourcent": 88,
+            "message": "88% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "17.0",
+            "topPourcent": 77,
+            "message": "77% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "51.6%",
+            "topPourcent": 43,
+            "message": "43% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 2685,
+            "topPourcent": 55,
+            "message": "55% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "DIAMOND II",
+            "topPourcent": 32,
+            "message": "32% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 8,
+            "topPourcent": 35,
+            "message": "35% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 20,
+            "topPourcent": 62,
+            "message": "62% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Manguier",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 317,
+            "topPourcent": 42,
+            "message": "42% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 5,
+            "topPourcent": 5,
+            "message": "5% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.72",
+            "topPourcent": 40,
+            "message": "40% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "28.0",
+            "topPourcent": 22,
+            "message": "22% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "49.2%",
+            "topPourcent": 75,
+            "message": "75% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 3619,
+            "topPourcent": 42,
+            "message": "42% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "MASTER I",
+            "topPourcent": 17,
+            "message": "17% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 7,
+            "topPourcent": 50,
+            "message": "50% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 43,
+            "topPourcent": 33,
+            "message": "33% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "bvigjjerge",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 683,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 13,
+            "topPourcent": 1,
+            "message": "Tu es dans le top 1%, quasi personne n'a dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.14",
+            "topPourcent": 67,
+            "message": "67% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "24.0",
+            "topPourcent": 42,
+            "message": "42% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "52.9%",
+            "topPourcent": 25,
+            "message": "25% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 7784,
+            "topPourcent": 12,
+            "message": "12% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "CHALLENGER I",
+            "topPourcent": 1,
+            "message": "Tu es dans le top 1%, quasi personne n'a atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 9,
+            "topPourcent": 20,
+            "message": "20% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 41,
+            "topPourcent": 35,
+            "message": "35% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Lew",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 12,
+            "topPourcent": 97,
+            "message": "97% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 0,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.52",
+            "topPourcent": 52,
+            "message": "52% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "10.0",
+            "topPourcent": 93,
+            "message": "93% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "50.0%",
+            "topPourcent": 67,
+            "message": "67% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 225,
+            "topPourcent": 97,
+            "message": "97% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "PLATINUM II",
+            "topPourcent": 88,
+            "message": "88% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 2,
+            "topPourcent": 95,
+            "message": "95% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 7,
+            "topPourcent": 90,
+            "message": "90% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Okba",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 415,
+            "topPourcent": 25,
+            "message": "25% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 2,
+            "topPourcent": 48,
+            "message": "48% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.87",
+            "topPourcent": 28,
+            "message": "28% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "26.0",
+            "topPourcent": 28,
+            "message": "28% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "51.1%",
+            "topPourcent": 53,
+            "message": "53% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 4410,
+            "topPourcent": 32,
+            "message": "32% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "EMERALD I",
+            "topPourcent": 55,
+            "message": "55% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 8,
+            "topPourcent": 35,
+            "message": "35% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 48,
+            "topPourcent": 22,
+            "message": "22% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "iStweaZ",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 45,
+            "topPourcent": 85,
+            "message": "85% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 2,
+            "topPourcent": 48,
+            "message": "48% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "2.29",
+            "topPourcent": 92,
+            "message": "92% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "10.5",
+            "topPourcent": 92,
+            "message": "92% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "44.4%",
+            "topPourcent": 92,
+            "message": "92% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 651,
+            "topPourcent": 88,
+            "message": "88% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "PLATINUM IV",
+            "topPourcent": 93,
+            "message": "93% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 4,
+            "topPourcent": 82,
+            "message": "82% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 4,
+            "topPourcent": 92,
+            "message": "92% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "LilStick",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 29,
+            "topPourcent": 92,
+            "message": "92% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 1,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.73",
+            "topPourcent": 38,
+            "message": "38% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "13.0",
+            "topPourcent": 88,
+            "message": "88% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "69.0%",
+            "topPourcent": 1,
+            "message": "Tu es dans le top 1%, quasi personne n'a un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 723,
+            "topPourcent": 85,
+            "message": "85% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "PLATINUM III",
+            "topPourcent": 92,
+            "message": "92% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 6,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 4,
+            "topPourcent": 92,
+            "message": "92% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "ToileSama",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 400,
+            "topPourcent": 28,
+            "message": "28% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 1,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "2.25",
+            "topPourcent": 95,
+            "message": "95% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "18.0",
+            "topPourcent": 73,
+            "message": "73% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "49.0%",
+            "topPourcent": 77,
+            "message": "77% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 5062,
+            "topPourcent": 25,
+            "message": "25% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "PLATINUM II",
+            "topPourcent": 83,
+            "message": "83% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 9,
+            "topPourcent": 20,
+            "message": "20% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 17,
+            "topPourcent": 72,
+            "message": "72% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "yardable",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 663,
+            "topPourcent": 15,
+            "message": "15% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 5,
+            "topPourcent": 5,
+            "message": "5% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "2.59",
+            "topPourcent": 85,
+            "message": "85% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "22.0",
+            "topPourcent": 60,
+            "message": "60% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "49.8%",
+            "topPourcent": 72,
+            "message": "72% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 6820,
+            "topPourcent": 18,
+            "message": "18% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "MASTER I",
+            "topPourcent": 12,
+            "message": "12% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 8,
+            "topPourcent": 35,
+            "message": "35% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 76,
+            "topPourcent": 7,
+            "message": "7% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Robébou",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 187,
+            "topPourcent": 62,
+            "message": "62% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 3,
+            "topPourcent": 30,
+            "message": "30% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.46",
+            "topPourcent": 53,
+            "message": "53% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "20.0",
+            "topPourcent": 67,
+            "message": "67% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "48.7%",
+            "topPourcent": 80,
+            "message": "80% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 2194,
+            "topPourcent": 62,
+            "message": "62% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "MASTER I",
+            "topPourcent": 25,
+            "message": "25% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 7,
+            "topPourcent": 50,
+            "message": "50% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 20,
+            "topPourcent": 62,
+            "message": "62% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Jiah",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 550,
+            "topPourcent": 22,
+            "message": "22% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 4,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "2.94",
+            "topPourcent": 77,
+            "message": "77% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "25.0",
+            "topPourcent": 33,
+            "message": "33% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "50.0%",
+            "topPourcent": 67,
+            "message": "67% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 5772,
+            "topPourcent": 22,
+            "message": "22% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "MASTER I",
+            "topPourcent": 8,
+            "message": "8% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 6,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 44,
+            "topPourcent": 32,
+            "message": "32% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Nekoo",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 933,
+            "topPourcent": 3,
+            "message": "3% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 0,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.98",
+            "topPourcent": 25,
+            "message": "25% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "28.0",
+            "topPourcent": 22,
+            "message": "22% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "51.1%",
+            "topPourcent": 52,
+            "message": "52% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 9355,
+            "topPourcent": 7,
+            "message": "7% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "EMERALD I",
+            "topPourcent": 57,
+            "message": "57% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 9,
+            "topPourcent": 20,
+            "message": "20% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 78,
+            "topPourcent": 5,
+            "message": "5% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "UnMecRandom",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 687,
+            "topPourcent": 12,
+            "message": "12% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 2,
+            "topPourcent": 48,
+            "message": "48% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.57",
+            "topPourcent": 47,
+            "message": "47% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "30.0",
+            "topPourcent": 15,
+            "message": "15% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "50.8%",
+            "topPourcent": 58,
+            "message": "58% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 7772,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "DIAMOND III",
+            "topPourcent": 33,
+            "message": "33% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 9,
+            "topPourcent": 20,
+            "message": "20% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 74,
+            "topPourcent": 8,
+            "message": "8% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Doser",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 951,
+            "topPourcent": 2,
+            "message": "2% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 13,
+            "topPourcent": 1,
+            "message": "Tu es dans le top 1%, quasi personne n'a dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.31",
+            "topPourcent": 60,
+            "message": "60% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "23.0",
+            "topPourcent": 53,
+            "message": "53% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "52.7%",
+            "topPourcent": 30,
+            "message": "30% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 10781,
+            "topPourcent": 1,
+            "message": "Tu es dans le top 1%, quasi personne n'a gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "MASTER I",
+            "topPourcent": 23,
+            "message": "23% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 16,
+            "topPourcent": 1,
+            "message": "Tu es dans le top 1%, quasi personne n'a fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 82,
+            "topPourcent": 3,
+            "message": "3% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Turdyo",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 298,
+            "topPourcent": 45,
+            "message": "45% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 5,
+            "topPourcent": 5,
+            "message": "5% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "4.33",
+            "topPourcent": 13,
+            "message": "13% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "26.0",
+            "topPourcent": 28,
+            "message": "28% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "50.7%",
+            "topPourcent": 62,
+            "message": "62% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 3304,
+            "topPourcent": 47,
+            "message": "47% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "MASTER I",
+            "topPourcent": 18,
+            "message": "18% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 7,
+            "topPourcent": 50,
+            "message": "50% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 21,
+            "topPourcent": 57,
+            "message": "57% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Eskuns",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 829,
+            "topPourcent": 8,
+            "message": "8% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 4,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "4.34",
+            "topPourcent": 12,
+            "message": "12% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "33.0",
+            "topPourcent": 5,
+            "message": "5% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "51.4%",
+            "topPourcent": 48,
+            "message": "48% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 9010,
+            "topPourcent": 8,
+            "message": "8% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "MASTER I",
+            "topPourcent": 10,
+            "message": "10% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 13,
+            "topPourcent": 2,
+            "message": "2% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 47,
+            "topPourcent": 23,
+            "message": "23% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "NingShui",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 254,
+            "topPourcent": 53,
+            "message": "53% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 0,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.91",
+            "topPourcent": 27,
+            "message": "27% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "27.0",
+            "topPourcent": 25,
+            "message": "25% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "52.8%",
+            "topPourcent": 27,
+            "message": "27% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 2616,
+            "topPourcent": 58,
+            "message": "58% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "DIAMOND IV",
+            "topPourcent": 50,
+            "message": "50% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 9,
+            "topPourcent": 20,
+            "message": "20% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 39,
+            "topPourcent": 37,
+            "message": "37% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Yohann",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 267,
+            "topPourcent": 48,
+            "message": "48% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 4,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "4.14",
+            "topPourcent": 20,
+            "message": "20% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "22.0",
+            "topPourcent": 60,
+            "message": "60% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "54.7%",
+            "topPourcent": 15,
+            "message": "15% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 3263,
+            "topPourcent": 48,
+            "message": "48% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "MASTER I",
+            "topPourcent": 20,
+            "message": "20% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 9,
+            "topPourcent": 20,
+            "message": "20% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 52,
+            "topPourcent": 17,
+            "message": "17% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "MalveillanceShyrow",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 50,
+            "topPourcent": 83,
+            "message": "83% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 0,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.15",
+            "topPourcent": 65,
+            "message": "65% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "18.0",
+            "topPourcent": 73,
+            "message": "73% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "52.0%",
+            "topPourcent": 38,
+            "message": "38% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 893,
+            "topPourcent": 78,
+            "message": "78% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "PLATINUM II",
+            "topPourcent": 85,
+            "message": "85% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 4,
+            "topPourcent": 82,
+            "message": "82% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 11,
+            "topPourcent": 83,
+            "message": "83% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "xD",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 461,
+            "topPourcent": 23,
+            "message": "23% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 4,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.70",
+            "topPourcent": 42,
+            "message": "42% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "37.0",
+            "topPourcent": 3,
+            "message": "3% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "51.0%",
+            "topPourcent": 55,
+            "message": "55% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 4699,
+            "topPourcent": 28,
+            "message": "28% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "DIAMOND III",
+            "topPourcent": 40,
+            "message": "40% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 8,
+            "topPourcent": 35,
+            "message": "35% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 54,
+            "topPourcent": 15,
+            "message": "15% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Bouhahahahahaha",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 79,
+            "topPourcent": 73,
+            "message": "73% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 2,
+            "topPourcent": 48,
+            "message": "48% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.35",
+            "topPourcent": 57,
+            "message": "57% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "15.0",
+            "topPourcent": 80,
+            "message": "80% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "46.8%",
+            "topPourcent": 88,
+            "message": "88% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 798,
+            "topPourcent": 80,
+            "message": "80% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "MASTER I",
+            "topPourcent": 12,
+            "message": "12% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 4,
+            "topPourcent": 82,
+            "message": "82% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 21,
+            "topPourcent": 57,
+            "message": "57% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "LasagneFroide",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 230,
+            "topPourcent": 60,
+            "message": "60% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 7,
+            "topPourcent": 3,
+            "message": "3% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "5.57",
+            "topPourcent": 2,
+            "message": "2% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "33.0",
+            "topPourcent": 5,
+            "message": "5% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "51.7%",
+            "topPourcent": 42,
+            "message": "42% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 3126,
+            "topPourcent": 52,
+            "message": "52% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "EMERALD II",
+            "topPourcent": 67,
+            "message": "67% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 9,
+            "topPourcent": 20,
+            "message": "20% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 18,
+            "topPourcent": 68,
+            "message": "68% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "SushiiRack",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 396,
+            "topPourcent": 30,
+            "message": "30% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 4,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.64",
+            "topPourcent": 43,
+            "message": "43% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "24.0",
+            "topPourcent": 42,
+            "message": "42% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "44.2%",
+            "topPourcent": 93,
+            "message": "93% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 3682,
+            "topPourcent": 40,
+            "message": "40% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "MASTER I",
+            "topPourcent": 28,
+            "message": "28% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 8,
+            "topPourcent": 35,
+            "message": "35% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 73,
+            "topPourcent": 10,
+            "message": "10% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Julie",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 381,
+            "topPourcent": 33,
+            "message": "33% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 4,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "4.32",
+            "topPourcent": 15,
+            "message": "15% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "29.0",
+            "topPourcent": 18,
+            "message": "18% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "54.6%",
+            "topPourcent": 18,
+            "message": "18% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 5362,
+            "topPourcent": 23,
+            "message": "23% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "EMERALD IV",
+            "topPourcent": 72,
+            "message": "72% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 12,
+            "topPourcent": 5,
+            "message": "5% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 47,
+            "topPourcent": 23,
+            "message": "23% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Willen",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 383,
+            "topPourcent": 32,
+            "message": "32% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 5,
+            "topPourcent": 5,
+            "message": "5% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "2.58",
+            "topPourcent": 87,
+            "message": "87% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "24.0",
+            "topPourcent": 42,
+            "message": "42% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "45.7%",
+            "topPourcent": 90,
+            "message": "90% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 3617,
+            "topPourcent": 43,
+            "message": "43% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "MASTER I",
+            "topPourcent": 22,
+            "message": "22% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 10,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 29,
+            "topPourcent": 50,
+            "message": "50% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "G_eodum",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 839,
+            "topPourcent": 5,
+            "message": "5% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 0,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "2.97",
+            "topPourcent": 75,
+            "message": "75% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "31.0",
+            "topPourcent": 12,
+            "message": "12% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "52.1%",
+            "topPourcent": 37,
+            "message": "37% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 10630,
+            "topPourcent": 2,
+            "message": "2% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "GOLD III",
+            "topPourcent": 98,
+            "message": "98% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 7,
+            "topPourcent": 50,
+            "message": "50% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 45,
+            "topPourcent": 28,
+            "message": "28% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "TencoNestco",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 231,
+            "topPourcent": 58,
+            "message": "58% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 0,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "4.18",
+            "topPourcent": 17,
+            "message": "17% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "26.0",
+            "topPourcent": 28,
+            "message": "28% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "51.5%",
+            "topPourcent": 47,
+            "message": "47% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 2679,
+            "topPourcent": 57,
+            "message": "57% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "EMERALD II",
+            "topPourcent": 63,
+            "message": "63% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 10,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 46,
+            "topPourcent": 27,
+            "message": "27% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Miam",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 78,
+            "topPourcent": 75,
+            "message": "75% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 3,
+            "topPourcent": 30,
+            "message": "30% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "2.28",
+            "topPourcent": 93,
+            "message": "93% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "14.0",
+            "topPourcent": 85,
+            "message": "85% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "52.6%",
+            "topPourcent": 32,
+            "message": "32% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 1028,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "MASTER I",
+            "topPourcent": 27,
+            "message": "27% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 5,
+            "topPourcent": 78,
+            "message": "78% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 9,
+            "topPourcent": 87,
+            "message": "87% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "AuroZed",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 600,
+            "topPourcent": 18,
+            "message": "18% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 1,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "2.88",
+            "topPourcent": 82,
+            "message": "82% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "24.0",
+            "topPourcent": 42,
+            "message": "42% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "51.8%",
+            "topPourcent": 40,
+            "message": "40% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 7852,
+            "topPourcent": 10,
+            "message": "10% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "PLATINUM I",
+            "topPourcent": 77,
+            "message": "77% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 7,
+            "topPourcent": 50,
+            "message": "50% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 113,
+            "topPourcent": 1,
+            "message": "Tu es dans le top 1%, quasi personne n'a joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "HunterTim",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 59,
+            "topPourcent": 80,
+            "message": "80% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 2,
+            "topPourcent": 48,
+            "message": "48% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "2.86",
+            "topPourcent": 83,
+            "message": "83% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "9.0",
+            "topPourcent": 95,
+            "message": "95% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "57.6%",
+            "topPourcent": 5,
+            "message": "5% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 1043,
+            "topPourcent": 75,
+            "message": "75% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "PLATINUM III",
+            "topPourcent": 90,
+            "message": "90% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 5,
+            "topPourcent": 78,
+            "message": "78% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 16,
+            "topPourcent": 73,
+            "message": "73% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Saxuralle",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 570,
+            "topPourcent": 20,
+            "message": "20% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 0,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.98",
+            "topPourcent": 23,
+            "message": "23% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "33.0",
+            "topPourcent": 5,
+            "message": "5% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "52.5%",
+            "topPourcent": 33,
+            "message": "33% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 6140,
+            "topPourcent": 20,
+            "message": "20% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "GRANDMASTER I",
+            "topPourcent": 3,
+            "message": "3% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 10,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 39,
+            "topPourcent": 37,
+            "message": "37% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "IceXx_",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 279,
+            "topPourcent": 47,
+            "message": "47% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 3,
+            "topPourcent": 30,
+            "message": "30% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.00",
+            "topPourcent": 73,
+            "message": "73% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "29.0",
+            "topPourcent": 18,
+            "message": "18% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "53.4%",
+            "topPourcent": 20,
+            "message": "20% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 3991,
+            "topPourcent": 35,
+            "message": "35% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "PLATINUM II",
+            "topPourcent": 87,
+            "message": "87% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 9,
+            "topPourcent": 20,
+            "message": "20% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 19,
+            "topPourcent": 65,
+            "message": "65% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Valgebo",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 358,
+            "topPourcent": 37,
+            "message": "37% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 4,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "4.14",
+            "topPourcent": 22,
+            "message": "22% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "25.0",
+            "topPourcent": 33,
+            "message": "33% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "48.3%",
+            "topPourcent": 82,
+            "message": "82% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 3832,
+            "topPourcent": 38,
+            "message": "38% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "DIAMOND III",
+            "topPourcent": 37,
+            "message": "37% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 8,
+            "topPourcent": 35,
+            "message": "35% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 34,
+            "topPourcent": 45,
+            "message": "45% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "AzuXo",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 340,
+            "topPourcent": 38,
+            "message": "38% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 2,
+            "topPourcent": 48,
+            "message": "48% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.61",
+            "topPourcent": 45,
+            "message": "45% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "21.5",
+            "topPourcent": 63,
+            "message": "63% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "52.9%",
+            "topPourcent": 23,
+            "message": "23% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 4717,
+            "topPourcent": 27,
+            "message": "27% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "EMERALD I",
+            "topPourcent": 62,
+            "message": "62% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 6,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 37,
+            "topPourcent": 43,
+            "message": "43% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "MOUAMEME",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 142,
+            "topPourcent": 67,
+            "message": "67% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 1,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.01",
+            "topPourcent": 72,
+            "message": "72% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "24.0",
+            "topPourcent": 42,
+            "message": "42% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "49.3%",
+            "topPourcent": 73,
+            "message": "73% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 1491,
+            "topPourcent": 67,
+            "message": "67% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "DIAMOND III",
+            "topPourcent": 35,
+            "message": "35% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 6,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 32,
+            "topPourcent": 47,
+            "message": "47% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "4eS Cleaver",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 66,
+            "topPourcent": 78,
+            "message": "78% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 0,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.55",
+            "topPourcent": 50,
+            "message": "50% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "15.0",
+            "topPourcent": 80,
+            "message": "80% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "59.1%",
+            "topPourcent": 3,
+            "message": "3% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 741,
+            "topPourcent": 83,
+            "message": "83% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "EMERALD II",
+            "topPourcent": 68,
+            "message": "68% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 6,
+            "topPourcent": 63,
+            "message": "63% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 12,
+            "topPourcent": 82,
+            "message": "82% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Totom",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 20,
+            "topPourcent": 93,
+            "message": "93% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 0,
+            "topPourcent": 77,
+            "message": "77% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.15",
+            "topPourcent": 63,
+            "message": "63% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "9.0",
+            "topPourcent": 95,
+            "message": "95% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "55.0%",
+            "topPourcent": 13,
+            "message": "13% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 226,
+            "topPourcent": 95,
+            "message": "95% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "DIAMOND IV",
+            "topPourcent": 48,
+            "message": "48% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 3,
+            "topPourcent": 92,
+            "message": "92% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 4,
+            "topPourcent": 92,
+            "message": "92% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Niceley",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 404,
+            "topPourcent": 27,
+            "message": "27% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 3,
+            "topPourcent": 30,
+            "message": "30% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.55",
+            "topPourcent": 48,
+            "message": "48% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "25.0",
+            "topPourcent": 33,
+            "message": "33% des joueurs ont fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "52.7%",
+            "topPourcent": 28,
+            "message": "28% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 4506,
+            "topPourcent": 30,
+            "message": "30% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "GRANDMASTER I",
+            "topPourcent": 2,
+            "message": "2% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 11,
+            "topPourcent": 10,
+            "message": "10% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 26,
+            "topPourcent": 53,
+            "message": "53% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "pseudo": "Aphitana",
+    "resume": {
+      "activite": {
+        "label": "Temps Passé",
+        "stats": [
+          {
+            "nom": "Parties Jouées",
+            "valeur": 726,
+            "topPourcent": 10,
+            "message": "10% des joueurs ont joué plus de parties que toi."
+          },
+          {
+            "nom": "Dodges Tactiques",
+            "valeur": 2,
+            "topPourcent": 48,
+            "message": "48% des joueurs ont dodge plus que toi."
+          }
+        ]
+      },
+      "skill": {
+        "label": "Niveau de Jeu",
+        "stats": [
+          {
+            "nom": "KDA Moyen",
+            "valeur": "3.06",
+            "topPourcent": 70,
+            "message": "70% des joueurs ont un meilleur KDA que toi."
+          },
+          {
+            "nom": "Meilleure Game (KDA)",
+            "valeur": "43.0",
+            "topPourcent": 1,
+            "message": "Tu es dans le top 1%, quasi personne n'a fait une meilleure game que toi."
+          }
+        ]
+      },
+      "progression": {
+        "label": "Ascension",
+        "stats": [
+          {
+            "nom": "Taux de Victoire",
+            "valeur": "48.9%",
+            "topPourcent": 78,
+            "message": "78% des joueurs ont un meilleur taux de victoire que toi."
+          },
+          {
+            "nom": "LP Gagnés (Total)",
+            "valeur": 7280,
+            "topPourcent": 15,
+            "message": "15% des joueurs ont gagné plus de LP que toi."
+          },
+          {
+            "nom": "Peak Rank",
+            "valeur": "MASTER I",
+            "topPourcent": 15,
+            "message": "15% des joueurs ont atteint un rang plus élevé que toi."
+          }
+        ]
+      },
+      "mental": {
+        "label": "Mental & Style",
+        "stats": [
+          {
+            "nom": "Plus longue série de victoires",
+            "valeur": 8,
+            "topPourcent": 35,
+            "message": "35% des joueurs ont fait une plus longue série que toi."
+          },
+          {
+            "nom": "Diversité de Champions",
+            "valeur": 57,
+            "topPourcent": 13,
+            "message": "13% des joueurs ont joué plus de champions différents que toi."
+          }
+        ]
+      }
+    }
+  }
+]

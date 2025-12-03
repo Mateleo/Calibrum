@@ -6,6 +6,7 @@
       <MainLadder class="h-min grow" />
       <div class="flex flex-col gap-4 md:w-[40%]">
         <LazyMainPlayersOfTheDay />
+        <LazyMainPlayerOfTheYear />
         <LazyMainLastGames />
         <LazyMainPredictions />
       </div>
