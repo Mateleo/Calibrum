@@ -6,7 +6,7 @@ const selected = ref("accounts")
 
 const tabs = [
   { label: "ACCOUNTS", value: "accounts" },
-  { label: "2025 WRAPPED", value: "wrapped2025" }
+  // { label: "2025 WRAPPED", value: "wrapped2025" }
 ]
 
 function selectTab(value: string) {
