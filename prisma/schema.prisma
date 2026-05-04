@@ -86,7 +86,7 @@ model LpUpdateS142 {
   death          Int?
   assist         Int?
 
-  season Season @default(S15)
+  season Season @default(S16)
 
   account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
   accountId String
@@ -96,6 +96,7 @@ enum Season {
   S142
   S143
   S15
+  S16
 }
 
 enum Tier {

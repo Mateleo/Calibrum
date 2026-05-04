@@ -16,7 +16,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     RIOT_API_KEY: process.env.NUXT_RIOT_API_KEY,
-    CURRENT_SEASON: "S15"
+    CURRENT_SEASON: "S16"
   },
 
   app: {
