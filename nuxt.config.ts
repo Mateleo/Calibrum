@@ -19,6 +19,12 @@ export default defineNuxtConfig({
     CURRENT_SEASON: "S16"
   },
 
+  build: {
+    // reka-ui doit partager l'instance de Vue du bundle serveur,
+    // sinon le SSR plante avec "Cannot read properties of null (reading 'ce')"
+    transpile: ["reka-ui"]
+  },
+
   app: {
     pageTransition: { name: "page", mode: "out-in" }
   },

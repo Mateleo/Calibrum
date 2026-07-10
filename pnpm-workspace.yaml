@@ -1,3 +1,7 @@
+# pnpm 11 ne lit plus ces réglages depuis .npmrc, ils vivent désormais ici
+shamefullyHoist: true
+strictPeerDependencies: false
+
 allowBuilds:
   '@parcel/watcher': true
   '@prisma/client': true
