@@ -31,18 +31,15 @@ Pour garder des statistiques lisibles, les champions joués moins de 5 fois sont
 
 On a aussi profité de cette mise à jour pour passer un grand coup de balai :
 
-- Votre page joueur s'affiche désormais immédiatement, sans attendre le calcul des prédictions. Celles-ci apparaissent quelques instants plus tard, dès qu'elles sont prêtes. Fini l'écran qui semble figé !
+- Votre page joueur s'affiche désormais immédiatement, sans attendre le calcul des prédictions.
 - Les badges sont enfin branchés sur la saison en cours, avec des séries de victoires et défaites correctement comptées et un vrai seuil de parties sur 24 heures. Au passage, les badges vides ne s'affichent plus.
-- Les parties à 0 kill s'affichent de nouveau dans l'historique (désolé pour les supports 🙏)
+- Les parties à 0 kill s'affichent de nouveau dans l'historique
 - La ligne de prédiction démarre désormais exactement là où votre historique s'arrête, et chaque valeur du graphique est alignée sur la bonne date
-- Les calculs de rang sont exacts, même pile à la frontière entre deux divisions : 2800 LPC, c'est bien Master, pas Diamond
-- La heatmap couvre maintenant une vraie année glissante, place vos parties sur le bon jour de la semaine et se met à jour quand vous changez de compte
-- Elle se calcule aussi beaucoup plus vite : on ne reparcourt plus l'intégralité de vos parties pour chaque jour de l'année
-- Plus de winrate "NaN" ni de crash sur les historiques de rang vides
-- Le graphique ne déclenche plus un appel réseau inutile à chaque chargement, la page joueur est un peu plus légère
+- Les calculs de rang sont exacts, même pile à la frontière entre deux divisions.
+- La heatmap couvre maintenant une vraie année glissante, place vos parties sur le bon jour de la semaine et se met à jour quand vous changez de compte.
+- Plus de winrate "NaN" ni de crash sur les historiques de rang vides.
+- Le graphique ne déclenche plus un call api inutile à chaque chargement, la page joueur est un peu plus légère
 - Les pages de joueurs introuvables renvoient une vraie erreur 404
-
-Merci à tous pour vos retours, c'est grâce à eux que Calibrum s'améliore. N'hésitez pas à venir partager votre Champion DNA sur le Discord de l'association !
 
 À bientôt,
 Mateleo
