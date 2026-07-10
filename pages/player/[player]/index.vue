@@ -13,14 +13,19 @@ const selectedAccountIndex = ref(0)
 const currentView = ref<string>("accounts")
 
 // --- Data Fetching ---
-const { data: player, error } = await useFetch<PlayerWithAccountsReponse>(`/api/player/${playerName.value}`)
+const { data: player } = await useFetch<PlayerWithAccountsReponse>(`/api/player/${playerName.value}`)
 
 const currentAccount = computed(() => player.value?.accounts?.[selectedAccountIndex.value])
 
-const { data: prediction } = await useLazyFetch<number[]>(() => `/api/AI/LPC/${currentAccount.value?.id}`, {
-  server: false,
-  watch: [currentAccount]
-})
+const { data: prediction, status: predictionStatus } = await useLazyFetch<number[]>(
+  () => `/api/AI/LPC/${currentAccount.value?.id}`,
+  {
+    server: false,
+    watch: [currentAccount]
+  }
+)
+
+const currentPrediction = computed(() => (predictionStatus.value === "success" ? (prediction.value ?? []) : []))
 
 // Pre-calculate the account list for the navigation component
 const navigationAccounts = computed(
@@ -35,9 +40,7 @@ const navigationAccounts = computed(
 // Filter and slice LP updates (Logic moved out of template)
 const recentLpUpdates = computed(() => {
   if (!currentAccount.value) return []
-  return currentAccount.value.lpUpdates
-    .filter((lp) => lp.kill) // Filter games with KDA data
-    .slice(0, 20)
+  return currentAccount.value.lpUpdates.filter((lp) => lp.kill !== null).slice(0, 20)
 })
 
 const getChampionIconUrl = (championId: number) =>
@@ -89,7 +92,11 @@ useSeoMeta({
         <CommonSection class="hidden h-full flex-col gap-2 rounded-lg p-4 md:flex">
           <div class="flex flex-col gap-2 p-2">
             <!-- Loop through computed property instead of complex inline filter -->
-            <div v-for="lpUpdate in recentLpUpdates" class="flex items-center justify-between gap-2">
+            <div
+              v-for="lpUpdate in recentLpUpdates"
+              :key="lpUpdate.matchId ?? lpUpdate.date.toString()"
+              class="flex items-center justify-between gap-2"
+            >
               <div class="flex gap-2">
                 <NuxtImg
                   v-if="lpUpdate.championId"
@@ -101,7 +108,7 @@ useSeoMeta({
                   alt="Champion Icon"
                 />
                 <div class="flex flex-col">
-                  <p v-if="lpUpdate.kill" class="font-semibold">
+                  <p v-if="lpUpdate.kill !== null" class="font-semibold">
                     {{ lpUpdate.kill }}/{{ lpUpdate.death }}/{{ lpUpdate.assist }}
                   </p>
                   <p class="text-sm text-white/40">
@@ -124,17 +131,19 @@ useSeoMeta({
         <div class="flex flex-col">
           <PlayerNavigation :is-live="player.isLive" @change="(val) => (currentView = val)" />
 
-          <div v-if="currentView === 'accounts'" class="mt-4 text-sm font-light">
+          <div v-if="currentView === 'accounts' || currentView === 'champions'" class="mt-4 text-sm font-light">
             <PlayerAccounts :accounts="navigationAccounts" v-model:selected="selectedAccountIndex" />
           </div>
         </div>
 
         <!-- Dynamic View Content -->
         <PlayerAccount
-          v-if="prediction && currentView === 'accounts' && currentAccount"
+          v-if="currentView === 'accounts' && currentAccount"
           :account="currentAccount"
-          :prediction="prediction"
+          :prediction="currentPrediction"
         />
+
+        <PlayerChampionPool v-else-if="currentView === 'champions' && currentAccount" :account-id="currentAccount.id" />
 
         <CommonSection v-else-if="currentView === 'wrapped2025'" class="mt-4 rounded-md">
           <PlayerWrapped :playerName="playerName" />

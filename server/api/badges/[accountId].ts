@@ -1,58 +1,64 @@
+import { Season } from "@prisma/client"
 import { computeStreak, getGamesCountByAccountByDay } from "~/server/utils/lp_updates/lp_updates"
 
 export default defineEventHandler(async (event) => {
-  let badges = []
-  if (!event.context.params?.accountId) {
-    return []
-  }
+  const accountId = getRouterParam(event, "accountId")
+  if (!accountId) return []
+
+  const currentSeason = useRuntimeConfig().CURRENT_SEASON as Season
   const account = await prisma.account.findUnique({
-    where: {
-      id: event.context.params.accountId
-    },
-    include: {
-      LpUpdate: {
-        orderBy: {
-          date: "desc"
-        },
-        take: 10
-      }
-    }
+    where: { id: accountId },
+    select: { id: true }
   })
-  if (!account) {
-    return []
-  }
-  //check for winning streak
-  const streak = computeStreak(account.LpUpdate.map((update) => update.lastUpdateDiff).reverse())
-  if (streak.win) {
+  if (!account) return []
+
+  const [recentUpdates, gamesCount, isChallengerThisSeason] = await Promise.all([
+    prisma.lpUpdateS142.findMany({
+      where: {
+        accountId,
+        season: currentSeason,
+        lastUpdateDiff: { not: 0 },
+        OR: [{ isDodge: false }, { isDodge: null }]
+      },
+      orderBy: { date: "desc" },
+      take: 20,
+      select: { lastUpdateDiff: true }
+    }),
+    getGamesCountByAccountByDay(accountId, 1),
+    prisma.lpUpdateS142.findFirst({
+      where: {
+        accountId,
+        tier: "CHALLENGER",
+        season: currentSeason
+      },
+      select: { id: true }
+    })
+  ])
+
+  const badges: Array<{ icon: string; count: number; message: string }> = []
+  const streak = computeStreak(recentUpdates.map((update) => update.lastUpdateDiff).reverse())
+
+  if (streak.currentStreak >= 3 && streak.win) {
     badges.push({
       icon: "🔥",
       count: Math.floor(streak.currentStreak / 3),
       message: `A gagné ${streak.currentStreak} games d'affilées`
     })
-  } else {
+  } else if (streak.currentStreak >= 3) {
     badges.push({
       icon: "😰",
       count: Math.floor(streak.currentStreak / 3),
       message: `A perdu ${streak.currentStreak} games d'affilées`
     })
   }
-  //check for shower badge
-  const gamesCount = await getGamesCountByAccountByDay(account.id, 1)
-  if (gamesCount?._count.LpUpdate) {
+
+  if (gamesCount >= 6) {
     badges.push({
       icon: "🚿",
-      count: Math.floor(gamesCount?._count.LpUpdate / 6),
-      message: `A joué ${gamesCount._count.LpUpdate} games dans la journée`
+      count: Math.floor(gamesCount / 6),
+      message: `A joué ${gamesCount} games dans les dernières 24 heures`
     })
   }
-
-  const isChallengerThisSeason = await prisma.lpUpdateS142.findFirst({
-    where: {
-      accountId: event.context.params.accountId,
-      tier: "CHALLENGER",
-      season: "S15"
-    }
-  })
 
   if (isChallengerThisSeason) {
     badges.push({

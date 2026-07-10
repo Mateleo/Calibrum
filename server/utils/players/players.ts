@@ -91,7 +91,8 @@ export async function getPlayerLiveGame(discordId: string) {
   const accounts = await getAccountsByPlayer(discordId)
 
   for (const account of accounts) {
-    return await getLiveGameData(account.id)
+    const liveGame = await getLiveGameData(account.id)
+    if (liveGame) return liveGame
   }
 }
 
@@ -123,16 +124,21 @@ export async function getPlayersOfTheDay() {
 
 export async function getLast10Games() {
   const updates = await getLastXUpdates(10)
-  return await Promise.all(
+  const games = await Promise.all(
     updates.map(async (update) => {
-      const { id, puuid, playerDiscordId, wins, losses, ...account } = await getAccountById(update.accountId)
-      const { id: idUpdate, accountId, ...updateResponse } = update
+      const accountData = await getAccountById(update.accountId)
+      if (!accountData) return null
+
+      const { id, puuid, playerDiscordId, wins, losses, ...account } = accountData
+      const { id: updateId, accountId, ...updateResponse } = update
       return {
         ...updateResponse,
         ...account
       }
     })
   )
+
+  return games.filter((game) => game !== null)
 }
 
 export async function getPlayersAlpha() {

@@ -72,44 +72,36 @@ export function getLastXUpdates(amount: number) {
 }
 
 export function computeStreak(arr: number[]) {
-  let currentStreak = 0
-  //@ts-ignore
-  let side = arr.at(-1) > 0 ? 0 : -1000000
-  for (let i = arr.length - 1; i >= 0; i--) {
-    if (arr[i] > side && arr[i] != 0) {
-      if (side != 0 && arr[i] < 0) {
-        currentStreak++
-      } else if (side == 0 && arr[i] > 0) {
-        currentStreak++
-      } else {
-        break
-      }
-    } else {
-      break
-    }
+  const results = arr.filter((diff) => diff !== 0)
+  const latestResult = results.at(-1)
+
+  if (latestResult === undefined) {
+    return { win: false, currentStreak: 0 }
   }
-  return { win: side == -1000000 ? 0 : 1, currentStreak: currentStreak }
+
+  const isWin = latestResult > 0
+  let currentStreak = 0
+
+  for (let index = results.length - 1; index >= 0; index--) {
+    if (results[index] > 0 !== isWin) break
+    currentStreak++
+  }
+
+  return { win: isWin, currentStreak }
 }
 
-export async function getGamesCountByAccountByDay(accountId: string, days: number) {
-  const last24hours = new Date().setHours(new Date().getHours() - 24)
-  return await prisma.account.findUnique({
+export function getGamesCountByAccountByDay(accountId: string, days: number) {
+  return prisma.lpUpdateS142.count({
     where: {
-      id: accountId
-    },
-    select: {
-      _count: {
-        select: {
-          LpUpdate: {
-            where: {
-              date: {
-                gte: dayjs().subtract(22, "hours").toDate(),
-                lt: dayjs().add(2, "hours").toDate()
-              }
-            }
-          }
-        }
-      }
+      accountId,
+      season: useRuntimeConfig().CURRENT_SEASON as Season,
+      date: {
+        gte: dayjs().subtract(days, "day").toDate()
+      },
+      lastUpdateDiff: {
+        not: 0
+      },
+      OR: [{ isDodge: false }, { isDodge: null }]
     }
   })
 }

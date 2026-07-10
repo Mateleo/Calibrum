@@ -6,6 +6,7 @@ const selected = ref("accounts")
 
 const tabs = [
   { label: "ACCOUNTS", value: "accounts" },
+  { label: "CHAMPION DNA", value: "champions" }
   // { label: "2025 WRAPPED", value: "wrapped2025" }
 ]
 
