@@ -8,8 +8,8 @@ WORKDIR /app
 # Enable pnpm via corepack
 RUN corepack enable pnpm
 
-# Copy package management files
-COPY package.json pnpm-lock.yaml .npmrc ./
+# Copy package management files (pnpm-workspace.yaml carries the allowed build scripts for pnpm 11)
+COPY package.json pnpm-lock.yaml .npmrc pnpm-workspace.yaml ./
 
 # Copy Prisma schema (needed for installation/generation)
 COPY prisma ./prisma/
