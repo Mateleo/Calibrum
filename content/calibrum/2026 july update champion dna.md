@@ -17,7 +17,7 @@ Dès l'ouverture, une carte d'identité vous accueille avec votre champion signa
 
 ![Champion DNA](/content/img/championdna.png)
 
-_Capture d'écran du profil de Niceley, meilleur joueur de 4eSport en ce mois de juillet 2026._{.text-sm .opacity-60}
+_Capture d'écran du profil de Niceley, meilleur joueur de 4eSport en ce mois de juillet 2026._{.block .text-center .text-xs .opacity-60}
 
 ### Un tableau complet, comparé au reste de Calibrum
 
