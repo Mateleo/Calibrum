@@ -1,14 +1,17 @@
 <script setup lang="ts">
 const router = useRouter()
-const props = defineProps({
-  toc: {
-    type: Object
-  },
-  activeSection: {
-    type: String,
-    default: null
-  }
-})
+
+interface TocLink {
+  id: string
+  text: string
+  depth: number
+  children?: TocLink[]
+}
+
+defineProps<{
+  toc?: { links?: TocLink[] }
+  activeSection?: string | null
+}>()
 
 // Smooth scroll function
 // J'aimerais pouvoir faire autrement... A delete également
@@ -41,7 +44,7 @@ const smoothScroll = (event: MouseEvent, id: string) => {
         v-for="link in toc.links"
         :key="link.text"
       >
-        <a class="custom" :href="`#${link.id}`" @click="(event) => smoothScroll(event, link.id)">
+        <a class="custom" :href="`#${link.id}`" @click="smoothScroll($event, link.id)">
           {{ link.text }}
         </a>
         <div v-if="link.children" class="mt-[10px]">
@@ -54,7 +57,7 @@ const smoothScroll = (event: MouseEvent, id: string) => {
             v-for="deepLink in link.children"
             :key="deepLink.text"
           >
-            <a class="custom" :href="`#${deepLink.id}`" @click="(event) => smoothScroll(event, deepLink.id)">
+            <a class="custom" :href="`#${deepLink.id}`" @click="smoothScroll($event, deepLink.id)">
               {{ deepLink.text }}
             </a>
           </li>

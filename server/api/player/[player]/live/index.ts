@@ -12,7 +12,7 @@ export default eventHandler(async (event) => {
 
   if (!player) {
     throw createError({
-      statusCode: 500,
+      statusCode: 404,
       statusMessage: `player ${params.player} not found`
     })
   }

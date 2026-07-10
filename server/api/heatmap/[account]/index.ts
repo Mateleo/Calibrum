@@ -1,3 +1,5 @@
+import dayjs from "dayjs"
+
 export default defineEventHandler(async (event) => {
   const accountId = getRouterParam(event, "account")
   if (!accountId) {
@@ -28,21 +30,25 @@ export default defineEventHandler(async (event) => {
     return []
   }
 
-  const now = new Date()
-  const heatmap = []
+  const startDate = dayjs().subtract(363, "day").startOf("day")
+  const gamesByDate = new Map<string, number>()
 
-  for (
-    var d = new Date(new Date().setDate(new Date(lpupdates[0].date).getDate() - 363));
-    d <= now;
-    d.setDate(d.getDate() + 1)
-  ) {
-    const iso = d.toISOString().substring(0, 10)
-    const dayOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"][d.getDay()]
+  for (const update of lpupdates) {
+    const date = dayjs(update.date).format("YYYY-MM-DD")
+    gamesByDate.set(date, (gamesByDate.get(date) ?? 0) + 1)
+  }
+
+  const heatmap = []
+  const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+  for (let offset = 0; offset < 364; offset++) {
+    const date = startDate.add(offset, "day")
+    const iso = date.format("YYYY-MM-DD")
     heatmap.push({
       x: iso,
-      y: dayOfWeek,
+      y: dayNames[date.day()],
       d: iso,
-      v: lpupdates.filter((e) => new Date(e.date).toDateString() === d.toDateString()).length
+      v: gamesByDate.get(iso) ?? 0
     })
   }
   return heatmap

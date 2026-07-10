@@ -19,7 +19,7 @@ export default defineEventHandler(async (event) => {
 
   if (!player) {
     throw createError({
-      statusCode: 500,
+      statusCode: 404,
       statusMessage: `player ${params.player} not found`
     })
   }
@@ -32,14 +32,14 @@ export default defineEventHandler(async (event) => {
   const accountsWithLpUpdates = await Promise.all(
     accounts.map(async (account) => {
       const lpUpdatesRaw = await prisma.lpUpdateS142.findMany({
-          where: {
-            season: useRuntimeConfig().CURRENT_SEASON as Season,
-            accountId: account.id
-          },
-          orderBy: {
-            date: "desc"
-          },
-        })
+        where: {
+          season: useRuntimeConfig().CURRENT_SEASON as Season,
+          accountId: account.id
+        },
+        orderBy: {
+          date: "desc"
+        }
+      })
       const lpUpdates = lpUpdatesRaw.map((lpupdate) => {
         const { id, accountId, ...lpupdateReponse } = lpupdate
         return lpupdateReponse

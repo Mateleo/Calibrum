@@ -19,12 +19,16 @@ const props = withDefaults(defineProps<Props>(), {
     rank: "IV",
     tier: "IRON"
   }),
-  title: "123",
-  wins: 1,
-  losses: 1
+  title: "Rank",
+  wins: 0,
+  losses: 0
 })
 
 const { title, losses, wins, lpUpdate, player } = toRefs(props)
+const winRate = computed(() => {
+  const games = wins.value + losses.value
+  return games === 0 ? 0 : Math.round((wins.value / games) * 1000) / 10
+})
 </script>
 <template>
   <div>
@@ -38,11 +42,12 @@ const { title, losses, wins, lpUpdate, player } = toRefs(props)
               quality="70"
               format="webp"
               class="h-[112px] w-[155px] object-cover opacity-70"
+              :alt="`${lpUpdate.tier} rank emblem`"
             ></NuxtImg>
             <div class="flex w-[140px] flex-col justify-center p-4 text-right text-sm leading-4">
               <p class="font-semibold">{{ lpUpdate.rank }} {{ lpUpdate.tier }}</p>
               <p class="font-semibold">{{ lpUpdate.LP }} LP</p>
-              <p>{{ wins }}/{{ losses }} ({{ Math.floor((wins / (losses + wins)) * 1000) / 10 }}%)</p>
+              <p>{{ wins }}/{{ losses }} ({{ winRate }}%)</p>
               <p class="text-white/70">{{ dayjs(lpUpdate.date).format("DD/MM") }}</p>
             </div>
           </div>

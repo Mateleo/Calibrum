@@ -10,19 +10,15 @@ import {
   CategoryScale,
   LinearScale,
   LineElement,
-  PointElement,
-  scales
+  PointElement
 } from "chart.js"
 import { type LpUpdateResponse } from "~/utils/types"
 import zoomPlugin from "chartjs-plugin-zoom"
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, PointElement, LineElement, zoomPlugin)
 
-const { data: cutoff } = useFetch("/api/cutoff")
-
 interface Props {
   lpUpdates: (LpUpdateResponse & { prediction: boolean })[]
-  prediction: number[]
 }
 
 const rankColors = {
@@ -40,10 +36,17 @@ const rankColors = {
 
 const props = defineProps<Props>()
 
+const actualData = computed(() => props.lpUpdates.map((update) => (update.prediction ? null : update.LPC)))
+const predictionData = computed(() => {
+  const lastActualIndex = props.lpUpdates.findLastIndex((update) => !update.prediction)
+  return props.lpUpdates.map((update, index) => (update.prediction || index === lastActualIndex ? update.LPC : null))
+})
+const peakLpc = computed(() => Math.max(...props.lpUpdates.map((update) => update.LPC), 0))
+
 function LPCtoString(LPC: number) {
   let rank = ""
   let tier = ""
-  if (LPC > 2800) {
+  if (LPC >= 2800) {
     tier = "MASTER"
     rank = "I"
     LPC -= 2800
@@ -51,7 +54,7 @@ function LPCtoString(LPC: number) {
   } else if (LPC >= 2400) {
     tier = "DIAMOND"
     LPC -= 2400
-  } else if (LPC > 2000) {
+  } else if (LPC >= 2000) {
     tier = "EMERALD"
     LPC -= 2000
   } else if (LPC >= 1600) {
@@ -69,13 +72,13 @@ function LPCtoString(LPC: number) {
   } else {
     tier = "IRON"
   }
-  if (LPC > 300) {
+  if (LPC >= 300) {
     rank = "1"
     LPC -= 300
-  } else if (LPC > 200) {
+  } else if (LPC >= 200) {
     rank = "2"
     LPC -= 200
-  } else if (LPC > 100) {
+  } else if (LPC >= 100) {
     rank = "3"
     LPC -= 100
   } else {
@@ -93,7 +96,7 @@ function LPCtoString(LPC: number) {
         :data="{
           datasets: [
             {
-              data: props.lpUpdates.filter((e) => !e.prediction).map((e) => e.LPC),
+              data: actualData,
               borderColor: props.lpUpdates.map((e) => rankColors[e.tier]),
               backgroundColor: props.lpUpdates.map((e) => rankColors[e.tier]),
               segment: {
@@ -103,7 +106,7 @@ function LPCtoString(LPC: number) {
               borderWidth: 3
             },
             {
-              data: props.lpUpdates.map((e) => (!e.prediction ? null : e.LPC)),
+              data: predictionData,
               borderColor: '#67e8f9CC',
               backgroundColor: '#67e8f9CC',
               segment: {
@@ -160,7 +163,6 @@ function LPCtoString(LPC: number) {
               caretPadding: 8,
               callbacks: {
                 title: (TooltipItem) => {
-                  // PLEASE UPDATE
                   return `${props.lpUpdates.at(TooltipItem[0].dataIndex)?.tier.charAt(0)} ${
                     props.lpUpdates.at(TooltipItem[0].dataIndex)?.rank
                   }  ${props.lpUpdates.at(TooltipItem[0].dataIndex)?.LP}LP`
@@ -174,8 +176,8 @@ function LPCtoString(LPC: number) {
           maintainAspectRatio: false,
           scales: {
             x: {
-              min: props.lpUpdates.length - 100,
-              max: props.lpUpdates.length
+              min: Math.max(props.lpUpdates.length - 100, 0),
+              max: Math.max(props.lpUpdates.length - 1, 0)
             },
             y: {
               ticks: {
@@ -184,10 +186,7 @@ function LPCtoString(LPC: number) {
                 },
                 stepSize: 50
               },
-              suggestedMax:
-                props.lpUpdates.reduce((peakEloUpdate, currentUpdate) =>
-                  currentUpdate.LPC > peakEloUpdate.LPC ? currentUpdate : peakEloUpdate
-                ).LPC + 15
+              suggestedMax: peakLpc + 15
             }
           },
           layout: {

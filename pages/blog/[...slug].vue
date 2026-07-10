@@ -12,20 +12,22 @@ const { data: articles } = await useAsyncData("navigation", () => {
 })
 
 const givenDate = dayjs(page.value?.date, "DD/MM/YYYY")
+const parseArticleDate = (date: unknown) => dayjs(typeof date === "string" ? date : "", "DD/MM/YYYY")
 
 // we need this bc of calibrum subfolder.
 // Not the best options (we suppose calibrum's articles are in the first item)
 // Ideal would be to flatten every list from "children"
-const allArticles = computed(() =>
-  articles.value ? [...articles.value.slice(1), ...articles.value.at(0).children] : []
-)
+const allArticles = computed(() => {
+  if (!articles.value) return []
+  return [...articles.value.slice(1), ...(articles.value.at(0)?.children ?? [])]
+})
 
 // Find the closest previous and next articles
 const previousArticle = computed(() => {
   if (!allArticles.value) return null
   const previous = allArticles.value
-    .filter((article) => dayjs(article.date, "DD/MM/YYYY").isBefore(givenDate))
-    .sort((a, b) => dayjs(b.date, "DD/MM/YYYY").diff(dayjs(a.date, "DD/MM/YYYY")))[0]
+    .filter((article) => parseArticleDate(article.date).isBefore(givenDate))
+    .sort((a, b) => parseArticleDate(b.date).diff(parseArticleDate(a.date)))[0]
 
   return previous || null
 })
@@ -33,8 +35,8 @@ const previousArticle = computed(() => {
 const nextArticle = computed(() => {
   if (!allArticles.value) return null
   const next = allArticles.value
-    .filter((article) => dayjs(article.date, "DD/MM/YYYY").isAfter(givenDate))
-    .sort((a, b) => dayjs(a.date, "DD/MM/YYYY").diff(dayjs(b.date, "DD/MM/YYYY")))[0]
+    .filter((article) => parseArticleDate(article.date).isAfter(givenDate))
+    .sort((a, b) => parseArticleDate(a.date).diff(parseArticleDate(b.date)))[0]
 
   return next || null
 })

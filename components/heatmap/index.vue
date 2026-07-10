@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Chart, registerables } from "chart.js"
+import { Chart, registerables, type ChartData, type ChartOptions, type ScriptableContext } from "chart.js"
 import { MatrixController, MatrixElement } from "chartjs-chart-matrix"
 import "chartjs-adapter-moment"
 import { color } from "chart.js/helpers"
@@ -15,6 +15,15 @@ const props = defineProps<Props>()
 
 const { data: heatmap } = await useFetch(`/api/heatmap/${props.id}`)
 const mostGamesInADay = computed(() => (heatmap.value ? Math.max(...heatmap.value.map((e) => e.v), 5) : 5))
+
+interface HeatmapPoint {
+  x: string
+  y: string
+  d: string
+  v: number
+}
+
+const getHeatmapPoint = (context: ScriptableContext<"matrix">) => context.raw as HeatmapPoint
 
 function formatDate(date: Date): string {
   const monthNames = [
@@ -70,31 +79,33 @@ function formatDate(date: Date): string {
 //   return data
 // }
 
-const data = {
+const data: ChartData<"matrix", HeatmapPoint[]> = {
   datasets: [
     {
       label: "My Matrix",
-      data: heatmap.value,
-      backgroundColor(c) {
-        const value = c.dataset.data[c.dataIndex].v
+      data: heatmap.value ?? [],
+      backgroundColor(context) {
+        const value = getHeatmapPoint(context).v
         const alpha = Math.min(value / mostGamesInADay.value, 1)
         return value == 0 ? "rgba(0, 0, 0, 0.3)" : color("#00fafa").alpha(alpha).rgbString()
       },
-      borderColor(c) {
-        const value = c.dataset.data[c.dataIndex].v
+      borderColor(context) {
+        const value = getHeatmapPoint(context).v
         const alpha = Math.min(value / mostGamesInADay.value, 1)
         return value == 0 ? "rgba(0, 0, 0, 0.1)" : color("#00fafa").alpha(alpha).darken(0.3).rgbString()
       },
       borderWidth: 1,
-      width(c) {
-        const a = c.chart.chartArea || {}
-        const cellSize = (a.right - a.left) / 53 // 53 weeks in a year
+      width(context) {
+        const chartArea = context.chart.chartArea
+        if (!chartArea) return 0
+        const cellSize = (chartArea.right - chartArea.left) / 53 // 53 weeks in a year
         const padding = 4 // Adjust padding as needed
         return cellSize - padding
       },
-      height(c) {
-        const a = c.chart.chartArea || {}
-        const cellSize = (a.bottom - a.top) / 7 // 7 days in a week
+      height(context) {
+        const chartArea = context.chart.chartArea
+        if (!chartArea) return 0
+        const cellSize = (chartArea.bottom - chartArea.top) / 7 // 7 days in a week
         const padding = 4 // Adjust padding as needed
         return cellSize - padding
       }
@@ -102,60 +113,12 @@ const data = {
   ]
 }
 
-const scales = {
-  y: {
-    type: "category", // Change from "time" to "category"
-    labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    position: "left",
-    ticks: {
-      maxRotation: 0,
-      autoSkip: true,
-      padding: 4,
-      font: {
-        size: 12
-      }
-    },
-    reverse: false,
-    offset: true,
-    grid: {
-      display: false,
-      drawBorder: false,
-      tickLength: 0
-    }
-  },
-  x: {
-    type: "time",
-    position: "top",
-    offset: true,
-    time: {
-      offsetAfterAutoskip: false,
-      unit: "week",
-      round: "week",
-      isoWeekday: false,
-      displayFormats: {
-        week: "MMMM"
-      }
-    },
-    ticks: {
-      maxRotation: 0,
-      autoSkip: true,
-      padding: 4,
-      font: {
-        size: 12
-      }
-    },
-    grid: {
-      display: false,
-      drawBorder: false,
-      tickLength: 0
-    }
-  }
-}
-
-const options = {
+const options: ChartOptions<"matrix"> = {
   aspectRatio: 6.4,
   plugins: {
-    legend: false,
+    legend: {
+      display: false
+    },
     tooltip: {
       displayColors: false,
       callbacks: {
@@ -163,15 +126,60 @@ const options = {
           return ""
         },
         label(context) {
-          const v = context.dataset.data[context.dataIndex]
-          return v.v === 0
-            ? `No game on ${formatDate(new Date(v.d))}.`
-            : `${v.v} games on ${formatDate(new Date(v.d))}.`
+          const point = context.raw as HeatmapPoint
+          return point.v === 0
+            ? `No game on ${formatDate(new Date(point.d))}.`
+            : `${point.v} games on ${formatDate(new Date(point.d))}.`
         }
       }
     }
   },
-  scales: scales,
+  scales: {
+    y: {
+      type: "category",
+      labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      position: "left",
+      ticks: {
+        maxRotation: 0,
+        autoSkip: true,
+        padding: 4,
+        font: {
+          size: 12
+        }
+      },
+      reverse: false,
+      offset: true,
+      grid: {
+        display: false,
+        tickLength: 0
+      }
+    },
+    x: {
+      type: "time",
+      position: "top",
+      offset: true,
+      time: {
+        unit: "week",
+        round: "week",
+        isoWeekday: false,
+        displayFormats: {
+          week: "MMMM"
+        }
+      },
+      ticks: {
+        maxRotation: 0,
+        autoSkip: true,
+        padding: 4,
+        font: {
+          size: 12
+        }
+      },
+      grid: {
+        display: false,
+        tickLength: 0
+      }
+    }
+  },
   layout: {
     padding: {
       top: 0
@@ -183,7 +191,7 @@ const chartRef = ref<HTMLCanvasElement | null>(null)
 
 onMounted(() => {
   if (chartRef.value) {
-    new Chart(chartRef.value, {
+    new Chart<"matrix", HeatmapPoint[]>(chartRef.value, {
       type: "matrix",
       data,
       options
